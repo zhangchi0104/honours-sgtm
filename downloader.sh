@@ -1,0 +1,2 @@
+wget -O ./data/AG_NEWS/train.csv https://raw.githubusercontent.com/mhjabreel/CharCnn_Keras/master/data/ag_news_csv/train.csv
+wget -O ./data/AG_NEWS/test.csv https://raw.githubusercontent.com/mhjabreel/CharCnn_Keras/master/data/ag_news_csv/test.csv
