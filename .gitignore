@@ -1,3 +1,8 @@
 /__pycache__
 /data
 tokens.pkl
+raw_inputs.pkl
+tokens-256.pkl
+tokens.pkl
+*.pth
+
