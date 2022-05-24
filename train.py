@@ -1,11 +1,13 @@
 #%%
 import pickle
 import random
-
+from pathlib import Path
 import torch
 from transformers import BertTokenizer, BertForPreTraining, AdamW
 from tqdm.auto import tqdm  # for our progress bar
-BATCH_SIZE=8
+import argparse
+
+
 device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
 
 class MyDataset(torch.utils.data.Dataset):
@@ -18,19 +20,23 @@ class MyDataset(torch.utils.data.Dataset):
     def __getitem__(self, i):
         return {key: torch.tensor(val[i]) for key, val in self.eoncodings.items() }
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-o', '--out_dir', default=Path.cwd())
+    parser.add_argument('-b', '--batch_size', type=int, default=8)
+    parser.add_argument('-e', '--epochs', type=int, default=2)
+
+    args = parser.parse_args()
     inputs = None
     with open('./raw_inputs.pkl', 'rb') as f:
         inputs = pickle.load(f)
     dataset = MyDataset(inputs)
-    loader = torch.utils.data.DataLoader(dataset, batch_size=BATCH_SIZE, shuffle=True)
+    loader = torch.utils.data.DataLoader(dataset, batch_size=args.batch_size, shuffle=True)
     model = BertForPreTraining.from_pretrained('bert-base-uncased')
     model.to(device)
     model.train()
     optim = AdamW(model.parameters(), lr=5e-5)
 
-    epochs = 2
-
-    for epoch in range(epochs):
+    for epoch in range(args.epochs):
         # setup loop with TQDM and dataloader
         loop = tqdm(loader, leave=True)
         for batch in loop:
@@ -57,7 +63,7 @@ def main():
             loop.set_description(f'Epoch {epoch}')
             loop.set_postfix(loss=loss.item())
 
-    torch.save(model, 'bert-base-local.pth')
+    model.save_pretrained(save_directory=args.out)
 
 if __name__ == "__main__":
     main()
