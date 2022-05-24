@@ -4,6 +4,7 @@ import torch
 import argparse
 from transformers import BertTokenizer
 import pickle
+from pathlib import Path
 def generate_tokens(tokenizer, dataset):
     sentence_a = []
     sentence_b = []
@@ -54,16 +55,18 @@ def add_nsp_mlm(inputs, label):
 def main(): 
     parser = argparse.ArgumentParser() 
     parser.add_argument("--pretrained", action='store_true')
+    parser.add_argument("-o", "--out", type=str, default=Path.cwd() / '.tokens.pkl')
     args = parser.parse_args()
     tokenizer = None
-    if (args.pretrained):
+    if args.pretrained:
         tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
     else:
         tokenizer = BertTokenizer(vocab_file='bert_vocab.txt')
     dataset = pd.read_csv('./data/dataset.csv')
     inputs, labels = generate_tokens(tokenizer, dataset)
-    inputs = add_nsp_mlm(inputs,labels)
-    with open('tokens.pkl' , 'wb') as f:
+
+    inputs = add_nsp_mlm(inputs, labels)
+    with open(args.out, 'wb') as f:
         pickle.dump(inputs, f)
 
 if __name__ == '__main__':
