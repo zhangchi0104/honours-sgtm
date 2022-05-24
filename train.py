@@ -18,7 +18,7 @@ class MyDataset(torch.utils.data.Dataset):
         return len(self.eoncodings['input_ids'])
 
     def __getitem__(self, i):
-        return {key: torch.tensor(val[i]) for key, val in self.eoncodings.items()}
+        return {key: val[i] for key, val in self.eoncodings.items()}
 
 
 def main():
@@ -26,7 +26,7 @@ def main():
     parser.add_argument('-o', '--out_dir', default=Path.cwd())
     parser.add_argument('-b', '--batch_size', type=int, default=8)
     parser.add_argument('-e', '--epochs', type=int, default=2)
-    parser.add_arguments('-t', '--tokens', type=str, default='tokens.pkl')
+    parser.add_argument('-t', '--tokens', type=str, default='tokens.pkl')
     args = parser.parse_args()
     inputs = None
     with open(args.tokens, 'rb') as f:
@@ -65,7 +65,7 @@ def main():
             loop.set_description(f'Epoch {epoch}')
             loop.set_postfix(loss=loss.item())
 
-    model.save_pretrained(save_directory=args.out)
+    model.save_pretrained(save_directory=args.out_dir)
 
 
 if __name__ == "__main__":
