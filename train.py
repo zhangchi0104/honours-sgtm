@@ -1,4 +1,4 @@
-#%%
+# %%
 import pickle
 import random
 from pathlib import Path
@@ -7,8 +7,8 @@ from transformers import BertTokenizer, BertForPreTraining, AdamW
 from tqdm.auto import tqdm  # for our progress bar
 import argparse
 
-
 device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
+
 
 class MyDataset(torch.utils.data.Dataset):
     def __init__(self, encodings):
@@ -18,16 +18,18 @@ class MyDataset(torch.utils.data.Dataset):
         return len(self.eoncodings['input_ids'])
 
     def __getitem__(self, i):
-        return {key: torch.tensor(val[i]) for key, val in self.eoncodings.items() }
+        return {key: torch.tensor(val[i]) for key, val in self.eoncodings.items()}
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('-o', '--out_dir', default=Path.cwd())
     parser.add_argument('-b', '--batch_size', type=int, default=8)
     parser.add_argument('-e', '--epochs', type=int, default=2)
-
+    parser.add_arguments('-t', '--tokens', type=str, default='tokens.pkl')
     args = parser.parse_args()
     inputs = None
-    with open('./raw_inputs.pkl', 'rb') as f:
+    with open(args.tokens, 'rb') as f:
         inputs = pickle.load(f)
     dataset = MyDataset(inputs)
     loader = torch.utils.data.DataLoader(dataset, batch_size=args.batch_size, shuffle=True)
@@ -65,6 +67,7 @@ def main():
 
     model.save_pretrained(save_directory=args.out)
 
+
 if __name__ == "__main__":
     main()
-#%%
+# %%
