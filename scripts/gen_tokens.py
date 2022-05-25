@@ -52,22 +52,22 @@ def add_nsp_mlm(inputs, label):
             torch.flatten(mask_arr[i].nonzero()).tolist()
         )
     for i in range(inputs.input_ids.shape[0]):
-        inputs.input_ids[i, selection[i]] = 103
+        inputs.input_ids[i, selection[i]] = 3
     return inputs
 
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--pretrained", action='store_true')
+    parser.add_argument("--vocab",  type=str, default='')
     parser.add_argument("-o", "--out", type=str, default=Path.cwd() / 'tokens.pkl')
     parser.add_argument('-s', "--size", type=int, default=None)
     parser.add_argument('-d', '--data', type=str, default=Path.cwd() / 'data' / 'dataset.csv')
     args = parser.parse_args()
     tokenizer = None
-    if args.pretrained:
+    if not args.vocab:
         tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
     else:
-        tokenizer = BertTokenizer(vocab_file='bert-vocab.txt')
+        tokenizer = BertTokenizer(vocab_file=args.vocab)
 
     dataset = pd.read_csv(args.data)
     inputs, labels = generate_tokens(tokenizer, dataset, args.size)

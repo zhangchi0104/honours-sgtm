@@ -5,7 +5,7 @@ URLS = [
     'https://raw.githubusercontent.com/mhjabreel/CharCnn_Keras/master/data/ag_news_csv/train.csv',
     'https://raw.githubusercontent.com/mhjabreel/CharCnn_Keras/master/data/ag_news_csv/test.csv',
 ]
-BASE_DIR = Path('data') 
+BASE_DIR = Path('../data')
 def download_data(url, filename):
     """
     Download data from url and save it to filename
@@ -34,7 +34,8 @@ def main():
     train_df = pd.read_csv(BASE_DIR / 'train.csv', names=['category', 'title', 'description']) 
     test_df = pd.read_csv(BASE_DIR / 'test.csv', names=['category', 'title', 'description'])
     dataset = pd.concat([train_df, test_df])
-    dataset.to_csv(dataset_path, index=False) 
+    dataset.to_csv(dataset_path, index=False)
+    dataset['description'].tofile(BASE_DIR/'content.txt', sep='\n')
 
 if __name__ == '__main__':
     main()
