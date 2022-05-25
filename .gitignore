@@ -9,4 +9,5 @@ tokens.pkl
 *.bin
 *.json
 model/
-
+*.txt
+*.pkl
