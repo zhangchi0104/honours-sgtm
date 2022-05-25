@@ -1,12 +1,12 @@
 # %%
 import pickle
-import random
+import datetime
 from pathlib import Path
 import torch
-from transformers import BertTokenizer, BertForPreTraining, AdamW
+from transformers import BertTokenizer, BertForPreTraining, AdamW, BertConfig
 from tqdm.auto import tqdm  # for our progress bar
 import argparse
-
+import wandb 
 device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
 
 
@@ -27,13 +27,29 @@ def main():
     parser.add_argument('-b', '--batch_size', type=int, default=8)
     parser.add_argument('-e', '--epochs', type=int, default=2)
     parser.add_argument('-t', '--tokens', type=str, default='tokens.pkl')
+    parser.add_argument('-s', '--scratch', action='store_true')
+    parser.add_argument('-n', '--name', default='')
     args = parser.parse_args()
+    wandb.init()
     inputs = None
     with open(args.tokens, 'rb') as f:
         inputs = pickle.load(f)
     dataset = MyDataset(inputs)
     loader = torch.utils.data.DataLoader(dataset, batch_size=args.batch_size, shuffle=True)
-    model = BertForPreTraining.from_pretrained('bert-base-uncased')
+    now_str = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
+    if args.scratch:
+        model = BertForPreTraining(BertConfig())
+        wandb.run.name = f"bert-local-scratch@{now_str}"
+    else:
+        model = BertForPreTraining.from_pretrained('bert-base-uncased')
+        wandb.run.name = f"bert-local-scratch@{now_str}"
+    wandb.config = {
+        "epoches": args.epochs,
+        "learning_rate": 5e-5,
+        "batch_size": args.batch_size 
+    }
+    if args.name:
+        wandb.run.name = args.name
     model.to(device)
     model.train()
     optim = AdamW(model.parameters(), lr=5e-5)
@@ -57,6 +73,7 @@ def main():
                             labels=labels)
             # extract loss
             loss = outputs.loss
+            wandb.log({"loss": loss})
             # calculate loss for every parameter that needs grad update
             loss.backward()
             # update parameters
@@ -68,6 +85,6 @@ def main():
     model.save_pretrained(save_directory=args.out_dir)
 
 
-if __name__ == "__main__":
+if __name__ == "__main__": 
     main()
 # %%
