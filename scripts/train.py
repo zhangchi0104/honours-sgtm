@@ -6,8 +6,10 @@ import torch
 from transformers import BertTokenizer, BertForPreTraining, AdamW, BertConfig
 from tqdm.auto import tqdm  # for our progress bar
 import argparse
-import wandb 
-device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
+import wandb
+
+device = torch.device('cuda') if torch.cuda.is_available() else torch.device(
+    'cpu')
 
 
 class MyDataset(torch.utils.data.Dataset):
@@ -22,21 +24,26 @@ class MyDataset(torch.utils.data.Dataset):
 
 
 def main():
+    now_str = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
     parser = argparse.ArgumentParser()
-    parser.add_argument('-o', '--out_dir', default=Path.cwd())
+    parser.add_argument('-o', '--out_dir', default='', type=Path)
     parser.add_argument('-b', '--batch_size', type=int, default=8)
     parser.add_argument('-e', '--epochs', type=int, default=2)
     parser.add_argument('-t', '--tokens', type=str, default='tokens.pkl')
     parser.add_argument('-s', '--scratch', action='store_true')
-    parser.add_argument('-n', '--name', default='')
+    parser.add_argument('-n', '--name', default=f'model-{now_str}')
     args = parser.parse_args()
+    out_dir = args.out_dir / args.name
+    out_dir.mkdir(exist_ok=True, parents=True)
     wandb.init(project="honours-sgtm")
     inputs = None
     with open(args.tokens, 'rb') as f:
         inputs = pickle.load(f)
     dataset = MyDataset(inputs)
-    loader = torch.utils.data.DataLoader(dataset, batch_size=args.batch_size, shuffle=True)
-    now_str = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
+    loader = torch.utils.data.DataLoader(dataset,
+                                         batch_size=args.batch_size,
+                                         shuffle=True)
+
     if args.scratch:
         model = BertForPreTraining(BertConfig())
         wandb.run.name = f"bert-local-scratch@{now_str}"
@@ -46,7 +53,7 @@ def main():
     wandb.config = {
         "epochs": args.epochs,
         "learning_rate": 5e-5,
-        "batch_size": args.batch_size 
+        "batch_size": args.batch_size
     }
     if args.name:
         wandb.run.name = args.name
@@ -67,7 +74,8 @@ def main():
             next_sentence_label = batch['next_sentence_label'].to(device)
             labels = batch['labels'].to(device)
             # process
-            outputs = model(input_ids, attention_mask=attention_mask,
+            outputs = model(input_ids,
+                            attention_mask=attention_mask,
                             token_type_ids=token_type_ids,
                             next_sentence_label=next_sentence_label,
                             labels=labels)
@@ -85,6 +93,6 @@ def main():
     model.save_pretrained(save_directory=args.out_dir)
 
 
-if __name__ == "__main__": 
+if __name__ == "__main__":
     main()
 # %%

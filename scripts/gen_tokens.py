@@ -32,8 +32,12 @@ def generate_tokens(tokenizer, dataset, size=None):
                 sentence_a.append(sentences[start])
                 sentence_b.append(dataset['description'][index])
                 label.append(1)
-    inputs = tokenizer(sentence_a, sentence_b, return_tensors='pt',
-                       max_length=512, truncation=True, padding='max_length')
+    inputs = tokenizer(sentence_a,
+                       sentence_b,
+                       return_tensors='pt',
+                       max_length=512,
+                       truncation=True,
+                       padding='max_length')
     return inputs, label
 
 
@@ -48,9 +52,7 @@ def add_nsp_mlm(inputs, label):
     selection = []
 
     for i in range(inputs.input_ids.shape[0]):
-        selection.append(
-            torch.flatten(mask_arr[i].nonzero()).tolist()
-        )
+        selection.append(torch.flatten(mask_arr[i].nonzero()).tolist())
     for i in range(inputs.input_ids.shape[0]):
         inputs.input_ids[i, selection[i]] = 3
     return inputs
@@ -58,10 +60,16 @@ def add_nsp_mlm(inputs, label):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--vocab",  type=str, default='')
-    parser.add_argument("-o", "--out", type=str, default=Path.cwd() / 'tokens.pkl')
+    parser.add_argument("--vocab", type=str, default='')
+    parser.add_argument("-o",
+                        "--out",
+                        type=str,
+                        default=Path.cwd() / 'tokens.pkl')
     parser.add_argument('-s', "--size", type=int, default=None)
-    parser.add_argument('-d', '--data', type=str, default=Path.cwd() / 'data' / 'dataset.csv')
+    parser.add_argument('-f',
+                        '--file',
+                        type=str,
+                        default=Path.cwd() / 'data' / 'dataset.csv')
     args = parser.parse_args()
     tokenizer = None
     if not args.vocab:
@@ -69,7 +77,7 @@ def main():
     else:
         tokenizer = BertTokenizer(vocab_file=args.vocab)
 
-    dataset = pd.read_csv(args.data)
+    dataset = pd.read_csv(args.file)
     inputs, labels = generate_tokens(tokenizer, dataset, args.size)
 
     inputs = add_nsp_mlm(inputs, labels)
@@ -80,7 +88,8 @@ def main():
     print('=' * 80)
     print("Tokens:")
     for key, val in inputs.items():
-        print(f"{key:>20}\t:{val.shape}")
+        key = key + ":"
+        print(f"{key:>20}{val.shape}")
 
 
 if __name__ == '__main__':
