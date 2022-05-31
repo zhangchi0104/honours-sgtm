@@ -1,6 +1,7 @@
-# %%
 from pathlib import Path
-from transformers import BertForPreTraining, DataCollatorForLanguageModeling, Trainer, TrainingArguments, BertConfig
+
+import torch.cuda
+from transformers import BertForPreTraining, DataCollatorWithPadding , Trainer, TrainingArguments, BertConfig
 from tokenizers import BertWordPieceTokenizer
 from datasets import concatenate_datasets, load_dataset, Dataset
 from transformers import BertTokenizer
@@ -9,7 +10,7 @@ import datetime, argparse
 
 
 def train(out, dataset, model, tokenizer, batch_size=8, epochs=1):
-    # wandb.init(project="honours-sgtm")
+    wandb.init(project="honours-sgtm")
     data_collator = DataCollatorForLanguageModeling(
         tokenizer=tokenizer,
         mlm=True,
@@ -21,7 +22,7 @@ def train(out, dataset, model, tokenizer, batch_size=8, epochs=1):
         num_train_epochs=epochs,
         per_device_train_batch_size=batch_size,
         save_steps=10000,
-        #        report_to='wandb',
+        report_to='wandb',
         prediction_loss_only=True,
     )
     trainer = Trainer(
@@ -29,12 +30,9 @@ def train(out, dataset, model, tokenizer, batch_size=8, epochs=1):
         args=trainer_args,
         data_collator=data_collator,
         train_dataset=dataset,
+        tokenizer=tokenizer,
     )
-    dataloader = trainer.get_train_dataloader()
-    for inputs in dataloader:
-        print(inputs)
-        return
-
+    trainer.train()
 
 def main():
     now_str = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
@@ -54,7 +52,7 @@ def main():
     name = f'bert-{model_type}-{tokenizer_type}-{datetime.datetime.now().strftime("%Y-%m-%d-%H-%M")}'
     out_dir = args.out_dir / name
     out_dir.mkdir(exist_ok=True, parents=True)
-
+    device = 'cuda' if torch.cuda.is_available() else 'cpu'
     if args.scratch_model:
         print("Using scratch model")
         model = BertForPreTraining(BertConfig())
@@ -91,17 +89,19 @@ def main():
             tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 
     dataset = load_dataset('ag_news')
-    dataset['train'] = dataset['train'].remove_columns('label')
-    dataset['test'] = dataset['test'].remove_columns('label')
-    dataset['all'] = concatenate_datasets(
-        [dataset['train'], dataset['test']],
-        axis=0,
-    )
+    def tokenize_function(examples):
+        return tokenizer(examples["text"], padding="max_length", truncation=True)
+
+    dataset = dataset.map(tokenize_function, batched=True, num_proc=12)
+    dataset.set_format("torch")
+    dataset['all'] = concatenate_datasets([dataset['train'], dataset['test']])
+
+
     train(
         out=out_dir,
         model=model,
         tokenizer=tokenizer,
-        dataset=dataset['all'],
+        dataset=dataset['all'].remove_columns(['label']),
         batch_size=args.batch_size,
         epochs=args.epochs,
     )
