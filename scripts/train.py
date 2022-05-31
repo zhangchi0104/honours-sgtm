@@ -1,96 +1,110 @@
 # %%
-import pickle
-import datetime
 from pathlib import Path
-import torch
-from transformers import BertTokenizer, BertForPreTraining, AdamW, BertConfig
-from tqdm.auto import tqdm  # for our progress bar
-import argparse
+from transformers import BertForPreTraining, DataCollatorForLanguageModeling, Trainer, TrainingArguments, BertConfig
+from tokenizers import BertWordPieceTokenizer
+from datasets import concatenate_datasets, load_dataset, Dataset
+from transformers import BertTokenizer
 import wandb
-
-device = torch.device('cuda') if torch.cuda.is_available() else torch.device(
-    'cpu')
+import datetime, argparse
 
 
-class MyDataset(torch.utils.data.Dataset):
-    def __init__(self, encodings):
-        self.encodings = encodings
-
-    def __len__(self):
-        return len(self.encodings['input_ids'])
-
-    def __getitem__(self, i):
-        return {key: val[i] for key, val in self.encodings.items()}
+def train(out, dataset, model, tokenizer, batch_size=8, epochs=1):
+    # wandb.init(project="honours-sgtm")
+    data_collator = DataCollatorForLanguageModeling(
+        tokenizer=tokenizer,
+        mlm=True,
+        mlm_probability=0.15,
+    )
+    trainer_args = TrainingArguments(
+        output_dir=out,
+        overwrite_output_dir=True,
+        num_train_epochs=epochs,
+        per_device_train_batch_size=batch_size,
+        save_steps=10000,
+        #        report_to='wandb',
+        prediction_loss_only=True,
+    )
+    trainer = Trainer(
+        model=model,
+        args=trainer_args,
+        data_collator=data_collator,
+        train_dataset=dataset,
+    )
+    dataloader = trainer.get_train_dataloader()
+    for inputs in dataloader:
+        print(inputs)
+        return
 
 
 def main():
     now_str = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
     parser = argparse.ArgumentParser()
-    parser.add_argument('-o', '--out_dir', default='', type=Path)
-    parser.add_argument('-b', '--batch_size', type=int, default=8)
-    parser.add_argument('-e', '--epochs', type=int, default=2)
-    parser.add_argument('-t', '--tokens', type=str, default='tokens.pkl')
-    parser.add_argument('-s', '--scratch', action='store_true')
-    parser.add_argument('-n', '--name', default=f'model-{now_str}')
+    parser.add_argument('--out_dir', required=True, type=Path)
+    parser.add_argument('--file', required=True)
+    parser.add_argument('--batch_size', type=int, default=8)
+    parser.add_argument('--epochs', type=int, default=1)
+    parser.add_argument('--scratch_model', action='store_true')
+    parser.add_argument('--type', default='text')
+    parser.add_argument('--scratch_tokenizer', action='store_true')
+    parser.add_argument('--vocab_size', default=30522)
+
     args = parser.parse_args()
-    out_dir = args.out_dir / args.name
+    tokenizer_type = 'pretrained' if not args.scratch_tokenizer else 'scratch'
+    model_type = 'scratch' if args.scratch_model else 'pretrained'
+    name = f'bert-{model_type}-{tokenizer_type}-{datetime.datetime.now().strftime("%Y-%m-%d-%H-%M")}'
+    out_dir = args.out_dir / name
     out_dir.mkdir(exist_ok=True, parents=True)
-    wandb.init(project="honours-sgtm")
-    inputs = None
-    with open(args.tokens, 'rb') as f:
-        inputs = pickle.load(f)
-    dataset = MyDataset(inputs)
-    loader = torch.utils.data.DataLoader(dataset,
-                                         batch_size=args.batch_size,
-                                         shuffle=True)
 
-    if args.scratch:
+    if args.scratch_model:
+        print("Using scratch model")
         model = BertForPreTraining(BertConfig())
-        wandb.run.name = f"bert-local-scratch@{now_str}"
     else:
+        print("Using pretrained model")
         model = BertForPreTraining.from_pretrained('bert-base-uncased')
-        wandb.run.name = f"bert-local-scratch@{now_str}"
-    wandb.config = {
-        "epochs": args.epochs,
-        "learning_rate": 5e-5,
-        "batch_size": args.batch_size
-    }
-    if args.name:
-        wandb.run.name = args.name
-    model.to(device)
-    model.train()
-    optim = AdamW(model.parameters(), lr=5e-5)
 
-    for epoch in range(args.epochs):
-        # setup loop with TQDM and dataloader
-        loop = tqdm(loader, leave=True)
-        for batch in loop:
-            # initialize calculated gradients (from prev step)
-            optim.zero_grad()
-            # pull all tensor batches required for training
-            input_ids = batch['input_ids'].to(device)
-            token_type_ids = batch['token_type_ids'].to(device)
-            attention_mask = batch['attention_mask'].to(device)
-            next_sentence_label = batch['next_sentence_label'].to(device)
-            labels = batch['labels'].to(device)
-            # process
-            outputs = model(input_ids,
-                            attention_mask=attention_mask,
-                            token_type_ids=token_type_ids,
-                            next_sentence_label=next_sentence_label,
-                            labels=labels)
-            # extract loss
-            loss = outputs.loss
-            wandb.log({"loss": loss, "epoch": epoch})
-            # calculate loss for every parameter that needs grad update
-            loss.backward()
-            # update parameters
-            optim.step()
-            # print relevant info to progress bar
-            loop.set_description(f'Epoch {epoch}')
-            loop.set_postfix(loss=loss.item())
+    if not args.scratch_model:
+        if args.scratch_tokenizer:
+            print(
+                "Warnning: --scratch_tokenizer is ignored when using pretrained model"
+            )
+        print('Using pretrained tokenizer')
+        tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+    else:
+        if args.srcratch_tokenizer:
+            print("Using scratch tokenizer")
+            tokenizer = BertWordPieceTokenizer(
+                clean_text=True,
+                handle_chinese_chars=True,
+                strip_accents=True,
+                lowercase=True,
+            )
+            tokenizer.train(
+                [args.file],
+                vocab_size=args.vocab_size,
+                min_frequency=2,
+                show_progress=True,
+                special_tokens=["[PAD]", "[UNK]", "[CLS]", "[SEP]", "[MASK]"],
+                limit_alphabet=1000,
+                wordpieces_prefix="##",
+            )
+        else:
+            tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 
-    model.save_pretrained(save_directory=args.out_dir)
+    dataset = load_dataset('ag_news')
+    dataset['train'] = dataset['train'].remove_columns('label')
+    dataset['test'] = dataset['test'].remove_columns('label')
+    dataset['all'] = concatenate_datasets(
+        [dataset['train'], dataset['test']],
+        axis=0,
+    )
+    train(
+        out=out_dir,
+        model=model,
+        tokenizer=tokenizer,
+        dataset=dataset['all'],
+        batch_size=args.batch_size,
+        epochs=args.epochs,
+    )
 
 
 if __name__ == "__main__":
