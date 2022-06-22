@@ -8,6 +8,6 @@ tokens.pkl
 *.pth
 *.bin
 *.json
-model/
+models/
 *.txt
 *.pkl

@@ -1,21 +1,25 @@
 from pathlib import Path
-
+import pickle
+import re
 import torch.cuda
-from transformers import BertForPreTraining, DataCollatorWithPadding , Trainer, TrainingArguments, BertConfig
-from tokenizers import BertWordPieceTokenizer
-from datasets import concatenate_datasets, load_dataset, Dataset
+from torch.utils.data import Dataset
+from transformers import BertForPreTraining, Trainer, TrainingArguments, BertConfig
 from transformers import BertTokenizer
 import wandb
 import datetime, argparse
 
+class AgNewsDataset(Dataset):
+    def __init__(self, encodings):
+        self.eoncodings = encodings
 
-def train(out, dataset, model, tokenizer, batch_size=8, epochs=1):
+    def __len__(self):
+        return len(self.eoncodings['input_ids'])
+
+    def __getitem__(self, i):
+        return {key: torch.tensor(val[i]) for key, val in self.eoncodings.items()}
+
+def train(out, dataset, model, batch_size=8, epochs=1):
     wandb.init(project="honours-sgtm")
-    data_collator = DataCollatorForLanguageModeling(
-        tokenizer=tokenizer,
-        mlm=True,
-        mlm_probability=0.15,
-    )
     trainer_args = TrainingArguments(
         output_dir=out,
         overwrite_output_dir=True,
@@ -28,28 +32,24 @@ def train(out, dataset, model, tokenizer, batch_size=8, epochs=1):
     trainer = Trainer(
         model=model,
         args=trainer_args,
-        data_collator=data_collator,
         train_dataset=dataset,
-        tokenizer=tokenizer,
     )
     trainer.train()
 
 def main():
-    now_str = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
     parser = argparse.ArgumentParser()
     parser.add_argument('--out_dir', required=True, type=Path)
-    parser.add_argument('--file', required=True)
+    parser.add_argument('--tokens', required=True, type=Path)
     parser.add_argument('--batch_size', type=int, default=8)
     parser.add_argument('--epochs', type=int, default=1)
     parser.add_argument('--scratch_model', action='store_true')
     parser.add_argument('--type', default='text')
-    parser.add_argument('--scratch_tokenizer', action='store_true')
     parser.add_argument('--vocab_size', default=30522)
 
     args = parser.parse_args()
-    tokenizer_type = 'pretrained' if not args.scratch_tokenizer else 'scratch'
+    tokenizer_type, vocab_size = re.findall('tokens-(scratch|pretrained)-([0-9]+).pkl$', str(args.tokens))[0]
     model_type = 'scratch' if args.scratch_model else 'pretrained'
-    name = f'bert-{model_type}-{tokenizer_type}-{datetime.datetime.now().strftime("%Y-%m-%d-%H-%M")}'
+    name = f'bert-{model_type}-{tokenizer_type}-{vocab_size}-{datetime.datetime.now().strftime("%Y-%m-%d-%H-%M")}'
     out_dir = args.out_dir / name
     out_dir.mkdir(exist_ok=True, parents=True)
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
@@ -61,47 +61,25 @@ def main():
         model = BertForPreTraining.from_pretrained('bert-base-uncased')
 
     if not args.scratch_model:
-        if args.scratch_tokenizer:
+        if tokenizer_type == 'scratch':
             print(
-                "Warnning: --scratch_tokenizer is ignored when using pretrained model"
+                "Error: scratch_tokens cannot be used when using a pretrained model"
             )
-        print('Using pretrained tokenizer')
-        tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+            exit(1)
     else:
-        if args.srcratch_tokenizer:
+        if tokenizer_type == 'scratch':
             print("Using scratch tokenizer")
-            tokenizer = BertWordPieceTokenizer(
-                clean_text=True,
-                handle_chinese_chars=True,
-                strip_accents=True,
-                lowercase=True,
-            )
-            tokenizer.train(
-                [args.file],
-                vocab_size=args.vocab_size,
-                min_frequency=2,
-                show_progress=True,
-                special_tokens=["[PAD]", "[UNK]", "[CLS]", "[SEP]", "[MASK]"],
-                limit_alphabet=1000,
-                wordpieces_prefix="##",
-            )
         else:
-            tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-
-    dataset = load_dataset('ag_news')
-    def tokenize_function(examples):
-        return tokenizer(examples["text"], padding="max_length", truncation=True)
-
-    dataset = dataset.map(tokenize_function, batched=True, num_proc=12)
-    dataset.set_format("torch")
-    dataset['all'] = concatenate_datasets([dataset['train'], dataset['test']])
-
-
+            print("Using pretrained tokenizer")
+    f = open(args.tokens, 'rb')
+    tokens = pickle.load(f)
+    f.close()
+    dataset = AgNewsDataset(tokens)
+    
     train(
         out=out_dir,
         model=model,
-        tokenizer=tokenizer,
-        dataset=dataset['all'].remove_columns(['label']),
+        dataset=dataset,
         batch_size=args.batch_size,
         epochs=args.epochs,
     )

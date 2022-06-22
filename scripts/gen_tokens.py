@@ -2,6 +2,7 @@ import pandas as pd
 import random
 import torch
 import argparse
+from tqdm import tqdm
 from transformers import BertTokenizer
 import pickle
 from pathlib import Path
@@ -12,8 +13,7 @@ def generate_tokens(tokenizer, dataset, size=None):
     sentence_b = []
     label = []
     num_sentences = 0
-    news = dataset['description'][:size]
-    for _, paragraph in news.iteritems():
+    for paragraph in tqdm(dataset):
         sentences = [
             sentence for sentence in paragraph.split('.') if sentence != ''
         ]
@@ -27,10 +27,10 @@ def generate_tokens(tokenizer, dataset, size=None):
                 sentence_b.append(sentences[start + 1])
                 label.append(0)
             else:
-                index = random.randint(0, dataset.shape[0] - 1)
+                index = random.randint(0, len(dataset) - 1)
                 # this is NotNextSentence
                 sentence_a.append(sentences[start])
-                sentence_b.append(dataset['description'][index])
+                sentence_b.append(dataset[index])
                 label.append(1)
     inputs = tokenizer(sentence_a,
                        sentence_b,
@@ -62,26 +62,31 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--vocab", type=str, default='')
     parser.add_argument("-o",
-                        "--out",
+                        "--out_dir",
                         type=str,
-                        default=Path.cwd() / 'tokens.pkl')
+                        default=Path.cwd() / 'data' / 'tokens')
     parser.add_argument('-s', "--size", type=int, default=None)
     parser.add_argument('-f',
                         '--file',
                         type=str,
                         default=Path.cwd() / 'data' / 'dataset.csv')
     args = parser.parse_args()
+    out_dir = Path(args.out_dir)
+    out_dir.mkdir(exist_ok=True, parents=True)
     tokenizer = None
     if not args.vocab:
         tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
     else:
         tokenizer = BertTokenizer(vocab_file=args.vocab)
-
-    dataset = pd.read_csv(args.file)
+    data_f = open(args.file, 'r')
+    dataset = data_f.readlines()
+    data_f.close()
     inputs, labels = generate_tokens(tokenizer, dataset, args.size)
-
+    name = f"tokens-{'pretrained' if not args.vocab else 'scratch'}-{tokenizer.vocab_size}.pkl"
     inputs = add_nsp_mlm(inputs, labels)
-    with open(args.out, 'wb') as f:
+    
+    with open(out_dir / name, 'wb') as f:
+        print("Dumping tokens")
         pickle.dump(inputs, f)
 
     print("SUMMARY")
