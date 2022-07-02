@@ -20,12 +20,14 @@ parser.add_argument(
     type=str,
     help="Path to the output directory, where the files will be saved",
 )
-parser.add_argument(
-    "--name", default="bert-wordpiece", type=str, help="The name of the output vocab files"
-)
-parser.add_argument(
-    "--vocab_size", default=10000, type=int, help="The name of the output vocab files"
-)
+parser.add_argument("--name",
+                    default="bert-wordpiece",
+                    type=str,
+                    help="The name of the output vocab files")
+parser.add_argument("--vocab_size",
+                    default=10000,
+                    type=int,
+                    help="The name of the output vocab files")
 
 args = parser.parse_args()
 
@@ -33,7 +35,6 @@ files = glob.glob(args.files)
 if not files:
     print(f"File does not exist: {args.files}")
     exit(1)
-
 
 # Initialize an empty tokenizer
 tokenizer = BertWordPieceTokenizer(

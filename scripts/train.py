@@ -8,7 +8,9 @@ from transformers import BertTokenizer
 import wandb
 import datetime, argparse
 
+
 class AgNewsDataset(Dataset):
+
     def __init__(self, encodings):
         self.eoncodings = encodings
 
@@ -16,7 +18,11 @@ class AgNewsDataset(Dataset):
         return len(self.eoncodings['input_ids'])
 
     def __getitem__(self, i):
-        return {key: torch.tensor(val[i]) for key, val in self.eoncodings.items()}
+        return {
+            key: torch.tensor(val[i])
+            for key, val in self.eoncodings.items()
+        }
+
 
 def train(out, dataset, model, batch_size=8, epochs=1):
     wandb.init(project="honours-sgtm")
@@ -25,8 +31,8 @@ def train(out, dataset, model, batch_size=8, epochs=1):
         overwrite_output_dir=True,
         num_train_epochs=epochs,
         per_device_train_batch_size=batch_size,
-        save_steps=10000,
         report_to='wandb',
+        save_steps=10000,
         prediction_loss_only=True,
     )
     trainer = Trainer(
@@ -35,6 +41,8 @@ def train(out, dataset, model, batch_size=8, epochs=1):
         train_dataset=dataset,
     )
     trainer.train()
+    trainer.save_model(out)
+
 
 def main():
     parser = argparse.ArgumentParser()
@@ -47,13 +55,13 @@ def main():
     parser.add_argument('--vocab_size', default=30522)
 
     args = parser.parse_args()
-    tokenizer_type, vocab_size = re.findall('tokens-(scratch|pretrained)-([0-9]+).pkl$', str(args.tokens))[0]
-    model_type = 'scratch' if args.scratch_model else 'pretrained'
-    name = f'bert-{model_type}-{tokenizer_type}-{vocab_size}-{datetime.datetime.now().strftime("%Y-%m-%d-%H-%M")}'
+    tokenizer_type, vocab_size = re.findall(
+        'tokens-(scratch|pretrained)-([0-9]+).pkl$', str(args.tokens))[0]
+    name = f'bert-{tokenizer_type}-{vocab_size}-{datetime.datetime.now().strftime("%Y-%m-%d-%H-%M")}'
     out_dir = args.out_dir / name
     out_dir.mkdir(exist_ok=True, parents=True)
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
-    if args.scratch_model:
+    if tokenizer_type == 'scratch':
         print("Using scratch model")
         model = BertForPreTraining(BertConfig())
     else:
@@ -75,7 +83,7 @@ def main():
     tokens = pickle.load(f)
     f.close()
     dataset = AgNewsDataset(tokens)
-    
+
     train(
         out=out_dir,
         model=model,

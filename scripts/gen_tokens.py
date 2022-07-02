@@ -13,7 +13,9 @@ def generate_tokens(tokenizer, dataset, size=None):
     sentence_b = []
     label = []
     num_sentences = 0
-    for paragraph in tqdm(dataset):
+    loop = tqdm(dataset)
+    loop.set_description("Generating tokens: ")
+    for paragraph in loop:
         sentences = [
             sentence for sentence in paragraph.split('.') if sentence != ''
         ]
@@ -32,6 +34,7 @@ def generate_tokens(tokenizer, dataset, size=None):
                 sentence_a.append(sentences[start])
                 sentence_b.append(dataset[index])
                 label.append(1)
+    print("Running tokenizers")
     inputs = tokenizer(sentence_a,
                        sentence_b,
                        return_tensors='pt',
@@ -50,10 +53,14 @@ def add_nsp_mlm(inputs, label):
                (inputs.input_ids != 102) * (inputs.input_ids != 0)
 
     selection = []
+    loop = tqdm(range(inputs.input_ids.shape[0]))
+    loop.set_description("Generating MLM: ")
 
-    for i in range(inputs.input_ids.shape[0]):
+    for i in loop:
         selection.append(torch.flatten(mask_arr[i].nonzero()).tolist())
-    for i in range(inputs.input_ids.shape[0]):
+    loop = tqdm(range(inputs.input_ids.shape[0]))
+    loop.set_description("Setting labels: ")
+    for i in loop:
         inputs.input_ids[i, selection[i]] = 3
     return inputs
 
@@ -86,7 +93,7 @@ def main():
     inputs = add_nsp_mlm(inputs, labels)
     
     with open(out_dir / name, 'wb') as f:
-        print("Dumping tokens")
+        print(f"Dumping tokens to file {args.out_dir}/{name}")
         pickle.dump(inputs, f)
 
     print("SUMMARY")
