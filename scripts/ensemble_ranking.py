@@ -27,13 +27,25 @@ def parse_args():
                         "-d",
                         help='do not write output',
                         action='store_true')
-
+    parser.add_argument("--local_weight",
+                        help='weights of local embeddings',
+                        default=0.5,
+                        type=float)
+    parser.add_argument("--global_weight",
+                        help='weights of global embeddings',
+                        default=0.5,
+                        type=float)
+    parser.add_argument("--rho",
+                        help='weights of global embeddings',
+                        default=0.5,
+                        type=float)
     return parser.parse_args()
 
 
-def ensemble_ranking(score_g, score_l, rho):
+def ensemble_ranking(score_g, score_l, rho, weight_global, weight_local):
     exponent = 1 / rho
-    base = 0.5 * np.power(1 / score_g, rho) + 0.5 * np.power(1 / score_l, rho)
+    base = weight_global * np.power(
+        1 / score_g, rho) + weight_local * np.power(1 / score_l, rho)
     return 1 / np.power(base, exponent)
 
 
@@ -42,34 +54,51 @@ def scale_data(data):
     return scaler.fit_transform(data)
 
 
-def compute_vocab_ensemble_rankings(score_l_df, score_g_df, vocab, rho=1):
+def compute_vocab_ensemble_rankings(score_g_df,
+                                    score_l_df,
+                                    vocab,
+                                    rho=0.5,
+                                    weight_global=0.5,
+                                    weight_local=0.5):
     raw = np.zeros((len(vocab), score_l_df.shape[1])).astype(np.double)
     res = pd.DataFrame(raw, index=vocab, columns=score_g_df.columns)
     for topic_idx in range(score_l_df.shape[1]):
         score_l = score_l_df.loc[vocab, score_l_df.columns[topic_idx]]
         score_g = score_g_df.loc[vocab, score_g_df.columns[topic_idx]]
-        res.iloc[:, topic_idx] = ensemble_ranking(score_l, score_g, rho)
+        res.iloc[:, topic_idx] = ensemble_ranking(score_g, score_l, rho,
+                                                  weight_global, weight_local)
     return res
 
 
 def main():
     args = parse_args()
-    global_cos_df = pd.read_csv(args.global_cos, index_col=0)
-    local_cos_df = pd.read_csv(args.local_cos, index_col=0)
+    run_ensemble_rankings(local_score=args.local_cos,
+                          global_score=args.global_cos,
+                          local_weight=args.local_weight,
+                          global_weight=args.global_weight,
+                          rho=args.rho,
+                          dry_run=args.dry_run,
+                          out_dir=args.out_dir)
+
+
+def run_ensemble_rankings(local_score, global_score, local_weight,
+                          global_weight, rho, dry_run, out_dir):
+    global_cos_df = pd.read_csv(global_score, index_col=0)
+    local_cos_df = pd.read_csv(local_score, index_col=0)
     local_cos_df.loc[:, :] = scale_data(local_cos_df)
     global_cos_df.loc[:, :] = scale_data(global_cos_df)
-    res = compute_vocab_ensemble_rankings(local_cos_df, global_cos_df,
-                                          local_cos_df.index)
-    local_fn = args.local_cos.split('/')[-1]
+    res = compute_vocab_ensemble_rankings(global_cos_df, local_cos_df,
+                                          local_cos_df.index, rho,
+                                          local_weight, global_weight)
+    local_fn = local_score.split('/')[-1]
     local_fn = local_fn.split('.')[0]
-    now_str = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M")
+
     for topic in global_cos_df.columns:
         print(
             f"{topic}: {res[topic].sort_values(ascending=False).index[0:5].to_list()}"
         )
-    if not args.dry_run:
-        out_path = Path(
-            args.out_dir) / f'ensemble_score_{local_fn}_{now_str}.csv'
+    if not dry_run:
+        out_path = Path(out_dir) / f'ensemble_score_{local_fn}.csv'
         print(f"writing results to {out_path}")
         res.to_csv(out_path)
 
