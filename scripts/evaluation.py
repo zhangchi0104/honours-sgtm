@@ -1,10 +1,13 @@
 from email.mime import base
 from pathlib import Path
+from tkinter import N
 import pandas as pd
 import numpy as np
 from argparse import ArgumentParser
-
+from joblib import Parallel, delayed
+import nltk
 import pickle
+import json
 
 
 def prob_word(word, mat):
@@ -30,8 +33,12 @@ def pmi(a, b, mat):
     res = prob_ab_cooccur / (prob_a * prob_b)
     return np.log(res) if res > 0 else 0
 
-def nmpi(a, b, mat):
-    return pmi(a, b, mat) / -np.log(prob_cooccur(a, b))
+
+def npmi(a, b, mat):
+    prob_ab_cooccurr = prob_cooccur(a, b, mat)
+    _pmi = pmi(a, b, mat)
+    return _pmi / -np.log(prob_ab_cooccurr) if _pmi > 0 else 0
+
 
 def sum_npmi(words, mat):
     res = 0
@@ -39,16 +46,22 @@ def sum_npmi(words, mat):
         for word_b in words[i + 1:]:
             res += npmi(word_a, word_b, mat)
     return res
-    pass
+
 
 def compute_npmi_from_results(cooccur_mat, topics, word_sets):
-    npmi = []
+
+    def job(words, cooccur_mat, topic):
+        res = sum_npmi(words, cooccur_mat)
+        print(f'\t{topic}:{res}')
+        return res
+
     print("====NPMIS====")
-    for topic in topics:
-        val = sum_npmi(word_sets[topic], cooccur_mat)
-        pmi.append(val)
-        print(f'\t{topic}:{val}')
-    return np.sum(npmi)
+    _npmi = Parallel(n_jobs=min(20, len(topics)), prefer='threads')(
+        delayed(job)(word_sets[topics[i]], cooccur_mat, topics[i])
+        for i in range(len(topics)))
+    res = np.sum(_npmi) / len(topics)
+    print(f"\t<SUM>: {res}")
+    return res
 
 
 def parse_args():
@@ -67,7 +80,7 @@ def parse_args():
     return parser.parse_args()
 
 
-def evaluation(files, cooccur_mat, out):
+def evaluation(files, cooccur_mat, out, n_words=5):
     print("SUMMARY")
     print("=" * 80)
     obj = {}
@@ -77,26 +90,67 @@ def evaluation(files, cooccur_mat, out):
         basename = file.split('/')[-1].split('.')[0]
         scores_df = pd.read_csv(file, index_col='_vocab')
         # construct wordset
-        word_sets = build_word_sets(scores_df)
+        word_sets = build_word_sets(scores_df, n_words=n_words)
         # compute PMI
-        pmi = compute_pmi_from_results(cooccur_mat, scores_df.columns, word_sets)
-        scores['pmi'] = pmi
+        _pmi = compute_pmi_from_results(cooccur_mat, scores_df.columns,
+                                        word_sets)
+        _npmi = compute_npmi_from_results(cooccur_mat, scores_df.columns,
+                                          word_sets)
+        _distinctivess, _sem_dist = compute_distinctiveness(word_sets)
+        scores['distinctiveness'] = _distinctivess
+        scores['sem_distinctiveness'] = _sem_dist
+        scores['pmi'] = _pmi
+        scores['npmi'] = _npmi
         scores['word_set'] = word_sets
-        print(f"\t<SUM>: {scores['pmi']}")
+
         obj[basename] = scores
 
-    with open(out, 'wb') as f:
-        pickle.dump(obj, f)
+    with open(out, 'w') as f:
+        json.dump(obj, f)
+
+
+def compute_distinctiveness(word_sets):
+    words = list(word_sets.values())
+    topics = list(word_sets.keys())
+    words = [set(v) for v in words]
+    total_items = 0
+    unique_words = set()
+    words_to_remove = set()
+    lemmatizer = nltk.stem.WordNetLemmatizer()
+    semantically_unique_words = set()
+    for s, _ in zip(words, topics):
+        total_items += len(s)
+        unique_words = unique_words.union(s)
+    distinctiveness = len(unique_words) / total_items
+    for word in unique_words:
+        for topic in topics:
+            if word.startswith(topic) or topic.startswith(word):
+                words_to_remove.add(word)
+    unique_words = (unique_words - words_to_remove).union(set(topics))
+    for word in unique_words:
+        semantically_unique_words.add(lemmatizer.lemmatize(word))
+    sem_dist = (len(semantically_unique_words)) / total_items
+    print("====DISTINCTIVENESS====")
+    print(f"\t<SUM>: {distinctiveness}")
+    print(f"\t<SEMANTICALLY DISTINCT>: {sem_dist}")
+    return distinctiveness, sem_dist
 
 
 def compute_pmi_from_results(cooccur_mat, topics, word_sets):
-    pmi = []
+    _pmi = []
     print("====PMIS====")
-    for topic in topics:
-        val = sum_pmi(word_sets[topic], cooccur_mat)
-        pmi.append(val)
-        print(f'\t{topic}:{val}')
-    return np.sum(pmi)
+
+    def job(words, cooccur_mat, topic):
+        res = sum_pmi(words, cooccur_mat)
+        print(f'\t{topic}:{res}')
+        return res
+
+    _pmi = Parallel(n_jobs=min(20, len(topics)), prefer='threads')(
+        delayed(job)(word_sets[topics[i]], cooccur_mat, topics[i])
+        for i in range(len(topics)))
+    res = np.sum(_pmi) / len(topics)
+    print(f"\t<SUM>: {res}")
+    return res
 
 
 def build_word_sets(scores_df, n_words=5):

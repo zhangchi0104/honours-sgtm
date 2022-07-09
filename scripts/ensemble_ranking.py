@@ -87,9 +87,12 @@ def run_ensemble_rankings(local_score, global_score, local_weight,
     local_cos_df = pd.read_csv(local_score, index_col=0)
     local_cos_df.loc[:, :] = scale_data(local_cos_df)
     global_cos_df.loc[:, :] = scale_data(global_cos_df)
-    res = compute_vocab_ensemble_rankings(global_cos_df, local_cos_df,
-                                          local_cos_df.index, rho,
-                                          local_weight, global_weight)
+    res = compute_vocab_ensemble_rankings(score_g_df=global_cos_df,
+                                          score_l_df=local_cos_df,
+                                          vocab=local_cos_df.index,
+                                          rho=rho,
+                                          weight_global=global_weight,
+                                          weight_local=local_weight)
     local_fn = local_score.split('/')[-1]
     local_fn = local_fn.split('.')[0]
 
