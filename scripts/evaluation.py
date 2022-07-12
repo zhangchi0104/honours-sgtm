@@ -158,6 +158,9 @@ def build_word_sets(scores_df, n_words=5):
     for topic in scores_df.columns:
         word_sets[topic] = list(
             scores_df[topic].sort_values(ascending=False).head(n_words).index)
+        if topic not in word_sets[topic]:
+            word_sets[topic].pop()
+            word_sets[topic].append(topic)
     print("====WORD SET====")
     for topic, item in word_sets.items():
         print(f"\t{topic}:{item}")

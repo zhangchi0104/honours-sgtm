@@ -1,3 +1,4 @@
+import argparse
 import subprocess
 from pathlib import Path
 from ensemble_ranking import run_ensemble_rankings
@@ -29,7 +30,7 @@ CONFIG = {
     ],
     "inputs": [
         *(PROJECT_ROOT / 'results' / 'bert').glob("*"),
-        (PROJECT_ROOT / 'results' / 'CatE' / '2022-07-07-12-43' /
+        (PROJECT_ROOT / 'results' / 'CatE' / '2022-07-03-09-36' /
          'cate-cos-similarities.csv')
     ],
     "baselines": [
@@ -45,6 +46,11 @@ CONFIG = {
 
 def main():
     # compute ensemble ranking
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        '--name',
+        default=f'run-{datetime.datetime.now().strftime("%Y-%m-%d-%H-%M")}')
+    args = parser.parse_args()
     ensemble_out_dirs = []
     for spec in CONFIG['specs']:
         local_w, global_w, rho = spec
@@ -64,7 +70,7 @@ def main():
                               'cooccurence_matrix-agnews.csv',
                               index_col=0)
     now_str = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M")
-    out_dir = PROJECT_ROOT / 'results' / 'evaluations' / f'cate_in_vocab'
+    out_dir = PROJECT_ROOT / 'results' / 'evaluations' / args.name
     out_dir.mkdir(parents=True, exist_ok=True)
     sys.stdout = open(out_dir / 'output.txt', 'w')
 
