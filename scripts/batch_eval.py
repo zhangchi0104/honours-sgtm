@@ -50,7 +50,9 @@ def main():
     parser.add_argument(
         '--name',
         default=f'run-{datetime.datetime.now().strftime("%Y-%m-%d-%H-%M")}')
-    args = parser.parse_args()
+    args = parser.parse_args(
+        
+    )
     ensemble_out_dirs = []
     for spec in CONFIG['specs']:
         local_w, global_w, rho = spec

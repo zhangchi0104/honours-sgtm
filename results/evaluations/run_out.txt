@@ -1,0 +1,273 @@
+(0.1, 0.9, 0.5)
+finance: ['finance', 'accounting', 'logistics', 'marketing', 'banking']
+medicine: ['medicine', 'dentistry', 'diseases', 'pharmacy', 'physics']
+sports: ['sports', 'sport', 'baseball', 'basketball', 'athletics']
+technology: ['technology', 'technologies', 'robotics', 'engineering', 'telecommunications']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.1-global-0.9-rho-0.5/ensemble_score_bert-local-scratch-30522.csv
+finance: ['finance', 'accounting', 'logistics', 'banking', 'marketing']
+medicine: ['medicine', 'dentistry', 'pathology', 'pharmacy', 'medical']
+sports: ['sports', 'sport', 'baseball', 'basketball', 'athletics']
+technology: ['technology', 'technologies', 'engineering', 'robotics', 'telecommunications']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.1-global-0.9-rho-0.5/ensemble_score_bert-pretrained.csv
+finance: ['finance', 'banking', 'accounting', 'marketing', 'logistics']
+medicine: ['medicine', 'dentistry', 'pharmacy', 'diseases', 'physics']
+sports: ['sports', 'sport', 'baseball', 'basketball', 'athletics']
+technology: ['technology', 'technologies', 'robotics', 'engineering', 'telecommunications']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.1-global-0.9-rho-0.5/ensemble_score_bert-local-scratch-25000.csv
+finance: ['finance', 'accounting', 'logistics', 'marketing', 'banking']
+medicine: ['medicine', 'dentistry', 'pathology', 'pharmacy', 'medical']
+sports: ['sports', 'baseball', 'sport', 'basketball', 'athletics']
+technology: ['technology', 'robotics', 'technologies', 'telecommunications', 'engineering']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.1-global-0.9-rho-0.5/ensemble_score_cate-cos-similarities.csv
+(0.2, 0.8, 0.5)
+finance: ['finance', 'accounting', 'logistics', 'marketing', 'banking']
+medicine: ['medicine', 'dentistry', 'diseases', 'pharmacy', 'biology']
+sports: ['sports', 'sport', 'baseball', 'athletics', 'basketball']
+technology: ['technology', 'robotics', 'technologies', 'telecommunications', 'engineering']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.2-global-0.8-rho-0.5/ensemble_score_bert-local-scratch-30522.csv
+finance: ['finance', 'banking', 'accounting', 'logistics', 'marketing']
+medicine: ['medicine', 'dentistry', 'medical', 'pathology', 'pharmacy']
+sports: ['sports', 'sport', 'basketball', 'athletics', 'baseball']
+technology: ['technology', 'technologies', 'engineering', 'robotics', 'industry']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.2-global-0.8-rho-0.5/ensemble_score_bert-pretrained.csv
+finance: ['finance', 'banking', 'accounting', 'marketing', 'securities']
+medicine: ['medicine', 'pharmacy', 'diseases', 'dentistry', 'accounting']
+sports: ['sports', 'sport', 'volleyball', 'gymnastics', 'baseball']
+technology: ['technology', 'industry', 'technologies', 'systems', 'robotics']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.2-global-0.8-rho-0.5/ensemble_score_bert-local-scratch-25000.csv
+finance: ['finance', 'accounting', 'logistics', 'marketing', 'securities']
+medicine: ['medicine', 'dentistry', 'pathology', 'pharmacy', 'medical']
+sports: ['sports', 'baseball', 'basketball', 'athletics', 'sport']
+technology: ['technology', 'robotics', 'technologies', 'telecommunication', 'communication']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.2-global-0.8-rho-0.5/ensemble_score_cate-cos-similarities.csv
+(0.3, 0.7, 0.5)
+finance: ['finance', 'logistics', 'accounting', 'banking', 'marketing']
+medicine: ['medicine', 'dentistry', 'diseases', 'biology', 'pharmacy']
+sports: ['sports', 'athletics', 'sport', 'baseball', 'swimming']
+technology: ['technology', 'robotics', 'industrial', 'technologies', 'telecommunications']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.3-global-0.7-rho-0.5/ensemble_score_bert-local-scratch-30522.csv
+finance: ['finance', 'banking', 'logistics', 'accounting', 'marketing']
+medicine: ['medicine', 'dentistry', 'medical', 'pathology', 'pharmacy']
+sports: ['sports', 'sport', 'basketball', 'athletics', 'baseball']
+technology: ['technology', 'technologies', 'engineering', 'robotics', 'industry']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.3-global-0.7-rho-0.5/ensemble_score_bert-pretrained.csv
+finance: ['finance', 'banking', 'marketing', 'accounting', 'securities']
+medicine: ['medicine', 'pharmacy', 'diseases', 'accounting', 'medical']
+sports: ['sports', 'sportsmen', 'volleyball', 'sport', 'broadcasting']
+technology: ['technology', 'industry', 'management', 'systems', 'financial']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.3-global-0.7-rho-0.5/ensemble_score_bert-local-scratch-25000.csv
+finance: ['accounting', 'logistics', 'marketing', 'finance', 'securities']
+medicine: ['medicine', 'dentistry', 'pathology', 'pharmacy', 'medical']
+sports: ['sports', 'baseball', 'basketball', 'athletics', 'volleyball']
+technology: ['technology', 'robotics', 'telecommunication', 'communication', 'technologies']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.3-global-0.7-rho-0.5/ensemble_score_cate-cos-similarities.csv
+(0.4, 0.6, 0.5)
+finance: ['finance', 'logistics', 'accounting', 'physics', 'governance']
+medicine: ['medicine', 'diseases', 'dentistry', 'sports', 'biology']
+sports: ['sports', 'medicine', 'athletics', 'swimming', 'volleyball']
+technology: ['technology', 'robotics', 'industrial', 'automation', 'marketing']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.4-global-0.6-rho-0.5/ensemble_score_bert-local-scratch-30522.csv
+finance: ['finance', 'banking', 'logistics', 'securities', 'accounting']
+medicine: ['medicine', 'medical', 'dentistry', 'pathology', 'health']
+sports: ['sports', 'sport', 'basketball', 'athletics', 'media']
+technology: ['technology', 'technologies', 'engineering', 'industry', 'robotics']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.4-global-0.6-rho-0.5/ensemble_score_bert-pretrained.csv
+finance: ['finance', 'banking', 'marketing', 'securities', 'financial']
+medicine: ['medicine', 'pharmacy', 'diseases', 'chemicals', 'accounting']
+sports: ['sports', 'sportsmen', 'sportswear', 'broadcasting', 'volleyball']
+technology: ['technology', 'industry', 'management', 'financial', 'systems']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.4-global-0.6-rho-0.5/ensemble_score_bert-local-scratch-25000.csv
+finance: ['accounting', 'logistics', 'marketing', 'securities', 'financial']
+medicine: ['medicine', 'dentistry', 'pathology', 'pharmacy', 'medical']
+sports: ['sports', 'baseball', 'basketball', 'athletics', 'volleyball']
+technology: ['technology', 'robotics', 'telecommunication', 'communication', 'technologies']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.4-global-0.6-rho-0.5/ensemble_score_cate-cos-similarities.csv
+(0.5, 0.5, 0.5)
+finance: ['finance', 'logistics', 'accounting', 'physics', 'governance']
+medicine: ['sports', 'medicine', 'diseases', 'dentistry', 'biology']
+sports: ['medicine', 'sports', 'athletics', 'swimming', 'volleyball']
+technology: ['technology', 'industrial', 'automation', 'robotics', 'marketing']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.5/ensemble_score_bert-local-scratch-30522.csv
+finance: ['finance', 'banking', 'securities', 'logistics', 'finances']
+medicine: ['medicine', 'medical', 'dentistry', 'healthcare', 'health']
+sports: ['sports', 'sport', 'basketball', 'athletics', 'arts']
+technology: ['technology', 'technologies', 'industry', 'engineering', 'robotics']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.5/ensemble_score_bert-pretrained.csv
+finance: ['finance', 'banking', 'explosives', 'communications', 'financial']
+medicine: ['medicine', 'pharmacy', 'chemicals', 'diseases', 'accounting']
+sports: ['sports', 'sportsmen', 'sportswear', 'sportsco', 'broadcasting']
+technology: ['technology', 'management', 'industry', 'financial', 'systems']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.5/ensemble_score_bert-local-scratch-25000.csv
+finance: ['accounting', 'logistics', 'marketing', 'securities', 'financial']
+medicine: ['dentistry', 'pathology', 'medicine', 'pharmacy', 'medical']
+sports: ['baseball', 'basketball', 'athletics', 'sports', 'volleyball']
+technology: ['technology', 'robotics', 'telecommunication', 'communication', 'technologies']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.5/ensemble_score_cate-cos-similarities.csv
+(0.6, 0.4, 0.5)
+finance: ['finance', 'logistics', 'physics', 'governance', 'counseling']
+medicine: ['sports', 'medicine', 'diseases', 'biology', 'metals']
+sports: ['medicine', 'sports', 'athletics', 'swimming', 'volleyball']
+technology: ['technology', 'industrial', 'automation', 'biomedical', 'technician']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.6-global-0.4-rho-0.5/ensemble_score_bert-local-scratch-30522.csv
+finance: ['finance', 'banking', 'securities', 'financing', 'finances']
+medicine: ['medicine', 'medical', 'healthcare', 'health', 'medication']
+sports: ['sports', 'sport', 'arts', 'basketball', 'media']
+technology: ['technology', 'technologies', 'industry', 'engineering', 'technological']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.6-global-0.4-rho-0.5/ensemble_score_bert-pretrained.csv
+finance: ['finance', 'banking', 'explosives', 'communications', 'preparation']
+medicine: ['medicine', 'chemicals', 'pharmacy', 'cooking', 'diseases']
+sports: ['sports', 'sportsmen', 'sportswear', 'sportsco', 'broadcasting']
+technology: ['technology', 'management', 'industry', 'financial', 'debate']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.6-global-0.4-rho-0.5/ensemble_score_bert-local-scratch-25000.csv
+finance: ['accounting', 'logistics', 'marketing', 'financial', 'securities']
+medicine: ['pathology', 'dentistry', 'pharmacy', 'medical', 'medicine']
+sports: ['baseball', 'basketball', 'athletics', 'volleyball', 'lacrosse']
+technology: ['robotics', 'telecommunication', 'technology', 'communication', 'technologies']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.6-global-0.4-rho-0.5/ensemble_score_cate-cos-similarities.csv
+(0.7, 0.3, 0.5)
+finance: ['finance', 'counseling', 'physics', 'disease', 'governance']
+medicine: ['sports', 'diseases', 'sportswear', 'medicine', 'biology']
+sports: ['medicine', 'mines', 'swimming', 'athletics', 'sports']
+technology: ['technology', 'industrial', 'automation', 'riding', 'pricing']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.7-global-0.3-rho-0.5/ensemble_score_bert-local-scratch-30522.csv
+finance: ['finance', 'banking', 'securities', 'financing', 'finances']
+medicine: ['medicine', 'medical', 'healthcare', 'medication', 'medicines']
+sports: ['sports', 'sport', 'arts', 'sportsmen', 'sportswear']
+technology: ['technology', 'technologies', 'industry', 'technological', 'device']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.7-global-0.3-rho-0.5/ensemble_score_bert-pretrained.csv
+finance: ['finance', 'banking', 'explosives', 'communications', 'arts']
+medicine: ['medicine', 'chemicals', 'cooking', 'reactor', 'hospitals']
+sports: ['sports', 'sportsmen', 'sportswear', 'sportsco', 'physics']
+technology: ['technology', 'management', 'industry', 'financial', 'trade']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.7-global-0.3-rho-0.5/ensemble_score_bert-local-scratch-25000.csv
+finance: ['accounting', 'logistics', 'marketing', 'financial', 'securities']
+medicine: ['pathology', 'dentistry', 'pharmacy', 'medical', 'dental']
+sports: ['basketball', 'baseball', 'athletics', 'volleyball', 'lacrosse']
+technology: ['robotics', 'telecommunication', 'communication', 'technology', 'gps']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.7-global-0.3-rho-0.5/ensemble_score_cate-cos-similarities.csv
+(0.8, 0.2, 0.5)
+finance: ['finance', 'devastation', 'disease', 'counseling', 'titan']
+medicine: ['sports', 'sportswear', 'sportsco', 'publications', 'diseases']
+sports: ['medicine', 'mines', 'swimming', 'judo', 'wrestling']
+technology: ['technology', 'riding', 'monetary', 'pricing', 'talent']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.8-global-0.2-rho-0.5/ensemble_score_bert-local-scratch-30522.csv
+finance: ['finance', 'banking', 'financing', 'securities', 'finances']
+medicine: ['medicine', 'medical', 'medication', 'healthcare', 'treatment']
+sports: ['sports', 'sport', 'sportswear', 'sportsco', 'arts']
+technology: ['technology', 'technologies', 'industry', 'device', 'technological']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.8-global-0.2-rho-0.5/ensemble_score_bert-pretrained.csv
+finance: ['finance', 'banking', 'explosives', 'communications', 'manning']
+medicine: ['medicine', 'duck', 'chemicals', 'prohibit', 'reactor']
+sports: ['sports', 'sportsmen', 'sportswear', 'sportsco', 'physics']
+technology: ['technology', 'management', 'trade', 'industry', 'financial']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.8-global-0.2-rho-0.5/ensemble_score_bert-local-scratch-25000.csv
+finance: ['accounting', 'logistics', 'marketing', 'financial', 'securities']
+medicine: ['pathology', 'dentistry', 'pharmacy', 'medical', 'dental']
+sports: ['basketball', 'baseball', 'athletics', 'lacrosse', 'volleyball']
+technology: ['robotics', 'telecommunication', 'communication', 'gps', 'technology']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.8-global-0.2-rho-0.5/ensemble_score_cate-cos-similarities.csv
+(0.9, 0.1, 0.5)
+finance: ['finance', 'devastation', 'titan', 'manage', 'disease']
+medicine: ['sports', 'sportswear', 'sportsco', 'publications', 'irregularities']
+sports: ['medicine', 'mines', 'warfare', 'magic', 'organize']
+technology: ['technology', 'riding', 'scorer', 'talent', 'monetary']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.9-global-0.1-rho-0.5/ensemble_score_bert-local-scratch-30522.csv
+finance: ['finance', 'banking', 'financing', 'securities', 'finances']
+medicine: ['medicine', 'medical', 'medication', 'healthcare', 'treatment']
+sports: ['sports', 'sport', 'sportsco', 'sportswear', 'sportsmen']
+technology: ['technology', 'technologies', 'device', 'functionality', 'technological']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.9-global-0.1-rho-0.5/ensemble_score_bert-pretrained.csv
+finance: ['finance', 'manning', 'banking', 'offering', 'watch']
+medicine: ['medicine', 'duck', 'prohibit', 'publish', 'prohibition']
+sports: ['sports', 'sportsmen', 'sportswear', 'sportsco', 'joint']
+technology: ['technology', 'management', 'percent', 'trade', 'longed']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.9-global-0.1-rho-0.5/ensemble_score_bert-local-scratch-25000.csv
+finance: ['accounting', 'unumprovident', 'logistics', 'cognos', 'marketing']
+medicine: ['pathology', 'dentistry', 'pharmacy', 'medical', 'dental']
+sports: ['basketball', 'baseball', 'lacrosse', 'athletics', 'volleyball']
+technology: ['telecommunication', 'robotics', 'communication', 'gps', 'mobile']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.9-global-0.1-rho-0.5/ensemble_score_cate-cos-similarities.csv
+(0.5, 0.5, 0.1)
+finance: ['finance', 'logistics', 'accounting', 'physics', 'governance']
+medicine: ['sports', 'medicine', 'diseases', 'dentistry', 'biology']
+sports: ['medicine', 'sports', 'athletics', 'swimming', 'volleyball']
+technology: ['technology', 'industrial', 'robotics', 'automation', 'marketing']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.1/ensemble_score_bert-local-scratch-30522.csv
+finance: ['finance', 'banking', 'securities', 'logistics', 'finances']
+medicine: ['medicine', 'medical', 'dentistry', 'health', 'pathology']
+sports: ['sports', 'sport', 'basketball', 'athletics', 'arts']
+technology: ['technology', 'technologies', 'industry', 'engineering', 'robotics']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.1/ensemble_score_bert-pretrained.csv
+finance: ['finance', 'banking', 'marketing', 'securities', 'financial']
+medicine: ['medicine', 'pharmacy', 'diseases', 'chemicals', 'accounting']
+sports: ['sports', 'sportsmen', 'sportswear', 'sportsco', 'broadcasting']
+technology: ['technology', 'management', 'industry', 'financial', 'systems']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.1/ensemble_score_bert-local-scratch-25000.csv
+finance: ['accounting', 'logistics', 'marketing', 'securities', 'financial']
+medicine: ['dentistry', 'pathology', 'medicine', 'pharmacy', 'medical']
+sports: ['baseball', 'basketball', 'athletics', 'sports', 'volleyball']
+technology: ['technology', 'robotics', 'telecommunication', 'communication', 'technologies']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.1/ensemble_score_cate-cos-similarities.csv
+(0.5, 0.5, 0.3)
+finance: ['finance', 'logistics', 'accounting', 'physics', 'governance']
+medicine: ['sports', 'medicine', 'diseases', 'dentistry', 'biology']
+sports: ['medicine', 'sports', 'athletics', 'swimming', 'volleyball']
+technology: ['technology', 'industrial', 'automation', 'robotics', 'marketing']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.3/ensemble_score_bert-local-scratch-30522.csv
+finance: ['finance', 'banking', 'securities', 'logistics', 'finances']
+medicine: ['medicine', 'medical', 'dentistry', 'healthcare', 'health']
+sports: ['sports', 'sport', 'basketball', 'athletics', 'arts']
+technology: ['technology', 'technologies', 'industry', 'engineering', 'robotics']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.3/ensemble_score_bert-pretrained.csv
+finance: ['finance', 'banking', 'marketing', 'explosives', 'securities']
+medicine: ['medicine', 'pharmacy', 'chemicals', 'diseases', 'accounting']
+sports: ['sports', 'sportsmen', 'sportswear', 'sportsco', 'broadcasting']
+technology: ['technology', 'management', 'industry', 'financial', 'systems']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.3/ensemble_score_bert-local-scratch-25000.csv
+finance: ['accounting', 'logistics', 'marketing', 'securities', 'financial']
+medicine: ['dentistry', 'pathology', 'medicine', 'pharmacy', 'medical']
+sports: ['baseball', 'basketball', 'athletics', 'sports', 'volleyball']
+technology: ['technology', 'robotics', 'telecommunication', 'communication', 'technologies']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.3/ensemble_score_cate-cos-similarities.csv
+(0.5, 0.5, 0.7)
+finance: ['finance', 'logistics', 'physics', 'accounting', 'governance']
+medicine: ['sports', 'medicine', 'diseases', 'dentistry', 'biology']
+sports: ['medicine', 'sports', 'athletics', 'swimming', 'volleyball']
+technology: ['technology', 'industrial', 'automation', 'robotics', 'cuisine']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.7/ensemble_score_bert-local-scratch-30522.csv
+finance: ['finance', 'banking', 'securities', 'logistics', 'finances']
+medicine: ['medicine', 'medical', 'dentistry', 'healthcare', 'health']
+sports: ['sports', 'sport', 'basketball', 'athletics', 'arts']
+technology: ['technology', 'technologies', 'industry', 'engineering', 'robotics']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.7/ensemble_score_bert-pretrained.csv
+finance: ['finance', 'banking', 'explosives', 'communications', 'financial']
+medicine: ['medicine', 'pharmacy', 'chemicals', 'diseases', 'cooking']
+sports: ['sports', 'sportsmen', 'sportswear', 'sportsco', 'broadcasting']
+technology: ['technology', 'management', 'industry', 'financial', 'debate']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.7/ensemble_score_bert-local-scratch-25000.csv
+finance: ['accounting', 'logistics', 'marketing', 'securities', 'financial']
+medicine: ['dentistry', 'pathology', 'medicine', 'pharmacy', 'medical']
+sports: ['baseball', 'basketball', 'athletics', 'sports', 'volleyball']
+technology: ['technology', 'robotics', 'telecommunication', 'communication', 'technologies']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.7/ensemble_score_cate-cos-similarities.csv
+(0.5, 0.5, 0.9)
+finance: ['finance', 'logistics', 'physics', 'governance', 'accounting']
+medicine: ['sports', 'medicine', 'diseases', 'biology', 'dentistry']
+sports: ['medicine', 'sports', 'athletics', 'swimming', 'volleyball']
+technology: ['technology', 'industrial', 'automation', 'robotics', 'cuisine']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.9/ensemble_score_bert-local-scratch-30522.csv
+finance: ['finance', 'banking', 'securities', 'logistics', 'finances']
+medicine: ['medicine', 'medical', 'healthcare', 'dentistry', 'health']
+sports: ['sports', 'sport', 'basketball', 'athletics', 'arts']
+technology: ['technology', 'technologies', 'industry', 'engineering', 'robotics']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.9/ensemble_score_bert-pretrained.csv
+finance: ['finance', 'banking', 'explosives', 'communications', 'financial']
+medicine: ['medicine', 'pharmacy', 'chemicals', 'diseases', 'cooking']
+sports: ['sports', 'sportsmen', 'sportswear', 'sportsco', 'broadcasting']
+technology: ['technology', 'management', 'industry', 'financial', 'debate']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.9/ensemble_score_bert-local-scratch-25000.csv
+finance: ['accounting', 'logistics', 'marketing', 'securities', 'financial']
+medicine: ['dentistry', 'pathology', 'medicine', 'pharmacy', 'medical']
+sports: ['baseball', 'basketball', 'athletics', 'sports', 'volleyball']
+technology: ['technology', 'robotics', 'telecommunication', 'communication', 'technologies']
+writing results to /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.9/ensemble_score_cate-cos-similarities.csv

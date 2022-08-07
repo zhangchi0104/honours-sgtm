@@ -1,0 +1,19 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "sccripts/gen_tokens.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/gen_tokens.py",
+            "args": [
+                "-f=${workspaceFolder}/data/content_cleaned.txt",
+                "-o=${workspaceFolder}/data/tokens/tokens-pretrained-30522.pkl"
+            ],
+            "console": "integratedTerminal",
+        }
+    ]
+}

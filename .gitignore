@@ -7,7 +7,5 @@ tokens-256.pkl
 tokens.pkl
 *.pth
 *.bin
-*.json
 models/
-*.txt
 *.pkl

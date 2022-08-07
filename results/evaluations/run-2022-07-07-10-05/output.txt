@@ -1,0 +1,1118 @@
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.1-global-0.9-rho-0.5/ensemble_score_bert-pretrained.csv
+====WORD SET====
+	finance:['finance', 'accounting', 'logistics', 'banking', 'marketing', 'securities', 'finances', 'debt', 'financial', 'engineering']
+	medicine:['medicine', 'dentistry', 'pathology', 'pharmacy', 'medical', 'diseases', 'physics', 'health', 'biology', 'surgery']
+	sports:['sports', 'sport', 'baseball', 'basketball', 'athletics', 'volleyball', 'swimming', 'hockey', 'football', 'gymnastics']
+	technology:['technology', 'technologies', 'engineering', 'robotics', 'telecommunications', 'systems', 'industry', 'telecommunication', 'communication', 'journalism']
+====PMIS====
+	finance:29.424076959673346
+	technology:32.57924171813002
+	medicine:33.23195563754423
+	sports:32.51113975260124
+	<SUM>: 31.93660351698721
+====NPMIS====
+	finance:2.1488311958734654
+	technology:2.156511516719005
+	sports:2.1933063266569084
+	medicine:2.0799103606595035
+	<SUM>: 2.1446398499772203
+====DISTINCTIVENESS====
+	<SUM>: 0.975
+	<SEMANTICALLY DISTINCT>: 0.875
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.1-global-0.9-rho-0.5/ensemble_score_bert-local-scratch-30522.csv
+====WORD SET====
+	finance:['finance', 'accounting', 'logistics', 'marketing', 'banking', 'securities', 'procurement', 'finances', 'governance', 'physics']
+	medicine:['medicine', 'dentistry', 'diseases', 'pharmacy', 'physics', 'biology', 'medical', 'pathology', 'surgery', 'accounting']
+	sports:['sports', 'sport', 'baseball', 'basketball', 'athletics', 'volleyball', 'swimming', 'gymnastics', 'football', 'hockey']
+	technology:['technology', 'technologies', 'robotics', 'engineering', 'telecommunications', 'communication', 'telecommunication', 'journalism', 'industrial', 'systems']
+====PMIS====
+	finance:21.832819006111286
+	technology:32.2511733117949
+	sports:32.51113975260124
+	medicine:22.417427685281222
+	<SUM>: 27.25313993894716
+====NPMIS====
+	finance:1.5157228840481107
+	sports:2.1933063266569084
+	technology:2.1190649858463617
+	medicine:1.3429184546831696
+	<SUM>: 1.7927531628086377
+====DISTINCTIVENESS====
+	<SUM>: 0.95
+	<SEMANTICALLY DISTINCT>: 0.85
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.1-global-0.9-rho-0.5/ensemble_score_bert-local-scratch-25000.csv
+====WORD SET====
+	finance:['finance', 'banking', 'accounting', 'marketing', 'logistics', 'securities', 'procurement', 'financial', 'debt', 'finances']
+	medicine:['medicine', 'dentistry', 'pharmacy', 'diseases', 'physics', 'pathology', 'medical', 'biology', 'accounting', 'health']
+	sports:['sports', 'sport', 'baseball', 'basketball', 'athletics', 'volleyball', 'gymnastics', 'football', 'swimming', 'broadcasting']
+	technology:['technology', 'technologies', 'robotics', 'engineering', 'telecommunications', 'systems', 'industry', 'journalism', 'logistics', 'telecommunication']
+====PMIS====
+	medicine:29.665681073875604
+	sports:32.31410771357601
+	finance:27.087342690592383
+	technology:30.610176112946093
+	<SUM>: 29.91932689774752
+====NPMIS====
+	finance:1.9947380352157726
+	technology:2.0148627565212296
+	medicine:1.833705581723179
+	sports:2.1601295804671232
+	<SUM>: 2.000858988481826
+====DISTINCTIVENESS====
+	<SUM>: 0.95
+	<SEMANTICALLY DISTINCT>: 0.85
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.1-global-0.9-rho-0.5/ensemble_score_cate-cos-similarities.csv
+====WORD SET====
+	finance:['finance', 'accounting', 'logistics', 'marketing', 'banking', 'securities', 'financial', 'procurement', 'finances', 'management']
+	medicine:['medicine', 'dentistry', 'pathology', 'pharmacy', 'medical', 'diseases', 'health', 'physics', 'surgery', 'nutrition']
+	sports:['sports', 'baseball', 'sport', 'basketball', 'athletics', 'volleyball', 'football', 'hockey', 'gymnastics', 'swimming']
+	technology:['technology', 'robotics', 'technologies', 'telecommunications', 'engineering', 'telecommunication', 'communication', 'systems', 'architecture', 'integration']
+====PMIS====
+	technology:45.57250863232285
+	sports:32.51113975260124
+	finance:31.009203258794017
+	medicine:26.175328535002308
+	<SUM>: 33.8170450446801
+====NPMIS====
+	sports:2.1933063266569084
+	technology:2.9274967160826972
+	finance:2.2560013633723917
+	medicine:1.6537432168732833
+	<SUM>: 2.25763690574632
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.9
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.2-global-0.8-rho-0.5/ensemble_score_bert-pretrained.csv
+====WORD SET====
+	finance:['finance', 'banking', 'accounting', 'logistics', 'marketing', 'securities', 'finances', 'debt', 'financing', 'financial']
+	medicine:['medicine', 'dentistry', 'medical', 'pathology', 'pharmacy', 'physics', 'health', 'diseases', 'biology', 'astronomy']
+	sports:['sports', 'sport', 'basketball', 'athletics', 'baseball', 'volleyball', 'hockey', 'swimming', 'education', 'broadcasting']
+	technology:['technology', 'technologies', 'engineering', 'robotics', 'industry', 'telecommunications', 'systems', 'telecommunication', 'communication', 'culture']
+====PMIS====
+	medicine:35.0570988222878
+	finance:35.38508067265322
+	technology:32.563309020868985
+	sports:27.87021815333894
+	<SUM>: 32.718926667287235
+====NPMIS====
+	finance:2.524723156839696
+	medicine:2.1500037238578527
+	sports:1.7549479913541781
+	technology:2.1565115167190054
+	<SUM>: 2.1465465971926827
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.9
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.2-global-0.8-rho-0.5/ensemble_score_bert-local-scratch-30522.csv
+====WORD SET====
+	finance:['finance', 'accounting', 'logistics', 'marketing', 'banking', 'procurement', 'securities', 'physics', 'governance', 'strategy']
+	medicine:['medicine', 'dentistry', 'diseases', 'pharmacy', 'biology', 'physics', 'medical', 'astronomy', 'logistics', 'surgery']
+	sports:['sports', 'sport', 'baseball', 'athletics', 'basketball', 'swimming', 'volleyball', 'gymnastics', 'softball', 'wrestling']
+	technology:['technology', 'robotics', 'technologies', 'telecommunications', 'engineering', 'industrial', 'communication', 'journalism', 'marketing', 'telecommunication']
+====PMIS====
+	finance:23.178692473215623
+	technology:29.334302200926484
+	sports:33.20112477651585
+	medicine:27.841171112552765
+	<SUM>: 28.38882264080268
+====NPMIS====
+	finance:1.5948657417965177
+	medicine:1.661244593458782
+	sports:2.1003007028813045
+	technology:1.887221326683936
+	<SUM>: 1.8109080912051352
+====DISTINCTIVENESS====
+	<SUM>: 0.925
+	<SEMANTICALLY DISTINCT>: 0.85
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.2-global-0.8-rho-0.5/ensemble_score_bert-local-scratch-25000.csv
+====WORD SET====
+	finance:['finance', 'banking', 'accounting', 'marketing', 'securities', 'financial', 'logistics', 'debt', 'procurement', 'governance']
+	medicine:['medicine', 'pharmacy', 'diseases', 'dentistry', 'accounting', 'physics', 'medical', 'biology', 'pathology', 'nutrition']
+	sports:['sports', 'sport', 'volleyball', 'gymnastics', 'baseball', 'broadcasting', 'basketball', 'sportsmen', 'athletics', 'football']
+	technology:['technology', 'industry', 'technologies', 'systems', 'robotics', 'telecommunications', 'management', 'engineering', 'communications', 'financial']
+====PMIS====
+	sports:33.199173774482794
+	technology:35.99261811256741
+	finance:32.89032645173628
+	medicine:18.447061535277015
+	<SUM>: 30.132294968515875
+====NPMIS====
+	technology:2.58516968736919
+	medicine:1.0946856791059059
+	finance:2.363248233173917
+	sports:2.2336168049969802
+	<SUM>: 2.069180101161498
+====DISTINCTIVENESS====
+	<SUM>: 0.95
+	<SEMANTICALLY DISTINCT>: 0.875
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.2-global-0.8-rho-0.5/ensemble_score_cate-cos-similarities.csv
+====WORD SET====
+	finance:['finance', 'accounting', 'logistics', 'marketing', 'securities', 'financial', 'banking', 'procurement', 'management', 'finances']
+	medicine:['medicine', 'dentistry', 'pathology', 'pharmacy', 'medical', 'diseases', 'health', 'medications', 'nutrition', 'surgery']
+	sports:['sports', 'baseball', 'basketball', 'athletics', 'sport', 'volleyball', 'hockey', 'football', 'softball', 'gymnastics']
+	technology:['technology', 'robotics', 'technologies', 'telecommunication', 'communication', 'telecommunications', 'engineering', 'systems', 'architecture', 'automation']
+====PMIS====
+	finance:31.009203258794017
+	sports:30.493627275034605
+	medicine:33.821718043017164
+	technology:43.1201285717311
+	<SUM>: 34.61116928714422
+====NPMIS====
+	finance:2.2560013633723917
+	technology:2.750521503210093
+	sports:2.074896050520656
+	medicine:2.1099946199700725
+	<SUM>: 2.2978533842683033
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.9
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.3-global-0.7-rho-0.5/ensemble_score_bert-pretrained.csv
+====WORD SET====
+	finance:['finance', 'banking', 'logistics', 'accounting', 'marketing', 'securities', 'finances', 'debt', 'financing', 'financial']
+	medicine:['medicine', 'dentistry', 'medical', 'pathology', 'pharmacy', 'health', 'physics', 'diseases', 'astronomy', 'healthcare']
+	sports:['sports', 'sport', 'basketball', 'athletics', 'baseball', 'hockey', 'broadcasting', 'volleyball', 'education', 'media']
+	technology:['technology', 'technologies', 'engineering', 'robotics', 'industry', 'culture', 'telecommunication', 'communication', 'systems', 'programming']
+====PMIS====
+	finance:35.38508067265322
+	medicine:43.60977598058717
+	sports:28.263288496716928
+	technology:21.366830786159937
+	<SUM>: 32.15624398402932
+====NPMIS====
+	finance:2.524723156839696
+	sports:1.8790269971703493
+	medicine:2.6690279348081036
+	technology:1.4278829211984683
+	<SUM>: 2.1251652525041544
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.925
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.3-global-0.7-rho-0.5/ensemble_score_bert-local-scratch-30522.csv
+====WORD SET====
+	finance:['finance', 'logistics', 'accounting', 'banking', 'marketing', 'procurement', 'physics', 'governance', 'strategy', 'securities']
+	medicine:['medicine', 'dentistry', 'diseases', 'biology', 'pharmacy', 'physics', 'medical', 'astronomy', 'logistics', 'metals']
+	sports:['sports', 'athletics', 'sport', 'baseball', 'swimming', 'basketball', 'volleyball', 'medicine', 'gymnastics', 'wrestling']
+	technology:['technology', 'robotics', 'industrial', 'technologies', 'telecommunications', 'automation', 'marketing', 'journalism', 'communication', 'integration']
+====PMIS====
+	finance:23.178692473215627
+	technology:31.422288511502025
+	sports:30.77844042192257
+	medicine:23.870804962548558
+	<SUM>: 27.31255659229719
+====NPMIS====
+	finance:1.5948657417965175
+	sports:1.9581103934739652
+	technology:1.9996061417191076
+	medicine:1.4130118178815183
+	<SUM>: 1.7413985237177771
+====DISTINCTIVENESS====
+	<SUM>: 0.9
+	<SEMANTICALLY DISTINCT>: 0.85
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.3-global-0.7-rho-0.5/ensemble_score_bert-local-scratch-25000.csv
+====WORD SET====
+	finance:['finance', 'banking', 'marketing', 'accounting', 'securities', 'financial', 'debt', 'governance', 'procurement', 'financing']
+	medicine:['medicine', 'pharmacy', 'diseases', 'accounting', 'medical', 'physics', 'dentistry', 'biology', 'chemicals', 'nutrition']
+	sports:['sports', 'sportsmen', 'volleyball', 'sport', 'broadcasting', 'gymnastics', 'statistics', 'physics', 'football', 'baseball']
+	technology:['technology', 'industry', 'management', 'systems', 'financial', 'robotics', 'technologies', 'communications', 'telecommunications', 'culture']
+====PMIS====
+	sports:26.237026435976208
+	technology:33.07709793492579
+	finance:41.18806443379711
+	medicine:22.884219948034513
+	<SUM>: 30.846602188183404
+====NPMIS====
+	finance:2.8932333547978413
+	medicine:1.3551079360966591
+	technology:2.376917858209774
+	sports:1.7707394788015904
+	<SUM>: 2.098999656976466
+====DISTINCTIVENESS====
+	<SUM>: 0.925
+	<SEMANTICALLY DISTINCT>: 0.85
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.3-global-0.7-rho-0.5/ensemble_score_cate-cos-similarities.csv
+====WORD SET====
+	finance:['accounting', 'logistics', 'marketing', 'finance', 'securities', 'financial', 'management', 'procurement', 'banking', 'finances']
+	medicine:['medicine', 'dentistry', 'pathology', 'pharmacy', 'medical', 'diseases', 'health', 'medications', 'nutrition', 'healthcare']
+	sports:['sports', 'baseball', 'basketball', 'athletics', 'volleyball', 'sport', 'hockey', 'football', 'softball', 'soccer']
+	technology:['technology', 'robotics', 'telecommunication', 'communication', 'technologies', 'telecommunications', 'systems', 'architecture', 'engineering', 'automation']
+====PMIS====
+	medicine:45.832422061330476
+	sports:27.19637254888874
+	technology:43.12012857173111
+	finance:31.009203258794017
+	<SUM>: 36.78953161018608
+====NPMIS====
+	technology:2.750521503210093
+	medicine:2.80695319912928
+	sports:1.8411084550200452
+	finance:2.256001363372392
+	<SUM>: 2.4136461301829524
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.9
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.4-global-0.6-rho-0.5/ensemble_score_bert-pretrained.csv
+====WORD SET====
+	finance:['finance', 'banking', 'logistics', 'securities', 'accounting', 'marketing', 'finances', 'financing', 'debt', 'financial']
+	medicine:['medicine', 'medical', 'dentistry', 'pathology', 'health', 'pharmacy', 'healthcare', 'physics', 'astronomy', 'medicines']
+	sports:['sports', 'sport', 'basketball', 'athletics', 'media', 'broadcasting', 'hockey', 'education', 'arts', 'volleyball']
+	technology:['technology', 'technologies', 'engineering', 'industry', 'robotics', 'culture', 'software', 'programming', 'architecture', 'telecommunication']
+====PMIS====
+	finance:35.38508067265321
+	medicine:43.97808062167883
+	technology:27.49163974427099
+	sports:25.45715204600071
+	<SUM>: 33.077988271150936
+====NPMIS====
+	finance:2.524723156839696
+	medicine:2.700727498217861
+	technology:1.7907550942565886
+	sports:1.6563695933496128
+	<SUM>: 2.1681438356659397
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.9
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.4-global-0.6-rho-0.5/ensemble_score_bert-local-scratch-30522.csv
+====WORD SET====
+	finance:['finance', 'logistics', 'accounting', 'physics', 'governance', 'procurement', 'banking', 'strategy', 'marketing', 'architecture']
+	medicine:['medicine', 'diseases', 'dentistry', 'sports', 'biology', 'medical', 'physics', 'astronomy', 'pharmacy', 'metals']
+	sports:['sports', 'medicine', 'athletics', 'swimming', 'volleyball', 'sport', 'baseball', 'basketball', 'wrestling', 'gymnastics']
+	technology:['technology', 'robotics', 'industrial', 'automation', 'marketing', 'telecommunications', 'journalism', 'integration', 'communication', 'cuisine']
+====PMIS====
+	finance:20.571464020882203
+	sports:30.77844042192257
+	technology:21.238342866702634
+	medicine:23.87080496254856
+	<SUM>: 24.114763068013993
+====NPMIS====
+	technology:1.328463547995011
+	sports:1.9581103934739654
+	medicine:1.4130118178815185
+	finance:1.295039734963946
+	<SUM>: 1.4986563735786105
+====DISTINCTIVENESS====
+	<SUM>: 0.9
+	<SEMANTICALLY DISTINCT>: 0.875
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.4-global-0.6-rho-0.5/ensemble_score_bert-local-scratch-25000.csv
+====WORD SET====
+	finance:['finance', 'banking', 'marketing', 'securities', 'financial', 'accounting', 'debt', 'communications', 'explosives', 'governance']
+	medicine:['medicine', 'pharmacy', 'diseases', 'chemicals', 'accounting', 'medical', 'healthcare', 'cooking', 'biology', 'physics']
+	sports:['sports', 'sportsmen', 'sportswear', 'broadcasting', 'volleyball', 'gymnastics', 'physics', 'statistics', 'sport', 'sportsco']
+	technology:['technology', 'industry', 'management', 'financial', 'systems', 'communications', 'culture', 'debate', 'robotics', 'telecommunications']
+====PMIS====
+	finance:36.23819214278529
+	sports:19.291396252526194
+	medicine:22.800068862397595
+	technology:21.404699296533828
+	<SUM>: 24.933589138560727
+====NPMIS====
+	medicine:1.3616480212646263
+	technology:1.7132415591562318
+	sports:1.2336303653546667
+	finance:2.608090913443184
+	<SUM>: 1.729152714804677
+====DISTINCTIVENESS====
+	<SUM>: 0.9
+	<SEMANTICALLY DISTINCT>: 0.8
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.4-global-0.6-rho-0.5/ensemble_score_cate-cos-similarities.csv
+====WORD SET====
+	finance:['accounting', 'logistics', 'marketing', 'securities', 'financial', 'finance', 'management', 'procurement', 'organizational', 'finances']
+	medicine:['medicine', 'dentistry', 'pathology', 'pharmacy', 'medical', 'diseases', 'health', 'medications', 'nutrition', 'dental']
+	sports:['sports', 'baseball', 'basketball', 'athletics', 'volleyball', 'hockey', 'football', 'sport', 'softball', 'lacrosse']
+	technology:['technology', 'robotics', 'telecommunication', 'communication', 'technologies', 'telecommunications', 'architecture', 'automation', 'systems', 'communications']
+====PMIS====
+	medicine:33.91466861793551
+	technology:46.18404387974442
+	sports:23.181826056365743
+	finance:22.84540037086094
+	<SUM>: 31.531484731226655
+====NPMIS====
+	finance:1.6807796906291548
+	sports:1.5783082013265295
+	technology:3.0249982288105635
+	medicine:2.078423479215531
+	<SUM>: 2.090627399995445
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.875
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.5/ensemble_score_bert-pretrained.csv
+====WORD SET====
+	finance:['finance', 'banking', 'securities', 'logistics', 'finances', 'financing', 'accounting', 'marketing', 'debt', 'treasury']
+	medicine:['medicine', 'medical', 'dentistry', 'healthcare', 'health', 'pathology', 'pharmacy', 'medicines', 'physician', 'medication']
+	sports:['sports', 'sport', 'basketball', 'athletics', 'arts', 'media', 'broadcasting', 'education', 'hockey', 'wrestling']
+	technology:['technology', 'technologies', 'industry', 'engineering', 'robotics', 'culture', 'software', 'technological', 'programming', 'infrastructure']
+====PMIS====
+	finance:34.430641862579236
+	technology:31.96182876856853
+	sports:30.523238951791654
+	medicine:57.93408117321677
+	<SUM>: 38.712447689039045
+====NPMIS====
+	sports:1.9537044332156248
+	technology:2.101240830732214
+	finance:2.4258585462733606
+	medicine:3.553181324753569
+	<SUM>: 2.508496283743692
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.9
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.5/ensemble_score_bert-local-scratch-30522.csv
+====WORD SET====
+	finance:['finance', 'logistics', 'accounting', 'physics', 'governance', 'strategy', 'procurement', 'counseling', 'architecture', 'advocacy']
+	medicine:['sports', 'medicine', 'diseases', 'dentistry', 'biology', 'metals', 'astronomy', 'medical', 'physics', 'logistics']
+	sports:['medicine', 'sports', 'athletics', 'swimming', 'volleyball', 'wrestling', 'softball', 'mines', 'gymnastics', 'sport']
+	technology:['technology', 'industrial', 'automation', 'robotics', 'marketing', 'cuisine', 'biomedical', 'banking', 'technician', 'integration']
+====PMIS====
+	finance:18.077662245079274
+	technology:15.54619478351533
+	medicine:14.604743244115587
+	sports:21.633640027739936
+	<SUM>: 17.46556007511253
+====NPMIS====
+	technology:0.9485338611678825
+	sports:1.3530795455924227
+	medicine:0.8691753167568479
+	finance:1.1378284947862167
+	<SUM>: 1.0771543045758425
+====DISTINCTIVENESS====
+	<SUM>: 0.9
+	<SEMANTICALLY DISTINCT>: 0.875
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.5/ensemble_score_bert-local-scratch-25000.csv
+====WORD SET====
+	finance:['finance', 'banking', 'explosives', 'communications', 'financial', 'securities', 'marketing', 'bankruptcy', 'debt', 'preparation']
+	medicine:['medicine', 'pharmacy', 'chemicals', 'diseases', 'accounting', 'cooking', 'hospitals', 'economics', 'healthcare', 'science']
+	sports:['sports', 'sportsmen', 'sportswear', 'sportsco', 'broadcasting', 'volleyball', 'physics', 'statistics', 'gymnastics', 'architecture']
+	technology:['technology', 'management', 'industry', 'financial', 'systems', 'debate', 'communications', 'trade', 'football', 'development']
+====PMIS====
+	sports:15.893082813624464
+	technology:-0.40782661604645254
+	medicine:17.08047010290185
+	finance:21.453956268769968
+	<SUM>: 13.504920642312456
+====NPMIS====
+	sports:0.9798363548383178
+	finance:1.6549709762371376
+	technology:1.2870313248975185
+	medicine:1.0465286916646361
+	<SUM>: 1.2420918369094025
+====DISTINCTIVENESS====
+	<SUM>: 0.95
+	<SEMANTICALLY DISTINCT>: 0.875
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.5/ensemble_score_cate-cos-similarities.csv
+====WORD SET====
+	finance:['accounting', 'logistics', 'marketing', 'securities', 'financial', 'management', 'finance', 'valuation', 'organizational', 'auditor']
+	medicine:['dentistry', 'pathology', 'medicine', 'pharmacy', 'medical', 'medications', 'dental', 'diseases', 'health', 'nutrition']
+	sports:['baseball', 'basketball', 'athletics', 'sports', 'volleyball', 'hockey', 'lacrosse', 'softball', 'football', 'soccer']
+	technology:['technology', 'robotics', 'telecommunication', 'communication', 'technologies', 'telecommunications', 'automation', 'architecture', 'spatial', 'communications']
+====PMIS====
+	finance:29.84015721475826
+	technology:33.714771511523054
+	sports:15.615648227529686
+	medicine:33.91466861793551
+	<SUM>: 28.271311392936628
+====NPMIS====
+	finance:2.1098306555705135
+	sports:1.0909929960926643
+	technology:2.1886136511411642
+	medicine:2.078423479215531
+	<SUM>: 1.8669651955049682
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.925
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.6-global-0.4-rho-0.5/ensemble_score_bert-pretrained.csv
+====WORD SET====
+	finance:['finance', 'banking', 'securities', 'financing', 'finances', 'logistics', 'debt', 'accounting', 'marketing', 'treasury']
+	medicine:['medicine', 'medical', 'healthcare', 'health', 'medication', 'pathology', 'dentistry', 'medicines', 'physician', 'treatment']
+	sports:['sports', 'sport', 'arts', 'basketball', 'media', 'sportsmen', 'broadcasting', 'athletics', 'education', 'sporting']
+	technology:['technology', 'technologies', 'industry', 'engineering', 'technological', 'culture', 'device', 'software', 'hardware', 'robotics']
+====PMIS====
+	medicine:53.76337263063293
+	finance:34.430641862579236
+	technology:29.735976854670398
+	sports:30.866140822588704
+	<SUM>: 37.19903304261781
+====NPMIS====
+	technology:2.1424959828919823
+	finance:2.425858546273361
+	medicine:3.3381525712461717
+	sports:1.9275577572710518
+	<SUM>: 2.4585162144206416
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.875
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.6-global-0.4-rho-0.5/ensemble_score_bert-local-scratch-30522.csv
+====WORD SET====
+	finance:['finance', 'logistics', 'physics', 'governance', 'counseling', 'strategy', 'accounting', 'disease', 'procurement', 'architecture']
+	medicine:['sports', 'medicine', 'diseases', 'biology', 'metals', 'dentistry', 'astronomy', 'bureaucracy', 'liver', 'medical']
+	sports:['medicine', 'sports', 'athletics', 'swimming', 'volleyball', 'wrestling', 'mines', 'softball', 'physics', 'judo']
+	technology:['technology', 'industrial', 'automation', 'biomedical', 'technician', 'cuisine', 'pricing', 'banking', 'marketing', 'monetary']
+====PMIS====
+	technology:13.74510674402634
+	sports:6.477426541905291
+	medicine:9.180999816844045
+	finance:15.615988741053624
+	<SUM>: 11.254880460957326
+====NPMIS====
+	sports:0.38368973139446627
+	technology:0.8582752792267713
+	finance:0.9933498644877105
+	medicine:0.5508491779812353
+	<SUM>: 0.6965410132725458
+====DISTINCTIVENESS====
+	<SUM>: 0.925
+	<SEMANTICALLY DISTINCT>: 0.9
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.6-global-0.4-rho-0.5/ensemble_score_bert-local-scratch-25000.csv
+====WORD SET====
+	finance:['finance', 'banking', 'explosives', 'communications', 'preparation', 'arts', 'bankruptcy', 'financial', 'securities', 'industry']
+	medicine:['medicine', 'chemicals', 'pharmacy', 'cooking', 'diseases', 'hospitals', 'economics', 'science', 'accounting', 'reactor']
+	sports:['sports', 'sportsmen', 'sportswear', 'sportsco', 'broadcasting', 'physics', 'volleyball', 'architecture', 'statistics', 'politics']
+	technology:['technology', 'management', 'industry', 'financial', 'debate', 'trade', 'football', 'military', 'communications', 'systems']
+====PMIS====
+	finance:14.821138273958772
+	sports:12.766325728050045
+	technology:-16.9616305451439
+	medicine:6.855310021178628
+	<SUM>: 4.370285869510885
+====NPMIS====
+	finance:1.2894839237831144
+	technology:0.9366654881920293
+	sports:0.770812893479274
+	medicine:0.40234653397853304
+	<SUM>: 0.8498272098582378
+====DISTINCTIVENESS====
+	<SUM>: 0.925
+	<SEMANTICALLY DISTINCT>: 0.85
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.6-global-0.4-rho-0.5/ensemble_score_cate-cos-similarities.csv
+====WORD SET====
+	finance:['accounting', 'logistics', 'marketing', 'financial', 'securities', 'valuation', 'auditor', 'management', 'organizational', 'restructuring']
+	medicine:['pathology', 'dentistry', 'pharmacy', 'medical', 'medicine', 'dental', 'medications', 'pediatric', 'veterinary', 'health']
+	sports:['baseball', 'basketball', 'athletics', 'volleyball', 'lacrosse', 'hockey', 'sports', 'softball', 'soccer', 'football']
+	technology:['robotics', 'telecommunication', 'technology', 'communication', 'technologies', 'telecommunications', 'gps', 'automation', 'spatial', 'architecture']
+====PMIS====
+	medicine:36.087025128693725
+	sports:15.615648227529686
+	technology:27.691002982969064
+	finance:32.527027844798894
+	<SUM>: 27.980176045997844
+====NPMIS====
+	technology:1.7407059223154415
+	sports:1.0909929960926643
+	medicine:2.216615909748107
+	finance:2.193676470919436
+	<SUM>: 1.810497824768912
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.975
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.7-global-0.3-rho-0.5/ensemble_score_bert-pretrained.csv
+====WORD SET====
+	finance:['finance', 'banking', 'securities', 'financing', 'finances', 'debt', 'logistics', 'treasury', 'marketing', 'accounting']
+	medicine:['medicine', 'medical', 'healthcare', 'medication', 'medicines', 'health', 'treatment', 'physician', 'pathology', 'dentistry']
+	sports:['sports', 'sport', 'arts', 'sportsmen', 'sportswear', 'sporting', 'media', 'basketball', 'sportsco', 'broadcasting']
+	technology:['technology', 'technologies', 'industry', 'technological', 'device', 'hardware', 'weaponry', 'culture', 'infrastructure', 'software']
+====PMIS====
+	finance:34.430641862579236
+	medicine:53.76337263063293
+	sports:23.732652817251488
+	technology:32.9619358720901
+	<SUM>: 36.22215079563844
+====NPMIS====
+	medicine:3.3381525712461717
+	finance:2.425858546273361
+	technology:2.3646314273146523
+	sports:1.4797729015973355
+	<SUM>: 2.40210386160788
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.825
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.7-global-0.3-rho-0.5/ensemble_score_bert-local-scratch-30522.csv
+====WORD SET====
+	finance:['finance', 'counseling', 'physics', 'disease', 'governance', 'logistics', 'devastation', 'merchants', 'theater', 'strategy']
+	medicine:['sports', 'diseases', 'sportswear', 'medicine', 'biology', 'metals', 'furniture', 'liver', 'bureaucracy', 'warfare']
+	sports:['medicine', 'mines', 'swimming', 'athletics', 'sports', 'wrestling', 'judo', 'physics', 'volleyball', 'softball']
+	technology:['technology', 'industrial', 'automation', 'riding', 'pricing', 'technician', 'monetary', 'biomedical', 'cuisine', 'marble']
+====PMIS====
+	technology:6.7169704582544085
+	medicine:4.823423963855549
+	finance:5.273283815851697
+	sports:6.477426541905291
+	<SUM>: 5.822776194966736
+====NPMIS====
+	sports:0.38368973139446627
+	finance:0.30949548006411576
+	technology:0.4344083516396746
+	medicine:0.2950977188084181
+	<SUM>: 0.3556728204766687
+====DISTINCTIVENESS====
+	<SUM>: 0.925
+	<SEMANTICALLY DISTINCT>: 0.875
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.7-global-0.3-rho-0.5/ensemble_score_bert-local-scratch-25000.csv
+====WORD SET====
+	finance:['finance', 'banking', 'explosives', 'communications', 'arts', 'preparation', 'bankruptcy', 'justice', 'legislation', 'financial']
+	medicine:['medicine', 'chemicals', 'cooking', 'reactor', 'hospitals', 'pharmacy', 'reorganization', 'loans', 'butterfly', 'science']
+	sports:['sports', 'sportsmen', 'sportswear', 'sportsco', 'physics', 'broadcasting', 'architecture', 'volleyball', 'former', 'housing']
+	technology:['technology', 'management', 'industry', 'financial', 'trade', 'debate', 'military', 'football', 'foreign', 'energy']
+====PMIS====
+	finance:13.821762536606652
+	sports:11.229031138446357
+	medicine:0
+	technology:-21.890654906074474
+	<SUM>: 0.7900346922446335
+====NPMIS====
+	sports:0.7536443505336796
+	finance:1.112249986902332
+	medicine:0
+	technology:0.5076861647850406
+	<SUM>: 0.593395125555263
+====DISTINCTIVENESS====
+	<SUM>: 0.975
+	<SEMANTICALLY DISTINCT>: 0.9
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.7-global-0.3-rho-0.5/ensemble_score_cate-cos-similarities.csv
+====WORD SET====
+	finance:['accounting', 'logistics', 'marketing', 'financial', 'securities', 'auditor', 'valuation', 'executives', 'organizational', 'management']
+	medicine:['pathology', 'dentistry', 'pharmacy', 'medical', 'dental', 'medicine', 'pediatric', 'medications', 'treatment', 'veterinary']
+	sports:['basketball', 'baseball', 'athletics', 'volleyball', 'lacrosse', 'hockey', 'softball', 'soccer', 'sports', 'football']
+	technology:['robotics', 'telecommunication', 'communication', 'technology', 'gps', 'telecommunications', 'technologies', 'mobile', 'spatial', 'automation']
+====PMIS====
+	finance:30.775858986076422
+	technology:42.197827619780846
+	medicine:37.54148835933673
+	sports:15.615648227529684
+	<SUM>: 31.53270579818092
+====NPMIS====
+	sports:1.0909929960926645
+	technology:2.7415653710134844
+	medicine:2.2851507488667213
+	finance:2.202044303153379
+	<SUM>: 2.079938354781562
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.975
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.8-global-0.2-rho-0.5/ensemble_score_bert-pretrained.csv
+====WORD SET====
+	finance:['finance', 'banking', 'financing', 'securities', 'finances', 'debt', 'treasury', 'logistics', 'shipping', 'marketing']
+	medicine:['medicine', 'medical', 'medication', 'healthcare', 'treatment', 'medicines', 'physician', 'health', 'science', 'illness']
+	sports:['sports', 'sport', 'sportswear', 'sportsco', 'arts', 'sportsmen', 'sporting', 'music', 'media', 'fitness']
+	technology:['technology', 'technologies', 'industry', 'device', 'technological', 'hardware', 'capability', 'functionality', 'weaponry', 'technique']
+====PMIS====
+	finance:33.64317880403347
+	medicine:47.52476652829418
+	sports:12.865850227060161
+	technology:23.252319535343347
+	<SUM>: 29.32152877368279
+====NPMIS====
+	finance:2.2839200906476824
+	sports:0.9442495044462651
+	technology:1.580017995691659
+	medicine:3.018253165677773
+	<SUM>: 1.9566101891158447
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.825
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.8-global-0.2-rho-0.5/ensemble_score_bert-local-scratch-30522.csv
+====WORD SET====
+	finance:['finance', 'devastation', 'disease', 'counseling', 'titan', 'manage', 'merchants', 'entrepreneurs', 'theater', 'physics']
+	medicine:['sports', 'sportswear', 'sportsco', 'publications', 'diseases', 'furniture', 'sick', 'irregularities', 'liver', 'laughing']
+	sports:['medicine', 'mines', 'swimming', 'judo', 'wrestling', 'physics', 'warfare', 'athletics', 'rowing', 'aviation']
+	technology:['technology', 'riding', 'monetary', 'pricing', 'talent', 'technician', 'scorer', 'automation', 'biomedical', 'marble']
+====PMIS====
+	finance:2.99027984774248
+	medicine:2.9849374720897925
+	technology:0.8933207261613587
+	sports:5.047859404098227
+	<SUM>: 2.9790993625229643
+====NPMIS====
+	medicine:0.18726422399822062
+	finance:0.17550318346626564
+	sports:0.2962650454866924
+	technology:0.07850981612108157
+	<SUM>: 0.18438556726806504
+====DISTINCTIVENESS====
+	<SUM>: 0.975
+	<SEMANTICALLY DISTINCT>: 0.9
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.8-global-0.2-rho-0.5/ensemble_score_bert-local-scratch-25000.csv
+====WORD SET====
+	finance:['finance', 'banking', 'explosives', 'communications', 'manning', 'arts', 'preparation', 'data', 'bankruptcy', 'justice']
+	medicine:['medicine', 'duck', 'chemicals', 'prohibit', 'reactor', 'prohibition', 'cooking', 'publish', 'reorganization', 'butterfly']
+	sports:['sports', 'sportsmen', 'sportswear', 'sportsco', 'physics', 'broadcasting', 'usc', 'former', 'housing', 'organizations']
+	technology:['technology', 'management', 'trade', 'industry', 'financial', 'military', 'debate', 'foreign', 'football', 'national']
+====PMIS====
+	medicine:0
+	finance:7.9595722702171186
+	sports:8.377761392484404
+	technology:-19.0765924692001
+	<SUM>: -0.6848147016246449
+====NPMIS====
+	finance:0.6576247654153793
+	sports:0.5862998400474263
+	technology:0.7077056183220684
+	medicine:0
+	<SUM>: 0.4879075559462185
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.925
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.8-global-0.2-rho-0.5/ensemble_score_cate-cos-similarities.csv
+====WORD SET====
+	finance:['accounting', 'logistics', 'marketing', 'financial', 'securities', 'auditor', 'valuation', 'bain', 'executives', 'organizational']
+	medicine:['pathology', 'dentistry', 'pharmacy', 'medical', 'dental', 'pediatric', 'patients', 'treatment', 'medicine', 'therapy']
+	sports:['basketball', 'baseball', 'athletics', 'lacrosse', 'volleyball', 'hockey', 'soccer', 'softball', 'mlb', 'bruins']
+	technology:['robotics', 'telecommunication', 'communication', 'gps', 'technology', 'mobile', 'spatial', 'telecommunications', 'technologies', 'cellular']
+====PMIS====
+	finance:24.96438407800244
+	sports:5.4144915380763745
+	medicine:59.834858522555336
+	technology:53.760323765158546
+	<SUM>: 35.993514475948174
+====NPMIS====
+	medicine:3.7357039445023488
+	finance:1.7957900660684036
+	technology:3.5173562225288886
+	sports:0.3255481173195322
+	<SUM>: 2.3435995876047935
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 1.0
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.9-global-0.1-rho-0.5/ensemble_score_bert-pretrained.csv
+====WORD SET====
+	finance:['finance', 'banking', 'financing', 'securities', 'finances', 'treasury', 'debt', 'shipping', 'logistics', 'fundraising']
+	medicine:['medicine', 'medical', 'medication', 'healthcare', 'treatment', 'medicines', 'physician', 'science', 'health', 'illness']
+	sports:['sports', 'sport', 'sportsco', 'sportswear', 'sportsmen', 'arts', 'sporting', 'music', 'fitness', 'travel']
+	technology:['technology', 'technologies', 'device', 'functionality', 'technological', 'hardware', 'capability', 'technique', 'industry', 'weaponry']
+====PMIS====
+	technology:23.252319535343347
+	finance:32.55871825439168
+	medicine:47.52476652829418
+	sports:9.763446327028428
+	<SUM>: 28.27481266126441
+====NPMIS====
+	technology:1.5800179956916591
+	sports:0.723053750473023
+	finance:2.1958368851994265
+	medicine:3.018253165677773
+	<SUM>: 1.8792904492604703
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.825
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.9-global-0.1-rho-0.5/ensemble_score_bert-local-scratch-30522.csv
+====WORD SET====
+	finance:['finance', 'devastation', 'titan', 'manage', 'disease', 'linking', 'busch', 'commuter', 'entrepreneurs', 'depths']
+	medicine:['sports', 'sportswear', 'sportsco', 'publications', 'irregularities', 'sick', 'laughing', 'sage', 'mason', 'maintaining']
+	sports:['medicine', 'mines', 'warfare', 'magic', 'organize', 'miners', 'colleges', 'judo', 'roads', 'physics']
+	technology:['technology', 'riding', 'scorer', 'talent', 'monetary', 'pricing', 'emerged', 'treasury', 'remove', 'salvation']
+====PMIS====
+	finance:5.977210554858209
+	medicine:2.9849374720897925
+	technology:4.5640173866110345
+	sports:5.7788924572465215
+	<SUM>: 4.826264467701389
+====NPMIS====
+	finance:0.35080980177080745
+	technology:0.41825616914997776
+	sports:0.39708151670174324
+	medicine:0.18726422399822062
+	<SUM>: 0.3383529279051873
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.95
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.9-global-0.1-rho-0.5/ensemble_score_bert-local-scratch-25000.csv
+====WORD SET====
+	finance:['finance', 'manning', 'banking', 'offering', 'watch', 'explosives', 'dropped', 'knight', 'data', 'house']
+	medicine:['medicine', 'duck', 'prohibit', 'publish', 'prohibition', 'pavel', 'daughter', 'ferrari', 'reactor', 'prohibited']
+	sports:['sports', 'sportsmen', 'sportswear', 'sportsco', 'joint', 'usc', 'supervisor', 'supervise', 'grew', 'rushing']
+	technology:['technology', 'management', 'percent', 'trade', 'longed', 'national', 'military', 'judge', 'disney', 'debate']
+====PMIS====
+	medicine:0
+	technology:-18.47192850817598
+	sports:9.20055577234505
+	finance:5.94470704694407
+	<SUM>: -0.8316664222217156
+====NPMIS====
+	sports:0.5689696418663928
+	medicine:0
+	finance:0.5718827551646459
+	technology:0.3428121513660661
+	<SUM>: 0.3709161370992762
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.925
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.9-global-0.1-rho-0.5/ensemble_score_cate-cos-similarities.csv
+====WORD SET====
+	finance:['accounting', 'unumprovident', 'logistics', 'cognos', 'marketing', 'bain', 'investcorp', 'financial', 'kpmg', 'auditor']
+	medicine:['pathology', 'dentistry', 'pharmacy', 'medical', 'dental', 'pediatric', 'patients', 'psychiatric', 'neurological', 'treatment']
+	sports:['basketball', 'baseball', 'lacrosse', 'athletics', 'volleyball', 'bruins', 'hockey', 'mlb', 'soccer', 'softball']
+	technology:['telecommunication', 'robotics', 'communication', 'gps', 'mobile', 'ims', 'gsm', 'technology', 'umts', 'spatial']
+====PMIS====
+	finance:34.35755345311199
+	sports:5.4144915380763745
+	medicine:50.94600667941994
+	technology:54.27773635565359
+	<SUM>: 36.24894700656547
+====NPMIS====
+	sports:0.3255481173195322
+	technology:3.3888237750684236
+	finance:2.2366602119560364
+	medicine:3.18015514941809
+	<SUM>: 2.2827968134405205
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 1.075
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.1/ensemble_score_bert-pretrained.csv
+====WORD SET====
+	finance:['finance', 'banking', 'securities', 'logistics', 'finances', 'accounting', 'financing', 'marketing', 'debt', 'treasury']
+	medicine:['medicine', 'medical', 'dentistry', 'health', 'pathology', 'healthcare', 'pharmacy', 'medicines', 'physics', 'physician']
+	sports:['sports', 'sport', 'basketball', 'athletics', 'arts', 'media', 'broadcasting', 'education', 'hockey', 'wrestling']
+	technology:['technology', 'technologies', 'industry', 'engineering', 'robotics', 'culture', 'software', 'technological', 'programming', 'device']
+====PMIS====
+	technology:24.525329044607865
+	sports:30.523238951791654
+	finance:34.430641862579236
+	medicine:48.32084039326097
+	<SUM>: 34.450012563059936
+====NPMIS====
+	technology:1.769695476155664
+	finance:2.4258585462733606
+	medicine:2.9655614753972563
+	sports:1.9537044332156248
+	<SUM>: 2.278704982760477
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.9
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.1/ensemble_score_bert-local-scratch-30522.csv
+====WORD SET====
+	finance:['finance', 'logistics', 'accounting', 'physics', 'governance', 'strategy', 'procurement', 'counseling', 'banking', 'architecture']
+	medicine:['sports', 'medicine', 'diseases', 'dentistry', 'biology', 'metals', 'astronomy', 'medical', 'physics', 'pharmacy']
+	sports:['medicine', 'sports', 'athletics', 'swimming', 'volleyball', 'wrestling', 'softball', 'mines', 'sport', 'gymnastics']
+	technology:['technology', 'industrial', 'robotics', 'automation', 'marketing', 'cuisine', 'biomedical', 'banking', 'integration', 'technician']
+====PMIS====
+	finance:18.975122727053673
+	technology:15.54619478351533
+	sports:21.633640027739936
+	medicine:23.87080496254856
+	<SUM>: 20.006440625214378
+====NPMIS====
+	finance:1.194891032882148
+	sports:1.3530795455924227
+	medicine:1.4130118178815185
+	technology:0.9485338611678825
+	<SUM>: 1.227379064380993
+====DISTINCTIVENESS====
+	<SUM>: 0.9
+	<SEMANTICALLY DISTINCT>: 0.875
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.1/ensemble_score_bert-local-scratch-25000.csv
+====WORD SET====
+	finance:['finance', 'banking', 'marketing', 'securities', 'financial', 'explosives', 'communications', 'accounting', 'debt', 'bankruptcy']
+	medicine:['medicine', 'pharmacy', 'diseases', 'chemicals', 'accounting', 'cooking', 'healthcare', 'hospitals', 'economics', 'science']
+	sports:['sports', 'sportsmen', 'sportswear', 'sportsco', 'broadcasting', 'volleyball', 'physics', 'gymnastics', 'statistics', 'culture']
+	technology:['technology', 'management', 'industry', 'financial', 'systems', 'communications', 'debate', 'trade', 'culture', 'development']
+====PMIS====
+	medicine:17.08047010290185
+	finance:33.05488317677174
+	technology:11.762396728135766
+	sports:11.190425935602107
+	<SUM>: 18.272043985852864
+====NPMIS====
+	finance:2.521964283872746
+	technology:1.5273670559686259
+	sports:0.7038316680309811
+	medicine:1.0465286916646361
+	<SUM>: 1.4499229248842473
+====DISTINCTIVENESS====
+	<SUM>: 0.9
+	<SEMANTICALLY DISTINCT>: 0.825
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.1/ensemble_score_cate-cos-similarities.csv
+====WORD SET====
+	finance:['accounting', 'logistics', 'marketing', 'securities', 'financial', 'finance', 'management', 'valuation', 'organizational', 'auditor']
+	medicine:['dentistry', 'pathology', 'medicine', 'pharmacy', 'medical', 'dental', 'medications', 'diseases', 'health', 'nutrition']
+	sports:['baseball', 'basketball', 'athletics', 'sports', 'volleyball', 'hockey', 'lacrosse', 'softball', 'football', 'soccer']
+	technology:['technology', 'robotics', 'telecommunication', 'communication', 'technologies', 'telecommunications', 'automation', 'architecture', 'gps', 'spatial']
+====PMIS====
+	sports:15.615648227529686
+	finance:29.840157214758257
+	medicine:33.91466861793551
+	technology:27.691002982969064
+	<SUM>: 26.76536926079813
+====NPMIS====
+	finance:2.1098306555705135
+	sports:1.0909929960926643
+	technology:1.7407059223154415
+	medicine:2.078423479215531
+	<SUM>: 1.7549882632985376
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.95
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.3/ensemble_score_bert-pretrained.csv
+====WORD SET====
+	finance:['finance', 'banking', 'securities', 'logistics', 'finances', 'accounting', 'financing', 'marketing', 'debt', 'treasury']
+	medicine:['medicine', 'medical', 'dentistry', 'healthcare', 'health', 'pathology', 'pharmacy', 'medicines', 'physician', 'physics']
+	sports:['sports', 'sport', 'basketball', 'athletics', 'arts', 'media', 'broadcasting', 'education', 'hockey', 'wrestling']
+	technology:['technology', 'technologies', 'industry', 'engineering', 'robotics', 'culture', 'software', 'technological', 'programming', 'device']
+====PMIS====
+	sports:30.523238951791654
+	medicine:48.320840393260966
+	finance:34.430641862579236
+	technology:24.525329044607865
+	<SUM>: 34.45001256305993
+====NPMIS====
+	finance:2.4258585462733606
+	medicine:2.9655614753972563
+	technology:1.769695476155664
+	sports:1.9537044332156248
+	<SUM>: 2.278704982760477
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.9
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.3/ensemble_score_bert-local-scratch-30522.csv
+====WORD SET====
+	finance:['finance', 'logistics', 'accounting', 'physics', 'governance', 'strategy', 'procurement', 'counseling', 'architecture', 'banking']
+	medicine:['sports', 'medicine', 'diseases', 'dentistry', 'biology', 'metals', 'astronomy', 'medical', 'physics', 'logistics']
+	sports:['medicine', 'sports', 'athletics', 'swimming', 'volleyball', 'wrestling', 'softball', 'mines', 'gymnastics', 'sport']
+	technology:['technology', 'industrial', 'automation', 'robotics', 'marketing', 'cuisine', 'biomedical', 'banking', 'technician', 'integration']
+====PMIS====
+	finance:18.975122727053673
+	sports:21.633640027739936
+	medicine:14.604743244115587
+	technology:15.54619478351533
+	<SUM>: 17.689925195606133
+====NPMIS====
+	finance:1.194891032882148
+	technology:0.9485338611678825
+	sports:1.3530795455924227
+	medicine:0.8691753167568479
+	<SUM>: 1.0914199390998252
+====DISTINCTIVENESS====
+	<SUM>: 0.875
+	<SEMANTICALLY DISTINCT>: 0.85
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.3/ensemble_score_bert-local-scratch-25000.csv
+====WORD SET====
+	finance:['finance', 'banking', 'marketing', 'explosives', 'securities', 'communications', 'financial', 'debt', 'bankruptcy', 'accounting']
+	medicine:['medicine', 'pharmacy', 'chemicals', 'diseases', 'accounting', 'cooking', 'hospitals', 'economics', 'healthcare', 'science']
+	sports:['sports', 'sportsmen', 'sportswear', 'sportsco', 'broadcasting', 'volleyball', 'physics', 'statistics', 'gymnastics', 'architecture']
+	technology:['technology', 'management', 'industry', 'financial', 'systems', 'debate', 'communications', 'trade', 'football', 'development']
+====PMIS====
+	finance:33.054883176771746
+	medicine:17.08047010290185
+	sports:15.893082813624464
+	technology:-0.40782661604645254
+	<SUM>: 16.4051523693129
+====NPMIS====
+	medicine:1.0465286916646361
+	finance:2.5219642838727463
+	technology:1.2870313248975185
+	sports:0.9798363548383178
+	<SUM>: 1.4588401638183046
+====DISTINCTIVENESS====
+	<SUM>: 0.925
+	<SEMANTICALLY DISTINCT>: 0.85
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.3/ensemble_score_cate-cos-similarities.csv
+====WORD SET====
+	finance:['accounting', 'logistics', 'marketing', 'securities', 'financial', 'finance', 'management', 'valuation', 'organizational', 'auditor']
+	medicine:['dentistry', 'pathology', 'medicine', 'pharmacy', 'medical', 'dental', 'medications', 'diseases', 'health', 'nutrition']
+	sports:['baseball', 'basketball', 'athletics', 'sports', 'volleyball', 'hockey', 'lacrosse', 'softball', 'football', 'soccer']
+	technology:['technology', 'robotics', 'telecommunication', 'communication', 'technologies', 'telecommunications', 'automation', 'architecture', 'spatial', 'gps']
+====PMIS====
+	sports:15.615648227529686
+	finance:29.840157214758257
+	medicine:33.91466861793551
+	technology:27.691002982969064
+	<SUM>: 26.76536926079813
+====NPMIS====
+	sports:1.0909929960926643
+	finance:2.1098306555705135
+	medicine:2.078423479215531
+	technology:1.7407059223154415
+	<SUM>: 1.7549882632985376
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.95
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.7/ensemble_score_bert-pretrained.csv
+====WORD SET====
+	finance:['finance', 'banking', 'securities', 'logistics', 'finances', 'financing', 'accounting', 'marketing', 'debt', 'treasury']
+	medicine:['medicine', 'medical', 'dentistry', 'healthcare', 'health', 'pathology', 'pharmacy', 'medicines', 'physician', 'medication']
+	sports:['sports', 'sport', 'basketball', 'athletics', 'arts', 'media', 'broadcasting', 'education', 'hockey', 'wrestling']
+	technology:['technology', 'technologies', 'industry', 'engineering', 'robotics', 'culture', 'software', 'technological', 'programming', 'infrastructure']
+====PMIS====
+	finance:34.430641862579236
+	sports:30.523238951791654
+	technology:31.96182876856853
+	medicine:57.93408117321677
+	<SUM>: 38.712447689039045
+====NPMIS====
+	sports:1.9537044332156248
+	finance:2.4258585462733606
+	medicine:3.553181324753569
+	technology:2.101240830732214
+	<SUM>: 2.508496283743692
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.9
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.7/ensemble_score_bert-local-scratch-30522.csv
+====WORD SET====
+	finance:['finance', 'logistics', 'physics', 'accounting', 'governance', 'strategy', 'counseling', 'procurement', 'architecture', 'advocacy']
+	medicine:['sports', 'medicine', 'diseases', 'dentistry', 'biology', 'metals', 'astronomy', 'medical', 'logistics', 'physics']
+	sports:['medicine', 'sports', 'athletics', 'swimming', 'volleyball', 'wrestling', 'softball', 'mines', 'gymnastics', 'physics']
+	technology:['technology', 'industrial', 'automation', 'robotics', 'cuisine', 'marketing', 'biomedical', 'banking', 'technician', 'intelligence']
+====PMIS====
+	finance:18.077662245079274
+	medicine:14.604743244115587
+	sports:9.283791814676292
+	technology:13.18092711736748
+	<SUM>: 13.78678110530966
+====NPMIS====
+	medicine:0.8691753167568479
+	finance:1.1378284947862167
+	technology:0.7985829623233919
+	sports:0.573909005196958
+	<SUM>: 0.8448739447658536
+====DISTINCTIVENESS====
+	<SUM>: 0.875
+	<SEMANTICALLY DISTINCT>: 0.875
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.7/ensemble_score_bert-local-scratch-25000.csv
+====WORD SET====
+	finance:['finance', 'banking', 'explosives', 'communications', 'financial', 'securities', 'marketing', 'bankruptcy', 'preparation', 'debt']
+	medicine:['medicine', 'pharmacy', 'chemicals', 'diseases', 'cooking', 'accounting', 'hospitals', 'economics', 'science', 'healthcare']
+	sports:['sports', 'sportsmen', 'sportswear', 'sportsco', 'broadcasting', 'volleyball', 'physics', 'statistics', 'gymnastics', 'architecture']
+	technology:['technology', 'management', 'industry', 'financial', 'debate', 'systems', 'communications', 'trade', 'football', 'development']
+====PMIS====
+	finance:21.453956268769968
+	sports:15.893082813624464
+	technology:-0.40782661604645254
+	medicine:17.08047010290185
+	<SUM>: 13.504920642312456
+====NPMIS====
+	finance:1.6549709762371376
+	technology:1.2870313248975185
+	sports:0.9798363548383178
+	medicine:1.0465286916646361
+	<SUM>: 1.2420918369094025
+====DISTINCTIVENESS====
+	<SUM>: 0.95
+	<SEMANTICALLY DISTINCT>: 0.875
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.7/ensemble_score_cate-cos-similarities.csv
+====WORD SET====
+	finance:['accounting', 'logistics', 'marketing', 'securities', 'financial', 'management', 'finance', 'valuation', 'organizational', 'restructuring']
+	medicine:['dentistry', 'pathology', 'medicine', 'pharmacy', 'medical', 'medications', 'diseases', 'dental', 'health', 'nutrition']
+	sports:['baseball', 'basketball', 'athletics', 'sports', 'volleyball', 'hockey', 'lacrosse', 'softball', 'football', 'soccer']
+	technology:['technology', 'robotics', 'telecommunication', 'communication', 'technologies', 'telecommunications', 'automation', 'architecture', 'spatial', 'communications']
+====PMIS====
+	medicine:33.91466861793551
+	finance:31.083776310527746
+	technology:33.714771511523054
+	sports:15.615648227529686
+	<SUM>: 28.582216166879
+====NPMIS====
+	sports:1.0909929960926643
+	medicine:2.078423479215531
+	finance:2.1999859203723737
+	technology:2.1886136511411642
+	<SUM>: 1.8895040117054334
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.925
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.9/ensemble_score_bert-pretrained.csv
+====WORD SET====
+	finance:['finance', 'banking', 'securities', 'logistics', 'finances', 'financing', 'accounting', 'marketing', 'debt', 'treasury']
+	medicine:['medicine', 'medical', 'healthcare', 'dentistry', 'health', 'pathology', 'pharmacy', 'medicines', 'physician', 'medication']
+	sports:['sports', 'sport', 'basketball', 'athletics', 'arts', 'media', 'broadcasting', 'education', 'hockey', 'wrestling']
+	technology:['technology', 'technologies', 'industry', 'engineering', 'robotics', 'culture', 'software', 'technological', 'programming', 'infrastructure']
+====PMIS====
+	finance:34.430641862579236
+	technology:31.96182876856853
+	sports:30.523238951791654
+	medicine:57.93408117321677
+	<SUM>: 38.712447689039045
+====NPMIS====
+	medicine:3.5531813247535684
+	technology:2.101240830732214
+	sports:1.9537044332156248
+	finance:2.4258585462733606
+	<SUM>: 2.508496283743692
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.9
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.9/ensemble_score_bert-local-scratch-30522.csv
+====WORD SET====
+	finance:['finance', 'logistics', 'physics', 'governance', 'accounting', 'strategy', 'counseling', 'procurement', 'architecture', 'advocacy']
+	medicine:['sports', 'medicine', 'diseases', 'biology', 'dentistry', 'metals', 'astronomy', 'medical', 'logistics', 'physics']
+	sports:['medicine', 'sports', 'athletics', 'swimming', 'volleyball', 'wrestling', 'softball', 'mines', 'gymnastics', 'physics']
+	technology:['technology', 'industrial', 'automation', 'robotics', 'cuisine', 'biomedical', 'marketing', 'banking', 'technician', 'intelligence']
+====PMIS====
+	finance:18.077662245079274
+	technology:13.18092711736748
+	sports:9.283791814676292
+	medicine:14.604743244115587
+	<SUM>: 13.78678110530966
+====NPMIS====
+	finance:1.1378284947862167
+	sports:0.573909005196958
+	technology:0.7985829623233919
+	medicine:0.8691753167568479
+	<SUM>: 0.8448739447658536
+====DISTINCTIVENESS====
+	<SUM>: 0.875
+	<SEMANTICALLY DISTINCT>: 0.875
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.9/ensemble_score_bert-local-scratch-25000.csv
+====WORD SET====
+	finance:['finance', 'banking', 'explosives', 'communications', 'financial', 'securities', 'marketing', 'bankruptcy', 'preparation', 'arts']
+	medicine:['medicine', 'pharmacy', 'chemicals', 'diseases', 'cooking', 'accounting', 'hospitals', 'economics', 'science', 'healthcare']
+	sports:['sports', 'sportsmen', 'sportswear', 'sportsco', 'broadcasting', 'volleyball', 'physics', 'statistics', 'gymnastics', 'architecture']
+	technology:['technology', 'management', 'industry', 'financial', 'debate', 'systems', 'communications', 'trade', 'football', 'development']
+====PMIS====
+	medicine:17.08047010290185
+	sports:15.893082813624464
+	finance:15.490029988747601
+	technology:-0.40782661604645254
+	<SUM>: 12.013939072306865
+====NPMIS====
+	sports:0.9798363548383178
+	finance:1.2340845325025835
+	technology:1.2870313248975185
+	medicine:1.0465286916646361
+	<SUM>: 1.136870225975764
+====DISTINCTIVENESS====
+	<SUM>: 0.95
+	<SEMANTICALLY DISTINCT>: 0.875
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.5-global-0.5-rho-0.9/ensemble_score_cate-cos-similarities.csv
+====WORD SET====
+	finance:['accounting', 'logistics', 'marketing', 'securities', 'financial', 'management', 'organizational', 'valuation', 'finance', 'restructuring']
+	medicine:['dentistry', 'pathology', 'medicine', 'pharmacy', 'medical', 'medications', 'diseases', 'health', 'dental', 'nutrition']
+	sports:['baseball', 'basketball', 'athletics', 'sports', 'volleyball', 'hockey', 'softball', 'lacrosse', 'football', 'soccer']
+	technology:['technology', 'robotics', 'telecommunication', 'communication', 'technologies', 'telecommunications', 'automation', 'architecture', 'communications', 'spatial']
+====PMIS====
+	technology:33.714771511523054
+	finance:31.083776310527742
+	sports:15.615648227529686
+	medicine:33.91466861793551
+	<SUM>: 28.582216166879
+====NPMIS====
+	technology:2.1886136511411642
+	sports:1.0909929960926643
+	finance:2.1999859203723737
+	medicine:2.078423479215531
+	<SUM>: 1.8895040117054334
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.925
