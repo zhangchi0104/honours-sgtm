@@ -1,11 +1,2 @@
-__pycache__/
-/data
-wandb/
-tokens.pkl
-raw_inputs.pkl
-tokens-256.pkl
-tokens.pkl
-*.pth
-*.bin
 models/
-*.pkl
+data/
