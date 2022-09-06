@@ -9,6 +9,7 @@ from pytorch_lightning.loggers.wandb import WandbLogger
 
 
 class BertTrainingModule(pl.LightningModule):
+
     def __init__(self, model):
         super().__init__()
         self.model = model
@@ -51,6 +52,7 @@ def parser_args():
                         help="ratio for the trainning set")
     parser.add_argument('--batch_size', type=int, default=4, help='Batch size')
     parser.add_argument('--output_dir', type=str, required=True)
+    parser.add_argument('--num_workers', type=int, default=4)
     parser = pl.Trainer.add_argparse_args(parser)
     return parser.parse_args()
 
@@ -72,6 +74,7 @@ def main(args):
         tokenizer,
         args.train_ratio,
         args.batch_size,
+        args.num_workers,
     )
     training_module = BertTrainingModule(model)
     trainer = pl.Trainer.from_argparse_args(

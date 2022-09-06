@@ -31,7 +31,12 @@ class BertDataset(Dataset):
 
 class BertDataModule(pl.LightningDataModule):
 
-    def __init__(self, data, tokenizer, train_ratio=0.8, batch_size=4):
+    def __init__(self,
+                 data,
+                 tokenizer,
+                 train_ratio=0.8,
+                 batch_size=4,
+                 num_workers=4):
         super().__init__()
         random.shuffle(data)
         train_size = int(len(data) * train_ratio)
@@ -42,6 +47,7 @@ class BertDataModule(pl.LightningDataModule):
         self.collate_fn = DataCollatorForLanguageModeling(self.tokenizer,
                                                           mlm=True,
                                                           mlm_probability=0.15)
+        self.num_workers = num_workers
 
     def setup(self, stage=None):
         self.train_dataset = BertDataset(self.train_data, self.tokenizer)
@@ -51,10 +57,10 @@ class BertDataModule(pl.LightningDataModule):
         return DataLoader(self.train_dataset,
                           self.batch_size,
                           collate_fn=self.collate_fn,
-                          num_workers=4)
+                          num_workers=self.num_workers)
 
     def val_dataloader(self):
         return DataLoader(self.val_dataset,
                           self.batch_size,
                           collate_fn=self.collate_fn,
-                          num_workers=4)
+                          num_workers=self.num_workers)
