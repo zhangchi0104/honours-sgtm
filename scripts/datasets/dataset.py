@@ -5,6 +5,7 @@ from transformers import DataCollatorForLanguageModeling
 
 
 class BertDataset(Dataset):
+
     def __init__(self, data, tokenizer):
         self.data = data
         self.tokenizer = tokenizer
@@ -29,6 +30,7 @@ class BertDataset(Dataset):
 
 
 class BertDataModule(pl.LightningDataModule):
+
     def __init__(self, data, tokenizer, train_ratio=0.8, batch_size=4):
         super().__init__()
         random.shuffle(data)
@@ -48,9 +50,11 @@ class BertDataModule(pl.LightningDataModule):
     def train_dataloader(self):
         return DataLoader(self.train_dataset,
                           self.batch_size,
-                          collate_fn=self.collate_fn)
+                          collate_fn=self.collate_fn,
+                          num_workers=4)
 
     def val_dataloader(self):
         return DataLoader(self.val_dataset,
                           self.batch_size,
-                          collate_fn=self.collate_fn)
+                          collate_fn=self.collate_fn,
+                          num_workers=4)
