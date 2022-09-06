@@ -16,13 +16,13 @@ class BertTrainingModule(pl.LightningModule):
     def training_step(self, batch, batch_idx):
         res = self.model(**batch)
         loss = res.loss
-        self.log('train_loss', loss, op_epoch=True, on_step=False)
+        self.log('train_loss', loss, on_epoch=True, on_step=False)
         return loss
 
     def validation_step(self, batch, batch_idx):
         res = self.model(**batch)
         loss = res.loss
-        self.log('val_loss', loss, op_epoch=True, on_step=False)
+        self.log('val_loss', loss, on_epoch=True, on_step=False)
         return loss
 
     def configure_optimizers(self):
