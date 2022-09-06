@@ -1,98 +1,87 @@
-from pathlib import Path
-import pickle
-import re
-import torch.cuda
-from torch.utils.data import Dataset
-from transformers import BertForPreTraining, Trainer, TrainingArguments, BertConfig
-from transformers import BertTokenizer
-import wandb
-import datetime, argparse
+import os
+import torch
+import pytorch_lightning as pl
+import argparse
+from transformers import BertTokenizer, BertForMaskedLM
+from datasets import BertDataModule
+from pytorch_lightning.callbacks import ModelCheckpoint
+from pytorch_lightning.loggers.wandb import WandbLogger
 
 
-class AgNewsDataset(Dataset):
+class BertTrainingModule(pl.LightningModule):
+    def __init__(self, model):
+        super().__init__()
+        self.model = model
 
-    def __init__(self, encodings):
-        self.eoncodings = encodings
+    def training_step(self, batch, batch_idx):
+        res = self.model(**batch)
+        loss = res.loss
+        self.log('train_loss', loss, op_epoch=True, on_step=False)
+        return loss
 
-    def __len__(self):
-        return len(self.eoncodings['input_ids'])
+    def validation_step(self, batch, batch_idx):
+        res = self.model(**batch)
+        loss = res.loss
+        self.log('val_loss', loss, op_epoch=True, on_step=False)
+        return loss
 
-    def __getitem__(self, i):
-        return {
-            key: torch.tensor(val[i])
-            for key, val in self.eoncodings.items()
+    def configure_optimizers(self):
+        optim = torch.optim.Adam(self.parameters(), lr=1e-4)
+        scheduler = {
+            "scheduler":
+            torch.optim.lr_scheduler.MultiStepLR(
+                optim,
+                [10, 25, 50, 75, 100, 125],
+            ),
+            "interval":
+            "epoch",
         }
+        return [optim], [scheduler]
 
 
-def train(out, dataset, model, batch_size=8, epochs=1):
-    wandb.init(project="honours-sgtm")
-    trainer_args = TrainingArguments(
-        output_dir=out,
-        overwrite_output_dir=True,
-        num_train_epochs=epochs,
-        per_device_train_batch_size=batch_size,
-        report_to='wandb',
-        save_steps=10000,
-        prediction_loss_only=True,
-    )
-    trainer = Trainer(
-        model=model,
-        args=trainer_args,
-        train_dataset=dataset,
-    )
-    trainer.train()
-    trainer.save_model(out)
-
-
-def main():
+def parser_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--out_dir', required=True, type=Path)
-    parser.add_argument('--tokens', required=True, type=Path)
-    parser.add_argument('--batch_size', type=int, default=8)
-    parser.add_argument('--epochs', type=int, default=1)
-    parser.add_argument('--scratch_model', action='store_true')
-    parser.add_argument('--type', default='text')
-    parser.add_argument('--vocab_size', default=30522)
+    parser.add_argument('--dataset_path',
+                        type=str,
+                        required=True,
+                        help='Path to Train-Labeled')
+    parser.add_argument('--train_ratio',
+                        type=float,
+                        default=0.8,
+                        help="ratio for the trainning set")
+    parser.add_argument('--batch_size', type=int, default=4, help='Batch size')
+    parser.add_argument('--output_dir', type=str, required=True)
+    parser = pl.Trainer.add_argparse_args(parser)
+    return parser.parse_args()
 
-    args = parser.parse_args()
-    tokenizer_type, vocab_size = re.findall(
-        'tokens-(scratch|pretrained)-([0-9]+).pkl$', str(args.tokens))[0]
-    name = f'bert-{tokenizer_type}-{vocab_size}-{datetime.datetime.now().strftime("%Y-%m-%d-%H-%M")}'
-    out_dir = args.out_dir / name
-    out_dir.mkdir(exist_ok=True, parents=True)
-    device = 'cuda' if torch.cuda.is_available() else 'cpu'
-    if tokenizer_type == 'scratch':
-        print("Using scratch model")
-        model = BertForPreTraining(BertConfig())
-    else:
-        print("Using pretrained model")
-        model = BertForPreTraining.from_pretrained('bert-base-uncased')
 
-    if not args.scratch_model:
-        if tokenizer_type == 'scratch':
-            print(
-                "Error: scratch_tokens cannot be used when using a pretrained model"
-            )
-            exit(1)
-    else:
-        if tokenizer_type == 'scratch':
-            print("Using scratch tokenizer")
-        else:
-            print("Using pretrained tokenizer")
-    f = open(args.tokens, 'rb')
-    tokens = pickle.load(f)
-    f.close()
-    dataset = AgNewsDataset(tokens)
-
-    train(
-        out=out_dir,
-        model=model,
-        dataset=dataset,
-        batch_size=args.batch_size,
-        epochs=args.epochs,
+def main(args):
+    tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+    model = BertForMaskedLM.from_pretrained('bert-base-uncased')
+    os.makedirs(args.output_dir, exist_ok=True)
+    checkpointer = ModelCheckpoint(
+        dirpath=args.output_dir,
+        every_n_epochs=10,
     )
+    data = None
+    with open(args.dataset_path, 'r') as f:
+        data = f.readlines()
+
+    data_module = BertDataModule(
+        data,
+        tokenizer,
+        args.train_ratio,
+        args.batch_size,
+    )
+    training_module = BertTrainingModule(model)
+    trainer = pl.Trainer.from_argparse_args(
+        args,
+        callbacks=[checkpointer],
+        logger=WandbLogger(project="honours-sgtm"),
+    )
+    trainer.fit(training_module, data_module)
 
 
-if __name__ == "__main__":
-    main()
-# %%
+if __name__ == '__main__':
+    args = parser_args()
+    main(args)
