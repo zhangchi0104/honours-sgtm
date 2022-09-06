@@ -1,13 +1,45 @@
 import argparse as a
-import nltk
+from nltk.tokenize import TreebankWordTokenizer
+from nltk.stem import WordNetLemmatizer
 import re
+from nltk.corpus import stopwords
+from tqdm import tqdm
+from typing import List
+import spacy
+
+spacy.prefer_gpu()
 
 
 def parse_args():
     parser = a.ArgumentParser()
-    parser.add_argument("file", type=str)
+    parser.add_argument("file", type=str, help='path to plaintext file')
     parser.add_argument("--out", "-o", type=str)
     return parser.parse_args()
+
+
+def clean_text(text: List[str], batch_size=200):
+    res = []
+    pipeline = spacy.load('en_core_web_trf')
+    for lo in tqdm(range(0, len(text), batch_size)):
+        hi = min(lo + batch_size, len(text))
+        text_batch = text[lo:hi]
+        _stopwords = set(stopwords.words('english'))
+        processed_lines = list(pipeline.pipe(text_batch))
+        for processed_line in processed_lines:
+            tokens = [
+                token.lemma_.lower() for token in processed_line
+                if token.pos_ not in ['PUNCT', 'SPACE', 'SYM', "NUM"]
+                and token.lemma_ not in _stopwords
+            ]
+            tokens = [
+                token for token in tokens if re.match(r'^[a-zA-Z]+$', token)
+            ]
+            res.append(' '.join(tokens))
+    return res
+
+
+def drop_prefix(line: str):
+    prefix_matcher = re.compile(r'^(afp|ap|)()')
 
 
 def main():
@@ -15,31 +47,12 @@ def main():
 
     f = open(args.file, 'r')
     lines = f.readlines()
+    lines = [line.strip().lower().replace(r'\\', ' ') for line in lines if len(line) > 0]
+    cleaned_text = clean_text(lines)
     f.close()
 
-    cleaned_lines = []
-    for line in lines:
-        line = line.replace(r"\\", ' ')
-        sep = line.find('-')
-        if sep != -1:
-            content = line[sep:]
-        else:
-            content = line
-        words = content.split(' ')
-        cleaned_line = []
-        for word in words:
-            match = re.match(r"""^[\'\"]*([a-zA-Z]+)[\,\.\?\!\;\']*$""", word)
-            if not match:
-                continue
-            word = match.group(1).lower()
-            if word in nltk.corpus.stopwords.words('english'):
-                continue
-            cleaned_line.append(word)
-
-        cleaned_lines.append(' '.join(cleaned_line))
-
     f = open(args.out, 'w')
-    f.write('\n'.join(cleaned_lines))
+    f.write('\n'.join(cleaned_text))
     f.close()
 
 

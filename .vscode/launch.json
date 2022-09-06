@@ -5,6 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "scripts/clean_text.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/clean_text.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "-o=./data/agnew/corpus/agnews_cleaned.txt",
+                "${workspaceFolder}/data/agnew/corpus/content.txt"
+            ]
+        },
+        {
             "name": "sccripts/gen_tokens.py",
             "type": "python",
             "request": "launch",
