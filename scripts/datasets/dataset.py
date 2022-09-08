@@ -50,9 +50,8 @@ class BertDataModule(pl.LightningDataModule):
         self.num_workers = num_workers
 
     def setup(self, stage=None):
-        self.train_dataset = BertDataset(self.train_data[:1000],
-                                         self.tokenizer)
-        self.val_dataset = BertDataset(self.val_data[:1000], self.tokenizer)
+        self.train_dataset = BertDataset(self.train_data, self.tokenizer)
+        self.val_dataset = BertDataset(self.val_data, self.tokenizer)
 
     def train_dataloader(self):
         return DataLoader(self.train_dataset,
