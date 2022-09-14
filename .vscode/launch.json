@@ -5,6 +5,30 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "scripts/embeddings.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/embeddings.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--vocab=./data/agnews/vocab/vocab.pkl",
+                "--seeds=./data/agnews/seed.txt",
+                "--output=./global_similarities.csv"
+            ],
+            "justMyCode": true
+        },
+        {
+            "name": "scripts/select_seed.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/select_seed.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "--dataset=./data/agnews/corpus/agnews_cleaned.txt"
+            ]
+        },
+        {
             "name": "scripts/clean_text.py",
             "type": "python",
             "request": "launch",

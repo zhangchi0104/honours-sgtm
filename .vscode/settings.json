@@ -1,3 +1,6 @@
 {
-    "editor.fontFamily": "'JetBrainsMono Nerd Font', 'JetBrainsMono NF',Consolas, 'Courier New', monospace"
+    "editor.fontFamily": "'JetBrainsMono Nerd Font', 'JetBrainsMono NF',Consolas, 'Courier New', monospace",
+    "python.analysis.extraPaths": [
+        "./scripts"
+    ]
 }

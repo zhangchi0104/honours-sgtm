@@ -1,9 +1,12 @@
 import argparse
-from asyncio.log import logger
 import pandas as pd
 from tqdm import tqdm
 import pickle
 import logging
+from rich.logging import RichHandler
+from rich.progress import track
+
+logging.basicConfig(handlers=[RichHandler()], level=logging.INFO)
 
 
 def parse_args():
@@ -47,7 +50,7 @@ def main(args):
 
 def build_vocabulary(lines, min_count):
     all_occurences = {}
-    loop = tqdm(lines, desc="Building vocabulary")
+    loop = track(lines, description="Building vocabulary")
     for line in loop:
         words = line.split(' ')
         for word in words:
@@ -66,10 +69,10 @@ def build_cooccurance_matrix(
     lines,
     vocabulary,
 ):
-    logger.info("Starting building co-occurrence matrix")
+    logging.info("Starting building co-occurrence matrix")
     coocurrence_matrix = pd.DataFrame(index=vocabulary, columns=vocabulary)
     coocurrence_matrix.fillna(0, inplace=True)
-    for line in tqdm(lines, desc="Building co-occurrence matrix"):
+    for line in track(lines, desc="Building co-occurrence matrix"):
         words = line.split(' ')
         for i in range(len(words)):
             for j in range(i + 1, len(words)):

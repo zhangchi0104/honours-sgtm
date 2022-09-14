@@ -2,3 +2,5 @@ models/
 data/
 wandb/
 train.sh
+*.bin
+
