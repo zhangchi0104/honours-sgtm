@@ -2,7 +2,7 @@ import os
 import torch
 import pytorch_lightning as pl
 import argparse
-from transformers import BertForMaskedLM
+from transformers import BertForMaskedLM, BertConfig
 from utils.dataset import BertDataModule
 from pytorch_lightning.callbacks import ModelCheckpoint
 from pytorch_lightning.loggers.wandb import WandbLogger
@@ -67,13 +67,29 @@ def parser_args():
     parser.add_argument('--num_workers', type=int, default=4)
     parser.add_argument('--tokenizer', type=str, default='')
     parser.add_argument("--verbose", "-v", action='store_true')
+    parser.add_argument("--scartch", action='store_true')
     parser = pl.Trainer.add_argparse_args(parser)
-    return parser.parse_args()
+    args = parser.parse_args()
+
+    return args
 
 
 def main(args):
     tokenizer = load_tokenizer(args.tokenizer)
-    model = BertForMaskedLM.from_pretrained('bert-base-uncased')
+    model = None
+    if args.tokenizer is not None and args.tokenizer.strip() != '':
+        logging.info(
+            "Training BERT from scratch because '--tokenizer is specified'")
+        config = BertConfig(vocab_size=len(tokenizer.vocab))
+        model = BertForMaskedLM(config)
+    elif args.scartch:
+        logging.info(
+            "Training BERT from scratch because '--scratch' is specified")
+        config = BertConfig()
+        model = BertForMaskedLM(config)
+    else:
+        logging.info("Fine tunning BERT")
+        model = BertForMaskedLM.from_pretrained('bert-base-uncased')
     os.makedirs(args.output_dir, exist_ok=True)
     checkpointer = ModelCheckpoint(
         dirpath=args.output_dir,
