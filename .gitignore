@@ -1,5 +1,5 @@
 models/
-data/
+data/***/vocab
 wandb/
 train.sh
 *.bin

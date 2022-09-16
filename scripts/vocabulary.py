@@ -40,13 +40,14 @@ def main(args):
     vocab = build_vocabulary(lines, args.min_count)
     vocab = [word.strip() for word in vocab]
     vocab = set(vocab)
+    logging.info(f"Vocabulary size: {len(vocab)}")
     with open(args.vocabulary_path, 'wb') as f:
         logging.info("Saving vocabulary to %s", args.vocabulary_path)
         pickle.dump(vocab, f)
         logging.info("Done saving vocabulary")
-    if args.cooccurrence_matrix_path is not None:
+    if args.cooccur_path is not None:
         coocurrence_matrix = build_cooccurance_matrix(lines, vocab)
-        coocurrence_matrix.to_csv(args.cooccurrence_matrix_path)
+        coocurrence_matrix.to_csv(args.cooccur_path)
 
 
 def build_vocabulary(lines, min_count):
@@ -73,7 +74,7 @@ def build_cooccurance_matrix(
     logging.info("Starting building co-occurrence matrix")
     coocurrence_matrix = pd.DataFrame(index=vocabulary, columns=vocabulary)
     coocurrence_matrix.fillna(0, inplace=True)
-    for line in track(lines, desc="Building co-occurrence matrix"):
+    for line in track(lines, description="Building co-occurrence matrix"):
         words = line.split(' ')
         for i in range(len(words)):
             for j in range(i + 1, len(words)):

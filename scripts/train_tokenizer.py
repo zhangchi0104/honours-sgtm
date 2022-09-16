@@ -15,7 +15,7 @@ parser.add_argument(
                           if enclosed in quotes",
 )
 parser.add_argument(
-    "--out",
+    "--out_dir",
     default="./",
     type=str,
     help="Path to the output directory, where the files will be saved",
@@ -56,4 +56,4 @@ tokenizer.train(
 )
 
 # Save the files
-tokenizer.save_model(args.out, args.name)
+tokenizer.save_model(args.out_dir, args.name)
