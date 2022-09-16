@@ -67,7 +67,7 @@ def parser_args():
     parser.add_argument('--num_workers', type=int, default=4)
     parser.add_argument('--tokenizer', type=str, default='')
     parser.add_argument("--verbose", "-v", action='store_true')
-    parser.add_argument("--scartch", action='store_true')
+    parser.add_argument("--scratch", action='store_true')
     parser = pl.Trainer.add_argparse_args(parser)
     args = parser.parse_args()
 
@@ -82,7 +82,7 @@ def main(args):
             "Training BERT from scratch because '--tokenizer' is specified")
         config = BertConfig(vocab_size=len(tokenizer.vocab))
         model = BertForMaskedLM(config)
-    elif args.scartch:
+    elif args.scratch:
         logging.info(
             "Training BERT from scratch because '--scratch' is specified")
         config = BertConfig()
@@ -111,6 +111,8 @@ def main(args):
         args,
         callbacks=[checkpointer],
         logger=WandbLogger(project="honours-sgtm"),
+        precision=16,
+        strategy="ddp_find_unused_parameters_false",
     )
     trainer.fit(training_module, data_module)
     torch.save(
