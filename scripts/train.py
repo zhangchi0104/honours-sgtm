@@ -79,7 +79,7 @@ def main(args):
     model = None
     if args.tokenizer is not None and args.tokenizer.strip() != '':
         logging.info(
-            "Training BERT from scratch because '--tokenizer is specified'")
+            "Training BERT from scratch because '--tokenizer' is specified")
         config = BertConfig(vocab_size=len(tokenizer.vocab))
         model = BertForMaskedLM(config)
     elif args.scartch:
