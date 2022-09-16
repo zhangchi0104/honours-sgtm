@@ -8,6 +8,8 @@ from pytorch_lightning.callbacks import ModelCheckpoint
 from pytorch_lightning.loggers.wandb import WandbLogger
 
 from utils.io import load_tokenizer
+from rich.logging import RichHandler
+import logging
 
 
 class BertTrainingModule(pl.LightningModule):
@@ -64,6 +66,7 @@ def parser_args():
     parser.add_argument('--output_dir', type=str, required=True)
     parser.add_argument('--num_workers', type=int, default=4)
     parser.add_argument('--tokenizer', type=str, default='')
+    parser.add_argument("--verbose", "-v", action='store_true')
     parser = pl.Trainer.add_argparse_args(parser)
     return parser.parse_args()
 
@@ -102,4 +105,8 @@ def main(args):
 
 if __name__ == '__main__':
     args = parser_args()
+    if args.verbose:
+        logging.basicConfig(level=logging.INFO, handlers=[RichHandler()])
+    else:
+        logging.basicConfig(handlers=[RichHandler()])
     main(args)

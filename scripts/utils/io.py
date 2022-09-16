@@ -48,4 +48,6 @@ def load_tokenizer(path):
         return tokenizer
     logging.info(f"loading pretrained tokenizer from {path}")
     tokenizer = BertTokenizer(path)
+    logging.info(
+        f"The tokenizer has a vocabulary of size {len(tokenizer.vocab)}")
     return tokenizer
