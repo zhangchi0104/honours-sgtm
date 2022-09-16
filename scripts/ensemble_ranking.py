@@ -1,28 +1,30 @@
 from argparse import ArgumentParser
 import pandas as pd
 import numpy as np
-from pathlib import Path
 from sklearn.preprocessing import MinMaxScaler
-import datetime
+from rich.logging import RichHandler
+from utils.visualize import visualize_results
+
+import logging
 
 
 def parse_args():
     parser = ArgumentParser()
-    parser.add_argument('--global_cos',
+    parser.add_argument('--global_df',
                         '-g',
                         help="path to global consine similarities",
                         type=str,
                         default='./results/global_cos_similarities.csv')
-    parser.add_argument('--local_cos',
+    parser.add_argument('--local_df',
                         '-l',
                         help="path to local cosine similarities",
                         type=str,
                         required=True)
-    parser.add_argument("--out_dir",
+    parser.add_argument("--output",
                         "-o",
-                        help='path to output dir',
+                        help='path to output',
                         type=str,
-                        default="./results/ensemble")
+                        required=True)
     parser.add_argument("--dry_run",
                         "-d",
                         help='do not write output',
@@ -39,6 +41,7 @@ def parse_args():
                         help='weights of global embeddings',
                         default=0.5,
                         type=float)
+    parser.add_argument('--verbose', "-v", action='store_true')
     return parser.parse_args()
 
 
@@ -54,57 +57,44 @@ def scale_data(data):
     return scaler.fit_transform(data)
 
 
-def compute_vocab_ensemble_rankings(score_g_df,
-                                    score_l_df,
-                                    vocab,
-                                    rho=0.5,
-                                    weight_global=0.5,
-                                    weight_local=0.5):
-    raw = np.zeros((len(vocab), score_l_df.shape[1])).astype(np.double)
-    res = pd.DataFrame(raw, index=vocab, columns=score_g_df.columns)
-    for topic_idx in range(score_l_df.shape[1]):
-        score_l = score_l_df.loc[vocab, score_l_df.columns[topic_idx]]
-        score_g = score_g_df.loc[vocab, score_g_df.columns[topic_idx]]
-        res.iloc[:, topic_idx] = ensemble_ranking(score_g, score_l, rho,
-                                                  weight_global, weight_local)
-    return res
+def read_csv(path):
+    df = pd.read_csv(path, index_col=0)
+    df.iloc[:, :] = MinMaxScaler().fit_transform(df)
+    logging.info(f"loaded a csv with shape {df.shape} from {path}")
+    return df
 
 
-def main():
-    args = parse_args()
-    run_ensemble_rankings(local_score=args.local_cos,
-                          global_score=args.global_cos,
-                          local_weight=args.local_weight,
-                          global_weight=args.global_weight,
-                          rho=args.rho,
-                          dry_run=args.dry_run,
-                          out_dir=args.out_dir)
+def rankings2df(rankings, vocab, topics):
+    return pd.DataFrame(rankings, index=vocab, columns=topics)
 
 
-def run_ensemble_rankings(local_score, global_score, local_weight,
-                          global_weight, rho, dry_run, out_dir):
-    global_cos_df = pd.read_csv(global_score, index_col=0)
-    local_cos_df = pd.read_csv(local_score, index_col=0)
-    local_cos_df.loc[:, :] = scale_data(local_cos_df)
-    global_cos_df.loc[:, :] = scale_data(global_cos_df)
-    res = compute_vocab_ensemble_rankings(score_g_df=global_cos_df,
-                                          score_l_df=local_cos_df,
-                                          vocab=local_cos_df.index,
-                                          rho=rho,
-                                          weight_global=global_weight,
-                                          weight_local=local_weight)
-    local_fn = local_score.split('/')[-1]
-    local_fn = local_fn.split('.')[0]
-
-    for topic in global_cos_df.columns:
-        print(
-            f"{topic}: {res[topic].sort_values(ascending=False).index[0:5].to_list()}"
-        )
-    if not dry_run:
-        out_path = Path(out_dir) / f'ensemble_score_{local_fn}.csv'
-        print(f"writing results to {out_path}")
-        res.to_csv(out_path)
+def main(args):
+    local_df = read_csv(args.local_df)
+    global_df = read_csv(args.global_df)
+    assert local_df.columns.to_list() == global_df.columns.to_list()
+    assert local_df.index.to_list() == global_df.index.to_list(
+    ), f"index unmatch {local_df.shape} != {global_df.shape}"
+    rankings = ensemble_ranking(global_df,
+                                local_df,
+                                rho=args.rho,
+                                weight_global=args.global_weight,
+                                weight_local=args.local_weight)
+    logging.info(
+        f"Done ensemble ranking, min score {np.max(rankings)}, max score {np.min(rankings)})"
+    )
+    rankings_df = pd.DataFrame(rankings,
+                               index=global_df.index,
+                               columns=global_df.columns)
+    visualize_results(rankings_df, 10)
+    if not args.dry_run:
+        logging.info(f"saving results to {args.output}")
+        rankings_df.to_csv(args.output)
 
 
 if __name__ == "__main__":
-    main()
+    args = parse_args()
+    if args.verbose:
+        logging.basicConfig(level=logging.INFO, handlers=[RichHandler()])
+    else:
+        logging.basicConfig(level=logging.WARN, handlers=[RichHandler()])
+    main(args)

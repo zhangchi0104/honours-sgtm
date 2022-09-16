@@ -5,6 +5,31 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "scripts/ensemble_ranking.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/ensemble_ranking.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--global_df=./results/agnews/global_cos_similarities.csv",
+                "--local_df=./results/agnews/bert/bert-fintuned.csv",
+                "--output=./test.csv"
+            ],
+            "justMyCode": true
+        },
+        {
+            "name": "scripts/convert_ckpt.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/convert_ckpt.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--output=test",
+                "./models/agnews/bert-finetuned/epoch=49-step=42550.ckpt"
+            ],
+            "justMyCode": true
+        },
+        {
             "name": "scripts/embeddings.py",
             "type": "python",
             "request": "launch",
@@ -13,7 +38,8 @@
             "args": [
                 "--vocab=./data/agnews/vocab/vocab.pkl",
                 "--seeds=./data/agnews/seed.txt",
-                "--output=./global_similarities.csv"
+                "--output=./global_similarities.csv",
+                "--weights=./models/agnews/bert-finetuned/epoch=49-step=42550.ckpt"
             ],
             "justMyCode": true
         },

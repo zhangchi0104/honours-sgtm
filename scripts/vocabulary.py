@@ -1,6 +1,5 @@
 import argparse
 import pandas as pd
-from tqdm import tqdm
 import pickle
 import logging
 from rich.logging import RichHandler
@@ -18,7 +17,7 @@ def parse_args():
                         type=int,
                         default=3)
 
-    parser.add_argument("--cooccurrence_matrix_path",
+    parser.add_argument("--cooccur_path",
                         "-c",
                         help="Path to co-occurrence matrix",
                         type=str,
@@ -37,8 +36,10 @@ def main(args):
     lines = None
     with open(args.input, 'r') as f:
         lines = f.readlines()
-    lines = [line for line in lines if line != '']
+    lines = [line.strip() for line in lines if line != '']
     vocab = build_vocabulary(lines, args.min_count)
+    vocab = [word.strip() for word in vocab]
+    vocab = set(vocab)
     with open(args.vocabulary_path, 'wb') as f:
         logging.info("Saving vocabulary to %s", args.vocabulary_path)
         pickle.dump(vocab, f)

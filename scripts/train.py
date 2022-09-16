@@ -2,10 +2,12 @@ import os
 import torch
 import pytorch_lightning as pl
 import argparse
-from transformers import BertTokenizer, BertForMaskedLM
-from datasets import BertDataModule
+from transformers import BertForMaskedLM
+from utils.dataset import BertDataModule
 from pytorch_lightning.callbacks import ModelCheckpoint
 from pytorch_lightning.loggers.wandb import WandbLogger
+
+from utils.io import load_tokenizer
 
 
 class BertTrainingModule(pl.LightningModule):
@@ -61,12 +63,13 @@ def parser_args():
     parser.add_argument('--batch_size', type=int, default=4, help='Batch size')
     parser.add_argument('--output_dir', type=str, required=True)
     parser.add_argument('--num_workers', type=int, default=4)
+    parser.add_argument('--tokenizer', type=str, default='')
     parser = pl.Trainer.add_argparse_args(parser)
     return parser.parse_args()
 
 
 def main(args):
-    tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+    tokenizer = load_tokenizer(args.tokenizer)
     model = BertForMaskedLM.from_pretrained('bert-base-uncased')
     os.makedirs(args.output_dir, exist_ok=True)
     checkpointer = ModelCheckpoint(
@@ -91,6 +94,10 @@ def main(args):
         logger=WandbLogger(project="honours-sgtm"),
     )
     trainer.fit(training_module, data_module)
+    torch.save(
+        model.model.state_dict(),
+        os.path.join(args.output_dir, 'model_final.pth'),
+    )
 
 
 if __name__ == '__main__':

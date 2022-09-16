@@ -1,17 +1,11 @@
-from ast import arg
-from gc import set_debug
-from pydoc_data.topics import topics
 import pandas as pd
 import numpy as np
-import pickle
 import logging
 from rich.logging import RichHandler
 import argparse
-from transformers import BertModel, BertTokenizer
-import torch
 from utils.embeddings import cosine_similarity_with_topic
-from rich.console import Console
-from rich.table import Table, Column
+from utils.visualize import visualize_results
+from utils.io import load_model, load_tokenizer, load_vocab, load_seed
 
 logging.basicConfig(level=logging.INFO,
                     handlers=[RichHandler()],
@@ -59,56 +53,6 @@ def main(args):
     df = pd.DataFrame(data, index=vocab_set, columns=seeds)
     df.to_csv(args.output)
     visualize_results(df)
-
-
-def visualize_results(df: pd.DataFrame):
-    console = Console()
-    table = Table("Topic", "1st", "2nd", "3rd", "4th", "5th")
-    for topic in df.columns:
-        col = df[topic].sort_values(ascending=False)
-        words = col.head(5).index.to_list()
-        table.add_row(topic, *words)
-    console.print(table)
-
-
-def load_vocab(path):
-    vocab_set = None
-    with open(path, 'rb') as f:
-        vocab_set = pickle.load(f)
-
-    vocab = [word.strip() for word in vocab_set]
-    vocab = list(set(vocab))
-    logging.info(f"Loaded {len(vocab)} words from {path}")
-    return vocab
-
-
-def load_seed(path):
-    seeds = []
-    with open(path, 'r') as f:
-        seeds = f.readlines()
-    seeds = [seed.strip() for seed in seeds]
-    logging.info(f"loaded {len(seeds)} seeds from {path}")
-    return seeds
-
-
-def load_model(path):
-    if path is None or path.strip() == '':
-        logging.info("loading pretrained model")
-        return BertModel.from_pretrained('bert-base-uncased')
-    logging.info(f"loading BERT model from {path}")
-    model = BertModel.from_pretrained('bert-base-uncased')
-    model.load_state_dict(torch.load(path), strict=False)
-    return model.eval()
-
-
-def load_tokenizer(path):
-    if path is None or path.strip() == '':
-        logging.info(f'loaded pretrained tokenizer')
-        tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-        return tokenizer
-    logging.info(f"loading pretrained tokenizer from {path}")
-    tokenizer = BertTokenizer(path)
-    return tokenizer
 
 
 if __name__ == "__main__":
