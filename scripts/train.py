@@ -10,13 +10,15 @@ from pytorch_lightning.loggers.wandb import WandbLogger
 from utils.io import load_tokenizer
 from rich.logging import RichHandler
 import logging
+import wandb
 
 
 class BertTrainingModule(pl.LightningModule):
 
-    def __init__(self, model):
+    def __init__(self, model, from_sratch=False):
         super().__init__()
         self.model = model
+        self.from_scratch = from_sratch
 
     def training_step(self, batch, batch_idx):
         res = self.model(**batch)
@@ -39,15 +41,18 @@ class BertTrainingModule(pl.LightningModule):
         return loss
 
     def configure_optimizers(self):
-        optim = torch.optim.Adam(self.parameters(), lr=1e-4)
+        lr = 1e-4
+        milestones = [10, 25, 50, 75, 100, 125]
+        if self.from_scratch:
+            lr = 1e-2
+            milestones = [25, 50, 75, 100, 125]
+        optim = torch.optim.Adam(self.parameters(), lr=lr)
         scheduler = {
-            "scheduler":
-            torch.optim.lr_scheduler.MultiStepLR(
+            "scheduler": torch.optim.lr_scheduler.MultiStepLR(
                 optim,
-                [10, 25, 50, 75, 100, 125],
+                milestones,
             ),
-            "interval":
-            "epoch",
+            "interval": "epoch",
         }
         return [optim], [scheduler]
 
@@ -68,6 +73,7 @@ def parser_args():
     parser.add_argument('--tokenizer', type=str, default='')
     parser.add_argument("--verbose", "-v", action='store_true')
     parser.add_argument("--scratch", action='store_true')
+    parser.add_argument("--upload_model", action='store_true')
     parser = pl.Trainer.add_argparse_args(parser)
     args = parser.parse_args()
 
@@ -106,8 +112,8 @@ def main(args):
         args.batch_size,
         args.num_workers,
     )
-    training_module = BertTrainingModule(model)
-    trainer = pl.Trainer.from_argparse_args(
+    training_module = BertTrainingModule(model, from_sratch=args.scratch)
+    trainer: pl.Trainer = pl.Trainer.from_argparse_args(
         args,
         callbacks=[checkpointer],
         logger=WandbLogger(project="honours-sgtm"),
@@ -116,13 +122,18 @@ def main(args):
     )
     trainer.fit(training_module, data_module)
     torch.save(
-        model.model.state_dict(),
+        training_module.model.state_dict(),
         os.path.join(args.output_dir, 'model_final.pth'),
     )
+
+    if trainer.current_epoch == trainer.max_epochs - 1 and args.upload_model:
+        logging.info("Uploading model to wandb")
+        wandb.save(os.path.join(args.output_dir, 'model_final.pth'))
 
 
 if __name__ == '__main__':
     args = parser_args()
+
     if args.verbose:
         logging.basicConfig(level=logging.INFO, handlers=[RichHandler()])
     else:
