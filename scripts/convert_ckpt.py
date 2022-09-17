@@ -18,7 +18,7 @@ def main(args):
         Column("New Key", style="magenta"),
     )
     console = Console()
-    pl_state_dict = torch.load(args.weights)
+    pl_state_dict = torch.load(args.weights, map_location='cuda')
     state_dict = pl_state_dict['state_dict']
     res = OrderedDict()
     for key in state_dict.keys():
