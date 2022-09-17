@@ -117,7 +117,6 @@ def main(args):
         args,
         callbacks=[checkpointer],
         logger=WandbLogger(project="honours-sgtm"),
-        precision=16,
         strategy="ddp_find_unused_parameters_false",
     )
     trainer.fit(training_module, data_module)
