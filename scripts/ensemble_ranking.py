@@ -71,9 +71,15 @@ def rankings2df(rankings, vocab, topics):
 def main(args):
     local_df = read_csv(args.local_df)
     global_df = read_csv(args.global_df)
-    assert local_df.columns.to_list() == global_df.columns.to_list()
-    assert local_df.index.to_list() == global_df.index.to_list(
-    ), f"index unmatch {local_df.shape} != {global_df.shape}"
+    vocab = set(local_df.index) & set(global_df.index)
+    dropped = set(local_df.index) - vocab
+    if (len(dropped) > 0):
+        logging.warning(f"dropped {list(dropped)} from local_df")
+    dropped = set(global_df.index) - vocab
+    if (len(dropped) > 0):
+        logging.warning(f"dropped {list(dropped)} from global_df")
+    local_df = local_df.loc[list(vocab)]
+    global_df = global_df.loc[list(vocab)]
     rankings = ensemble_ranking(global_df,
                                 local_df,
                                 rho=args.rho,

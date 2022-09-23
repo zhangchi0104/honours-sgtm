@@ -37,11 +37,15 @@
             "console": "integratedTerminal",
             "args": [
                 "--vocab=./data/agnews/vocab/vocab.pkl",
-                "--seeds=./data/agnews/seed.txt",
-                "--output=./global_similarities.csv",
-                "--weights=./models/agnews/bert-finetuned/epoch=49-step=42550.ckpt"
+                "--seeds=./data/agnews/seed.json",
+                "--output=./cate_cos_similarities",
+                "cate",
+                "--similarities=results/agnews/global_cos_similarities.csv",
+                "--topic=results/agnews/CatE/2022-09-22-14-15/emb_seeds_t.txt",
+                "--words=results/agnews/CatE/2022-09-22-14-15/emb_seeds_w.txt"
+                // "--weights=./models/agnews/bert-finetuned/epoch=49-step=42550.ckpt"
             ],
-            "justMyCode": true
+            "justMyCode": false
         },
         {
             "name": "scripts/select_seed.py",

@@ -1,8 +1,0 @@
-Category (accounting):
-unumprovident cognos unitedhealth kpmg investcorp bain pimco aig dlj intuit 
-Category (pharmacy):
-dentistry dental pediatric orthopedic patients neurological psychiatric acute toxicology treatment 
-Category (baseball):
-lacrosse bruins volleyball mlb intercollegiate hockey pastime league soccer postseason 
-Category (robotics):
-ims gps gsm mobile umts telephones wcdma synchronous downlink ofdm 

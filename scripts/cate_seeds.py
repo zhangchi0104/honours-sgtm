@@ -1,0 +1,66 @@
+import argparse as a
+
+import pandas as pd
+import logging
+from rich.table import Table, Column
+from rich.console import Console
+from rich.logging import RichHandler
+from utils.io import load_seed
+
+
+def parse_args():
+    parser = a.ArgumentParser()
+    parser.add_argument("--verbose", "-v", action="store_true")
+    sub_parser = parser.add_subparsers(dest='command')
+    seed_parser = sub_parser.add_parser("gen_seeds")
+    seed_parser.add_argument("--out", required=True)
+    seed_parser.add_argument("--similarities", required=True)
+    seed_parser.add_argument("--seeds")
+    args = parser.parse_args()
+    return args
+
+
+def main(args):
+    if args.command == "gen_seeds":
+        in_vocab, out_vocab = load_seed(args.seeds, False)
+
+        similarities = pd.read_csv(args.similarities, index_col=0)
+        replacements = find_in_vocab_replacements(out_vocab, similarities)
+        visualize_replacement_seeds(out_vocab, replacements)
+        logging.info(f"Saving seeds to {args.out}")
+        with open(args.out, "w") as f:
+            f.write("\n".join([
+                *in_vocab,
+                *replacements,
+            ]))
+
+
+def find_in_vocab_replacements(seeds: list, similarities: pd.DataFrame):
+    res = []
+    for seed in seeds:
+        sorted_col = similarities[seed].sort_values(ascending=False).head(3)
+        in_vocab_seed = sorted_col.index[0]
+        res.append(in_vocab_seed)
+    return res
+
+
+def visualize_replacement_seeds(old_seeds, new_seeds):
+    console = Console()
+    table = Table(
+        Column("Out-vocab Seeds", style="cyan"),
+        Column("Replaced Seeds", style="magenta"),
+        show_header=True,
+        header_style="bold magenta",
+    )
+    for old_seed, new_seed in zip(old_seeds, new_seeds):
+        table.add_row(old_seed, new_seed)
+    console.print(table)
+
+
+if __name__ == "__main__":
+    args = parse_args()
+    if args.verbose:
+        logging.basicConfig(level=logging.INFO, handlers=[RichHandler()])
+    else:
+        logging.basicConfig(level=logging.WARNING, handlers=[RichHandler()])
+    main(args)

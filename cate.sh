@@ -1,7 +1,7 @@
 #!/bin/bash
 CATE_DIR=../../yumeng5/CatE
 NOW=$(date +"%Y-%m-%d-%H-%M")
-OUT_DIR=./results/CatE/$NOW 
+OUT_DIR=./results/agnews/CatE/$NOW 
 mkdir -p $OUT_DIR
 cd $CATE_DIR && \
 bash ./run.sh && \

@@ -38,16 +38,15 @@ def clean_text(text: List[str], batch_size=200):
     return res
 
 
-def drop_prefix(line: str):
-    prefix_matcher = re.compile(r'^(afp|ap|)()')
-
-
 def main():
     args = parse_args()
 
     f = open(args.file, 'r')
     lines = f.readlines()
-    lines = [line.strip().lower().replace(r'\\', ' ') for line in lines if len(line) > 0]
+    lines = [
+        line.strip().lower().replace(r'\\', ' ') for line in lines
+        if len(line) > 0
+    ]
     cleaned_text = clean_text(lines)
     f.close()
 

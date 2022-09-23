@@ -2,6 +2,7 @@ import pickle
 import logging
 from transformers import BertModel, BertTokenizer
 import torch
+import json
 
 
 def load_vocab(path):
@@ -16,13 +17,16 @@ def load_vocab(path):
     return vocab
 
 
-def load_seed(path):
-    seeds = []
-    with open(path, 'r') as f:
-        seeds = f.readlines()
-    seeds = [seed.strip() for seed in seeds]
-    logging.info(f"loaded {len(seeds)} seeds from {path}")
-    return seeds
+def load_seed(path, combine_result=True):
+    f = open(path, "r")
+    topics = json.load(f)
+    in_vocab, out_vocab = topics['in_vocab'], topics['out_vocab']
+    logging.info(
+        f"Loaded {len(in_vocab)} in-vocab words and {len(out_vocab)} out-vocab words from {path}"
+    )
+    if combine_result:
+        return [*in_vocab, *out_vocab]
+    return in_vocab, out_vocab
 
 
 def load_model(path):

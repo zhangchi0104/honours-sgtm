@@ -9,6 +9,7 @@ import random
 from rich.console import Console
 from rich.logging import RichHandler
 from utils.embeddings import get_bert_embeddings
+import json
 
 logging.basicConfig(level=logging.INFO, handlers=[RichHandler()])
 logger = logging.getLogger("select_seed")
@@ -74,10 +75,12 @@ def main(args):
     console.print("Document seeds: {}".format(doc_seeds))
     console.print("Tokenizer seeds: {}".format(tokenizer_seeds))
     logger.info("Saving seeds to {}".format(args.output))
+    res = {
+        "in_vocab": doc_seeds,
+        "out_vocab": tokenizer_seeds,
+    }
     with open(args.output, "w") as f:
-        f.write("\n".join(doc_seeds))
-        f.write("\n")
-        f.write("\n".join(tokenizer_seeds))
+        json.dump(res, f)
     return
 
 
