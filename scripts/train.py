@@ -103,7 +103,9 @@ def main(args):
     tokenizer.add_tokens(new_tokens)
     logging.info(f"adding {new_tokens} to tokenizer")
     logging.info(f"new tokenizer now has shape {len(tokenizer)}")
-    os.makedirs(os.path.join(args.output_dir, "tokenizer"), exist_ok=True)
+    tokenizer_dir = os.path.join(args.output_dir, "tokenizer")
+    model_dir = os.path.join(args.output_dir, "finetuned-model")
+    os.makedirs(tokenizer_dir, exist_ok=True)
     tokenizer.save_pretrained(os.path.join(args.output_dir, "tokenizer"))
     model.resize_token_embeddings(len(tokenizer))
     os.makedirs(args.output_dir, exist_ok=True)
@@ -133,7 +135,8 @@ def main(args):
     # trainer.tune(training_module, datamodule=data_module)
     trainer.fit(training_module, data_module)
     hg_trainer = Trainer(model=model)
-    hg_trainer.save_model(args.output_dir)
+    logging.info(f"Saving model and config to {model_dir}")
+    hg_trainer.save_model(model_dir)
 
 
 if __name__ == '__main__':
