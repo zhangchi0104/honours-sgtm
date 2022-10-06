@@ -15,10 +15,11 @@ import wandb
 
 class BertTrainingModule(pl.LightningModule):
 
-    def __init__(self, model, from_sratch=False):
+    def __init__(self, model, from_sratch=False, learning_rate=1e-3):
         super().__init__()
         self.model = model
         self.from_scratch = from_sratch
+        self.learning_rate = learning_rate
 
     def training_step(self, batch, batch_idx):
         res = self.model(**batch)
@@ -41,10 +42,9 @@ class BertTrainingModule(pl.LightningModule):
         return loss
 
     def configure_optimizers(self):
-        lr = 1e-4
+        lr = self.learning_rate
         milestones = [10, 25, 50, 75, 100, 125]
         if self.from_scratch:
-            lr = 1e-2
             milestones = [25, 50, 75, 100, 125]
         optim = torch.optim.SGD(self.parameters(), lr=lr)
         scheduler = {
@@ -118,7 +118,9 @@ def main(args):
         callbacks=[checkpointer],
         logger=WandbLogger(project="honours-sgtm"),
         strategy="ddp_find_unused_parameters_false",
+        auto_scale_batch_size="binsearch",
     )
+    trainer.tune(training_module, datamodule=data_module)
     trainer.fit(training_module, data_module)
     hg_trainer = Trainer(model=model)
     hg_trainer.save_model(args.output_dir)
