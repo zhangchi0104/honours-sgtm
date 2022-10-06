@@ -4,6 +4,7 @@ import pickle
 import logging
 from rich.logging import RichHandler
 from rich.progress import track
+from tqdm import tqdm
 
 logging.basicConfig(handlers=[RichHandler()], level=logging.INFO)
 
@@ -74,7 +75,7 @@ def build_cooccurance_matrix(
     logging.info("Starting building co-occurrence matrix")
     coocurrence_matrix = pd.DataFrame(index=vocabulary, columns=vocabulary)
     coocurrence_matrix.fillna(0, inplace=True)
-    for line in track(lines, description="Building co-occurrence matrix"):
+    for line in tqdm(lines, desc="Building co-occurrence matrix"):
         words = line.split(' ')
         for i in range(len(words)):
             for j in range(i + 1, len(words)):

@@ -1,3 +1,4 @@
+from lib2to3.pgen2.tokenize import tokenize
 import os
 import torch
 import pytorch_lightning as pl
@@ -7,7 +8,7 @@ from utils.dataset import BertDataModule
 from pytorch_lightning.callbacks import ModelCheckpoint
 from pytorch_lightning.loggers.wandb import WandbLogger
 
-from utils.io import load_tokenizer
+from utils.io import load_tokenizer, load_vocab
 from rich.logging import RichHandler
 import logging
 import wandb
@@ -68,6 +69,7 @@ def parser_args():
                         default=0.8,
                         help="ratio for the trainning set")
     parser.add_argument('--batch_size', type=int, default=4, help='Batch size')
+    parser.add_argument("--vocab", type=str, required=True)
     parser.add_argument('--output_dir', type=str, required=True)
     parser.add_argument('--num_workers', type=int, default=4)
     parser.add_argument('--tokenizer', type=str, default='')
@@ -82,6 +84,7 @@ def parser_args():
 
 def main(args):
     tokenizer = load_tokenizer(args.tokenizer)
+    vocab = load_vocab(args.vocab)
     model = None
     if args.tokenizer is not None and args.tokenizer.strip() != '':
         logging.info(
@@ -96,6 +99,13 @@ def main(args):
     else:
         logging.info("Fine tunning BERT")
         model = BertForMaskedLM.from_pretrained('bert-base-uncased')
+    new_tokens = list(set(vocab) - set(tokenizer.vocab.keys()))
+    tokenizer.add_tokens(new_tokens)
+    logging.info(f"adding {new_tokens} to tokenizer")
+    logging.info(f"new tokenizer now has shape {len(tokenizer)}")
+    os.makedirs(os.path.join(args.output_dir, "tokenizer"), exist_ok=True)
+    tokenizer.save_pretrained(os.path.join(args.output_dir, "tokenizer"))
+    model.resize_token_embeddings(len(tokenizer))
     os.makedirs(args.output_dir, exist_ok=True)
     checkpointer = ModelCheckpoint(
         dirpath=args.output_dir,
@@ -120,7 +130,7 @@ def main(args):
         strategy="ddp_find_unused_parameters_false",
         auto_scale_batch_size="binsearch",
     )
-    trainer.tune(training_module, datamodule=data_module)
+    # trainer.tune(training_module, datamodule=data_module)
     trainer.fit(training_module, data_module)
     hg_trainer = Trainer(model=model)
     hg_trainer.save_model(args.output_dir)
