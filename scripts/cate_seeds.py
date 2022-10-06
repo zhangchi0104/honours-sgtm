@@ -1,11 +1,16 @@
 import argparse as a
+from array import array
+from shutil import move
+from typing import Iterable
 
 import pandas as pd
 import logging
 from rich.table import Table, Column
 from rich.console import Console
 from rich.logging import RichHandler
+import numpy as np
 from utils.io import load_seed
+import gensim
 
 
 def parse_args():
@@ -15,7 +20,7 @@ def parse_args():
     seed_parser = sub_parser.add_parser("gen_seeds")
     seed_parser.add_argument("--out", required=True)
     seed_parser.add_argument("--similarities", required=True)
-    seed_parser.add_argument("--seeds")
+    seed_parser.add_argument("--seeds", required=True)
     args = parser.parse_args()
     return args
 

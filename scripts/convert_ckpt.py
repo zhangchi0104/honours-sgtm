@@ -1,3 +1,4 @@
+from os import stat
 import torch
 import argparse
 from rich.console import Console
@@ -19,7 +20,10 @@ def main(args):
     )
     console = Console()
     pl_state_dict = torch.load(args.weights, map_location='cuda')
-    state_dict = pl_state_dict['state_dict']
+    try:
+        state_dict = pl_state_dict['state_dict']
+    except KeyError:
+        state_dict = pl_state_dict
     res = OrderedDict()
     for key in state_dict.keys():
         if key.startswith('model.bert.'):
@@ -28,6 +32,9 @@ def main(args):
         elif key.startswith('model.'):
             res[key[6:]] = state_dict[key]
             table.add_row(key, key[6:])
+        elif key.startswith('bert.'):
+            res[key[5:]] = state_dict[key]
+            table.add_row(key, key[5:])
         else:
             res[key] = state_dict[key]
             table.add_row(key, key)

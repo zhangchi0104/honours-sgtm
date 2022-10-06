@@ -2,7 +2,7 @@ import os
 import torch
 import pytorch_lightning as pl
 import argparse
-from transformers import BertForMaskedLM, BertConfig
+from transformers import BertForMaskedLM, BertConfig, Trainer, TrainingArguments
 from utils.dataset import BertDataModule
 from pytorch_lightning.callbacks import ModelCheckpoint
 from pytorch_lightning.loggers.wandb import WandbLogger
@@ -46,7 +46,7 @@ class BertTrainingModule(pl.LightningModule):
         if self.from_scratch:
             lr = 1e-2
             milestones = [25, 50, 75, 100, 125]
-        optim = torch.optim.Adam(self.parameters(), lr=lr)
+        optim = torch.optim.SGD(self.parameters(), lr=lr)
         scheduler = {
             "scheduler": torch.optim.lr_scheduler.MultiStepLR(
                 optim,
@@ -120,14 +120,8 @@ def main(args):
         strategy="ddp_find_unused_parameters_false",
     )
     trainer.fit(training_module, data_module)
-    torch.save(
-        training_module.model.state_dict(),
-        os.path.join(args.output_dir, 'model_final.pth'),
-    )
-
-    if trainer.current_epoch == trainer.max_epochs - 1 and args.upload_model:
-        logging.info("Uploading model to wandb")
-        wandb.save(os.path.join(args.output_dir, 'model_final.pth'))
+    hg_trainer = Trainer(model=model)
+    hg_trainer.save_model(args.output_dir)
 
 
 if __name__ == '__main__':

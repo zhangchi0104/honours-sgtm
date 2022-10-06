@@ -1,8 +1,9 @@
 import argparse as a
-from nltk.tokenize import TreebankWordTokenizer
-from nltk.stem import WordNetLemmatizer
+from curses import nl
+from lib2to3.pgen2 import token
 import re
 from nltk.corpus import stopwords
+from nltk.stem.wordnet import WordNetLemmatizer
 from tqdm import tqdm
 from typing import List
 import spacy
@@ -19,21 +20,38 @@ def parse_args():
 
 def clean_text(text: List[str], batch_size=200):
     res = []
+    lemmatizer = WordNetLemmatizer()
     pipeline = spacy.load('en_core_web_trf')
+
     for lo in tqdm(range(0, len(text), batch_size)):
         hi = min(lo + batch_size, len(text))
         text_batch = text[lo:hi]
         _stopwords = set(stopwords.words('english'))
-        processed_lines = list(pipeline.pipe(text_batch))
+        processed_lines = list(
+            pipeline.pipe(text_batch, disable=['ner', 'parser']))
         for processed_line in processed_lines:
             tokens = [
-                token.lemma_.lower() for token in processed_line
+                token for token in processed_line
                 if token.pos_ not in ['PUNCT', 'SPACE', 'SYM', "NUM"]
                 and token.lemma_ not in _stopwords
             ]
-            tokens = [
-                token for token in tokens if re.match(r'^[a-zA-Z]+$', token)
+            words = [token.lemma_.lower() for token in tokens]
+            pos_dict = {
+                "NOUN": "n",
+                "ADJ": "a",
+                "ADV": "r",
+                "VERB": "v",
+            }
+            pos = [pos_dict.get(token.pos_, "n") for token in tokens]
+
+            words = [
+                token for token in words
+                if re.match(r'^[a-zA-Z]+$', token) and len(token) >= 3
             ]
+            tokens = [
+                lemmatizer.lemmatize(word, p) for word, p in zip(words, pos)
+            ]
+
             res.append(' '.join(tokens))
     return res
 

@@ -4,6 +4,7 @@ import numpy as np
 import logging
 from rich.logging import RichHandler
 import argparse
+from utils import embeddings
 from utils.embeddings import cosine_similarity_with_topic
 from utils.visualize import visualize_results
 from utils.io import load_model, load_tokenizer, load_vocab, load_seed
@@ -21,6 +22,8 @@ def parse_args():
 
     parser.add_argument("--vocab", type=str, required=True)
     parser.add_argument("--output", type=str, required=True)
+    parser.add_argument("--out_embeddings", type=str)
+    parser.add_argument("--device", type=str, default='cpu')
     parser.add_argument("--seeds", type=str, required=True)
     # Bert Parser
     bert_parser.add_argument("--weights", type=str, default="")
@@ -62,17 +65,27 @@ def bert_embeddings(args):
     data = np.zeros((len(vocab_set), len(seeds)))
     logging.info(
         f"Created a dataframe for cosine similarities with shape {df.shape}")
-    model = load_model(args.weights)
+    logging.info(f"Using device {args.device}")
+    model = load_model(args.weights, device=args.device)
+    model.to(args.device)
     tokenizer = load_tokenizer(args.tokenizer)
     for i, topic in enumerate(df.columns):
-        similarities = cosine_similarity_with_topic(topic,
-                                                    vocab_set,
-                                                    tokenizer,
-                                                    model,
-                                                    batch_size=512)
+        similarities, embeddings = cosine_similarity_with_topic(
+            topic,
+            vocab_set,
+            tokenizer,
+            model,
+            batch_size=8192,
+            device=args.device)
         data[:, i] = similarities
 
     df = pd.DataFrame(data, index=vocab_set, columns=seeds)
+    embeddings_df = pd.DataFrame(data, index=vocab_set, columns=range(768))
+    if args.out_embeddings:
+        logging.info(
+            f"writing embeddings with shape {embeddings_df.shape} to {args.out_embeddings}"
+        )
+        embeddings_df.to_csv(args.out_embeddings)
     return df
 
 
