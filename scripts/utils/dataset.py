@@ -9,39 +9,49 @@ class BertDataset(Dataset):
     def __init__(self, data, tokenizer):
         self.data = data
         self.tokenizer = tokenizer
+        self.tokenizer_vocab = tokenizer.get_vocab()
 
     def __len__(self):
         return len(self.data)
 
+    def tokenize(self, text: str):
+        tokens = self.tokenizer.basic_tokenizer.tokenize(
+            text,
+            never_split=self.tokenizer_vocab.keys(),
+        )
+        tokens = self.tokenizer.encode_plus(tokens,
+                                            max_length=512,
+                                            trancation='longest',
+                                            return_tensors='pt',
+                                            return_special_tokens_mask=True,
+                                            padding='max_length')
+
+        return tokens
+
     def __getitem__(self, index):
         line = self.data[index]
-        tokens = self.tokenizer(line,
-                                return_tensors='pt',
-                                return_special_tokens_mask=True,
-                                max_length=512,
-                                truncation=True,
-                                padding='max_length')
+        tokens = self.tokenize(line)
+        # self.tokenizer.encode_plus()
+        # tokens = self.tokenizer(line,
+        #                         return_tensors='pt',
+        #                         return_special_tokens_mask=True,
+        #                         padding='max_length')
         return {
-            "input_ids": tokens['input_ids'].squeeze(0),
-            "attention_mask": tokens['attention_mask'].squeeze(0),
-            "token_type_ids": tokens['token_type_ids'].squeeze(0),
-            "special_tokens_mask": tokens['special_tokens_mask'].squeeze(0)
+            "input_ids": tokens['input_ids'].squeeze(0)[:512],
+            "attention_mask": tokens['attention_mask'].squeeze(0)[:512],
+            "token_type_ids": tokens['token_type_ids'].squeeze(0)[:512],
+            "special_tokens_mask":
+            tokens['special_tokens_mask'].squeeze(0)[:512]
         }
 
 
 class BertDataModule(pl.LightningDataModule):
 
-    def __init__(self,
-                 data,
-                 tokenizer,
-                 train_ratio=0.8,
-                 batch_size=4,
-                 num_workers=4):
+    def __init__(self, data, tokenizer, batch_size=4, num_workers=4):
         super().__init__()
         random.shuffle(data)
-        train_size = int(len(data) * train_ratio)
-        self.train_data = data[:train_size]
-        self.val_data = data[train_size:]
+
+        self.train_data = data
         self.batch_size = batch_size
         self.tokenizer = tokenizer
         self.collate_fn = DataCollatorForLanguageModeling(self.tokenizer,
@@ -51,17 +61,9 @@ class BertDataModule(pl.LightningDataModule):
 
     def setup(self, stage=None):
         self.train_dataset = BertDataset(self.train_data, self.tokenizer)
-        self.val_dataset = BertDataset(self.val_data, self.tokenizer)
 
     def train_dataloader(self):
         return DataLoader(self.train_dataset,
-                          self.batch_size,
-                          collate_fn=self.collate_fn,
-                          num_workers=self.num_workers,
-                          persistent_workers=True)
-
-    def val_dataloader(self):
-        return DataLoader(self.val_dataset,
                           self.batch_size,
                           collate_fn=self.collate_fn,
                           num_workers=self.num_workers,

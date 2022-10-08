@@ -5,6 +5,26 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "train.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/train.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                "--verbose",
+                "--vocab=data/scidoc/vocab/vocab_phrase.pkl",
+                "--dataset_path=data/scidoc/corpus/phrase_text.txt",
+                "--accelerator=cuda",
+                "--max_epochs=50",
+                "--output_dir=./models/scidoc/fintuned-bert/",
+                "--num_workers=16",
+                "--precision=16",
+                "--upload_model",
+                "--seeds=./data/scidoc/seeds.json"
+            ]
+        },
+        {
             "name": "scripts/ensemble_ranking.py",
             "type": "python",
             "request": "launch",

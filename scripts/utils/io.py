@@ -29,32 +29,23 @@ def load_seed(path, combine_result=True):
     return in_vocab, out_vocab
 
 
-def load_model(path, device='cpu'):
-    if path is None or path.strip() == '':
-        logging.info("loading pretrained model")
-        return BertModel.from_pretrained('bert-base-uncased')
-    logging.info(f"loading BERT model from {path}")
-    model = BertModel(con)
-    weights = torch.load(path, map_location=device)
+def load_model(path=None, device='cpu'):
+    if path is None:
+        model = BertModel.from_pretrained('bert-base-uncased')
+    else:
+        model = BertModel.from_pretrained(path)
+    model.eval()
     model.to(device)
-    missing_keys, unexpected_keys = model.load_state_dict(
-        weights,
-        strict=False,
-    )
-    logging.warn(f"the following keys are missing: {missing_keys}")
-    logging.warn(f"the following keys are unexpected: {unexpected_keys}")
-    return model.eval()
+    return model
 
 
-def load_tokenizer(path):
-    if path is None or path.strip() == '':
-        logging.info(f'loaded pretrained tokenizer')
+def load_tokenizer(path=None):
+    if path is None:
+        logging.info("Loading pretrained tokenizer")
         tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
-        return tokenizer
-    logging.info(f"loading pretrained tokenizer from {path}")
-    tokenizer = BertTokenizer(path)
-    logging.info(
-        f"The tokenizer has a vocabulary of size {len(tokenizer.vocab)}")
+    else:
+        logging.info(f"loading tokenizer from {path}")
+        tokenizer = BertTokenizer.from_pretrained(path)
     return tokenizer
 
 

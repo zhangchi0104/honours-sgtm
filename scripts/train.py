@@ -7,8 +7,8 @@ from transformers import BertForMaskedLM, BertConfig, Trainer, TrainingArguments
 from utils.dataset import BertDataModule
 from pytorch_lightning.callbacks import ModelCheckpoint
 from pytorch_lightning.loggers.wandb import WandbLogger
-
-from utils.io import load_tokenizer, load_vocab
+from tokenizers import AddedToken
+from utils.io import load_seed, load_tokenizer, load_vocab
 from rich.logging import RichHandler
 import logging
 import wandb
@@ -16,7 +16,7 @@ import wandb
 
 class BertTrainingModule(pl.LightningModule):
 
-    def __init__(self, model, from_sratch=False, learning_rate=1e-3):
+    def __init__(self, model, from_sratch=False, learning_rate=1e-4):
         super().__init__()
         self.model = model
         self.from_scratch = from_sratch
@@ -32,22 +32,12 @@ class BertTrainingModule(pl.LightningModule):
                  sync_dist=True)
         return loss
 
-    def validation_step(self, batch, batch_idx):
-        res = self.model(**batch)
-        loss = res.loss
-        self.log('val_loss',
-                 loss,
-                 on_epoch=True,
-                 on_step=False,
-                 sync_dist=True)
-        return loss
-
     def configure_optimizers(self):
         lr = self.learning_rate
         milestones = [10, 25, 50, 75, 100, 125]
         if self.from_scratch:
             milestones = [25, 50, 75, 100, 125]
-        optim = torch.optim.SGD(self.parameters(), lr=lr)
+        optim = torch.optim.AdamW(self.parameters(), lr=lr)
         scheduler = {
             "scheduler": torch.optim.lr_scheduler.MultiStepLR(
                 optim,
@@ -64,17 +54,14 @@ def parser_args():
                         type=str,
                         required=True,
                         help='Path to Train-Labeled')
-    parser.add_argument('--train_ratio',
-                        type=float,
-                        default=0.8,
-                        help="ratio for the trainning set")
     parser.add_argument('--batch_size', type=int, default=4, help='Batch size')
     parser.add_argument("--vocab", type=str, required=True)
     parser.add_argument('--output_dir', type=str, required=True)
     parser.add_argument('--num_workers', type=int, default=4)
-    parser.add_argument('--tokenizer', type=str, default='')
+    parser.add_argument('--tokenizer', type=str, default=None)
     parser.add_argument("--verbose", "-v", action='store_true')
     parser.add_argument("--scratch", action='store_true')
+    parser.add_argument("--seeds", required=True)
     parser.add_argument("--upload_model", action='store_true')
     parser = pl.Trainer.add_argparse_args(parser)
     args = parser.parse_args()
@@ -99,14 +86,22 @@ def main(args):
     else:
         logging.info("Fine tunning BERT")
         model = BertForMaskedLM.from_pretrained('bert-base-uncased')
-    new_tokens = list(set(vocab) - set(tokenizer.vocab.keys()))
+    seeds = load_seed(args.seeds, combine_result=True)
+    new_tokens = list((set(vocab) - set(tokenizer.vocab.keys())).union(seeds))
+    logging.info("hiv_aids" in new_tokens)
+    new_tokens = [
+        AddedToken(word, single_word=True) for word in new_tokens
+        if '_' in word
+    ]
+
     tokenizer.add_tokens(new_tokens)
-    logging.info(f"adding {new_tokens} to tokenizer")
+    # logging.info(f"adding {new_tokens} to tokenizer")
     logging.info(f"new tokenizer now has shape {len(tokenizer)}")
     tokenizer_dir = os.path.join(args.output_dir, "tokenizer")
     model_dir = os.path.join(args.output_dir, "finetuned-model")
     os.makedirs(tokenizer_dir, exist_ok=True)
-    tokenizer.save_pretrained(os.path.join(args.output_dir, "tokenizer"))
+    tokenizer.save_pretrained(tokenizer_dir)
+    logging.info(f"save tokenizer to {tokenizer_dir}")
     model.resize_token_embeddings(len(tokenizer))
     os.makedirs(args.output_dir, exist_ok=True)
     checkpointer = ModelCheckpoint(
@@ -120,7 +115,6 @@ def main(args):
     data_module = BertDataModule(
         data,
         tokenizer,
-        args.train_ratio,
         args.batch_size,
         args.num_workers,
     )

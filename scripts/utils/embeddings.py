@@ -45,20 +45,17 @@ def cosine_similarity_with_topic(topic,
     topic_emb = model(**topic_tokens)
     topic_emb = topic_emb.last_hidden_state[0, 1, :].detach().cpu().numpy()
     res = []
-    res_embeddings = np.zeros((len(vocab), 768))
+
     for lo in track(range(0, len(vocab), batch_size),
                     description=f"Computing cosine similarites for {topic}"):
         hi = min(lo + batch_size, len(vocab))
         batch = vocab[lo:hi]
         inputs = tokenizer(batch, return_tensors='pt', padding=True)
         inputs.to(device)
-        embeddings = None
         with torch.no_grad():
             outputs = model(**inputs)
             embeddings = outputs.last_hidden_state.detach().cpu().numpy(
             )[:, 1:, :]
-            res_embeddings = outputs.last_hidden_state.detach().cpu().numpy(
-            )[:, 1, :]
         endings = torch.argwhere(inputs['input_ids'] == 102)
         endings[:, 1] = endings[:, 1] - 1
         for end in endings:
@@ -72,5 +69,5 @@ def cosine_similarity_with_topic(topic,
                 weights = [stem_weight]
                 weights.extend([weights_rest] * (similarities.shape[0] - 1))
                 res.append(np.average(similarities, weights=weights))
-    print(res)
-    return np.array(res), res_embeddings
+    print(max(res))
+    return np.array(res)

@@ -1,0 +1,17 @@
+{
+    "in_vocab": [
+        "cardiovascular_disease",
+        "chronic_kidney_disease",
+        "mental_disorder",
+        "musculoskeletal_disorder",
+        "neoplasm",
+        "neurological_disorder"
+    ],
+    "out_vocab": [
+        "chronic_respiratory_disease",
+        "diabetes_mellitus",
+        "digestive_disease",
+        "hiv_aids",
+        "hepatitis_a_b_c_e"
+    ]
+}

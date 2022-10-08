@@ -3,4 +3,6 @@ data/***/vocab
 wandb/
 train.sh
 *.bin
+results/***/embeddings.csv
 
+data/***/cooccurence*.csv
