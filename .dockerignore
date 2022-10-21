@@ -2,8 +2,6 @@ models/
 results/
 jobs/
 data/***/*.csv
-data/***/*.pkl
-data/***/vocab/
 data/agnews/vocab
 thesis_b_demo/
 wandb/
@@ -11,4 +9,5 @@ wandb/
 .ipynb_checkpoints/
 .idea/
 .git/
+*.zip
 __pycache__/

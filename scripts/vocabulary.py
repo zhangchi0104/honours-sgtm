@@ -47,6 +47,7 @@ def main(args):
         pickle.dump(vocab, f)
         logging.info("Done saving vocabulary")
     if args.cooccur_path is not None:
+        vocab = list(vocab)
         coocurrence_matrix = build_cooccurance_matrix(lines, vocab)
         coocurrence_matrix.to_csv(args.cooccur_path)
 

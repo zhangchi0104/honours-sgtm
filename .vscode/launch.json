@@ -5,6 +5,35 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "scripts/similarities.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/similarities.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--seeds=./data/scidoc/seeds.json",
+                "--vocab=./data/scidoc/vocab/vocab_phrase.pkl",
+                "--output=./results/scidoc/similarities.csv",
+                "--device=cuda",
+                "bert",
+                "--weights=./models/scidoc/bert/finetuned-model",
+                "--tokenizer=./models/scidoc/bert/tokenizer",
+                "--embeddings=./results/scidoc/embeddings_reduced.csv"
+            ]
+        },
+        {
+            "name": "rank_reduction.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/rank_reduction.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "--embeddings=./results/scidoc/embeddings.csv",
+                "--similarities=./results/scidoc/similarities.csv"
+            ]
+        },
+        {
             "name": "train.py",
             "type": "python",
             "request": "launch",

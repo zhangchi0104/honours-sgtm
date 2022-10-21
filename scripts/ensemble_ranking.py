@@ -1,10 +1,11 @@
 from argparse import ArgumentParser
+from unittest import result
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 from rich.logging import RichHandler
 from utils.visualize import visualize_results
-
+import os
 import logging
 
 
@@ -14,7 +15,8 @@ def parse_args():
                         '-g',
                         help="path to global consine similarities",
                         type=str,
-                        default='./results/global_cos_similarities.csv')
+                        default='./results/global_cos_similarities.csv',
+                        required=True)
     parser.add_argument('--local_df',
                         '-l',
                         help="path to local cosine similarities",
@@ -68,9 +70,17 @@ def rankings2df(rankings, vocab, topics):
     return pd.DataFrame(rankings, index=vocab, columns=topics)
 
 
-def main(args):
-    local_df = read_csv(args.local_df)
-    global_df = read_csv(args.global_df)
+def run_ensemble_rankings(
+    global_score: str,
+    local_score: str,
+    global_weight: float,
+    local_weight: float,
+    rho: float,
+    out_dir: str,
+    dry_run=False,
+):
+    local_df = read_csv(local_score)
+    global_df = read_csv(global_score)
     vocab = set(local_df.index) & set(global_df.index)
     dropped = set(local_df.index) - vocab
     if (len(dropped) > 0):
@@ -82,9 +92,9 @@ def main(args):
     global_df = global_df.loc[list(vocab)]
     rankings = ensemble_ranking(global_df,
                                 local_df,
-                                rho=args.rho,
-                                weight_global=args.global_weight,
-                                weight_local=args.local_weight)
+                                rho=rho,
+                                weight_global=global_weight,
+                                weight_local=local_weight)
     logging.info(
         f"Done ensemble ranking, min score {np.max(rankings)}, max score {np.min(rankings)})"
     )
@@ -92,9 +102,23 @@ def main(args):
                                index=global_df.index,
                                columns=global_df.columns)
     visualize_results(rankings_df, 10)
-    if not args.dry_run:
-        logging.info(f"saving results to {args.output}")
-        rankings_df.to_csv(args.output)
+
+    if not dry_run:
+        results_path = os.path.join(out_dir, 'result.csv')
+        logging.info(f"saving results to {results_path}")
+        rankings_df.to_csv(results_path)
+
+
+def main(args):
+    run_ensemble_rankings(
+        global_score=args.global_df,
+        local_score=args.local_df,
+        global_weight=args.global_weight,
+        local_weight=args.local_weight,
+        rho=args.rho,
+        dry_run=args.dry_run,
+        out_dir=args.output,
+    )
 
 
 if __name__ == "__main__":

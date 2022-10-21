@@ -1,0 +1,17 @@
+
+{
+    "in_vocab": [
+        "religion",
+        "hardware",
+        "space",
+        "gun",
+        "medicine"
+    ],
+    "out_vocab":[
+        "crypt",
+        "graphics",
+        "sports",
+        "politics",
+        "windows"
+    ]
+}

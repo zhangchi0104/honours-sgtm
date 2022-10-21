@@ -1,0 +1,163 @@
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.1-global-0.9-rho-0.5/result.csv
+====WORD SET====
+	cardiovascular_disease:['cardiovascular_disease', 'coronary_heart_disease', 'metabolic_syndrome', 'abdominal_obesity', 'vascular_disease', 'mix_hyperlipidemia', 'end_stage_renal_disease', 'chronic_renal_failure', 'subclinical_atherosclerosis', 'cardiovascular_risk']
+	chronic_kidney_disease:['chronic_kidney_disease', 'modification_diet_renal_disease', 'serum_creatinine', 'renal_function', 'glomerular_filtration_rate', 'end_stage_renal_disease', 'renal_failure', 'estimate_glomerular_filtration_rate_egfr', 'estimate_glomerular_filtration_rate', 'peritoneal_dialysis']
+	mental_disorder:['mental_disorder', 'psychotic_disorder', 'posttraumatic_stress_disorder', 'mental_illness', 'intellectual_disability', 'psychiatric_disorder', 'autism', 'mentally_ill', 'personality_disorder', 'post_traumatic_stress_disorder']
+	musculoskeletal_disorder:['musculoskeletal_disorder', 'cfa', 'plurality', 'health_literacy', 'magical', 'unitary', 'proxy', 'cain', 'cfas', 'exemplary']
+	neoplasm:['neoplasm', 'neoadjuvantly', 'neoplastic', 'neoplasia', 'neoaltto', 'neoadjuvant', 'neovascularisation', 'neobladder', 'neovessel', 'neovascularization']
+	neurological_disorder:['neurological_disorder', 'groningen_netherlands', 'medical_oncology', 'behavioral_medicine', 'wiley_periodical_inc', 'sheffield', 'barcelona_spain', 'emergency_medicine', 'santa_clara_valley', 'berlin_germany']
+	chronic_respiratory_disease:['spread_depolarization', 'impulse_control_disorder', 'slow_wave_sleep', 'poor_sleeper', 'dopamine_antagonist', 'motor_fluctuation_dyskinesia', 'plasma_mhpg', 'rapid_eye_movement_sleep', 'striatal_dopamine', 'chronic_respiratory_disease']
+	diabetes_mellitus:['iron_deficiency_anemia', 'asia_pacific', 'blurred_vision', 'nasal_congestion', 'pip_tazo', 'acpa_titer', 'cerebral_hemorrhage', 'intrahepatic_cccdna', 'urinary_tract_infection', 'diabetes_mellitus']
+	digestive_disease:['capital_city', 'monroe_county', 'catchment_area', 'speak_english', 'san_francisco_general_hospital', 'health_maintenance_organization', 'middle_income_country', 'private_school', 'southeast_michigan', 'digestive_disease']
+	hiv_aids:['population_density', 'framingham_heart_study', 'publication_bias', 'variant_allele', 'genetic_variability', 'genetic_predisposition', 'uremic_solute', 'opposite_direction', 'primary_sclerosing_cholangitis', 'hiv_aids']
+	hepatitis_a_b_c_e:['blunt_trauma', 'air_filter', 'aortic_aneurysm', 'leave_anterior_descend', 'sternal_wound', 'cardiac_tamponade', 'definite_probable_stent_thrombosis', 'ica_occlusion', 'remnant_laa_stump', 'hepatitis_a_b_c_e']
+====PMIS====
+	chronic_respiratory_disease:6.949980818873649
+	hiv_aids:9.837935366523125
+	neoplasm:29.264723101592566
+	digestive_disease:15.393134765639154
+	chronic_kidney_disease:116.07121668102371
+	mental_disorder:75.80779382220531
+	diabetes_mellitus:0
+	hepatitis_a_b_c_e:0
+	musculoskeletal_disorder:6.822043703593476
+	cardiovascular_disease:55.974324929713326
+	neurological_disorder:11.070446163764371
+	<SUM>: 29.74469085026625
+====NPMIS====
+	hepatitis_a_b_c_e:0
+	digestive_disease:0.7888848194244518
+	diabetes_mellitus:0
+	chronic_respiratory_disease:0.38196497363012105
+	hiv_aids:0.49221437205489316
+	musculoskeletal_disorder:0.3487733804298958
+	neurological_disorder:0.5869356411270794
+	cardiovascular_disease:3.2556842205586376
+	chronic_kidney_disease:6.857090960900505
+	mental_disorder:4.268091358108842
+	neoplasm:1.5782476691712626
+	<SUM>: 1.6870806723096081
+====DISTINCTIVENESS====
+	<SUM>: 0.990909090909091
+	<SEMANTICALLY DISTINCT>: 0.990909090909091
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.2-global-0.8-rho-0.5/result.csv
+====WORD SET====
+	cardiovascular_disease:['cardiovascular_disease', 'coronary_heart_disease', 'metabolic_syndrome', 'abdominal_obesity', 'cardiovascular_risk', 'mix_hyperlipidemia', 'cardiovascular_risk_factor', 'morbidly_obese', 'incident_chd', 'non_alcoholic_fatty_liver_disease']
+	chronic_kidney_disease:['chronic_kidney_disease', 'modification_diet_renal_disease', 'serum_creatinine', 'glomerular_filtration_rate', 'renal_function', 'estimate_glomerular_filtration_rate', 'estimate_glomerular_filtration_rate_egfr', 'end_stage_renal_disease', 'renal_failure', 'blood_urea_nitrogen']
+	mental_disorder:['mental_disorder', 'psychotic_disorder', 'intellectual_disability', 'mental_illness', 'posttraumatic_stress_disorder', 'psychiatric_disorder', 'mentally_ill', 'antisocial_personality_disorder', 'panic_disorder', 'post_traumatic_stress_disorder']
+	musculoskeletal_disorder:['musculoskeletal_disorder', 'cfa', 'plurality', 'health_literacy', 'unitary', 'proxy', 'informant', 'scale_factor', 'magical', 'cain']
+	neoplasm:['neoplasm', 'neoadjuvantly', 'neoplastic', 'neoplasia', 'neoaltto', 'neoadjuvant', 'neovascularisation', 'neobladder', 'neovessel', 'neovascularization']
+	neurological_disorder:['neurological_disorder', 'groningen_netherlands', 'behavioral_medicine', 'medical_oncology', 'santa_clara_valley', 'barcelona_spain', 'berlin_germany', 'sheffield', 'queen', 'wiley_periodical_inc']
+	chronic_respiratory_disease:['spread_depolarization', 'impulse_control_disorder', 'dopamine_antagonist', 'slow_wave_sleep', 'motor_fluctuation_dyskinesia', 'striatal_dopamine', 'plasma_mhpg', 'voltage_dependent_calcium_channel', 'poor_sleeper', 'chronic_respiratory_disease']
+	diabetes_mellitus:['iron_deficiency_anemia', 'asia_pacific', 'blurred_vision', 'nasal_congestion', 'cerebral_hemorrhage', 'pip_tazo', 'chill', 'micro_tiw', 'dabrafenib_trametinib', 'diabetes_mellitus']
+	digestive_disease:['capital_city', 'monroe_county', 'catchment_area', 'speak_english', 'health_maintenance_organization', 'san_francisco_general_hospital', 'middle_income_country', 'private_school', 'southeast_michigan', 'digestive_disease']
+	hiv_aids:['population_density', 'framingham_heart_study', 'genetic_predisposition', 'opposite_direction', 'insul_resistance', 'publication_bias', 'variant_allele', 'uremic_solute', 'genetic_variability', 'hiv_aids']
+	hepatitis_a_b_c_e:['blunt_trauma', 'air_filter', 'cardiac_tamponade', 'aortic_aneurysm', 'leave_anterior_descend', 'sternal_wound', 'edward_sapien', 'ica_occlusion', 'percutaneous_transluminal_coronary_angioplasty', 'hepatitis_a_b_c_e']
+====PMIS====
+	digestive_disease:15.393134765639154
+	diabetes_mellitus:0
+	hiv_aids:9.837935366523125
+	mental_disorder:76.79336979766497
+	neoplasm:29.264723101592566
+	neurological_disorder:11.070446163764371
+	chronic_respiratory_disease:6.949980818873649
+	hepatitis_a_b_c_e:5.767897483009825
+	musculoskeletal_disorder:10.677295971864687
+	cardiovascular_disease:67.61521682319172
+	chronic_kidney_disease:115.55688379133363
+	<SUM>: 31.72062582576888
+====NPMIS====
+	diabetes_mellitus:0
+	hepatitis_a_b_c_e:0.29894853900320184
+	chronic_respiratory_disease:0.38196497363012105
+	digestive_disease:0.7888848194244518
+	hiv_aids:0.49221437205489316
+	cardiovascular_disease:3.967783345474397
+	chronic_kidney_disease:6.722315591019325
+	musculoskeletal_disorder:0.554205235006538
+	neoplasm:1.5782476691712626
+	mental_disorder:4.355298342435029
+	neurological_disorder:0.5869356411270794
+	<SUM>: 1.7933453207587546
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 1.0
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.3-global-0.7-rho-0.5/result.csv
+====WORD SET====
+	cardiovascular_disease:['cardiovascular_disease', 'coronary_heart_disease', 'metabolic_syndrome', 'abdominal_obesity', 'cardiovascular_risk', 'cardiovascular_risk_factor', 'cardiometabolic_risk', 'visceral_adiposity', 'cvd_risk', 'morbidly_obese']
+	chronic_kidney_disease:['chronic_kidney_disease', 'modification_diet_renal_disease', 'glomerular_filtration_rate', 'serum_creatinine', 'renal_function', 'estimate_glomerular_filtration_rate', 'estimate_glomerular_filtration_rate_egfr', 'end_stage_renal_disease', 'renal_failure', 'blood_urea_nitrogen']
+	mental_disorder:['mental_disorder', 'psychotic_disorder', 'intellectual_disability', 'mental_illness', 'posttraumatic_stress_disorder', 'antisocial_personality_disorder', 'psychiatric_disorder', 'mentally_ill', 'sexual_abuse', 'panic_disorder']
+	musculoskeletal_disorder:['musculoskeletal_disorder', 'cfa', 'health_literacy', 'plurality', 'unitary', 'proxy', 'informant', 'scale_factor', 'physical_health', 'pencil']
+	neoplasm:['neoplasm', 'neoadjuvantly', 'neoplastic', 'neoplasia', 'neoaltto', 'neoadjuvant', 'neovascularisation', 'neobladder', 'neovessel', 'neovascularization']
+	neurological_disorder:['neurological_disorder', 'groningen_netherlands', 'behavioral_medicine', 'medical_oncology', 'santa_clara_valley', 'berlin_germany', 'barcelona_spain', 'ohio_state_university', 'queen', 'catholic_university']
+	chronic_respiratory_disease:['spread_depolarization', 'impulse_control_disorder', 'dopamine_antagonist', 'voltage_dependent_calcium_channel', 'motor_fluctuation_dyskinesia', 'methyl_aspartate_receptor', 'striatal_dopamine', 'plasma_mhpg', 'motor_complication', 'chronic_respiratory_disease']
+	diabetes_mellitus:['iron_deficiency_anemia', 'asia_pacific', 'cerebral_hemorrhage', 'nasal_congestion', 'blurred_vision', 'micro_tiw', 'chill', 'pip_tazo', 'dabrafenib_trametinib', 'diabetes_mellitus']
+	digestive_disease:['capital_city', 'monroe_county', 'catchment_area', 'speak_english', 'health_maintenance_organization', 'public_housing', 'san_francisco_general_hospital', 'public_university', 'middle_income_country', 'digestive_disease']
+	hiv_aids:['population_density', 'framingham_heart_study', 'opposite_direction', 'insul_resistance', 'genetic_predisposition', 'white_american', 'ultraviolet_radiation', 'uremic_solute', 'publication_bias', 'hiv_aids']
+	hepatitis_a_b_c_e:['blunt_trauma', 'cardiac_tamponade', 'aortic_aneurysm', 'air_filter', 'ventricular_assist_device', 'edward_sapien', 'percutaneous_transluminal_coronary_angioplasty', 'peri_procedural', 'heart_valve', 'hepatitis_a_b_c_e']
+====PMIS====
+	hepatitis_a_b_c_e:9.081715774597075
+	diabetes_mellitus:0
+	hiv_aids:0
+	chronic_respiratory_disease:29.933268587455146
+	digestive_disease:15.393134765639154
+	chronic_kidney_disease:115.55688379133365
+	neurological_disorder:16.42656702708885
+	cardiovascular_disease:83.82429027992171
+	musculoskeletal_disorder:16.77304449118744
+	mental_disorder:58.55287083016012
+	neoplasm:29.264723101592566
+	<SUM>: 34.07331805899779
+====NPMIS====
+	hepatitis_a_b_c_e:0.4808251599376466
+	cardiovascular_disease:4.845614801928107
+	mental_disorder:3.334027744267805
+	musculoskeletal_disorder:0.9282184844148864
+	chronic_kidney_disease:6.722315591019323
+	digestive_disease:0.7888848194244518
+	chronic_respiratory_disease:1.64210864145542
+	hiv_aids:0
+	diabetes_mellitus:0
+	neoplasm:1.5782476691712626
+	neurological_disorder:0.8645419112683226
+	<SUM>: 1.9258895293533846
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 1.0
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.4-global-0.6-rho-0.5/result.csv
+====WORD SET====
+	cardiovascular_disease:['cardiovascular_disease', 'coronary_heart_disease', 'metabolic_syndrome', 'cardiovascular_risk', 'abdominal_obesity', 'cardiovascular_risk_factor', 'visceral_adiposity', 'cardiometabolic_risk', 'cvd_risk', 'cvd_risk_factor']
+	chronic_kidney_disease:['chronic_kidney_disease', 'modification_diet_renal_disease', 'glomerular_filtration_rate', 'serum_creatinine', 'estimate_glomerular_filtration_rate', 'renal_function', 'estimate_glomerular_filtration_rate_egfr', 'end_stage_renal_disease', 'blood_urea_nitrogen', 'peritoneal_dialysis']
+	mental_disorder:['mental_disorder', 'intellectual_disability', 'psychotic_disorder', 'mental_illness', 'antisocial_personality_disorder', 'posttraumatic_stress_disorder', 'mentally_ill', 'psychiatric_disorder', 'sexual_abuse', 'stressful_life_event']
+	musculoskeletal_disorder:['musculoskeletal_disorder', 'cfa', 'health_literacy', 'informant', 'unitary', 'plurality', 'physical_health', 'proxy', 'scale_factor', 'pencil']
+	neoplasm:['neoplasm', 'neoadjuvantly', 'neoplastic', 'neoplasia', 'neoaltto', 'neoadjuvant', 'neovascularisation', 'neobladder', 'neovessel', 'neovascularization']
+	neurological_disorder:['neurological_disorder', 'groningen_netherlands', 'behavioral_medicine', 'medical_oncology', 'berlin_germany', 'santa_clara_valley', 'ohio_state_university', 'queen', 'barcelona_spain', 'catholic_university']
+	chronic_respiratory_disease:['spread_depolarization', 'impulse_control_disorder', 'voltage_dependent_calcium_channel', 'dopamine_antagonist', 'methyl_aspartate_receptor', 'motor_fluctuation_dyskinesia', 'dysfunctional_attitude', 'motor_complication', 'striatal_dopamine', 'chronic_respiratory_disease']
+	diabetes_mellitus:['iron_deficiency_anemia', 'asia_pacific', 'cerebral_hemorrhage', 'micro_tiw', 'nasal_congestion', 'blurred_vision', 'chill', 'dabrafenib_trametinib', 'pip_tazo', 'diabetes_mellitus']
+	digestive_disease:['capital_city', 'monroe_county', 'catchment_area', 'speak_english', 'health_maintenance_organization', 'public_housing', 'public_university', 'federally_qualified_health_center', 'turku_finland', 'digestive_disease']
+	hiv_aids:['population_density', 'framingham_heart_study', 'insul_resistance', 'opposite_direction', 'genetic_predisposition', 'african_ancestry', 'white_american', 'ultraviolet_radiation', 'uremic_solute', 'hiv_aids']
+	hepatitis_a_b_c_e:['blunt_trauma', 'cardiac_tamponade', 'aortic_aneurysm', 'air_filter', 'ventricular_assist_device', 'peri_procedural', 'heart_valve', 'edward_sapien', 'percutaneous_transluminal_coronary_angioplasty', 'hepatitis_a_b_c_e']
+====PMIS====
+	hepatitis_a_b_c_e:9.081715774597075
+	hiv_aids:0
+	chronic_respiratory_disease:29.933268587455146
+	diabetes_mellitus:0
+	digestive_disease:0
+	neoplasm:29.264723101592566
+	mental_disorder:50.97454863711193
+	cardiovascular_disease:89.22166079806073
+	musculoskeletal_disorder:16.77304449118744
+	neurological_disorder:16.42656702708885
+	chronic_kidney_disease:109.55050121489202
+	<SUM>: 31.929639057453247
+====NPMIS====
+	chronic_respiratory_disease:1.64210864145542
+	digestive_disease:0

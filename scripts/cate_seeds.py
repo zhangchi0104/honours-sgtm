@@ -44,7 +44,7 @@ def find_in_vocab_replacements(seeds: list, similarities: pd.DataFrame):
     res = []
     for seed in seeds:
         sorted_col = similarities[seed].sort_values(ascending=False).head(3)
-        in_vocab_seed = sorted_col.index[0]
+        in_vocab_seed = sorted_col.index[1]
         res.append(in_vocab_seed)
     return res
 

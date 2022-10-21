@@ -1,5 +1,6 @@
-from lib2to3.pgen2.tokenize import tokenize
 import os
+from random import seed
+import shutil
 import torch
 import pytorch_lightning as pl
 import argparse
@@ -87,14 +88,15 @@ def main(args):
         logging.info("Fine tunning BERT")
         model = BertForMaskedLM.from_pretrained('bert-base-uncased')
     seeds = load_seed(args.seeds, combine_result=True)
-    new_tokens = list((set(vocab) - set(tokenizer.vocab.keys())).union(seeds))
+    new_tokens = list(set(vocab) - set(tokenizer.vocab.keys()))
     logging.info("hiv_aids" in new_tokens)
     new_tokens = [
         AddedToken(word, single_word=True) for word in new_tokens
         if '_' in word
     ]
-
+    seed_tokens = [AddedToken(word, single_word=True) for word in seeds]
     tokenizer.add_tokens(new_tokens)
+    tokenizer.add_tokens(seed_tokens)
     # logging.info(f"adding {new_tokens} to tokenizer")
     logging.info(f"new tokenizer now has shape {len(tokenizer)}")
     tokenizer_dir = os.path.join(args.output_dir, "tokenizer")
@@ -131,6 +133,13 @@ def main(args):
     hg_trainer = Trainer(model=model)
     logging.info(f"Saving model and config to {model_dir}")
     hg_trainer.save_model(model_dir)
+    if args.upload_model:
+        logging.info(
+            f"zipping tokenizer and model to 'model-{trainer.logger.name}.zip'"
+        )
+        shutil.make_archive(f"model-{trainer.logger.name}", "zip",
+                            args.output_dir)
+    return f'model-{trainer.logger.name}.zip'
 
 
 if __name__ == '__main__':
@@ -140,4 +149,7 @@ if __name__ == '__main__':
         logging.basicConfig(level=logging.INFO, handlers=[RichHandler()])
     else:
         logging.basicConfig(handlers=[RichHandler()])
-    main(args)
+    zip_name = main(args)
+    if args.upload_model:
+        logging.info(f"Uploading {zip_name} to wandb")
+        wandb.save(zip_name)

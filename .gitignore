@@ -4,5 +4,8 @@ wandb/
 train.sh
 *.bin
 results/***/embeddings.csv
-
+results/***/embeddings.pkl
+results/***/embedding*
+data/***/embeddings.pkl
 data/***/cooccurence*.csv
+*.zip

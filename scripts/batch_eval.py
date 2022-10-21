@@ -7,6 +7,7 @@ import pandas as pd
 import datetime
 import sys
 
+DATASET = 'scidoc'
 PROJECT_ROOT = Path(
     "~/code/github.com/zhangchi0104/honours-sgtm").expanduser().absolute()
 CONFIG = {
@@ -28,17 +29,14 @@ CONFIG = {
         (0.5, 0.5, 0.7),
         (0.5, 0.5, 0.9),
     ],
-    "inputs": [
-        *(PROJECT_ROOT / 'results' / 'bert').glob("*"),
-        (PROJECT_ROOT / 'results' / 'CatE' / '2022-07-03-09-36' /
-         'cate-cos-similarities.csv')
-    ],
+    "inputs":
+    [PROJECT_ROOT / 'results' / DATASET / 'cate' / 'similarities.csv'],
     "baselines": [
         PROJECT_ROOT / 'results' / 'global_cos_similarities.csv',
         PROJECT_ROOT / 'results' / 'cate_cos_similarities.csv'
     ],
     "global_score":
-    PROJECT_ROOT / 'results' / 'global_cos_similarities.csv',
+    PROJECT_ROOT / 'results' / DATASET / 'bert' / 'similarities.csv',
     "n_words":
     10
 }
@@ -50,9 +48,7 @@ def main():
     parser.add_argument(
         '--name',
         default=f'run-{datetime.datetime.now().strftime("%Y-%m-%d-%H-%M")}')
-    args = parser.parse_args(
-        
-    )
+    args = parser.parse_args()
     ensemble_out_dirs = []
     for spec in CONFIG['specs']:
         local_w, global_w, rho = spec
@@ -68,11 +64,10 @@ def main():
                                   rho=rho,
                                   dry_run=False,
                                   out_dir=str(ensemble_out_dir))
-    cooccur_mat = pd.read_csv(PROJECT_ROOT / 'data' / 'vocab' /
-                              'cooccurence_matrix-agnews.csv',
+    cooccur_mat = pd.read_csv(PROJECT_ROOT / 'data' / DATASET /
+                              'cooccurence.csv',
                               index_col=0)
-    now_str = datetime.datetime.now().strftime("%Y-%m-%d-%H-%M")
-    out_dir = PROJECT_ROOT / 'results' / 'evaluations' / args.name
+    out_dir = PROJECT_ROOT / 'results' / DATASET / 'evaluations' / args.name
     out_dir.mkdir(parents=True, exist_ok=True)
     sys.stdout = open(out_dir / 'output.txt', 'w')
 

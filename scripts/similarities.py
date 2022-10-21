@@ -1,4 +1,5 @@
 from ast import arg
+from operator import index
 from random import seed
 import pandas as pd
 import numpy as np
@@ -11,6 +12,7 @@ from utils.visualize import visualize_results
 from utils.io import load_model, load_tokenizer, load_vocab, load_seed
 from utils.embeddings import batch_cosine_similarity
 from tqdm.auto import tqdm
+import shutil
 
 logging.basicConfig(level=logging.INFO,
                     handlers=[RichHandler()],
@@ -27,15 +29,16 @@ def parse_args():
     parser.add_argument("--out_embeddings", type=str)
     parser.add_argument("--device", type=str, default='cpu')
     parser.add_argument("--seeds", type=str, required=True)
+    parser.add_argument("--embeddings", type=str, default=None)
     # Bert Parser
     bert_parser.add_argument("--weights", type=str)
     bert_parser.add_argument("--tokenizer", type=str)
+
     # CatE Parser
     cate_parser = sub_parser.add_parser("cate")
     cate_parser.add_argument("--topic", type=str, required=True)
     cate_parser.add_argument("--words", type=str, required=True)
 
-    cate_parser.add_argument("--similarities", type=str, required=True)
     args = parser.parse_args()
     if args.command == "bert":
         has_weights = args.weights is not None
@@ -62,62 +65,94 @@ def main(args):
 def bert_embeddings(args):
     seeds = load_seed(args.seeds)
     vocab_set = load_vocab(args.vocab)
+    all_vocab = set(vocab_set).union(set(seeds))
+    all_vocab = sorted(list(all_vocab))
     df = pd.DataFrame(None,
-                      index=list(vocab_set),
+                      index=list(all_vocab),
                       columns=seeds,
                       dtype=np.float32)
-    data = np.zeros((len(vocab_set), len(seeds)))
+    data = np.zeros((len(all_vocab), len(seeds)))
     logging.info(
         f"Created a dataframe for cosine similarities with shape {df.shape}")
     logging.info(f"Using device {args.device}")
     model = load_model(args.weights, device=args.device)
     tokenizer = load_tokenizer(args.tokenizer)
-    embeddings_arr = np.zeros((df.shape[0], 768))
-    for lo in tqdm(range(0, len(vocab_set), 4096)):
-        hi = min(lo + 4096, len(vocab_set))
-        batch = vocab_set[lo:hi]
-        inputs = tokenizer(batch, return_tensors='pt', padding=True)
-        inputs.to(args.device)
-        with torch.no_grad():
-            outputs = model(**inputs)
-            embeddings = outputs.last_hidden_state.detach().cpu().numpy()[:,
-                                                                          1, :]
-            embeddings_arr[lo:hi] = embeddings
-    embeddings_df = pd.DataFrame(embeddings_arr,
-                                 index=vocab_set,
-                                 columns=range(768))
-    for i, topic in enumerate(df.columns):
+    if not args.embeddings:
+        for i, topic in enumerate(df.columns):
+            similarities = cosine_similarity_with_topic(topic,
+                                                        all_vocab,
+                                                        tokenizer,
+                                                        model,
+                                                        batch_size=10240,
+                                                        device=args.device)
+            data[:, i] = similarities
+            df = pd.DataFrame(data, index=all_vocab, columns=seeds)
+    else:
+        word_embeddings = pd.read_pickle(args.embeddings)
+        for i, topic in enumerate(df.columns):
+            topic_embedding = word_embeddings.loc[topic, :]
+            print('null' in vocab_set)
 
-        similarities = cosine_similarity_with_topic(topic,
-                                                    vocab_set,
-                                                    tokenizer,
-                                                    model,
-                                                    batch_size=4096,
-                                                    device=args.device)
-        data[:, i] = similarities
-
-    df = pd.DataFrame(data, index=vocab_set, columns=seeds)
+            similarities = batch_cosine_similarity(topic_embedding.to_numpy(),
+                                                   word_embeddings.to_numpy())
+            data[:, i] = similarities
+        df = pd.DataFrame(data, index=word_embeddings.index, columns=seeds)
     if args.out_embeddings:
+        embeddings_arr = np.zeros((len(all_vocab), 768))
+        batch_size = 10240
+        embeddings_df = pd.DataFrame(embeddings_arr,
+                                     index=all_vocab,
+                                     columns=range(768))
+        for lo in tqdm(range(0, len(all_vocab), batch_size)):
+            hi = min(lo + batch_size, len(all_vocab))
+            batch = all_vocab[lo:hi]
+            inputs = tokenizer(batch, return_tensors='pt', padding=True)
+            inputs.to(args.device)
+            with torch.no_grad():
+                outputs = model(**inputs)
+                embeddings = outputs.last_hidden_state.detach().cpu().numpy(
+                )[:, 1, :]
+                embeddings_df.loc[batch, :] = embeddings
+
         logging.info(
             f"writing embeddings with shape {embeddings_df.shape} to {args.out_embeddings}"
         )
-        embeddings_df.to_csv(args.out_embeddings)
+        print()
+        embeddings_df.to_pickle(args.out_embeddings)
     return df
 
 
 def cate_embeddings(args):
-    topics = load_seed(args.seeds)
-    topic_embeddings = load_cate_embeddings(args.topic)
-    vocab_embeddings = load_cate_embeddings(args.words)
+    df = None
+    if not args.embeddings:
+        topics = load_seed(args.seeds)
+        topic_embeddings = load_cate_embeddings(args.topic)
+        vocab_embeddings = load_cate_embeddings(args.words)
 
-    res = np.zeros((vocab_embeddings.shape[0], len(topics)))
-    for i, topic in enumerate(topic_embeddings.index):
-        similarities = batch_cosine_similarity(topic_embeddings.loc[topic],
-                                               vocab_embeddings.to_numpy())
-        res[:, i] = similarities
-    df = pd.DataFrame(res, index=vocab_embeddings.index, columns=topics)
-    logging.info(
-        f"Created a dataframe for cosine similarities with shape {df.shape}")
+        res = np.zeros((vocab_embeddings.shape[0], len(topics)))
+        for i, topic in enumerate(topic_embeddings.index):
+            similarities = batch_cosine_similarity(topic_embeddings.loc[topic],
+                                                   vocab_embeddings.to_numpy())
+            res[:, i] = similarities
+        df = pd.DataFrame(res, index=vocab_embeddings.index, columns=topics)
+        if (args.out_embeddings):
+            for topic in topic_embeddings.index:
+                vocab_embeddings.loc[topic, :] = topic_embeddings.loc[topic, :]
+                vocab_embeddings.to_pickle(args.out_embeddings)
+        logging.info(
+            f"Created a dataframe for cosine similarities with shape {df.shape}"
+        )
+
+    else:
+        topic_embeddings = load_cate_embeddings(args.topic)
+        embeddings = pd.read_pickle(args.embeddings)
+        topics = load_seed(args.seeds)
+        res = np.zeros((embeddings.shape[0], len(topics)))
+        for i, topic in enumerate(topic_embeddings.index):
+            similarities = batch_cosine_similarity(embeddings.loc[topic],
+                                                   embeddings.to_numpy())
+            res[:, i] = similarities
+        df = pd.DataFrame(res, index=embeddings.index, columns=topics)
     return df
 
 

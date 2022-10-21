@@ -11,10 +11,14 @@ import json
 
 
 def prob_word(word, mat):
+    if word not in mat.index:
+        return 0
     return np.sum(mat[word]) / np.sum(mat.to_numpy())
 
 
 def prob_cooccur(a, b, mat):
+    if a not in mat or b not in mat:
+        return 0
     return mat.loc[a, b] / np.sum(mat.to_numpy())
 
 
@@ -88,7 +92,7 @@ def evaluation(files, cooccur_mat, out, n_words=5):
         print(file)
         scores = {}
         basename = file.split('/')[-1].split('.')[0]
-        scores_df = pd.read_csv(file, index_col='_vocab')
+        scores_df = pd.read_csv(file, index_col=0)
         # construct wordset
         word_sets = build_word_sets(scores_df, n_words=n_words)
         # compute PMI

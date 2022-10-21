@@ -46,7 +46,7 @@ def clean_text(text: List[str], batch_size=200):
 
             words = [
                 token for token in words
-                if re.match(r'^[a-zA-Z]+$', token) and len(token) >= 3
+                if re.match(r'^[a-zA-Z_]+$', token) and len(token) >= 3
             ]
             tokens = [
                 lemmatizer.lemmatize(word, p) for word, p in zip(words, pos)

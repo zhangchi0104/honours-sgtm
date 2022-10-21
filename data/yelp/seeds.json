@@ -1,0 +1,16 @@
+{
+    "in_vocab": [
+        "seafood",
+        "burger",
+        "sushi",
+        "chinese_food",
+        "dessert"
+    ],
+    "out_vocab": [
+        "denmark",
+        "synthesis",
+        "breast",
+        "scotland",
+        "uk"
+    ]
+}

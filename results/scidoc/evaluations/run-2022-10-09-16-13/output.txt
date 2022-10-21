@@ -1,0 +1,16 @@
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/ensemble/local-0.1-global-0.9-rho-0.5/result.csv
+====WORD SET====
+	cardiovascular_disease:['cardiovascular_disease', 'coronary_heart_disease', 'metabolic_syndrome', 'abdominal_obesity', 'vascular_disease', 'mix_hyperlipidemia', 'end_stage_renal_disease', 'chronic_renal_failure', 'subclinical_atherosclerosis', 'cardiovascular_risk']
+	chronic_kidney_disease:['chronic_kidney_disease', 'modification_diet_renal_disease', 'serum_creatinine', 'renal_function', 'glomerular_filtration_rate', 'end_stage_renal_disease', 'renal_failure', 'estimate_glomerular_filtration_rate_egfr', 'estimate_glomerular_filtration_rate', 'peritoneal_dialysis']
+	mental_disorder:['mental_disorder', 'psychotic_disorder', 'posttraumatic_stress_disorder', 'mental_illness', 'intellectual_disability', 'psychiatric_disorder', 'autism', 'mentally_ill', 'personality_disorder', 'post_traumatic_stress_disorder']
+	musculoskeletal_disorder:['musculoskeletal_disorder', 'cfa', 'plurality', 'health_literacy', 'magical', 'unitary', 'proxy', 'cain', 'cfas', 'exemplary']
+	neoplasm:['neoplasm', 'neoadjuvantly', 'neoplastic', 'neoplasia', 'neoaltto', 'neoadjuvant', 'neovascularisation', 'neobladder', 'neovessel', 'neovascularization']
+	neurological_disorder:['neurological_disorder', 'groningen_netherlands', 'medical_oncology', 'behavioral_medicine', 'wiley_periodical_inc', 'sheffield', 'barcelona_spain', 'emergency_medicine', 'santa_clara_valley', 'berlin_germany']
+	chronic_respiratory_disease:['spread_depolarization', 'impulse_control_disorder', 'slow_wave_sleep', 'poor_sleeper', 'dopamine_antagonist', 'motor_fluctuation_dyskinesia', 'plasma_mhpg', 'rapid_eye_movement_sleep', 'striatal_dopamine', 'chronic_respiratory_disease']
+	diabetes_mellitus:['iron_deficiency_anemia', 'asia_pacific', 'blurred_vision', 'nasal_congestion', 'pip_tazo', 'acpa_titer', 'cerebral_hemorrhage', 'intrahepatic_cccdna', 'urinary_tract_infection', 'diabetes_mellitus']
+	digestive_disease:['capital_city', 'monroe_county', 'catchment_area', 'speak_english', 'san_francisco_general_hospital', 'health_maintenance_organization', 'middle_income_country', 'private_school', 'southeast_michigan', 'digestive_disease']
+	hiv_aids:['population_density', 'framingham_heart_study', 'publication_bias', 'variant_allele', 'genetic_variability', 'genetic_predisposition', 'uremic_solute', 'opposite_direction', 'primary_sclerosing_cholangitis', 'hiv_aids']
+	hepatitis_a_b_c_e:['blunt_trauma', 'air_filter', 'aortic_aneurysm', 'leave_anterior_descend', 'sternal_wound', 'cardiac_tamponade', 'definite_probable_stent_thrombosis', 'ica_occlusion', 'remnant_laa_stump', 'hepatitis_a_b_c_e']
+====PMIS====
