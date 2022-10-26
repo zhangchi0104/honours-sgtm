@@ -20,7 +20,7 @@ def rank_reduction(embeddings: pd.DataFrame, similarities: pd.DataFrame,
     return reduced_embeddings_df
 
 
-def label_words(similarities: pd.DataFrame, similarity_threshold=0.7):
+def label_words(similarities: pd.DataFrame, similarity_threshold=0.8):
     vocab = similarities.index
     data = np.zeros((similarities.shape[0], 1))
     topics = list(similarities.columns)

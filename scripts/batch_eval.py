@@ -7,7 +7,9 @@ import pandas as pd
 import datetime
 import sys
 
-DATASET = 'scidoc'
+from utils.io import load_vocab
+
+DATASET = 'yelp'
 PROJECT_ROOT = Path(
     "~/code/github.com/zhangchi0104/honours-sgtm").expanduser().absolute()
 CONFIG = {
@@ -37,6 +39,8 @@ CONFIG = {
     ],
     "global_score":
     PROJECT_ROOT / 'results' / DATASET / 'bert' / 'similarities.csv',
+    "vocab":
+    PROJECT_ROOT / 'data' / DATASET / 'vocab' / 'vocab.pkl',
     "n_words":
     10
 }
@@ -53,7 +57,7 @@ def main():
     for spec in CONFIG['specs']:
         local_w, global_w, rho = spec
         print(spec)
-        ensemble_out_dir = PROJECT_ROOT / 'results' / 'ensemble' / f'local-{local_w}-global-{global_w}-rho-{rho}'
+        ensemble_out_dir = PROJECT_ROOT / 'results' / DATASET / 'ensemble' / f'local-{local_w}-global-{global_w}-rho-{rho}'
         ensemble_out_dir.mkdir(parents=True, exist_ok=True)
         ensemble_out_dirs.append(ensemble_out_dir)
         for input_fn in CONFIG['inputs']:
@@ -70,12 +74,13 @@ def main():
     out_dir = PROJECT_ROOT / 'results' / DATASET / 'evaluations' / args.name
     out_dir.mkdir(parents=True, exist_ok=True)
     sys.stdout = open(out_dir / 'output.txt', 'w')
-
+    vocab = load_vocab(CONFIG['vocab'], False)
     for in_dir in ensemble_out_dirs:
         input_files = [str(f) for f in in_dir.glob('*')]
         out_file = out_dir / f"{in_dir.name}.json"
         evaluation(input_files,
                    cooccur_mat,
+                   vocab,
                    out_file,
                    n_words=CONFIG['n_words'])
     sys.stdout.close()

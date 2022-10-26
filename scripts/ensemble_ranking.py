@@ -102,9 +102,11 @@ def run_ensemble_rankings(
                                index=global_df.index,
                                columns=global_df.columns)
     visualize_results(rankings_df, 10)
-
+    results = {}
+    for topic in rankings_df.columns:
+        words = rankings_df[topic].sort_values(ascending=False).index[:10]
     if not dry_run:
-        results_path = os.path.join(out_dir, 'result.csv')
+        results_path = os.path.join(out_dir, 'scores.csv')
         logging.info(f"saving results to {results_path}")
         rankings_df.to_csv(results_path)
 

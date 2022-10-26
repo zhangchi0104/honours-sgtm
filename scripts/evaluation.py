@@ -9,53 +9,72 @@ import nltk
 import pickle
 import json
 
-
-def prob_word(word, mat):
-    if word not in mat.index:
-        return 0
-    return np.sum(mat[word]) / np.sum(mat.to_numpy())
+from utils.io import load_vocab
 
 
-def prob_cooccur(a, b, mat):
-    if a not in mat or b not in mat:
-        return 0
-    return mat.loc[a, b] / np.sum(mat.to_numpy())
-
-
-def sum_pmi(words, mat):
+def sum_pmi(words, mat, vocab):
     res = 0
+    word_count = sum(vocab.values())
     for i, word_a in enumerate(words):
         for word_b in words[i + 1:]:
-            res += pmi(word_a, word_b, mat)
+            count_a = vocab.get(word_a, 0)
+            count_b = vocab.get(word_b, 0)
+            try:
+                count_ab = mat.loc[word_a, word_b]
+            except KeyError:
+                count_ab = 0
+            res += pmi(count_a, count_b, count_ab, word_count)
     return res
 
 
-def pmi(a, b, mat):
-    prob_a = prob_word(a, mat)
-    prob_b = prob_word(b, mat)
-    prob_ab_cooccur = prob_cooccur(a, b, mat)
-    res = prob_ab_cooccur / (prob_a * prob_b)
+def pmi(
+    a_count,
+    b_count,
+    ab_count,
+    word_count,
+):
+    corpus_word_count = float(word_count)
+    prob_a = a_count / corpus_word_count
+    prob_b = b_count / corpus_word_count
+    prob_ab_cooccur = ab_count / corpus_word_count
+    try:
+        res = prob_ab_cooccur / (prob_a * prob_b)
+    except ZeroDivisionError:
+        res = 0
     return np.log(res) if res > 0 else 0
 
 
-def npmi(a, b, mat):
-    prob_ab_cooccurr = prob_cooccur(a, b, mat)
-    _pmi = pmi(a, b, mat)
-    return _pmi / -np.log(prob_ab_cooccurr) if _pmi > 0 else 0
+def npmi(
+    a_count,
+    b_count,
+    ab_count,
+    word_count,
+):
+    corpus_word_count = float(word_count)
+    prob_ab = ab_count / corpus_word_count
+    _pmi = pmi(a_count, b_count, ab_count, word_count)
+    return _pmi / -np.log(prob_ab) if _pmi > 0 else 0
 
 
-def sum_npmi(words, mat):
+def sum_npmi(words, mat, vocab):
     res = 0
+    word_count = sum(vocab.values())
     for i, word_a in enumerate(words):
         for word_b in words[i + 1:]:
-            res += npmi(word_a, word_b, mat)
+            count_a = vocab.get(word_a, 0)
+            count_b = vocab.get(word_b, 0)
+            try:
+                count_ab = mat.loc[word_a, word_b]
+            except KeyError:
+                count_ab = 0
+            res += npmi(count_a, count_b, count_ab, word_count)
     return res
 
 
-def compute_npmi_from_results(cooccur_mat, topics, word_sets):
+def compute_npmi_from_results(cooccur_mat, topics, word_sets, vocab):
 
     def job(words, cooccur_mat, topic):
-        res = sum_npmi(words, cooccur_mat)
+        res = sum_npmi(words, cooccur_mat, vocab)
         print(f'\t{topic}:{res}')
         return res
 
@@ -63,7 +82,7 @@ def compute_npmi_from_results(cooccur_mat, topics, word_sets):
     _npmi = Parallel(n_jobs=min(20, len(topics)), prefer='threads')(
         delayed(job)(word_sets[topics[i]], cooccur_mat, topics[i])
         for i in range(len(topics)))
-    res = np.sum(_npmi) / len(topics)
+    res = np.sum(_npmi) / len(_npmi)
     print(f"\t<SUM>: {res}")
     return res
 
@@ -73,18 +92,18 @@ def parse_args():
     parser.add_argument("files", nargs="+", help="input files")
     parser.add_argument("--out",
                         "-o",
-                        default=Path('./results/pmi/evaluations.pkl'),
+                        default=Path('./evaluations.json'),
                         type=Path)
     parser.add_argument("--cooccur",
                         "-c",
-                        default="data/vocab/cooccurence_matrix-agnews.csv",
+                        required=True,
                         type=str,
                         help="path to precomputed co-occurence matrix")
-
+    parser.add_argument("--vocab", "-v", required=True)
     return parser.parse_args()
 
 
-def evaluation(files, cooccur_mat, out, n_words=5):
+def evaluation(files, cooccur_mat, vocab, out, n_words=5):
     print("SUMMARY")
     print("=" * 80)
     obj = {}
@@ -92,14 +111,20 @@ def evaluation(files, cooccur_mat, out, n_words=5):
         print(file)
         scores = {}
         basename = file.split('/')[-1].split('.')[0]
-        scores_df = pd.read_csv(file, index_col=0)
-        # construct wordset
-        word_sets = build_word_sets(scores_df, n_words=n_words)
+        if file.endswith('.csv'):
+            scores_df = pd.read_csv(file, index_col=0)
+            # construct wordset
+            word_sets = build_word_sets(scores_df, n_words=n_words)
+
+        else:
+            f = open(file, 'r')
+            word_sets = json.load(f)
+            f.close()
+        topics = list(word_sets.keys())
         # compute PMI
-        _pmi = compute_pmi_from_results(cooccur_mat, scores_df.columns,
-                                        word_sets)
-        _npmi = compute_npmi_from_results(cooccur_mat, scores_df.columns,
-                                          word_sets)
+        _pmi = compute_pmi_from_results(cooccur_mat, topics, word_sets, vocab)
+        _npmi = compute_npmi_from_results(cooccur_mat, topics, word_sets,
+                                          vocab)
         _distinctivess, _sem_dist = compute_distinctiveness(word_sets)
         scores['distinctiveness'] = _distinctivess
         scores['sem_distinctiveness'] = _sem_dist
@@ -140,19 +165,19 @@ def compute_distinctiveness(word_sets):
     return distinctiveness, sem_dist
 
 
-def compute_pmi_from_results(cooccur_mat, topics, word_sets):
+def compute_pmi_from_results(cooccur_mat, topics, word_sets, vocab):
     _pmi = []
     print("====PMIS====")
 
     def job(words, cooccur_mat, topic):
-        res = sum_pmi(words, cooccur_mat)
+        res = sum_pmi(words, cooccur_mat, vocab)
         print(f'\t{topic}:{res}')
         return res
 
     _pmi = Parallel(n_jobs=min(20, len(topics)), prefer='threads')(
         delayed(job)(word_sets[topics[i]], cooccur_mat, topics[i])
         for i in range(len(topics)))
-    res = np.sum(_pmi) / len(topics)
+    res = np.sum(_pmi) / len(_pmi)
     print(f"\t<SUM>: {res}")
     return res
 
@@ -174,7 +199,8 @@ def build_word_sets(scores_df, n_words=5):
 def main():
     args = parse_args()
     cooccur_mat = pd.read_csv(args.cooccur, index_col=0)
-    evaluation(args.files, cooccur_mat, args.out)
+    vocab = load_vocab(args.vocab, False)
+    evaluation(args.files, cooccur_mat, vocab, args.out)
 
 
 if __name__ == '__main__':

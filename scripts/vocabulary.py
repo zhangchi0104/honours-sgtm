@@ -39,8 +39,10 @@ def main(args):
         lines = f.readlines()
     lines = [line.strip() for line in lines if line != '']
     vocab = build_vocabulary(lines, args.min_count)
-    vocab = [word.strip() for word in vocab]
-    vocab = set(vocab)
+
+    if isinstance(vocab, (list, set)):
+        vocab = [word.strip() for word in vocab]
+        vocab = set(vocab)
     logging.info(f"Vocabulary size: {len(vocab)}")
     with open(args.vocabulary_path, 'wb') as f:
         logging.info("Saving vocabulary to %s", args.vocabulary_path)
@@ -64,8 +66,9 @@ def build_vocabulary(lines, min_count):
                 all_occurences[word] = 1
 
     return {
-        word
-        for word, count in all_occurences.items() if count >= min_count
+        word: count
+        for word, count in all_occurences.items()
+        if count >= min_count and not word.isspace()
     }
 
 

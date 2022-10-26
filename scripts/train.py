@@ -17,7 +17,7 @@ import wandb
 
 class BertTrainingModule(pl.LightningModule):
 
-    def __init__(self, model, from_sratch=False, learning_rate=1e-4):
+    def __init__(self, model, from_sratch=False, learning_rate=5e-5):
         super().__init__()
         self.model = model
         self.from_scratch = from_sratch
@@ -89,7 +89,6 @@ def main(args):
         model = BertForMaskedLM.from_pretrained('bert-base-uncased')
     seeds = load_seed(args.seeds, combine_result=True)
     new_tokens = list(set(vocab) - set(tokenizer.vocab.keys()))
-    logging.info("hiv_aids" in new_tokens)
     new_tokens = [
         AddedToken(word, single_word=True) for word in new_tokens
         if '_' in word
@@ -100,7 +99,7 @@ def main(args):
     # logging.info(f"adding {new_tokens} to tokenizer")
     logging.info(f"new tokenizer now has shape {len(tokenizer)}")
     tokenizer_dir = os.path.join(args.output_dir, "tokenizer")
-    model_dir = os.path.join(args.output_dir, "finetuned-model")
+    model_dir = os.path.join(args.output_dir, f"finetuned-model")
     os.makedirs(tokenizer_dir, exist_ok=True)
     tokenizer.save_pretrained(tokenizer_dir)
     logging.info(f"save tokenizer to {tokenizer_dir}")

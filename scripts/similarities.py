@@ -1,4 +1,5 @@
 from ast import arg
+import json
 from operator import index
 from random import seed
 import pandas as pd
@@ -27,13 +28,18 @@ def parse_args():
     parser.add_argument("--vocab", type=str, required=True)
     parser.add_argument("--output", type=str, required=True)
     parser.add_argument("--out_embeddings", type=str)
-    parser.add_argument("--device", type=str, default='cpu')
+
     parser.add_argument("--seeds", type=str, required=True)
     parser.add_argument("--embeddings", type=str, default=None)
+    parser.add_argument("--out_words", type=str, default=None)
     # Bert Parser
     bert_parser.add_argument("--weights", type=str)
     bert_parser.add_argument("--tokenizer", type=str)
-
+    bert_parser.add_argument(
+        "--device",
+        type=str,
+        default='cuda' if torch.cuda.is_available() else 'cpu',
+    )
     # CatE Parser
     cate_parser = sub_parser.add_parser("cate")
     cate_parser.add_argument("--topic", type=str, required=True)
@@ -58,7 +64,16 @@ def main(args):
     else:
         df = cate_embeddings(args)
     logging.info(f"Saving embeddings to {args.output}")
+
     df.to_csv(args.output)
+    words_set = {}
+    if args.out_words:
+        for topic in df.columns:
+            col = df[topic].sort_values(ascending=False)
+            words_set[topic] = col.head(10).index.to_list()
+        logging.info(f"Writing word sets to {args.out_words}")
+        with open(args.out_words, 'w') as f:
+            json.dump(words_set, f)
     visualize_results(df)
 
 
@@ -83,7 +98,7 @@ def bert_embeddings(args):
                                                         all_vocab,
                                                         tokenizer,
                                                         model,
-                                                        batch_size=10240,
+                                                        batch_size=3072,
                                                         device=args.device)
             data[:, i] = similarities
             df = pd.DataFrame(data, index=all_vocab, columns=seeds)
@@ -99,7 +114,7 @@ def bert_embeddings(args):
         df = pd.DataFrame(data, index=word_embeddings.index, columns=seeds)
     if args.out_embeddings:
         embeddings_arr = np.zeros((len(all_vocab), 768))
-        batch_size = 10240
+        batch_size = 3072
         embeddings_df = pd.DataFrame(embeddings_arr,
                                      index=all_vocab,
                                      columns=range(768))

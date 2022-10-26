@@ -1,0 +1,31 @@
+SUMMARY
+================================================================================
+./results/scidoc/cate/word_sets.json
+====PMIS====
+        !chronic_kidney_disease:304.30882412004
+        !mental_disorder:29.672002577667367
+        !musculoskeletal_disorder:36.27398640012797
+        !neoplasm:127.59190861465576
+        !neurological_disorder:189.22660431054058
+        chronic_respiratory_disease:56.69476606243262
+        diabetes_mellitus:17.21583304779021
+        digestive_disease:0
+        hiv_aids:43.029216887694005
+        hepatitis_a_b_c_e:37.72899869281093
+        !cardiovascular_disease:182.01061408294174
+        <SUM>: 93.06843225424556
+====NPMIS====
+        cardiovascular_disease:14.924739975222401
+        chronic_kidney_disease:26.530731841043828
+        mental_disorder:2.347685149561187
+        musculoskeletal_disorder:3.1374432431400114
+        neoplasm:10.273577821152221
+        neurological_disorder:14.1492059074066
+        chronic_respiratory_disease:4.597779390775101
+        diabetes_mellitus:1.1495044020440994
+        digestive_disease:0
+        hiv_aids:3.6427066720339796
+        hepatitis_a_b_c_e:2.861512569456862
+        <SUM>: 7.6013533610760255
+====DISTINCTIVENESS====
+        <SUM>: 1.0

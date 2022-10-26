@@ -56,18 +56,23 @@ def cosine_similarity_with_topic(topic,
             outputs = model(**inputs)
             embeddings = outputs.last_hidden_state.detach().cpu().numpy(
             )[:, 1:, :]
+
         endings = torch.argwhere(inputs['input_ids'] == 102)
         endings[:, 1] = endings[:, 1] - 1
         for end in endings:
             row, col = end[0].item(), end[1].item()
+
             embedding = embeddings[row, :col, :]
+
             similarities = batch_cosine_similarity(topic_emb, embedding)
+
             if similarities.shape[0] == 1:
                 res.append(similarities[0])
             else:
                 weights_rest = (1 - stem_weight) / (similarities.shape[0] - 1)
                 weights = [stem_weight]
                 weights.extend([weights_rest] * (similarities.shape[0] - 1))
+
                 res.append(np.average(similarities, weights=weights))
     print(max(res))
     return np.array(res)

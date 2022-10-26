@@ -5,16 +5,18 @@ import torch
 import json
 
 
-def load_vocab(path):
-    vocab_set = None
+def load_vocab(path, keys_only=True):
+    vocab_dict = None
     with open(path, 'rb') as f:
-        vocab_set = pickle.load(f)
-
-    vocab = [word.strip() for word in vocab_set]
-    vocab = list(set(vocab))
-    vocab = sorted(vocab)
-    logging.info(f"Loaded {len(vocab)} words from {path}")
-    return vocab
+        vocab_dict = pickle.load(f)
+        logging.info(f"Loaded {len(vocab_dict)} words from {path}")
+    if keys_only:
+        vocab = [word.strip() for word in vocab_dict]
+        vocab = list(set(vocab))
+        vocab = sorted(vocab)
+        return vocab
+    else:
+        return vocab_dict
 
 
 def load_seed(path, combine_result=True):

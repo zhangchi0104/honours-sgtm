@@ -9,7 +9,7 @@ from rich.table import Table, Column
 from rich.console import Console
 from rich.logging import RichHandler
 import numpy as np
-from utils.io import load_seed
+from utils.io import load_seed, load_vocab
 import gensim
 
 
@@ -20,6 +20,7 @@ def parse_args():
     seed_parser = sub_parser.add_parser("gen_seeds")
     seed_parser.add_argument("--out", required=True)
     seed_parser.add_argument("--similarities", required=True)
+    seed_parser.add_argument("--vocab", required=True)
     seed_parser.add_argument("--seeds", required=True)
     args = parser.parse_args()
     return args
@@ -28,8 +29,10 @@ def parse_args():
 def main(args):
     if args.command == "gen_seeds":
         in_vocab, out_vocab = load_seed(args.seeds, False)
-
+        vocab = load_vocab(args.vocab)
         similarities = pd.read_csv(args.similarities, index_col=0)
+        safe_vocab = set(vocab).intersection(set(similarities.index))
+        similarities = similarities.loc[list(safe_vocab), :]
         replacements = find_in_vocab_replacements(out_vocab, similarities)
         visualize_replacement_seeds(out_vocab, replacements)
         logging.info(f"Saving seeds to {args.out}")
