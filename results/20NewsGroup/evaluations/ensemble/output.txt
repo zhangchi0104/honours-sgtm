@@ -1,0 +1,535 @@
+[2;36m[10/28/22 18:37:28][0m[2;36m [0m[34mINFO    [0m INFO:root:Loaded [1;36m34771[0m words from                                                                   ]8;id=113791;file:///mnt/data/code/github.com/zhangchi0104/honours-sgtm/scripts/utils/io.py\[2mio.py[0m]8;;\[2m:[0m]8;id=928806;file:///mnt/data/code/github.com/zhangchi0104/honours-sgtm/scripts/utils/io.py#12\[2m12[0m]8;;\
+                             [35m/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/data/20NewsGroup/vocab/[0m[95mvocab.pkl[0m                  
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/20NewsGroup/ensemble/local-0.1-global-0.9-rho-0.5/scores.pkl
+====WORD SET====
+	religion:['religion', 'religionist', 'christianity', 'religious', 'belief', 'theology', 'denomination', 'culture', 'religiously', 'bible']
+	hardware:['hardware', 'hardwarecolor', 'computers', 'configuration', 'equipment', 'installation', 'implementation', 'software', 'procurement', 'device']
+	space:['space', 'spacelink', 'spacehab', 'spacelab', 'air', 'universe', 'spacepac', 'orbit', 'dimension', 'gravity']
+	gun:['gun', 'weapon', 'pistol', 'firearm', 'bullet', 'shotgun', 'handgun', 'gund', 'rifle', 'knife']
+	medicine:['medicine', 'physician', 'medical', 'doctor', 'healthcare', 'health', 'diagnosis', 'disease', 'surgery', 'medication']
+	crypt:['crypt', 'crawl', 'bathroom', 'graveyard', 'pantheon', 'slab', 'ledge', 'basement', 'cellar', 'hiding']
+	graphics:['graphics', 'graphic', 'computers', 'rendering', 'imaging', 'visuals', 'comics', 'processing', 'animated', 'mathematical']
+	sports:['sports', 'sportsman', 'sporting', 'rodeo', 'athletic', 'cars', 'biking', 'turf', 'shamrock', 'greyhound']
+	politics:['politics', 'political', 'politically', 'anthropology', 'geography', 'sexuality', 'diplomacy', 'debate', 'bureaucracy', 'rhetoric']
+	windows:['windows', 'window', 'windowsnt', 'windowsvga', 'microsoft', 'windowed', 'windowing', 'windowe', 'do', 'dos']
+====PMIS====
+	space:256.38317357274434
+	medicine:338.3475628414226
+	gun:335.9842521459259
+	religion:306.5602762525707
+	politics:170.18938426781227
+	hardware:217.14377876545086
+	graphics:177.28303440233898
+	crypt:30.483851806781413
+	sports:25.986357262879245
+	windows:256.3282826826516
+	<SUM>: 211.4689954000578
+====NPMIS====
+	gun:39.71822310685598
+	medicine:36.968136542477446
+	hardware:23.292222022645802
+	sports:1.9441590016610268
+	religion:30.473799472020154
+	graphics:18.727012427065407
+	windows:25.204422656278478
+	crypt:2.661569114729372
+	politics:13.317141532403966
+	space:25.29082760113264
+	<SUM>: 21.759751347727025
+====DISTINCTIVENESS====
+	<SUM>: 0.99
+	<SEMANTICALLY DISTINCT>: 0.86
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/20NewsGroup/ensemble/local-0.2-global-0.8-rho-0.5/scores.pkl
+====WORD SET====
+	religion:['religion', 'religionist', 'christianity', 'religious', 'belief', 'theology', 'denomination', 'bible', 'culture', 'religiously']
+	hardware:['hardware', 'configuration', 'implementation', 'computers', 'hardwarecolor', 'equipment', 'software', 'functionality', 'device', 'installation']
+	space:['space', 'spacelink', 'spacehab', 'orbit', 'spacelab', 'shuttle', 'sphere', 'universe', 'air', 'spaceflight']
+	gun:['gun', 'weapon', 'firearm', 'pistol', 'handgun', 'shotgun', 'knife', 'bullet', 'rifle', 'shoot']
+	medicine:['medicine', 'physician', 'medical', 'doctor', 'healthcare', 'health', 'diagnosis', 'medication', 'disease', 'surgery']
+	crypt:['crypt', 'crawl', 'bathroom', 'graveyard', 'ledge', 'doorway', 'choking', 'shriek', 'wardrobe', 'fireplace']
+	graphics:['graphics', 'graphic', 'rendering', 'visuals', 'computers', 'animation', 'imagery', 'animated', 'processing', 'imaging']
+	sports:['sports', 'sportsman', 'sporting', 'biking', 'rodeo', 'cars', 'outspoken', 'athletic', 'horseback', 'goalkeeper']
+	politics:['politics', 'political', 'politically', 'economic', 'rhetoric', 'activism', 'anthropology', 'reform', 'judiciary', 'debate']
+	windows:['windows', 'window', 'windowsnt', 'microsoft', 'windowsvga', 'windowed', 'windowe', 'windowing', 'do', 'application']
+====PMIS====
+	hardware:241.3702223574355
+	religion:306.56027625257076
+	space:290.0502748164638
+	medicine:338.34756284142264
+	gun:405.8475804640735
+	windows:264.2252917124958
+	politics:203.13878696131175
+	crypt:78.14926111964596
+	sports:12.044618638996683
+	graphics:240.702329950989
+	<SUM>: 238.0436205115405
+====NPMIS====
+	religion:30.473799472020154
+	space:28.50249582292516
+	gun:47.28569481500687
+	hardware:26.644038477575332
+	politics:16.956593022910493
+	windows:27.215804774705667
+	sports:0.9011133615879897
+	crypt:6.361998411978827
+	medicine:36.968136542477446
+	graphics:26.23669766307431
+	<SUM>: 24.754637236426227
+====DISTINCTIVENESS====
+	<SUM>: 0.99
+	<SEMANTICALLY DISTINCT>: 0.88
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/20NewsGroup/ensemble/local-0.3-global-0.7-rho-0.5/scores.pkl
+====WORD SET====
+	religion:['religion', 'religious', 'christianity', 'belief', 'religionist', 'denomination', 'theology', 'bible', 'religiously', 'hindu']
+	hardware:['hardware', 'implementation', 'configuration', 'software', 'computers', 'functionality', 'device', 'compatibility', 'processor', 'equipment']
+	space:['space', 'spacehab', 'shuttle', 'orbit', 'spacelink', 'spacelab', 'orbital', 'spacecraft', 'satellite', 'sphere']
+	gun:['gun', 'weapon', 'firearm', 'handgun', 'pistol', 'shotgun', 'knife', 'rifle', 'bullet', 'revolver']
+	medicine:['medicine', 'medical', 'physician', 'doctor', 'healthcare', 'health', 'diagnosis', 'medication', 'disease', 'surgery']
+	crypt:['crawl', 'crypt', 'ledge', 'bathroom', 'wardrobe', 'graveyard', 'doorway', 'shriek', 'choking', 'ravine']
+	graphics:['graphics', 'graphic', 'rendering', 'animation', 'visuals', 'imagery', 'graphical', 'tracing', 'computers', 'texture']
+	sports:['sportsman', 'sports', 'biking', 'rodeo', 'sporting', 'outspoken', 'cars', 'horseback', 'pony', 'playground']
+	politics:['political', 'politics', 'economic', 'activism', 'politically', 'rhetoric', 'democratic', 'judiciary', 'reform', 'communists']
+	windows:['windows', 'window', 'windowsnt', 'microsoft', 'windowe', 'windowed', 'do', 'windowsvga', 'application', 'windowing']
+====PMIS====
+	graphics:328.68356919308917
+	sports:22.995079339674636
+	medicine:338.34756284142264
+	religion:287.1892934777132
+	space:389.0156540267308
+	crypt:68.86042408457267
+	windows:264.2252917124958
+	politics:222.64227756754792
+	gun:407.15222605654446
+	hardware:308.39100249091007
+	<SUM>: 263.7502380790701
+====NPMIS====
+	gun:46.81214629290574
+	medicine:36.96813654247744
+	graphics:34.757614673012625
+	religion:28.25221710580027
+	hardware:32.440253141322536
+	space:41.02348366926475
+	politics:18.39459158555299
+	windows:27.215804774705667
+	sports:1.5587064001038398
+	crypt:5.7323606741733455
+	<SUM>: 27.31553148593192
+====DISTINCTIVENESS====
+	<SUM>: 0.99
+	<SEMANTICALLY DISTINCT>: 0.89
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/20NewsGroup/ensemble/local-0.4-global-0.6-rho-0.5/scores.pkl
+====WORD SET====
+	religion:['religion', 'religious', 'christianity', 'belief', 'denomination', 'theology', 'religionist', 'bible', 'hindu', 'religiously']
+	hardware:['hardware', 'implementation', 'software', 'configuration', 'functionality', 'processor', 'device', 'computers', 'compatibility', 'protocol']
+	space:['space', 'shuttle', 'spacehab', 'orbit', 'spacelink', 'spacelab', 'orbital', 'spacecraft', 'aeronautics', 'satellite']
+	gun:['gun', 'weapon', 'firearm', 'handgun', 'pistol', 'shotgun', 'knife', 'rifle', 'revolver', 'shoot']
+	medicine:['medicine', 'medical', 'physician', 'doctor', 'healthcare', 'health', 'diagnosis', 'medication', 'clinical', 'disease']
+	crypt:['crawl', 'wardrobe', 'ledge', 'doorway', 'graveyard', 'bathroom', 'shriek', 'choking', 'ravine', 'crypt']
+	graphics:['graphics', 'graphic', 'rendering', 'animation', 'imagery', 'visuals', 'graphical', 'sgi_rad', 'downloadable', 'tracing']
+	sports:['sportsman', 'sports', 'biking', 'outspoken', 'rodeo', 'sporting', 'pony', 'horseback', 'cars', 'aviator']
+	politics:['political', 'politics', 'economic', 'activism', 'moraltiy', 'communists', 'democratic', 'politically', 'bloc', 'rhetoric']
+	windows:['windows', 'window', 'microsoft', 'windowsnt', 'windowe', 'windowed', 'do', 'application', 'icon', 'dos']
+====PMIS====
+	religion:287.18929347771325
+	space:430.5375810463583
+	gun:404.19002480145923
+	medicine:349.18224474699576
+	windows:306.8552886542142
+	sports:22.995079339674636
+	hardware:320.7611976950922
+	graphics:328.57742753484814
+	crypt:68.86042408457267
+	politics:166.84652066179484
+	<SUM>: 268.59950820427235
+====NPMIS====
+	crypt:5.732360674173346
+	gun:47.236591362397675
+	religion:28.252217105800277
+	medicine:39.52206925823428
+	windows:32.56866713106035
+	politics:13.637119396303897
+	space:45.061218596007386
+	graphics:33.75192001091467
+	sports:1.5587064001038398
+	hardware:34.18227790460378
+	<SUM>: 28.15031478395995
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.9
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/20NewsGroup/ensemble/local-0.5-global-0.5-rho-0.5/scores.pkl
+====WORD SET====
+	religion:['religion', 'religious', 'belief', 'christianity', 'denomination', 'bible', 'hindu', 'theology', 'christians', 'religiously']
+	hardware:['hardware', 'implementation', 'software', 'configuration', 'processor', 'functionality', 'device', 'protocol', 'compatibility', 'builtin']
+	space:['space', 'shuttle', 'spacehab', 'orbit', 'orbital', 'aeronautics', 'spacecraft', 'spacelink', 'spacelab', 'satellite']
+	gun:['gun', 'weapon', 'firearm', 'handgun', 'pistol', 'shotgun', 'knife', 'revolver', 'rifle', 'violent']
+	medicine:['medicine', 'medical', 'physician', 'doctor', 'healthcare', 'health', 'clinical', 'therapy', 'diagnosis', 'medication']
+	crypt:['crawl', 'wardrobe', 'ledge', 'doorway', 'shriek', 'graveyard', 'bathroom', 'ravine', 'choking', 'crypt']
+	graphics:['graphics', 'graphic', 'rendering', 'animation', 'sgi_rad', 'imagery', 'graphical', 'downloadable', 'vm_pray', 'graphsupport']
+	sports:['sportsman', 'sports', 'biking', 'outspoken', 'rodeo', 'pony', 'horseback', 'sporting', 'cars', 'sport']
+	politics:['political', 'moraltiy', 'activism', 'economic', 'politics', 'communists', 'democratic', 'bloc', 'moral', 'repression']
+	windows:['window', 'windows', 'microsoft', 'windowe', 'do', 'application', 'windowed', 'icon', 'windowsnt', 'screen']
+====PMIS====
+	medicine:349.97459210307886
+	religion:326.0666743628438
+	graphics:348.52263884158197
+	space:430.53758104635824
+	windows:310.26117045798486
+	hardware:379.0828949513564
+	gun:401.59748062243756
+	sports:59.92150153273157
+	crypt:68.86042408457267
+	politics:205.27038918980534
+	<SUM>: 288.00953471927517
+====NPMIS====
+	hardware:38.878159806933496
+	gun:46.7156062434994
+	windows:33.76236968938704
+	crypt:5.732360674173346
+	politics:16.6640420789287
+	religion:33.09400128561551
+	sports:4.341367313801916
+	medicine:38.12756958050268
+	space:45.06121859600739
+	graphics:34.414153105146944
+	<SUM>: 29.679084837399635
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.91
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/20NewsGroup/ensemble/local-0.6-global-0.4-rho-0.5/scores.pkl
+====WORD SET====
+	religion:['religion', 'religious', 'belief', 'christianity', 'denomination', 'islam', 'bible', 'christians', 'hindu', 'believer']
+	hardware:['hardware', 'implementation', 'software', 'processor', 'configuration', 'functionality', 'builtin', 'protocol', 'vendor', 'device']
+	space:['space', 'shuttle', 'spacehab', 'orbit', 'aeronautics', 'orbital', 'spacecraft', 'satellite', 'billboard', 'spacelab']
+	gun:['gun', 'handgun', 'firearm', 'weapon', 'pistol', 'shotgun', 'knife', 'revolver', 'violent', 'criminal']
+	medicine:['medicine', 'medical', 'physician', 'doctor', 'therapy', 'clinical', 'healthcare', 'nutrition', 'patient', 'dentistry']
+	crypt:['crawl', 'wardrobe', 'ledge', 'doorway', 'climb', 'shriek', 'balcony', 'ravine', 'graveyard', 'crypt']
+	graphics:['graphics', 'graphic', 'rendering', 'graphsupport', 'displayer', 'sgi_rad', 'animation', 'downloadable', 'vm_pray', 'raytracker']
+	sports:['sportsman', 'biking', 'outspoken', 'sports', 'pony', 'rodeo', 'horseback', 'sport', 'sporting', 'cars']
+	politics:['political', 'moraltiy', 'activism', 'economic', 'communists', 'bloc', 'democratic', 'moral', 'repression', 'politics']
+	windows:['window', 'windows', 'icon', 'windowe', 'application', 'do', 'microsoft', 'windowed', 'screen', 'windowsnt']
+====PMIS====
+	gun:395.98173686372786
+	religion:329.58772201865963
+	medicine:344.57319386356687
+	space:396.9378793718207
+	hardware:388.4959896355412
+	sports:59.92150153273157
+	crypt:114.29733535542087
+	graphics:376.8381816588267
+	windows:310.26117045798475
+	politics:205.27038918980531
+	<SUM>: 292.2165099948086
+====NPMIS====
+	hardware:41.57133477508262
+	gun:46.933782302290574
+	space:42.444396382874395
+	medicine:37.466986766648574
+	crypt:10.019459104061491
+	graphics:36.13992982039501
+	religion:35.54083847935876
+	politics:16.6640420789287
+	windows:33.76236968938705
+	sports:4.341367313801916
+	<SUM>: 30.48845067128291
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.92
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/20NewsGroup/ensemble/local-0.7-global-0.3-rho-0.5/scores.pkl
+====WORD SET====
+	religion:['religion', 'religious', 'belief', 'christianity', 'islam', 'christians', 'believer', 'denomination', 'hindu', 'bible']
+	hardware:['hardware', 'implementation', 'software', 'processor', 'cpus', 'pipelining', 'builtin', 'protocol', 'thrue', 'vendor']
+	space:['space', 'shuttle', 'spacehab', 'aeronautics', 'orbit', 'orbital', 'nasa', 'spacecraft', 'billboard', 'satellite']
+	gun:['gun', 'handgun', 'firearm', 'weapon', 'shotgun', 'pistol', 'knife', 'revolver', 'criminal', 'violent']
+	medicine:['medicine', 'medical', 'physician', 'doctor', 'dentistry', 'therapy', 'clinical', 'nutrition', 'patient', 'psychiatry']
+	crypt:['crawl', 'wardrobe', 'climb', 'ledge', 'doorway', 'urinate', 'leg', 'downstairs', 'balcony', 'crypt']
+	graphics:['graphic', 'graphics', 'graphsupport', 'displayer', 'rendering', 'raytracker', 'dctv', 'sgi_rad', 'pmjpeg', 'animation']
+	sports:['sportsman', 'biking', 'outspoken', 'pony', 'rodeo', 'sports', 'sport', 'horseback', 'specificly', 'raod']
+	politics:['political', 'moraltiy', 'activism', 'economic', 'communists', 'marginalize', 'bloc', 'moral', 'democratic', 'politics']
+	windows:['window', 'windows', 'icon', 'application', 'windowe', 'do', 'screen', 'microsoft', 'xsetwmnormalhint', 'windowed']
+====PMIS====
+	medicine:403.1526581494396
+	gun:395.9817368637278
+	space:405.5845014956513
+	religion:329.5877220186597
+	sports:44.20446470411194
+	hardware:317.49963062547994
+	graphics:368.169080553313
+	politics:193.36146826292335
+	windows:291.04658651322137
+	crypt:243.112738316615
+	<SUM>: 299.1700587503143
+====NPMIS====
+	religion:35.54083847935876
+	gun:46.933782302290574
+	sports:3.1716740596269157
+	space:46.6527608323813
+	hardware:31.42394313765207
+	graphics:34.5682498714379
+	windows:32.619833650144976
+	crypt:21.416773534243756
+	politics:15.86553576898781
+	medicine:42.455998851374474
+	<SUM>: 31.064939048749853
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.94
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/20NewsGroup/ensemble/local-0.8-global-0.2-rho-0.5/scores.pkl
+====WORD SET====
+	religion:['religion', 'religious', 'belief', 'christianity', 'islam', 'christians', 'believer', 'christian', 'hindus', 'hindu']
+	hardware:['hardware', 'pipelining', 'cpus', 'implementation', 'software', 'snmp', 'thrue', 'processor', 'chording', 'tokenring']
+	space:['space', 'shuttle', 'aeronautics', 'spacehab', 'orbit', 'nasa', 'orbital', 'fyou', 'billboard', 'telescope']
+	gun:['gun', 'handgun', 'firearm', 'weapon', 'shotgun', 'pistol', 'homocide', 'revolver', 'knife', 'criminal']
+	medicine:['medicine', 'medical', 'dentistry', 'physician', 'therapy', 'doctor', 'nutrition', 'clinical', 'patient', 'psychiatry']
+	crypt:['crawl', 'wardrobe', 'urinate', 'climb', 'careen', 'ledge', 'leg', 'doorway', 'downstairs', 'crypt']
+	graphics:['graphic', 'graphics', 'displayer', 'graphsupport', 'raytracker', 'pmjpeg', 'dctv', 'rendering', 'sgi_rad', 'vm_pray']
+	sports:['sportsman', 'biking', 'outspoken', 'raod', 'specificly', 'pony', 'rodeo', 'sport', 'horseback', 'sports']
+	politics:['political', 'moraltiy', 'activism', 'marginalize', 'pluralism', 'communists', 'economic', 'clout', 'moral', 'politics']
+	windows:['window', 'windows', 'icon', 'xsetwmnormalhint', 'xquerytree', 'application', 'xsizehint', 'do', 'screen', 'windowe']
+====PMIS====
+	graphics:350.23091506723927
+	religion:345.6016355827844
+	windows:216.77455654267405
+	gun:381.7574043691405
+	space:343.10473938741376
+	hardware:264.1658957284323
+	medicine:403.1526581494395
+	crypt:172.31125444021896
+	sports:44.20446470411194
+	politics:154.77017394378632
+	<SUM>: 267.6073697915241
+====NPMIS====
+	gun:43.81632229639697
+	medicine:42.45599885137447
+	hardware:24.16337268260352
+	crypt:14.31061755303705
+	politics:12.637068519758078
+	windows:24.565969272523475
+	sports:3.1716740596269157
+	graphics:32.394339281914384
+	religion:36.85325652776689
+	space:36.946063091659816
+	<SUM>: 27.13146821366616
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.93
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/20NewsGroup/ensemble/local-0.9-global-0.1-rho-0.5/scores.pkl
+====WORD SET====
+	religion:['religion', 'religious', 'belief', 'christianity', 'islam', 'christanity', 'christians', 'monotheistic', 'christian', 'believer']
+	hardware:['hardware', 'pipelining', 'cpus', 'fpga', 'snmp', 'xilinx', 'encryptor', 'thrue', 'implementation', 'interfacing']
+	space:['space', 'shuttle', 'fyou', 'aeronautics', 'nasa', 'jenks', 'jsc', 'orbit', 'spacehab', 'orbital']
+	gun:['gun', 'handgun', 'firearm', 'homocide', 'weapon', 'shotgun', 'pistol', 'homicide', 'semiautomatic', 'backcountry']
+	medicine:['medicine', 'dentistry', 'medical', 'radiology', 'obstetrics', 'physician', 'neurology', 'therapy', 'pharmacology', 'nutrition']
+	crypt:['crawl', 'careen', 'urinate', 'wardrobe', 'stocking', 'climb', 'undress', 'leg', 'ledge', 'crypt']
+	graphics:['graphic', 'graphics', 'displayer', 'raytracker', 'graphsupport', 'pmjpeg', 'dctv', 'rendering', 'sgi_rad', 'cgi']
+	sports:['sportsman', 'raod', 'specificly', 'biking', 'outspoken', 'pastime', 'pony', 'rodeo', 'sport', 'sports']
+	politics:['political', 'moraltiy', 'pluralism', 'marginalize', 'clout', 'federalism', 'atheist', 'activism', 'libertarians', 'politics']
+	windows:['window', 'windows', 'xsetwmnormalhint', 'xquerytree', 'telemate', 'icon', 'xsizehint', 'manager', 'ussize', 'application']
+====PMIS====
+	hardware:127.8573983915395
+	space:357.1365299902385
+	medicine:290.97565741895056
+	religion:323.56119138300085
+	gun:364.25303047102295
+	windows:210.81346324891015
+	sports:44.20446470411194
+	crypt:168.287814497947
+	graphics:305.27289613144893
+	politics:99.23728454872943
+	<SUM>: 229.15997307858999
+====NPMIS====
+	hardware:10.742164469879345
+	medicine:25.635571846164734
+	space:36.485405325199565
+	sports:3.1716740596269157
+	crypt:13.126963783727755
+	religion:34.945539461271984
+	windows:22.602642570928122
+	gun:40.615755098969665
+	graphics:28.008592141641554
+	politics:8.206747534860195
+	<SUM>: 22.354105629226982
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.94
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/20NewsGroup/ensemble/local-0.5-global-0.5-rho-0.1/scores.pkl
+====WORD SET====
+	religion:['religion', 'religious', 'belief', 'christianity', 'denomination', 'bible', 'hindu', 'theology', 'christians', 'islam']
+	hardware:['hardware', 'implementation', 'software', 'configuration', 'processor', 'functionality', 'device', 'protocol', 'compatibility', 'builtin']
+	space:['space', 'shuttle', 'spacehab', 'orbit', 'orbital', 'aeronautics', 'spacecraft', 'spacelink', 'spacelab', 'satellite']
+	gun:['gun', 'weapon', 'firearm', 'handgun', 'pistol', 'shotgun', 'knife', 'revolver', 'rifle', 'violent']
+	medicine:['medicine', 'medical', 'physician', 'doctor', 'healthcare', 'clinical', 'health', 'therapy', 'diagnosis', 'medication']
+	crypt:['crawl', 'wardrobe', 'ledge', 'doorway', 'graveyard', 'shriek', 'bathroom', 'ravine', 'choking', 'crypt']
+	graphics:['graphics', 'graphic', 'rendering', 'animation', 'sgi_rad', 'imagery', 'graphsupport', 'graphical', 'downloadable', 'vm_pray']
+	sports:['sportsman', 'sports', 'biking', 'outspoken', 'rodeo', 'pony', 'sporting', 'horseback', 'cars', 'sport']
+	politics:['political', 'moraltiy', 'politics', 'activism', 'economic', 'communists', 'democratic', 'bloc', 'moral', 'repression']
+	windows:['window', 'windows', 'microsoft', 'windowe', 'do', 'application', 'icon', 'windowed', 'windowsnt', 'screen']
+====PMIS====
+	medicine:349.97459210307886
+	hardware:379.0828949513564
+	crypt:68.86042408457267
+	politics:205.27038918980534
+	graphics:348.52263884158197
+	space:430.53758104635824
+	religion:322.5977917112597
+	gun:401.59748062243756
+	windows:310.26117045798486
+	sports:59.92150153273157
+	<SUM>: 287.6626464541167
+====NPMIS====
+	gun:46.7156062434994
+	windows:33.76236968938704
+	religion:34.001994011848936
+	sports:4.341367313801916
+	medicine:38.12756958050267
+	graphics:34.41415310514694
+	hardware:38.878159806933496
+	space:45.06121859600739
+	politics:16.664042078928695
+	crypt:5.732360674173346
+	<SUM>: 29.769884110022986
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.91
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/20NewsGroup/ensemble/local-0.5-global-0.5-rho-0.3/scores.pkl
+====WORD SET====
+	religion:['religion', 'religious', 'belief', 'christianity', 'denomination', 'bible', 'hindu', 'theology', 'christians', 'islam']
+	hardware:['hardware', 'implementation', 'software', 'configuration', 'processor', 'functionality', 'device', 'protocol', 'compatibility', 'builtin']
+	space:['space', 'shuttle', 'spacehab', 'orbit', 'orbital', 'aeronautics', 'spacecraft', 'spacelink', 'spacelab', 'satellite']
+	gun:['gun', 'weapon', 'firearm', 'handgun', 'pistol', 'shotgun', 'knife', 'revolver', 'rifle', 'violent']
+	medicine:['medicine', 'medical', 'physician', 'doctor', 'healthcare', 'clinical', 'health', 'therapy', 'diagnosis', 'medication']
+	crypt:['crawl', 'wardrobe', 'ledge', 'doorway', 'shriek', 'graveyard', 'bathroom', 'ravine', 'choking', 'crypt']
+	graphics:['graphics', 'graphic', 'rendering', 'animation', 'sgi_rad', 'imagery', 'graphical', 'graphsupport', 'downloadable', 'vm_pray']
+	sports:['sportsman', 'sports', 'biking', 'outspoken', 'rodeo', 'pony', 'horseback', 'sporting', 'cars', 'sport']
+	politics:['political', 'moraltiy', 'politics', 'activism', 'economic', 'communists', 'democratic', 'bloc', 'moral', 'repression']
+	windows:['window', 'windows', 'microsoft', 'windowe', 'do', 'application', 'icon', 'windowed', 'windowsnt', 'screen']
+====PMIS====
+	sports:59.92150153273157
+	religion:322.5977917112597
+	politics:205.27038918980534
+	crypt:68.86042408457267
+	hardware:379.0828949513564
+	graphics:348.52263884158197
+	gun:401.59748062243756
+	windows:310.26117045798486
+	medicine:349.97459210307886
+	space:430.53758104635824
+	<SUM>: 287.6626464541167
+====NPMIS====
+	gun:46.7156062434994
+	medicine:38.12756958050267
+	politics:16.664042078928695
+	crypt:5.732360674173346
+	religion:34.001994011848936
+	graphics:34.41415310514694
+	sports:4.341367313801916
+	hardware:38.878159806933496
+	windows:33.76236968938704
+	space:45.06121859600739
+	<SUM>: 29.769884110022986
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.91
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/20NewsGroup/ensemble/local-0.5-global-0.5-rho-0.7/scores.pkl
+====WORD SET====
+	religion:['religion', 'religious', 'christianity', 'belief', 'denomination', 'bible', 'hindu', 'theology', 'christians', 'religiously']
+	hardware:['hardware', 'implementation', 'software', 'configuration', 'processor', 'functionality', 'device', 'protocol', 'compatibility', 'builtin']
+	space:['space', 'shuttle', 'spacehab', 'orbit', 'orbital', 'aeronautics', 'spacecraft', 'spacelink', 'spacelab', 'satellite']
+	gun:['gun', 'weapon', 'firearm', 'handgun', 'pistol', 'shotgun', 'knife', 'revolver', 'rifle', 'violent']
+	medicine:['medicine', 'medical', 'physician', 'doctor', 'healthcare', 'health', 'clinical', 'diagnosis', 'therapy', 'medication']
+	crypt:['crawl', 'wardrobe', 'ledge', 'doorway', 'shriek', 'graveyard', 'bathroom', 'ravine', 'choking', 'crypt']
+	graphics:['graphics', 'graphic', 'rendering', 'animation', 'sgi_rad', 'imagery', 'graphical', 'downloadable', 'vm_pray', 'visuals']
+	sports:['sportsman', 'sports', 'biking', 'outspoken', 'rodeo', 'pony', 'horseback', 'sporting', 'cars', 'sport']
+	politics:['political', 'moraltiy', 'activism', 'economic', 'politics', 'communists', 'democratic', 'bloc', 'moral', 'repression']
+	windows:['window', 'windows', 'microsoft', 'windowe', 'do', 'application', 'windowed', 'icon', 'windowsnt', 'screen']
+====PMIS====
+	hardware:379.0828949513564
+	medicine:349.97459210307886
+	gun:401.59748062243756
+	space:430.53758104635824
+	religion:326.0666743628438
+	politics:205.27038918980534
+	sports:59.92150153273157
+	crypt:68.86042408457267
+	graphics:323.8600290326414
+	windows:310.26117045798486
+	<SUM>: 285.5432737383811
+====NPMIS====
+	religion:33.094001285615505
+	crypt:5.732360674173346
+	gun:46.7156062434994
+	hardware:38.878159806933496
+	windows:33.76236968938704
+	space:45.06121859600739
+	graphics:32.35069135719477
+	sports:4.341367313801916
+	politics:16.6640420789287
+	medicine:38.12756958050267
+	<SUM>: 29.47273866260442
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.91
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/20NewsGroup/ensemble/local-0.5-global-0.5-rho-0.9/scores.pkl
+====WORD SET====
+	religion:['religion', 'religious', 'christianity', 'belief', 'denomination', 'bible', 'theology', 'hindu', 'religiously', 'christians']
+	hardware:['hardware', 'implementation', 'software', 'configuration', 'processor', 'functionality', 'device', 'protocol', 'compatibility', 'builtin']
+	space:['space', 'shuttle', 'spacehab', 'orbit', 'orbital', 'aeronautics', 'spacecraft', 'spacelab', 'spacelink', 'satellite']
+	gun:['gun', 'weapon', 'firearm', 'handgun', 'pistol', 'shotgun', 'knife', 'revolver', 'rifle', 'violent']
+	medicine:['medicine', 'medical', 'physician', 'doctor', 'healthcare', 'health', 'clinical', 'diagnosis', 'medication', 'therapy']
+	crypt:['crawl', 'wardrobe', 'ledge', 'doorway', 'shriek', 'graveyard', 'bathroom', 'ravine', 'choking', 'crypt']
+	graphics:['graphics', 'graphic', 'rendering', 'animation', 'sgi_rad', 'imagery', 'graphical', 'downloadable', 'vm_pray', 'visuals']
+	sports:['sportsman', 'sports', 'biking', 'outspoken', 'rodeo', 'pony', 'horseback', 'sporting', 'cars', 'sport']
+	politics:['political', 'activism', 'moraltiy', 'economic', 'communists', 'politics', 'democratic', 'bloc', 'moral', 'repression']
+	windows:['window', 'windows', 'microsoft', 'windowe', 'do', 'application', 'windowed', 'icon', 'windowsnt', 'screen']
+====PMIS====
+	hardware:379.0828949513564
+	medicine:349.97459210307886
+	space:430.5375810463583
+	gun:401.59748062243756
+	religion:326.0666743628438
+	crypt:68.86042408457267
+	sports:59.92150153273157
+	graphics:323.8600290326414
+	politics:205.27038918980534
+	windows:310.26117045798486
+	<SUM>: 285.5432737383811
+====NPMIS====
+	hardware:38.878159806933496
+	space:45.06121859600739
+	religion:33.094001285615505
+	gun:46.7156062434994
+	graphics:32.35069135719477
+	crypt:5.732360674173346
+	medicine:38.12756958050267
+	sports:4.341367313801916
+	windows:33.76236968938704
+	politics:16.664042078928695
+	<SUM>: 29.47273866260442
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.91

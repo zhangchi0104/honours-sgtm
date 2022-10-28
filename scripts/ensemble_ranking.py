@@ -60,7 +60,7 @@ def scale_data(data):
 
 
 def read_csv(path):
-    df = pd.read_csv(path, index_col=0)
+    df = pd.read_pickle(path)
     df.iloc[:, :] = MinMaxScaler().fit_transform(df)
     logging.info(f"loaded a csv with shape {df.shape} from {path}")
     return df
@@ -95,20 +95,26 @@ def run_ensemble_rankings(
                                 rho=rho,
                                 weight_global=global_weight,
                                 weight_local=local_weight)
-    logging.info(
-        f"Done ensemble ranking, min score {np.max(rankings)}, max score {np.min(rankings)})"
-    )
+    duplicate_masks = rankings.index.duplicated(keep=False)
+    duplicate_idx = np.argwhere(duplicate_masks == True)
+    duplicate_idx = duplicate_idx.flatten().tolist()
+    dup_words = list(rankings.index[duplicate_idx])
+    words = ' '.join(
+        [f"{word}@{idx}" for idx, word in zip(duplicate_idx, dup_words)])
+    logging.warning(f"{words} are duplicated, keeping first occurences")
+    rankings = rankings[~rankings.index.duplicated(keep='first')]
+    # logging.info(
+    #     f"Done ensemble ranking, min score {np.max(rankings)}, max score {np.min(rankings)})"
+    # )
     rankings_df = pd.DataFrame(rankings,
                                index=global_df.index,
                                columns=global_df.columns)
     visualize_results(rankings_df, 10)
-    results = {}
-    for topic in rankings_df.columns:
-        words = rankings_df[topic].sort_values(ascending=False).index[:10]
+
     if not dry_run:
-        results_path = os.path.join(out_dir, 'scores.csv')
+        results_path = os.path.join(out_dir, 'scores.pkl')
         logging.info(f"saving results to {results_path}")
-        rankings_df.to_csv(results_path)
+        rankings_df.to_pickle(results_path)
 
 
 def main(args):

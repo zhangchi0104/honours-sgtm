@@ -1,4 +1,3 @@
-from functools import reduce
 import pandas as pd
 import argparse
 import numpy as np
@@ -9,10 +8,10 @@ import umap
 
 
 def rank_reduction(embeddings: pd.DataFrame, similarities: pd.DataFrame,
-                   similarity_threshold):
+                   similarity_threshold, n_dim):
     labels = label_words(similarities, similarity_threshold)
-    fitter = umap.UMAP(n_components=50).fit(embeddings.to_numpy(),
-                                            y=labels.to_numpy())
+    fitter = umap.UMAP(n_components=n_dim).fit(embeddings.to_numpy(),
+                                               y=labels.to_numpy())
     reduced_embeddings = fitter.embedding_
     reduced_embeddings_df = pd.DataFrame(reduced_embeddings,
                                          index=embeddings.index)
@@ -34,13 +33,11 @@ def label_words(similarities: pd.DataFrame, similarity_threshold=0.8):
         else:
             data[i] = -1
     res_df = pd.DataFrame(data, index=similarities.index, columns=['label'])
-    res_df.groupby(['label'])
-    print(res_df)
     return res_df
 
 
 def main(args):
-    similarities = pd.read_csv(args.similarities, index_col=0)
+    similarities = pd.read_pickle(args.similarities)
     logging.info(
         f"Loaded cosine similarities from {args.similarities} with shape {similarities.shape}"
     )
@@ -49,17 +46,21 @@ def main(args):
         f"Loaded embeddings from {args.embeddings} with shape {embeddings.shape}"
     )
     reduced_embeddings = rank_reduction(embeddings, similarities,
-                                        args.similarity_threshold)
+                                        args.similarity_threshold, args.ndim)
     logging.info(f"Writing results to {args.output}")
     reduced_embeddings.to_pickle(args.output)
 
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--similarities", type=str, required=True)
-    parser.add_argument("--embeddings", type=str, required=True)
-    parser.add_argument("--similarity_threshold", type=float, default=0.7)
-    parser.add_argument("--output", type=str, required=True)
+    parser.add_argument("--similarities", "-s", type=str, required=True)
+    parser.add_argument("--embeddings", "-e", type=str, required=True)
+    parser.add_argument("--ndim", '-n', type=int, default=80)
+    parser.add_argument("--similarity_threshold",
+                        "-t",
+                        type=float,
+                        default=0.7)
+    parser.add_argument("--output", "-o", type=str, required=True)
     return parser.parse_args()
 
 

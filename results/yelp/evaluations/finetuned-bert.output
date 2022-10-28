@@ -1,0 +1,32 @@
+SUMMARY
+================================================================================
+results/scidoc/bert/finetuned_word_sets.json
+====PMIS====
+        cardiovascular_disease:180.08721417775087
+        chronic_kidney_disease:177.34201822637036
+        mental_disorder:56.91850494770831
+        musculoskeletal_disorder:0
+        neoplasm:46.30005320591332
+        neurological_disorder:0
+        chronic_respiratory_disease:0
+        diabetes_mellitus:0
+        digestive_disease:0
+        hiv_aids:0
+        hepatitis_a_b_c_e:0
+        <SUM>: 41.877071868885714
+====NPMIS====
+        cardiovascular_disease:14.421462789483103
+        chronic_kidney_disease:14.11586560698693
+        musculoskeletal_disorder:0
+        mental_disorder:4.443009799228122
+        neoplasm:3.4121862510972827
+        diabetes_mellitus:0
+        digestive_disease:0
+        chronic_respiratory_disease:0
+        hepatitis_a_b_c_e:0
+        neurological_disorder:0
+        hiv_aids:0
+        <SUM>: 3.3084113133450397
+====DISTINCTIVENESS====
+        <SUM>: 0.9727272727272728
+        <SEMANTICALLY DISTINCT>: 0.9636363636363636

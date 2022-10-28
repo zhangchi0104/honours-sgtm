@@ -48,9 +48,11 @@ def main(args):
         logging.info("Saving vocabulary to %s", args.vocabulary_path)
         pickle.dump(vocab, f)
         logging.info("Done saving vocabulary")
+    # return
     if args.cooccur_path is not None:
         vocab = list(vocab)
         coocurrence_matrix = build_cooccurance_matrix(lines, vocab)
+        logging.info(f"Saving dataframe to {args.cooccur_path}")
         coocurrence_matrix.to_csv(args.cooccur_path)
 
 
@@ -76,19 +78,19 @@ def build_cooccurance_matrix(
     lines,
     vocabulary,
 ):
-    logging.info("Starting building co-occurrence matrix")
-    coocurrence_matrix = pd.DataFrame(index=vocabulary, columns=vocabulary)
-    coocurrence_matrix.fillna(0, inplace=True)
-    for line in tqdm(lines, desc="Building co-occurrence matrix"):
-        words = line.split(' ')
-        for i in range(len(words)):
-            for j in range(i + 1, len(words)):
-                if words[i] in vocabulary and words[j] in vocabulary:
-                    coocurrence_matrix.loc[words[i], words[j]] += 1
-                    coocurrence_matrix.loc[words[j], words[i]] += 1
-    for i in range(len(vocabulary)):
-        coocurrence_matrix.iloc[i, i] = 0
-    return coocurrence_matrix
+    from sklearn.feature_extraction.text import CountVectorizer
+    import numpy as np
+    logging.info("making unigram matrix")
+    cv = CountVectorizer(ngram_range=(1, 1), vocabulary=vocabulary)
+    x = cv.fit_transform(lines)
+    logging.info("Computing occurrence matrix")
+    co_x = x.T * x
+    co_x.setdiag(0)
+    data = co_x.toarray()
+    names = cv.get_feature_names_out()
+    logging.info("Starting building dataframe")
+    df = pd.DataFrame(data, columns=names, index=names)
+    return df
 
 
 if __name__ == "__main__":

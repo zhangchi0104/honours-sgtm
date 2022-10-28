@@ -111,8 +111,8 @@ def evaluation(files, cooccur_mat, vocab, out, n_words=5):
         print(file)
         scores = {}
         basename = file.split('/')[-1].split('.')[0]
-        if file.endswith('.csv'):
-            scores_df = pd.read_csv(file, index_col=0)
+        if file.endswith('.csv') or file.endswith('.pkl'):
+            scores_df = pd.read_pickle(file)
             # construct wordset
             word_sets = build_word_sets(scores_df, n_words=n_words)
 

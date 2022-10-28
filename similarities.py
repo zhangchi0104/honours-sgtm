@@ -16,6 +16,7 @@ def parse_args():
         choices=['words', 'embeddings'],
         default=[],
     )
+    parser.add_argument("--reduced_embeddings", "-r", action='store_true')
     parser.add_argument('--dry_run', action='store_true')
     return parser.parse_args()
 
@@ -28,7 +29,8 @@ def main(args):
     results_path = os.path.join('results', dataset, method)
     vocab_path = os.path.join(datapath, 'vocab', 'vocab.pkl')
     seeds_path = os.path.join(datapath, 'seeds.json')
-    similarities_csv_path = os.path.join(results_path, 'similarities.csv')
+    out_similarities_name = 'similarities.pkl' if not args.reduced_embeddings else 'similarities_reduced.pkl'
+    similarities_csv_path = os.path.join(results_path, out_similarities_name)
     proc_args.extend([
         f"--output={similarities_csv_path}",
         f"--vocab={vocab_path}",
@@ -41,7 +43,8 @@ def main(args):
         out_embeddings_path = os.path.join(results_path, "embeddings.pkl")
         proc_args.append(f"--out_embeddings={out_embeddings_path}")
     if args.use_embeddings:
-        input_emb_path = os.path.join(results_path, 'embeddings.pkl')
+        embedding_name = "embeddings.pkl" if args.reduced_embeddings else "embeddings_reduced.pkl"
+        input_emb_path = os.path.join(results_path, embedding_name)
         proc_args.append(f'--embeddings={input_emb_path}')
     proc_args.append(args.method)
     if args.method == 'cate':

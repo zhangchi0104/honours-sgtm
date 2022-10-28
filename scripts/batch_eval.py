@@ -6,53 +6,47 @@ from evaluation import evaluation
 import pandas as pd
 import datetime
 import sys
-
+import logging
+from rich.logging import RichHandler
 from utils.io import load_vocab
 
-DATASET = 'yelp'
-PROJECT_ROOT = Path(
-    "~/code/github.com/zhangchi0104/honours-sgtm").expanduser().absolute()
-CONFIG = {
-    # local_weight, global_weight, rho
-    "specs": [
-        # changes in weights
-        (0.1, 0.9, 0.5),
-        (0.2, 0.8, 0.5),
-        (0.3, 0.7, 0.5),
-        (0.4, 0.6, 0.5),
-        (0.5, 0.5, 0.5),
-        (0.6, 0.4, 0.5),
-        (0.7, 0.3, 0.5),
-        (0.8, 0.2, 0.5),
-        (0.9, 0.1, 0.5),
-        # changes in rho
-        (0.5, 0.5, 0.1),
-        (0.5, 0.5, 0.3),
-        (0.5, 0.5, 0.7),
-        (0.5, 0.5, 0.9),
-    ],
-    "inputs":
-    [PROJECT_ROOT / 'results' / DATASET / 'cate' / 'similarities.csv'],
-    "baselines": [
-        PROJECT_ROOT / 'results' / 'global_cos_similarities.csv',
-        PROJECT_ROOT / 'results' / 'cate_cos_similarities.csv'
-    ],
-    "global_score":
-    PROJECT_ROOT / 'results' / DATASET / 'bert' / 'similarities.csv',
-    "vocab":
-    PROJECT_ROOT / 'data' / DATASET / 'vocab' / 'vocab.pkl',
-    "n_words":
-    10
-}
 
-
-def main():
+def main(args):
+    DATASET = args.dataset
+    similarity_name = 'similarities.pkl' if not args.reduced_similarities else 'similarities_reduced.pkl'
+    PROJECT_ROOT = Path(
+        "~/code/github.com/zhangchi0104/honours-sgtm").expanduser().absolute()
+    CONFIG = {
+        # local_weight, global_weight, rho
+        "specs": [
+            # changes in weights
+            (0.1, 0.9, 0.5),
+            (0.2, 0.8, 0.5),
+            (0.3, 0.7, 0.5),
+            (0.4, 0.6, 0.5),
+            (0.5, 0.5, 0.5),
+            (0.6, 0.4, 0.5),
+            (0.7, 0.3, 0.5),
+            (0.8, 0.2, 0.5),
+            (0.9, 0.1, 0.5),
+            # changes in rho
+            (0.5, 0.5, 0.1),
+            (0.5, 0.5, 0.3),
+            (0.5, 0.5, 0.7),
+            (0.5, 0.5, 0.9),
+        ],
+        "inputs":
+        [PROJECT_ROOT / 'results' / DATASET / 'cate' / 'similarities.pkl'],
+        "global_score":
+        PROJECT_ROOT / 'results' / DATASET / 'bert' / similarity_name,
+        "vocab":
+        PROJECT_ROOT / 'data' / DATASET / 'vocab' / 'vocab.pkl',
+        "n_words":
+        10
+    }
     # compute ensemble ranking
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        '--name',
-        default=f'run-{datetime.datetime.now().strftime("%Y-%m-%d-%H-%M")}')
-    args = parser.parse_args()
+    logging.info(f"global similarities: {CONFIG['global_score']}")
+    logging.info(f"local similarities: {CONFIG['inputs']}")
     ensemble_out_dirs = []
     for spec in CONFIG['specs']:
         local_w, global_w, rho = spec
@@ -71,12 +65,13 @@ def main():
     cooccur_mat = pd.read_csv(PROJECT_ROOT / 'data' / DATASET /
                               'cooccurence.csv',
                               index_col=0)
+
     out_dir = PROJECT_ROOT / 'results' / DATASET / 'evaluations' / args.name
     out_dir.mkdir(parents=True, exist_ok=True)
     sys.stdout = open(out_dir / 'output.txt', 'w')
     vocab = load_vocab(CONFIG['vocab'], False)
     for in_dir in ensemble_out_dirs:
-        input_files = [str(f) for f in in_dir.glob('*')]
+        input_files = [str(f) for f in in_dir.glob('*.pkl')]
         out_file = out_dir / f"{in_dir.name}.json"
         evaluation(input_files,
                    cooccur_mat,
@@ -86,5 +81,20 @@ def main():
     sys.stdout.close()
 
 
+def parse_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        '--name',
+        "-n",
+        default=f'run-{datetime.datetime.now().strftime("%Y-%m-%d-%H-%M")}',
+    )
+    parser.add_argument("--dataset", "-d", required=True, type=str)
+    parser.add_argument("--reduced_similarities", "-r", action="store_true")
+    args = parser.parse_args()
+    return args
+
+
 if __name__ == '__main__':
-    main()
+    logging.basicConfig(level=logging.INFO, handlers=[RichHandler()])
+    args = parse_args()
+    main(args)

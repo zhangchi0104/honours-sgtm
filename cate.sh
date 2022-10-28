@@ -1,5 +1,5 @@
 #!/bin/bash
-DATASET=yelp
+DATASET=20NewsGroup
 CATE_DIR=../../yumeng5/CatE
 NOW=$(date +"%Y-%m-%d-%H-%M")
 OUT_DIR=./results/$DATASET/cate

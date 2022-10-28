@@ -1,0 +1,32 @@
+SUMMARY                                                                                                                                  
+================================================================================                                                         
+./results/scidoc/cate/word_sets.json                                                                                                     
+====PMIS====                                                                                                                             
+        cardiovascular_disease:83.08988436852158                                                                                         
+        chronic_kidney_disease:209.01643315517873                                                                                        
+        mental_disorder:100.42558673528005                                                                                               
+        musculoskeletal_disorder:34.395741736675106                                                                                      
+        neoplasm:53.69365262461084                                                                                                       
+        neurological_disorder:22.443969913487386                                                                                         
+        spread_depolarization:54.34922829167235                                                                                          
+        iron_deficiency_anemia:0                                                                                                         
+        capital_city:0                                                                                                                   
+        population_density:23.568462060514292                                                                                            
+        blunt_trauma:25.20421728126577                                                                                                   
+        <SUM>: 55.107925106109654                                                                                                        
+====NPMIS====                                                                                                                            
+        cardiovascular_disease:7.434922869332843                                                                                         
+        chronic_kidney_disease:17.946113316492674                                                                                        
+        mental_disorder:8.557473562966566                                                                                                
+        musculoskeletal_disorder:2.878108946992713                                                                                       
+        neoplasm:3.6459780874187913                                                                                                      
+        neurological_disorder:1.6345544107062842                                                                                         
+        spread_depolarization:4.540365695131223                                                                                          
+        iron_deficiency_anemia:0                                                                                                         
+        capital_city:0                                                                                                                   
+        population_density:1.8183691977110894                                                                                            
+        blunt_trauma:1.8446152517187486                                                                                                  
+        <SUM>: 4.572772848951903                                                                                                         
+====DISTINCTIVENESS====                                                                                                                  
+        <SUM>: 1.0                                                                                                                       
+        <SEMANTICALLY DISTINCT>: 1.1

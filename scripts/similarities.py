@@ -64,8 +64,8 @@ def main(args):
     else:
         df = cate_embeddings(args)
     logging.info(f"Saving embeddings to {args.output}")
-
-    df.to_csv(args.output)
+    df.index = df.index.astype(str)
+    df.to_pickle(args.output)
     words_set = {}
     if args.out_words:
         for topic in df.columns:
@@ -106,8 +106,6 @@ def bert_embeddings(args):
         word_embeddings = pd.read_pickle(args.embeddings)
         for i, topic in enumerate(df.columns):
             topic_embedding = word_embeddings.loc[topic, :]
-            print('null' in vocab_set)
-
             similarities = batch_cosine_similarity(topic_embedding.to_numpy(),
                                                    word_embeddings.to_numpy())
             data[:, i] = similarities
