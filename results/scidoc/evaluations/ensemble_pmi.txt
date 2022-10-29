@@ -1,0 +1,11 @@
+cardiovascular_disease:260.4923691832301
+chronic_kidney_disease:323.32883911290077
+mental_disorder:240.06094661448404
+musculoskeletal_disorder:30.807396598001155
+neoplasm:140.3122253869545
+neurological_disorder:36.12500651420912
+chronic_respiratory_disease:0
+diabetes_mellitus:0
+digestive_disease:0
+hiv_aids:0
+hepatitis_a_b_c_e:12.268693704511598

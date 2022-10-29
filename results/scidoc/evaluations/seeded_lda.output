@@ -1,0 +1,22 @@
+SUMMARY
+================================================================================
+./results/scidoc/seeded_lda/result.json
+====PMIS====
+	cardiovascular_disease:230.48323962849642
+	chronic_kidney_disease:230.49124405600833
+	mental_disorder:212.82690087968803
+	neoplasm:238.34164571916256
+	neurological_disorder:229.76176711330024
+	musculoskeletal_disorder:227.73823072159067
+	<SUM>: 228.2738380197077
+====NPMIS====
+	cardiovascular_disease:37.00340660981595
+	chronic_kidney_disease:29.488456134280618
+	mental_disorder:29.202468713599455
+	musculoskeletal_disorder:35.09613994970491
+	neoplasm:40.91904336147792
+	neurological_disorder:35.28542243793771
+	<SUM>: 34.499156201136095
+====DISTINCTIVENESS====
+	<SUM>: 0.7166666666666667
+	<SEMANTICALLY DISTINCT>: 0.8166666666666667
