@@ -134,8 +134,10 @@ def ensemble_pmi2dataframe(*datasets):
         in_vocab_pmi = sum(pmis[word] for word in in_vocab) / len(out_vocab)
         dataset_result['In vocabulary Average'] = in_vocab_pmi
         dataset_result['Out Vocabulary Average'] = out_vocab_pmi
-        dataset_result['Overall Average'] = (in_vocab_pmi +
-                                             out_vocab_pmi) / len(pmis)
+        dataset_result['Overall Average'] = (
+            sum(pmis[word]
+                for word in out_vocab) + sum(pmis[word]
+                                             for word in in_vocab)) / len(pmis)
         for key, value in dataset_result.items():
             data['Dataset'].append(dataset)
             data['Type'].append(key)
