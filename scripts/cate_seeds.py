@@ -30,7 +30,7 @@ def main(args):
     if args.command == "gen_seeds":
         in_vocab, out_vocab = load_seed(args.seeds, False)
         vocab = load_vocab(args.vocab)
-        similarities = pd.read_csv(args.similarities, index_col=0)
+        similarities = pd.read_pickle(args.similarities)
         safe_vocab = set(vocab).intersection(set(similarities.index))
         similarities = similarities.loc[list(safe_vocab), :]
         replacements = find_in_vocab_replacements(out_vocab, similarities)

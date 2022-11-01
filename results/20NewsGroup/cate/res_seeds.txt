@@ -1,20 +1,20 @@
 Category (religion):
-religious monotheistic belief christanity christianity christians islam abrahamic polytheist christian 
+religious christianity belief buddhists christian christians islam theist calvinists evangelicals 
 Category (hardware):
-xilinx fpga pipelining interfacing multiprocessing cpus zilog snmp encryptor multiband 
+pclk pipelining xilinx zilog superscalar multiprocessing cpus smd thrue transputer 
 Category (space):
-fyou shuttle jsc jenks launch nasa deployable aeronautics buenneke rtgs 
+seds shuttle onobstructed jenks nasa orbital billboard jsc aeronautics rtgs 
 Category (gun):
-homocide handgun firearm submachine weapon homicide semiautomatic kratz backcountry shotgun 
+myselfe homocide firearm handgun weapon semiautomatic backcountry enyone shumer nra 
 Category (medicine):
-dentistry obstetrics neurology radiology medical podiatry optometry pharmacology neurosurgery osteopathy 
-Category (crawl):
-careen stocking urinate wardrobe leg climb undress slink ajar gambarians 
-Category (graphic):
-displayer raytracker graphics graphsupport rendering cgi dctv pmjpeg aminet freeform 
-Category (sportsman):
-raod specificly outspoken pastime sport golfer biking rodeo pony scoutmaster 
-Category (political):
-moraltiy federalism pluralism clout atheist libertarians allan marginalize schneider nonviolent 
-Category (window):
-telemate xsetwmnormalhint windows xquerytree manager icon ussize xsizehint psize pposition 
+dentistry obstetrics neurology optometry medical geriatric radiology osteopathic neurosurgery podiatry 
+Category (sanskrit):
+vedas vedic gathas brahma samadhi dasa mitra avestan gatha veda 
+Category (mythical):
+mythic gods godlike fantastical telepathic deity personify extraterrestrial odin retell 
+Category (rbis):
+rbi leadoff slugging centerfielder groundout innings expos nlcs baserunner tettleton 
+Category (forested):
+expanse farmland ravine mountainous canopy arid gorge uninhabited hectare southward 
+Category (cmap_compact):
+fontpath keyrelease winhelp builderxcessory prompting xev printscreen xenvironment current_dir xmndialogstyle 

@@ -1,4 +1,4 @@
-[2;36m[10/28/22 19:18:10][0m[2;36m [0m[34mINFO    [0m INFO:root:Loaded [1;36m34049[0m words from                                                                   ]8;id=896422;file:///mnt/data/code/github.com/zhangchi0104/honours-sgtm/scripts/utils/io.py\[2mio.py[0m]8;;\[2m:[0m]8;id=846698;file:///mnt/data/code/github.com/zhangchi0104/honours-sgtm/scripts/utils/io.py#12\[2m12[0m]8;;\
+[2;36m[11/01/22 10:48:28][0m[2;36m [0m[34mINFO    [0m INFO:root:Loaded [1;36m34049[0m words from                                                                   ]8;id=35658;file:///mnt/data/code/github.com/zhangchi0104/honours-sgtm/scripts/utils/io.py\[2mio.py[0m]8;;\[2m:[0m]8;id=334394;file:///mnt/data/code/github.com/zhangchi0104/honours-sgtm/scripts/utils/io.py#12\[2m12[0m]8;;\
                              [35m/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/data/scidoc/vocab/[0m[95mvocab.pkl[0m                       
 SUMMARY
 ================================================================================
@@ -25,8 +25,8 @@ SUMMARY
 	chronic_respiratory_disease:0
 	diabetes_mellitus:0
 	digestive_disease:0
-	hepatitis_a_b_c_e:0
 	hiv_aids:0
+	hepatitis_a_b_c_e:0
 	<SUM>: 68.10928376788765
 ====NPMIS====
 	cardiovascular_disease:18.900488122991902
@@ -38,8 +38,8 @@ SUMMARY
 	chronic_respiratory_disease:0
 	diabetes_mellitus:0
 	digestive_disease:0
-	hiv_aids:0
 	hepatitis_a_b_c_e:0
+	hiv_aids:0
 	<SUM>: 5.407633932392321
 ====DISTINCTIVENESS====
 	<SUM>: 0.9818181818181818
@@ -82,8 +82,8 @@ SUMMARY
 	chronic_respiratory_disease:0
 	diabetes_mellitus:0
 	digestive_disease:0
-	hiv_aids:0
 	hepatitis_a_b_c_e:0
+	hiv_aids:0
 	<SUM>: 6.097293920363556
 ====DISTINCTIVENESS====
 	<SUM>: 0.990909090909091
@@ -167,11 +167,11 @@ SUMMARY
 	musculoskeletal_disorder:2.552069457327181
 	neoplasm:3.7474202304193582
 	neurological_disorder:1.6009117019743297
-	chronic_respiratory_disease:0
 	diabetes_mellitus:0
 	digestive_disease:0
 	hiv_aids:0
 	hepatitis_a_b_c_e:0
+	chronic_respiratory_disease:0
 	<SUM>: 6.850741713801248
 ====DISTINCTIVENESS====
 	<SUM>: 1.0
@@ -211,11 +211,11 @@ SUMMARY
 	musculoskeletal_disorder:2.552069457327181
 	neoplasm:11.218399139231089
 	neurological_disorder:2.4426059691842497
+	chronic_respiratory_disease:0
 	diabetes_mellitus:0
 	digestive_disease:0
 	hiv_aids:0
 	hepatitis_a_b_c_e:0.8191829800810616
-	chronic_respiratory_disease:0
 	<SUM>: 7.744481597319887
 ====DISTINCTIVENESS====
 	<SUM>: 1.0
@@ -343,11 +343,11 @@ SUMMARY
 	musculoskeletal_disorder:9.104703213673176
 	neoplasm:17.59666095784131
 	neurological_disorder:2.4426059691842497
+	chronic_respiratory_disease:0.9001094384040014
 	diabetes_mellitus:0
 	digestive_disease:0
 	hiv_aids:3.171581295296602
 	hepatitis_a_b_c_e:0.8191829800810616
-	chronic_respiratory_disease:0.9001094384040014
 	<SUM>: 8.730339689784097
 ====DISTINCTIVENESS====
 	<SUM>: 1.0
@@ -475,11 +475,11 @@ SUMMARY
 	musculoskeletal_disorder:3.1232283854422835
 	neoplasm:10.4896425075927
 	neurological_disorder:2.4426059691842497
-	chronic_respiratory_disease:0
 	diabetes_mellitus:0
 	digestive_disease:0
 	hiv_aids:0
 	hepatitis_a_b_c_e:0.8191829800810616
+	chronic_respiratory_disease:0
 	<SUM>: 7.730154533363225
 ====DISTINCTIVENESS====
 	<SUM>: 1.0
@@ -522,8 +522,8 @@ SUMMARY
 	chronic_respiratory_disease:0
 	diabetes_mellitus:0
 	digestive_disease:0
-	hepatitis_a_b_c_e:0.8191829800810616
 	hiv_aids:0
+	hepatitis_a_b_c_e:0.8191829800810616
 	<SUM>: 7.585287428092945
 ====DISTINCTIVENESS====
 	<SUM>: 1.0

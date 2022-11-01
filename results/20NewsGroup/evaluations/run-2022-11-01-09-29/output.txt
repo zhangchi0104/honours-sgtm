@@ -1,0 +1,533 @@
+[2;36m[11/01/22 09:34:21][0m[2;36m [0m[34mINFO    [0m INFO:root:Loaded [1;36m34771[0m words from [35m/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/data/20NewsGroup/vocab/[0m[95mvocab.pkl[0m                                                                                              ]8;id=637604;file:///mnt/data/code/github.com/zhangchi0104/honours-sgtm/scripts/utils/io.py\[2mio.py[0m]8;;\[2m:[0m]8;id=715124;file:///mnt/data/code/github.com/zhangchi0104/honours-sgtm/scripts/utils/io.py#12\[2m12[0m]8;;\
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/20NewsGroup/ensemble/local-0.1-global-0.9-rho-0.5/scores.pkl
+====WORD SET====
+	religion:['religion', 'religionist', 'christianity', 'religious', 'belief', 'denomination', 'theology', 'culture', 'ideology', 'religiously']
+	hardware:['hardware', 'computers', 'hardwarecolor', 'configuration', 'equipment', 'installation', 'implementation', 'software', 'procurement', 'upgrade']
+	space:['space', 'spacelink', 'spacehab', 'spacepac', 'spacelab', 'air', 'dimension', 'universe', 'orbit', 'spaceflight']
+	gun:['gun', 'weapon', 'pistol', 'firearm', 'bullet', 'shotgun', 'handgun', 'gund', 'rifle', 'knife']
+	medicine:['medicine', 'physician', 'medical', 'doctor', 'healthcare', 'health', 'diagnosis', 'disease', 'surgery', 'medication']
+	sakura:['kata', 'sanskrit', 'asha', 'samurai', 'turkic', 'lydia', 'sufi', 'asa', 'iso', 'sakura']
+	superhero:['mythical', 'humanoid', 'demonic', 'bounty', 'superhuman', 'telling', 'horrific', 'enthusiastically', 'dazzling', 'superhero']
+	himalayas:['rbis', 'catching', 'fumble', 'outing', 'pitched', 'rushing', 'pennant', 'unbeaten', 'postseason', 'himalayas']
+	lyrics:['forested', 'mountainous', 'expanse', 'populated', 'countryside', 'northernmost', 'geographically', 'flowing', 'outpost', 'lyrics']
+	html:['cmap_compact', 'w_id', 'atom_wm_save_yourself', 'prompting', 'max_x', 'uuprog_mode', 'my_int_var', 'save_yourself', 'wc_len', 'html']
+====PMIS====
+	religion:296.9737763255099
+	hardware:213.86019538536038
+	himalayas:18.993444175556803
+	space:234.9072399605927
+	gun:335.9842521459259
+	lyrics:10.504173598049533
+	sakura:61.96546839084557
+	superhero:10.252859169768628
+	medicine:338.3475628414226
+	html:14.752668840098892
+	<SUM>: 153.6541640833131
+====NPMIS====
+	space:23.35754246048249
+	hardware:22.271911566361265
+	medicine:36.968136542477446
+	sakura:4.438924597610805
+	himalayas:1.2874581800366287
+	superhero:0.6949833471419468
+	religion:28.12635844179148
+	gun:39.71822310685598
+	lyrics:0.7120185311486407
+	html:1.2025558216110992
+	<SUM>: 15.87781125955178
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.92
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/20NewsGroup/ensemble/local-0.2-global-0.8-rho-0.5/scores.pkl
+====WORD SET====
+	religion:['religion', 'religionist', 'christianity', 'religious', 'belief', 'denomination', 'theology', 'religiously', 'bible', 'culture']
+	hardware:['hardware', 'implementation', 'computers', 'configuration', 'software', 'compatibility', 'equipment', 'device', 'proprietary', 'upgrade']
+	space:['space', 'spacelink', 'spacehab', 'orbit', 'spacelab', 'spaceflight', 'shuttle', 'spacepac', 'air', 'dimension']
+	gun:['gun', 'weapon', 'firearm', 'pistol', 'handgun', 'shotgun', 'rifle', 'knife', 'bullet', 'gund']
+	medicine:['medicine', 'physician', 'medical', 'doctor', 'healthcare', 'health', 'diagnosis', 'medication', 'surgery', 'disease']
+	sakura:['sanskrit', 'kata', 'asha', 'vedic', 'sufi', 'turkic', 'samurai', 'vowel', 'syriac', 'sakura']
+	superhero:['mythical', 'humanoid', 'horrific', 'demonic', 'telling', 'enthusiastically', 'daring', 'monstrous', 'dazzling', 'superhero']
+	himalayas:['rbis', 'catching', 'rushing', 'innings', 'fumble', 'postseason', 'pennant', 'pitched', 'yards', 'himalayas']
+	lyrics:['forested', 'expanse', 'mountainous', 'countryside', 'northernmost', 'populated', 'flowing', 'outpost', 'geographically', 'lyrics']
+	html:['cmap_compact', 'w_id', 'prompting', 'max_x', 'uubuild_mode', 'uuprog_mode', 'my_int_var', 'save_yourself', 'window_title', 'html']
+====PMIS====
+	religion:306.5602762525707
+	hardware:314.9693959519224
+	gun:335.9842521459259
+	himalayas:9.587882866175379
+	medicine:338.34756284142264
+	space:274.9724808075679
+	superhero:22.29747780876531
+	lyrics:10.504173598049533
+	sakura:50.01105601973504
+	html:14.059521659538948
+	<SUM>: 167.72940799516738
+====NPMIS====
+	hardware:33.03905832670406
+	medicine:36.968136542477446
+	religion:30.473799472020158
+	space:27.08751014041303
+	himalayas:0.6499083637066925
+	sakura:3.5976540260961176
+	gun:39.71822310685598
+	lyrics:0.7120185311486407
+	html:1.1093876349312244
+	superhero:1.5114199369919459
+	<SUM>: 17.48671160813453
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.93
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/20NewsGroup/ensemble/local-0.3-global-0.7-rho-0.5/scores.pkl
+====WORD SET====
+	religion:['religion', 'christianity', 'religious', 'religionist', 'belief', 'denomination', 'theology', 'bible', 'religiously', 'hinduism']
+	hardware:['hardware', 'implementation', 'software', 'computers', 'configuration', 'compatibility', 'processor', 'device', 'proprietary', 'upgrade']
+	space:['space', 'spacelink', 'spacehab', 'orbit', 'shuttle', 'spacelab', 'spaceflight', 'orbital', 'spacecraft', 'spacepac']
+	gun:['gun', 'weapon', 'firearm', 'handgun', 'pistol', 'shotgun', 'rifle', 'knife', 'bullet', 'shoot']
+	medicine:['medicine', 'physician', 'medical', 'doctor', 'healthcare', 'health', 'diagnosis', 'medication', 'surgery', 'disease']
+	sakura:['sanskrit', 'vedic', 'kata', 'asha', 'sufi', 'turkic', 'syriac', 'aramaic', 'mandir', 'sakura']
+	superhero:['mythical', 'humanoid', 'horrific', 'demonic', 'telling', 'monstrous', 'enthusiastically', 'daring', 'ambitious', 'superhero']
+	himalayas:['rbis', 'innings', 'rushing', 'catching', 'postseason', 'fumble', 'yards', 'batting', 'pennant', 'himalayas']
+	lyrics:['forested', 'expanse', 'mountainous', 'countryside', 'northernmost', 'populated', 'southward', 'flowing', 'arid', 'lyrics']
+	html:['cmap_compact', 'prompting', 'w_id', 'max_x', 'uubuild_mode', 'window_title', 'uuprog_mode', 'my_int_var', 'n_control', 'html']
+====PMIS====
+	himalayas:17.147617485058472
+	gun:405.8475804640735
+	religion:293.4725780868805
+	medicine:338.34756284142264
+	hardware:327.9712011858321
+	space:344.64762145943934
+	superhero:10.252859169768628
+	sakura:87.85971036481702
+	lyrics:11.351471458436738
+	html:14.059521659538948
+	<SUM>: 185.0957724175268
+====NPMIS====
+	religion:28.428009616346646
+	space:34.817753863125496
+	medicine:36.968136542477446
+	hardware:34.17619085061551
+	lyrics:0.769452061960651
+	html:1.1093876349312244
+	gun:47.28569481500687
+	sakura:6.468693169422336
+	himalayas:1.1876033722530215
+	superhero:0.6949833471419468
+	<SUM>: 19.19059052732812
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.93
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/20NewsGroup/ensemble/local-0.4-global-0.6-rho-0.5/scores.pkl
+====WORD SET====
+	religion:['religion', 'christianity', 'religious', 'belief', 'denomination', 'religionist', 'theology', 'christians', 'bible', 'religiously']
+	hardware:['hardware', 'implementation', 'software', 'pclk', 'compatibility', 'processor', 'computers', 'configuration', 'device', 'pcs']
+	space:['space', 'spacehab', 'shuttle', 'spacelink', 'orbit', 'spacelab', 'spaceflight', 'orbital', 'spacecraft', 'satellite']
+	gun:['gun', 'weapon', 'firearm', 'handgun', 'pistol', 'shotgun', 'knife', 'rifle', 'shoot', 'revolver']
+	medicine:['medicine', 'medical', 'physician', 'doctor', 'healthcare', 'health', 'diagnosis', 'clinical', 'medication', 'surgery']
+	sakura:['sanskrit', 'vedic', 'asha', 'sufi', 'kata', 'aramaic', 'syriac', 'hindus', 'turkic', 'sakura']
+	superhero:['mythical', 'humanoid', 'horrific', 'demonic', 'telling', 'monstrous', 'enthusiastically', 'daring', 'gods', 'superhero']
+	himalayas:['rbis', 'innings', 'rushing', 'catching', 'batting', 'postseason', 'padres', 'yards', 'marlins', 'himalayas']
+	lyrics:['forested', 'expanse', 'mountainous', 'countryside', 'northernmost', 'southward', 'canopy', 'arid', 'populated', 'lyrics']
+	html:['cmap_compact', 'prompting', 'w_id', 'uubuild_mode', 'max_x', 'current_dir', 'vinfo_list', 'window_title', 'n_control', 'html']
+====PMIS====
+	religion:308.9584437083224
+	gun:404.19002480145923
+	html:0
+	himalayas:16.943228294337487
+	lyrics:11.351471458436738
+	sakura:87.85971036481702
+	superhero:10.252859169768628
+	hardware:312.04684868655295
+	medicine:341.3752103943852
+	<SUM>: 188.3069491361312
+====NPMIS====
+	gun:47.236591362397675
+	hardware:30.953481258290523
+	medicine:36.34889533832524
+	religion:31.207650292906603
+	sakura:6.468693169422335
+	space:41.52460456456877
+	superhero:0.6949833471419468
+	lyrics:0.769452061960651
+	html:0
+	himalayas:1.1484856386313291
+	<SUM>: 19.63528370336451
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.94
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/20NewsGroup/ensemble/local-0.5-global-0.5-rho-0.5/scores.pkl
+====WORD SET====
+	religion:['religion', 'christianity', 'religious', 'belief', 'denomination', 'christians', 'judaism', 'islam', 'bible', 'christian']
+	hardware:['hardware', 'pclk', 'implementation', 'software', 'compatibility', 'processor', 'pcs', 'ethernet', 'builtin', 'device']
+	space:['space', 'shuttle', 'spacehab', 'orbit', 'spacelink', 'orbital', 'spaceflight', 'spacelab', 'spacecraft', 'satellite']
+	gun:['gun', 'weapon', 'firearm', 'handgun', 'pistol', 'shotgun', 'knife', 'rifle', 'revolver', 'violent']
+	medicine:['medicine', 'medical', 'physician', 'doctor', 'healthcare', 'health', 'clinical', 'medication', 'diagnosis', 'therapy']
+	sakura:['sanskrit', 'vedic', 'sufi', 'asha', 'aramaic', 'hindus', 'mandir', 'syriac', 'krishna', 'sakura']
+	superhero:['mythical', 'gods', 'humanoid', 'horrific', 'monstrous', 'demonic', 'telling', 'enthusiastically', 'daring', 'superhero']
+	himalayas:['rbis', 'innings', 'rushing', 'batting', 'catching', 'padres', 'marlins', 'postseason', 'royals', 'himalayas']
+	lyrics:['forested', 'expanse', 'mountainous', 'canopy', 'countryside', 'southward', 'northernmost', 'arid', 'flowing', 'lyrics']
+	html:['cmap_compact', 'prompting', 'current_dir', 'w_id', 'uubuild_mode', 'vinfo_list', 'max_x', 'window_title', 'n_control', 'html']
+====PMIS====
+	hardware:358.2216691627929
+	religion:342.2410433811319
+	space:390.0916944832325
+	lyrics:11.351471458436738
+	html:0
+	himalayas:27.764071501712053
+	sakura:88.73517910217092
+	gun:401.5974806224375
+	medicine:349.9745921030789
+	superhero:10.252859169768628
+	<SUM>: 198.02300609847617
+====NPMIS====
+	hardware:35.39229295397252
+	medicine:38.12756958050267
+	space:41.524604564568776
+	religion:39.105302247669655
+	lyrics:0.769452061960651
+	sakura:6.6989773110036595
+	html:0
+	gun:46.7156062434994
+	superhero:0.6949833471419468
+	himalayas:1.9181308278069482
+	<SUM>: 21.09469191381263
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.94
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/20NewsGroup/ensemble/local-0.6-global-0.4-rho-0.5/scores.pkl
+====WORD SET====
+	religion:['religion', 'religious', 'christianity', 'belief', 'denomination', 'christians', 'islam', 'christian', 'judaism', 'hindus']
+	hardware:['hardware', 'pclk', 'implementation', 'software', 'processor', 'compatibility', 'thrue', 'pcs', 'builtin', 'ethernet']
+	space:['space', 'shuttle', 'spacehab', 'orbit', 'orbital', 'spacelink', 'aeronautics', 'spacecraft', 'satellite', 'billboard']
+	gun:['gun', 'firearm', 'weapon', 'handgun', 'pistol', 'shotgun', 'knife', 'rifle', 'myselfe', 'violent']
+	medicine:['medicine', 'medical', 'physician', 'doctor', 'clinical', 'healthcare', 'nutrition', 'health', 'therapy', 'dentistry']
+	sakura:['sanskrit', 'vedic', 'sufi', 'asha', 'aramaic', 'krishna', 'hindus', 'mandir', 'syriac', 'sakura']
+	superhero:['mythical', 'gods', 'horrific', 'humanoid', 'monstrous', 'telling', 'demonic', 'enthusiastically', 'terrifying', 'superhero']
+	himalayas:['rbis', 'innings', 'rushing', 'batting', 'padres', 'royals', 'catching', 'marlins', 'brewers', 'himalayas']
+	lyrics:['forested', 'expanse', 'mountainous', 'canopy', 'southward', 'arid', 'farmland', 'countryside', 'northernmost', 'lyrics']
+	html:['cmap_compact', 'prompting', 'current_dir', 'uubuild_mode', 'vinfo_list', 'w_id', 'max_x', 'n_control', 'window_title', 'html']
+====PMIS====
+	hardware:302.8071194050033
+	space:402.1395072677093
+	medicine:351.33261420760306
+	sakura:88.73517910217092
+	gun:395.49338474228836
+	religion:329.9073154789959
+	html:0
+	himalayas:27.764071501712053
+	superhero:10.252859169768628
+	lyrics:11.351471458436738
+	<SUM>: 191.97835223336884
+====NPMIS====
+	religion:35.1048811674547
+	medicine:37.98527033052977
+	space:43.15261517333477
+	gun:44.892505756349934
+	hardware:29.110510215330002
+	html:0
+	himalayas:1.9181308278069484
+	sakura:6.6989773110036595
+	superhero:0.6949833471419468
+	lyrics:0.769452061960651
+	<SUM>: 20.03273261909124
+====DISTINCTIVENESS====
+	<SUM>: 0.99
+	<SEMANTICALLY DISTINCT>: 0.95
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/20NewsGroup/ensemble/local-0.7-global-0.3-rho-0.5/scores.pkl
+====WORD SET====
+	religion:['religion', 'religious', 'christianity', 'belief', 'christians', 'denomination', 'christian', 'islam', 'hindus', 'atheist']
+	hardware:['hardware', 'pclk', 'software', 'implementation', 'thrue', 'processor', 'compatibility', 'cpus', 'pipelining', 'pcs']
+	space:['space', 'shuttle', 'spacehab', 'orbit', 'orbital', 'aeronautics', 'billboard', 'satellite', 'spacecraft', 'spacelink']
+	gun:['gun', 'firearm', 'handgun', 'weapon', 'shotgun', 'pistol', 'myselfe', 'knife', 'rifle', 'violent']
+	medicine:['medicine', 'medical', 'physician', 'doctor', 'dentistry', 'clinical', 'nutrition', 'therapy', 'patient', 'healthcare']
+	sakura:['sanskrit', 'vedic', 'sufi', 'krishna', 'aramaic', 'hindus', 'hindi', 'mandir', 'asha', 'sakura']
+	superhero:['mythical', 'gods', 'horrific', 'humanoid', 'monstrous', 'telling', 'demonic', 'mythic', 'enthusiastically', 'superhero']
+	himalayas:['rbis', 'innings', 'rushing', 'batting', 'padres', 'nlcs', 'royals', 'marlins', 'brewers', 'himalayas']
+	lyrics:['forested', 'expanse', 'mountainous', 'farmland', 'canopy', 'southward', 'arid', 'ravine', 'gorge', 'lyrics']
+	html:['cmap_compact', 'prompting', 'current_dir', 'fontpath', 'vinfo_list', 'uubuild_mode', 'w_id', 'xview_private', 'n_control', 'html']
+====PMIS====
+	gun:395.4933847422883
+	superhero:10.252859169768628
+	space:402.13950726770935
+	himalayas:38.160031515121354
+	medicine:344.57319386356687
+	sakura:88.73517910217092
+	html:14.347203731990728
+	lyrics:11.351471458436738
+	religion:342.16402477208686
+	hardware:329.36485563812295
+	<SUM>: 197.65817112612626
+====NPMIS====
+	religion:38.785710181613325
+	superhero:0.6949833471419468
+	hardware:30.345944293641907
+	lyrics:0.769452061960651
+	himalayas:2.622814171959044
+	space:43.15261517333478
+	html:1.1069596524018241
+	sakura:6.6989773110036595
+	medicine:37.46698676664858
+	gun:44.89250575634993
+	<SUM>: 20.653694871605566
+====DISTINCTIVENESS====
+	<SUM>: 0.99
+	<SEMANTICALLY DISTINCT>: 0.95
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/20NewsGroup/ensemble/local-0.8-global-0.2-rho-0.5/scores.pkl
+====WORD SET====
+	religion:['religion', 'religious', 'christianity', 'belief', 'christians', 'christian', 'islam', 'denomination', 'buddhists', 'atheist']
+	hardware:['hardware', 'pclk', 'thrue', 'pipelining', 'cpus', 'software', 'implementation', 'processor', 'compatibility', 'tokenring']
+	space:['space', 'shuttle', 'spacehab', 'orbit', 'orbital', 'aeronautics', 'seds', 'billboard', 'satellite', 'nasa']
+	gun:['gun', 'firearm', 'handgun', 'myselfe', 'weapon', 'shotgun', 'pistol', 'knife', 'violent', 'homocide']
+	medicine:['medicine', 'medical', 'physician', 'dentistry', 'doctor', 'nutrition', 'clinical', 'therapy', 'patient', 'psychiatry']
+	sakura:['sanskrit', 'vedic', 'vedas', 'krishna', 'sufi', 'gatha', 'aramaic', 'dasa', 'hindus', 'sakura']
+	superhero:['mythical', 'gods', 'mythic', 'personify', 'fantastical', 'horrific', 'monstrous', 'humanoid', 'telling', 'superhero']
+                         	himalayas:['rbis', 'innings', 'nlcs', 'rushing', 'batting', 'padres', 'royals', 'hitting', 'rbi', 'himalayas']
+	lyrics:['forested', 'expanse', 'mountainous', 'farmland', 'ravine', 'canopy', 'gorge', 'uninhabited', 'southward', 'lyrics']
+	html:['cmap_compact', 'prompting', 'fontpath', 'current_dir', 'vinfo_list', 'uubuild_mode', 'builderxcessory', 'xview_private', 'n_control', 'html']
+====PMIS====
+	hardware:390.48073382461035
+	sakura:166.6501030593188
+	superhero:0
+	religion:346.1515365503309
+	space:402.40546397888875
+	himalayas:89.2877656998031
+	medicine:403.1526581494395
+	gun:366.1409730233848
+	html:14.347203731990728
+	lyrics:23.90691572119941
+	<SUM>: 220.25233537389664
+====NPMIS====
+	religion:39.33743199758858
+	medicine:42.455998851374474
+	space:43.63590950139899
+	gun:40.32334029485513
+	himalayas:6.856821810602467
+	superhero:0
+	hardware:35.40750415784184
+	sakura:12.838288875616456
+	html:1.1069596524018241
+	lyrics:1.6205146323232424
+	<SUM>: 22.3582769774003
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.97
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/20NewsGroup/ensemble/local-0.9-global-0.1-rho-0.5/scores.pkl
+====WORD SET====
+	religion:['religion', 'religious', 'christianity', 'belief', 'christians', 'christian', 'buddhists', 'islam', 'atheist', 'denomination']
+	hardware:['hardware', 'pclk', 'pipelining', 'thrue', 'cpus', 'software', 'implementation', 'xilinx', 'processor', 'superscalar']
+	space:['space', 'shuttle', 'seds', 'jenks', 'onobstructed', 'aeronautics', 'billboard', 'orbital', 'spacehab', 'orbit']
+	gun:['gun', 'myselfe', 'firearm', 'handgun', 'homocide', 'weapon', 'enyone', 'shotgun', 'pistol', 'semiautomatic']
+	medicine:['medicine', 'dentistry', 'medical', 'physician', 'neurology', 'obstetrics', 'radiology', 'nutrition', 'doctor', 'clinical']
+	sakura:['sanskrit', 'vedic', 'vedas', 'gatha', 'avestan', 'gathas', 'dasa', 'brahma', 'krishna', 'sakura']
+	superhero:['mythical', 'gods', 'mythic', 'fantastical', 'personify', 'deity', 'godlike', 'extraterrestrial', 'horrific', 'superhero']
+	himalayas:['rbis', 'rbi', 'innings', 'leadoff', 'slugging', 'nlcs', 'baserunner', 'rushing', 'hitting', 'himalayas']
+	lyrics:['forested', 'expanse', 'farmland', 'mountainous', 'ravine', 'gorge', 'uninhabited', 'canopy', 'hectare', 'lyrics']
+	html:['cmap_compact', 'fontpath', 'prompting', 'builderxcessory', 'keyrelease', 'winhelp', 'current_dir', 'xenvironment', 'xev', 'html']
+====PMIS====
+	sakura:270.10563762774575
+	medicine:315.60998784984673
+	gun:328.09931518775676
+	lyrics:0
+	hardware:330.86904533561415
+	religion:346.15153655033083
+	html:68.15249972149753
+	himalayas:95.2871930369597
+	superhero:8.160995108090235
+	space:331.1456158785448
+	<SUM>: 209.35818262963863
+====NPMIS====
+	hardware:30.177578762159687
+	medicine:29.79374425895994
+	religion:39.33743199758858
+	superhero:0.5531877110877742
+	space:31.450330576577123
+	html:5.007303510577915
+	himalayas:7.444581018283969
+	gun:35.00373480776007
+	sakura:20.635709318376758
+	lyrics:0
+	<SUM>: 19.94036019613718
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.97
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/20NewsGroup/ensemble/local-0.5-global-0.5-rho-0.1/scores.pkl
+====WORD SET====
+	religion:['religion', 'christianity', 'religious', 'belief', 'denomination', 'christians', 'islam', 'christian', 'judaism', 'religionist']
+	hardware:['hardware', 'pclk', 'implementation', 'software', 'compatibility', 'processor', 'pcs', 'ethernet', 'computers', 'builtin']
+	space:['space', 'shuttle', 'spacehab', 'orbit', 'spacelink', 'orbital', 'spaceflight', 'spacelab', 'spacecraft', 'satellite']
+	gun:['gun', 'weapon', 'firearm', 'handgun', 'pistol', 'shotgun', 'knife', 'rifle', 'revolver', 'violent']
+	medicine:['medicine', 'medical', 'physician', 'doctor', 'healthcare', 'health', 'clinical', 'medication', 'nutrition', 'therapy']
+	sakura:['sanskrit', 'vedic', 'sufi', 'asha', 'aramaic', 'hindus', 'mandir', 'syriac', 'krishna', 'sakura']
+	superhero:['mythical', 'gods', 'humanoid', 'horrific', 'monstrous', 'demonic', 'telling', 'enthusiastically', 'daring', 'superhero']
+	himalayas:['rbis', 'innings', 'rushing', 'catching', 'batting', 'padres', 'postseason', 'marlins', 'yards', 'himalayas']
+	lyrics:['forested', 'expanse', 'mountainous', 'countryside', 'canopy', 'southward', 'northernmost', 'arid', 'flowing', 'lyrics']
+	html:['cmap_compact', 'prompting', 'current_dir', 'w_id', 'uubuild_mode', 'vinfo_list', 'max_x', 'window_title', 'n_control', 'html']
+====PMIS====
+	space:390.0916944832325
+	religion:310.66172167966585
+	medicine:353.4762866543663
+	gun:401.5974806224375
+	himalayas:16.943228294337487
+	sakura:88.73517910217092
+	hardware:302.17940874664043
+	html:0
+	lyrics:11.351471458436738
+	superhero:10.252859169768628
+	<SUM>: 188.52893302110564
+====NPMIS====
+	space:41.524604564568776
+	religion:33.669317648779554
+	hardware:29.164908320546914
+	medicine:38.791285789557605
+	superhero:0.6949833471419468
+	gun:46.7156062434994
+	himalayas:1.1484856386313291
+	html:0
+	sakura:6.6989773110036595
+	lyrics:0.769452061960651
+	<SUM>: 19.917762092568985
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.93
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/20NewsGroup/ensemble/local-0.5-global-0.5-rho-0.3/scores.pkl
+====WORD SET====
+	religion:['religion', 'christianity', 'religious', 'belief', 'denomination', 'christians', 'islam', 'judaism', 'christian', 'bible']
+	hardware:['hardware', 'pclk', 'implementation', 'software', 'compatibility', 'processor', 'pcs', 'ethernet', 'builtin', 'device']
+	space:['space', 'shuttle', 'spacehab', 'orbit', 'spacelink', 'orbital', 'spaceflight', 'spacelab', 'spacecraft', 'satellite']
+	gun:['gun', 'weapon', 'firearm', 'handgun', 'pistol', 'shotgun', 'knife', 'rifle', 'revolver', 'violent']
+	medicine:['medicine', 'medical', 'physician', 'doctor', 'healthcare', 'health', 'clinical', 'medication', 'diagnosis', 'therapy']
+	sakura:['sanskrit', 'vedic', 'sufi', 'asha', 'aramaic', 'hindus', 'mandir', 'syriac', 'krishna', 'sakura']
+	superhero:['mythical', 'gods', 'humanoid', 'horrific', 'monstrous', 'demonic', 'telling', 'enthusiastically', 'daring', 'superhero']
+	himalayas:['rbis', 'innings', 'rushing', 'catching', 'batting', 'padres', 'postseason', 'marlins', 'yards', 'himalayas']
+	lyrics:['forested', 'expanse', 'mountainous', 'canopy', 'countryside', 'southward', 'northernmost', 'arid', 'flowing', 'lyrics']
+	html:['cmap_compact', 'prompting', 'current_dir', 'w_id', 'uubuild_mode', 'vinfo_list', 'max_x', 'window_title', 'n_control', 'html']
+====PMIS====
+	hardware:358.2216691627929
+	religion:342.2410433811319
+	gun:401.5974806224375
+	medicine:349.9745921030789
+	sakura:88.73517910217092
+	space:390.0916944832325
+	himalayas:16.943228294337487
+	lyrics:11.351471458436738
+	html:0
+	superhero:10.252859169768628
+	<SUM>: 196.94092177773874
+====NPMIS====
+	medicine:38.12756958050267
+	himalayas:1.1484856386313291
+	space:41.524604564568776
+	religion:39.10530224766965
+	gun:46.7156062434994
+	lyrics:0.769452061960651
+	html:0
+	sakura:6.6989773110036595
+	superhero:0.6949833471419468
+	hardware:35.39229295397252
+	<SUM>: 21.017727394895065
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.94
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/20NewsGroup/ensemble/local-0.5-global-0.5-rho-0.7/scores.pkl
+====WORD SET====
+	religion:['religion', 'christianity', 'religious', 'belief', 'denomination', 'christians', 'judaism', 'islam', 'bible', 'church']
+	hardware:['hardware', 'pclk', 'implementation', 'software', 'compatibility', 'processor', 'pcs', 'ethernet', 'builtin', 'device']
+	space:['space', 'shuttle', 'spacehab', 'orbit', 'spacelink', 'orbital', 'spaceflight', 'spacelab', 'spacecraft', 'satellite']
+	gun:['gun', 'weapon', 'firearm', 'handgun', 'pistol', 'shotgun', 'knife', 'rifle', 'revolver', 'violent']
+	medicine:['medicine', 'medical', 'physician', 'doctor', 'healthcare', 'health', 'clinical', 'medication', 'diagnosis', 'therapy']
+	sakura:['sanskrit', 'vedic', 'sufi', 'asha', 'aramaic', 'hindus', 'mandir', 'syriac', 'krishna', 'sakura']
+	superhero:['mythical', 'gods', 'humanoid', 'horrific', 'monstrous', 'demonic', 'telling', 'enthusiastically', 'daring', 'superhero']
+	himalayas:['rbis', 'innings', 'rushing', 'batting', 'catching', 'padres', 'marlins', 'postseason', 'royals', 'himalayas']
+	lyrics:['forested', 'expanse', 'mountainous', 'canopy', 'southward', 'countryside', 'arid', 'northernmost', 'flowing', 'lyrics']
+	html:['cmap_compact', 'prompting', 'current_dir', 'w_id', 'uubuild_mode', 'vinfo_list', 'max_x', 'window_title', 'n_control', 'html']
+====PMIS====
+	religion:340.15174822721553
+	space:390.0916944832325
+	gun:401.5974806224375
+	medicine:349.9745921030789
+	lyrics:11.351471458436738
+	hardware:358.2216691627929
+	html:0
+	superhero:10.252859169768628
+	himalayas:27.764071501712053
+	sakura:88.73517910217092
+	<SUM>: 197.81407658308456
+====NPMIS====
+	religion:38.01372969946483
+	medicine:38.12756958050267
+	gun:46.7156062434994
+	space:41.524604564568776
+	lyrics:0.769452061960651
+	himalayas:1.9181308278069482
+	superhero:0.6949833471419468
+	sakura:6.6989773110036595
+	html:0
+	hardware:35.39229295397252
+	<SUM>: 20.985534658992144
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.95
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/20NewsGroup/ensemble/local-0.5-global-0.5-rho-0.9/scores.pkl
+====WORD SET====
+	religion:['religion', 'christianity', 'religious', 'belief', 'denomination', 'christians', 'judaism', 'bible', 'islam', 'religiously']
+	hardware:['hardware', 'pclk', 'implementation', 'software', 'compatibility', 'processor', 'pcs', 'ethernet', 'builtin', 'device']
+	space:['space', 'shuttle', 'spacehab', 'orbit', 'spacelink', 'orbital', 'spaceflight', 'spacelab', 'spacecraft', 'satellite']
+	gun:['gun', 'weapon', 'firearm', 'handgun', 'pistol', 'shotgun', 'knife', 'rifle', 'revolver', 'violent']
+	medicine:['medicine', 'medical', 'physician', 'doctor', 'healthcare', 'health', 'clinical', 'medication', 'diagnosis', 'therapy']
+	sakura:['sanskrit', 'vedic', 'sufi', 'asha', 'aramaic', 'hindus', 'mandir', 'syriac', 'krishna', 'sakura']
+	superhero:['mythical', 'gods', 'humanoid', 'horrific', 'monstrous', 'demonic', 'telling', 'enthusiastically', 'terrifying', 'superhero']
+	himalayas:['rbis', 'innings', 'rushing', 'batting', 'padres', 'catching', 'marlins', 'royals', 'postseason', 'himalayas']
+	lyrics:['forested', 'expanse', 'mountainous', 'canopy', 'southward', 'countryside', 'arid', 'northernmost', 'flowing', 'lyrics']
+	html:['cmap_compact', 'prompting', 'current_dir', 'w_id', 'uubuild_mode', 'vinfo_list', 'max_x', 'window_title', 'n_control', 'html']
+====PMIS====
+	hardware:358.2216691627929
+	superhero:10.252859169768628
+	space:390.0916944832325
+	html:0
+	religion:331.2121806152516
+	himalayas:27.764071501712053
+	gun:401.5974806224375
+	lyrics:11.351471458436738
+	sakura:88.73517910217092
+	medicine:349.9745921030789
+	<SUM>: 196.92011982188816
+====NPMIS====
+	space:41.524604564568776
+	hardware:35.39229295397252
+	superhero:0.6949833471419468
+	medicine:38.12756958050267
+	sakura:6.6989773110036595
+	lyrics:0.769452061960651
+	gun:46.7156062434994
+	religion:34.66631279589967
+	himalayas:1.9181308278069482
+	html:0
+	<SUM>: 20.650792968635628
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.95

@@ -1,4 +1,4 @@
-[2;36m[10/28/22 18:45:28][0m[2;36m [0m[34mINFO    [0m INFO:root:Loaded [1;36m13461[0m words from                                                                   ]8;id=239163;file:///mnt/data/code/github.com/zhangchi0104/honours-sgtm/scripts/utils/io.py\[2mio.py[0m]8;;\[2m:[0m]8;id=652105;file:///mnt/data/code/github.com/zhangchi0104/honours-sgtm/scripts/utils/io.py#12\[2m12[0m]8;;\
+[2;36m[11/01/22 10:14:33][0m[2;36m [0m[34mINFO    [0m INFO:root:Loaded [1;36m13461[0m words from                                                                   ]8;id=139975;file:///mnt/data/code/github.com/zhangchi0104/honours-sgtm/scripts/utils/io.py\[2mio.py[0m]8;;\[2m:[0m]8;id=870009;file:///mnt/data/code/github.com/zhangchi0104/honours-sgtm/scripts/utils/io.py#12\[2m12[0m]8;;\
                              [35m/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/data/yelp/vocab/[0m[95mvocab.pkl[0m                         
 SUMMARY
 ================================================================================
@@ -76,8 +76,8 @@ SUMMARY
 	complained:0
 	vivid:0.7968177916419454
 	breast:5.253403566673767
-	uk:3.267019146990596
 	own:0
+	uk:3.267019146990596
 	<SUM>: 9.96985451712276
 ====DISTINCTIVENESS====
 	<SUM>: 0.98
@@ -445,8 +445,8 @@ SUMMARY
 	complained:0
 	vivid:0.7968177916419454
 	breast:12.204643403453732
-	uk:2.017502455332752
 	own:0
+	uk:2.017502455332752
 	<SUM>: 11.42560182715212
 ====DISTINCTIVENESS====
 	<SUM>: 1.0
@@ -528,5 +528,4 @@ SUMMARY
 ====DISTINCTIVENESS====
 	<SUM>: 1.0
 	<SEMANTICALLY DISTINCT>: 0.93
-  ä!
-Âïø◊~p,MÊ¯  äV.¸m                                                                     
+                           ∞Åt     ˇˇˇˇˇˇˇˇ                0Ââ≥◊  é’_ƒ—~@∞;y≥◊  èºsÕu†Fî     

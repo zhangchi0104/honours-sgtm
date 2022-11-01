@@ -1,0 +1,535 @@
+[2;36m[11/01/22 10:13:58][0m[2;36m [0m[34mINFO    [0m INFO:root:Loaded [1;36m13461[0m words from                                                                   ]8;id=387691;file:///mnt/data/code/github.com/zhangchi0104/honours-sgtm/scripts/utils/io.py\[2mio.py[0m]8;;\[2m:[0m]8;id=157575;file:///mnt/data/code/github.com/zhangchi0104/honours-sgtm/scripts/utils/io.py#12\[2m12[0m]8;;\
+                             [35m/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/data/yelp/vocab/[0m[95mvocab.pkl[0m                         
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/yelp/ensemble/local-0.1-global-0.9-rho-0.5/scores.pkl
+====WORD SET====
+	seafood:['seafood', 'oyster', 'shrimp', 'fish', 'crab', 'lobster', 'cod', 'octopus', 'squid', 'fisherman']
+	burger:['burger', 'burgerfi', 'burgers', 'hamburger', 'fry', 'burgerking', 'bun', 'shake', 'patty', 'bacon']
+	sushi:['sushi', 'sushimon', 'sushiya', 'sushiholic', 'bento_box', 'miso_soup', 'sushiritto', 'spicy_tuna_roll', 'ayce_sushi', 'spicy_tuna']
+	chinese_food:['chinese_food', 'roast_pork', 'dim_sum', 'orange_chicken', 'won_ton', 'panang_curry', 'pad_thai', 'lo_mein', 'fried_rice', 'stir_fry']
+	dessert:['dessert', 'champagne', 'pastry', 'chocolate', 'cake', 'soft_serve', 'strawberry', 'ice_cream', 'beverage', 'sugar']
+	complained:['markus', 'der', 'bahn', 'yvonne', 'bei', 'stil', 'bernie', 'milano', 'bret', 'complained']
+	vivid:['intricate', 'richly', 'illusion', 'coloured', 'unconventional', 'layered', 'duct', 'fabric', 'orderly', 'vivid']
+	breast:['breast', 'belly', 'cheek', 'liver', 'shoulder', 'roast', 'ear', 'roasted', 'dried', 'blouse']
+	own:['stevens', 'tucker', 'leary', 'fulton', 'bernie', 'reece', 'bryce', 'bret', 'anderson', 'own']
+	uk:['british', 'england', 'usa', 'australia', 'perfectly_cooke', 'london', 'pub', 'brit', 'germany', 'uk']
+====PMIS====
+	seafood:236.36661475281062
+	burger:159.44210726137615
+	sushi:110.49640597225373
+	chinese_food:178.42359731534376
+	dessert:228.43704929064913
+	complained:0
+	vivid:11.335144251865158
+	own:0
+	uk:44.21576884598335
+	breast:61.66954441573563
+	<SUM>: 103.03862321060174
+====NPMIS====
+	seafood:23.63506952591967
+	burger:17.05605497979954
+	sushi:9.7617987259428
+	chinese_food:14.318782596605146
+	dessert:22.009457908563103
+	complained:0
+	vivid:0.7968177916419454
+	breast:4.787808325983143
+	uk:3.267019146990596
+	own:0
+	<SUM>: 9.563280900144594
+====DISTINCTIVENESS====
+	<SUM>: 0.98
+	<SEMANTICALLY DISTINCT>: 0.91
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/yelp/ensemble/local-0.2-global-0.8-rho-0.5/scores.pkl
+====WORD SET====
+	seafood:['seafood', 'oyster', 'shrimp', 'crab', 'fish', 'lobster', 'octopus', 'fisherman', 'cod', 'squid']
+	burger:['burger', 'burgerfi', 'burgers', 'hamburger', 'fry', 'bun', 'shake', 'patty', 'burgerking', 'burger_joint']
+	sushi:['sushi', 'sushimon', 'sushiya', 'miso_soup', 'bento_box', 'sushiholic', 'ayce_sushi', 'spicy_tuna_roll', 'spicy_tuna', 'roll']
+	chinese_food:['chinese_food', 'dim_sum', 'roast_pork', 'orange_chicken', 'guangzhou', 'fried_rice', 'pad_thai', 'noodle_soup', 'lo_mein', 'won_ton']
+	dessert:['dessert', 'champagne', 'chocolate', 'pastry', 'cake', 'strawberry', 'ice_cream', 'soft_serve', 'cookie', 'dark_chocolate']
+	complained:['markus', 'der', 'bahn', 'yvonne', 'bei', 'stil', 'bernie', 'anderson', 'milano', 'complained']
+	vivid:['intricate', 'richly', 'illusion', 'coloured', 'layered', 'weave', 'fabric', 'unconventional', 'unnatural', 'vivid']
+	breast:['breast', 'belly', 'cheek', 'liver', 'shoulder', 'roasted', 'dried', 'blouse', 'pig', 'roast']
+	own:['stevens', 'tucker', 'leary', 'fulton', 'anderson', 'bernie', 'bryce', 'reece', 'horton', 'own']
+	uk:['british', 'england', 'australia', 'usa', 'pub', 'london', 'brit', 'perfectly_cooke', 'germany', 'uk']
+====PMIS====
+	seafood:236.36661475281062
+	burger:184.34529154628268
+	sushi:168.32695200307072
+	chinese_food:178.70074614701065
+	dessert:253.46736678915892
+	complained:0
+	vivid:11.335144251865158
+	breast:65.73086200790398
+	own:0
+	uk:44.21576884598335
+	<SUM>: 114.24887463440862
+====NPMIS====
+	seafood:23.63506952591967
+	burger:18.60947336057411
+	sushi:15.901007405791722
+	chinese_food:14.420702021223969
+	dessert:25.031098076522465
+	complained:0
+	vivid:0.7968177916419454
+	breast:5.253403566673767
+	own:0
+	uk:3.267019146990596
+	<SUM>: 10.691459089533824
+====DISTINCTIVENESS====
+	<SUM>: 0.98
+	<SEMANTICALLY DISTINCT>: 0.91
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/yelp/ensemble/local-0.3-global-0.7-rho-0.5/scores.pkl
+====WORD SET====
+	seafood:['seafood', 'oyster', 'shrimp', 'crab', 'lobster', 'fish', 'fisherman', 'octopus', 'cod', 'squid']
+	burger:['burger', 'burgerfi', 'burgers', 'hamburger', 'fry', 'bun', 'patty', 'shake', 'burger_joint', 'cheeseburger']
+	sushi:['sushi', 'sushimon', 'miso_soup', 'ayce_sushi', 'sushiya', 'bento_box', 'sushiholic', 'spicy_tuna_roll', 'roll', 'spicy_tuna']
+	chinese_food:['chinese_food', 'dim_sum', 'roast_pork', 'orange_chicken', 'guangzhou', 'chinese', 'noodle_soup', 'fried_rice', 'sam_woo', 'pad_thai']
+	dessert:['dessert', 'chocolate', 'champagne', 'pastry', 'cake', 'strawberry', 'ice_cream', 'dark_chocolate', 'cookie', 'vanilla']
+	complained:['markus', 'der', 'bahn', 'bei', 'yvonne', 'stil', 'anderson', 'karl', 'bernie', 'complained']
+	vivid:['intricate', 'richly', 'illusion', 'coloured', 'weave', 'layered', 'fabric', 'colourful', 'unnatural', 'vivid']
+	breast:['breast', 'belly', 'cheek', 'roasted', 'shoulder', 'liver', 'dried', 'skin', 'pig', 'egg']
+	own:['stevens', 'tucker', 'leary', 'fulton', 'anderson', 'horton', 'bryce', 'bernie', 'bret', 'own']
+	uk:['british', 'australia', 'england', 'usa', 'pub', 'london', 'malaya', 'australian', 'brit', 'uk']
+====PMIS====
+	seafood:236.36661475281062
+	burger:234.96702325189113
+	sushi:168.32695200307077
+	chinese_food:182.1072270525503
+	dessert:265.1560383403362
+	complained:0
+	vivid:11.335144251865158
+	breast:109.03317726691809
+	own:0
+	uk:44.21576884598335
+	<SUM>: 125.15079457654255
+====NPMIS====
+	seafood:23.63506952591967
+	burger:23.21757697616657
+	sushi:15.90100740579172
+	chinese_food:15.874846178908843
+	dessert:26.77390479366961
+	complained:0
+	vivid:0.7968177916419454
+	breast:8.775801373691959
+	own:0
+	uk:3.267019146990596
+	<SUM>: 11.824204319278092
+====DISTINCTIVENESS====
+	<SUM>: 0.98
+	<SEMANTICALLY DISTINCT>: 0.91
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/yelp/ensemble/local-0.4-global-0.6-rho-0.5/scores.pkl
+====WORD SET====
+	seafood:['seafood', 'oyster', 'shrimp', 'crab', 'lobster', 'fish', 'fisherman', 'octopus', 'clam_chowder', 'yacht']
+	burger:['burger', 'burgerfi', 'hamburger', 'burgers', 'fry', 'patty', 'bun', 'burger_joint', 'cheeseburger', 'shake']
+	sushi:['sushi', 'ayce_sushi', 'miso_soup', 'sushimon', 'bento_box', 'sushiya', 'sushiholic', 'roll', 'spicy_tuna_roll', 'spicy_tuna']
+	chinese_food:['chinese_food', 'dim_sum', 'chinese', 'roast_pork', 'guangzhou', 'noodle_soup', 'orange_chicken', 'sam_woo', 'fried_rice', 'dan_dan_noodles']
+	dessert:['dessert', 'chocolate', 'ice_cream', 'cake', 'strawberry', 'dark_chocolate', 'champagne', 'vanilla', 'pastry', 'whipped_cream']
+	complained:['markus', 'der', 'bahn', 'karl', 'bei', 'yvonne', 'nello', 'stil', 'anderson', 'complained']
+	vivid:['intricate', 'richly', 'illusion', 'weave', 'coloured', 'layered', 'colourful', 'fabric', 'thoughtfully', 'vivid']
+	breast:['belly', 'breast', 'roasted', 'cheek', 'shoulder', 'pork', 'skin', 'dried', 'liver', 'pig']
+	own:['stevens', 'tucker', 'leary', 'fulton', 'anderson', 'horton', 'bryce', 'bernie', 'bret', 'own']
+	uk:['british', 'australia', 'malaya', 'australian', 'england', 'pub', 'usa', 'london', 'wellington', 'uk']
+====PMIS====
+	seafood:219.98661816096862
+	burger:234.96702325189113
+	sushi:168.32695200307074
+	chinese_food:187.09334288778913
+	dessert:271.69354749939237
+	complained:0
+	vivid:11.335144251865158
+	breast:128.47390612565243
+	own:0
+	uk:34.512041413271064
+	<SUM>: 125.63885755939006
+====NPMIS====
+	seafood:21.888854343723832
+	burger:23.21757697616657
+	sushi:15.90100740579172
+	chinese_food:16.025998722891988
+	dessert:26.645205181971996
+	complained:0
+	vivid:0.7968177916419454
+	breast:10.865226391333085
+	own:0
+	uk:2.5848837906313795
+	<SUM>: 11.792557060415252
+====DISTINCTIVENESS====
+	<SUM>: 0.99
+	<SEMANTICALLY DISTINCT>: 0.92
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/yelp/ensemble/local-0.5-global-0.5-rho-0.5/scores.pkl
+====WORD SET====
+	seafood:['seafood', 'oyster', 'shrimp', 'crab', 'lobster', 'fisherman', 'fish', 'clam_chowder', 'king_crab', 'octopus']
+	burger:['burger', 'burgerfi', 'hamburger', 'burgers', 'fry', 'patty', 'burger_joint', 'bun', 'cheeseburger', 'shake']
+	sushi:['sushi', 'ayce_sushi', 'miso_soup', 'sushimon', 'roll', 'bento_box', 'spicy_tuna', 'sushiya', 'sushiholic', 'spicy_tuna_roll']
+	chinese_food:['chinese_food', 'chinese', 'dim_sum', 'guangzhou', 'noodle_soup', 'roast_pork', 'sam_woo', 'orange_chicken', 'china', 'fried_rice']
+	dessert:['dessert', 'chocolate', 'creme_brulee', 'ice_cream', 'dark_chocolate', 'vanilla', 'strawberry', 'whipped_cream', 'cake', 'cookie']
+	complained:['markus', 'der', 'bahn', 'karl', 'nello', 'bei', 'yvonne', 'andreas', 'bruno', 'complained']
+	vivid:['intricate', 'richly', 'illusion', 'weave', 'coloured', 'layered', 'thoughtfully', 'colourful', 'fabric', 'vivid']
+	breast:['belly', 'breast', 'pork', 'roasted', 'shoulder', 'skin', 'tender', 'dried', 'cheek', 'pig']
+	own:['stevens', 'tucker', 'leary', 'fulton', 'anderson', 'horton', 'bryce', 'bret', 'bernie', 'own']
+	uk:['british', 'australia', 'australian', 'malaya', 'pub', 'wellington', 'london', 'england', 'yukon', 'uk']
+====PMIS====
+	seafood:228.6172738187629
+	burger:234.96702325189116
+	sushi:168.32695200307074
+	chinese_food:198.33263739552214
+	dessert:256.3457620884993
+	complained:0
+	vivid:11.335144251865158
+	breast:162.33367573794473
+	own:0
+	uk:26.834027917205262
+	<SUM>: 128.70924964647617
+====NPMIS====
+	seafood:23.168872656326094
+	burger:23.21757697616657
+	sushi:15.90100740579172
+	chinese_food:17.436616035115414
+	dessert:26.029069218611568
+	complained:0
+	vivid:0.7968177916419454
+	breast:13.983519250549614
+	own:0
+	uk:2.017502455332752
+	<SUM>: 12.255098178953569
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.93
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/yelp/ensemble/local-0.6-global-0.4-rho-0.5/scores.pkl
+====WORD SET====
+	seafood:['seafood', 'oyster', 'shrimp', 'crab', 'lobster', 'fisherman', 'king_crab', 'shellfish', 'yacht', 'clam_chowder']
+	burger:['burger', 'burgerfi', 'hamburger', 'patty', 'burgers', 'fry', 'burger_joint', 'cheeseburger', 'bun', 'shake_shack']
+	sushi:['sushi', 'ayce_sushi', 'miso_soup', 'roll', 'sushimon', 'bento_box', 'spicy_tuna', 'spicy_tuna_roll', 'specialty_roll', 'sushiya']
+	chinese_food:['chinese_food', 'chinese', 'noodle_soup', 'guangzhou', 'dim_sum', 'beijing', 'sam_woo', 'sichuan', 'china', 'roast_pork']
+	dessert:['dessert', 'chocolate', 'creme_brulee', 'dark_chocolate', 'vanilla', 'ice_cream', 'whipped_cream', 'strawberry', 'cream', 'cookie']
+	complained:['markus', 'der', 'karl', 'bahn', 'bruno', 'andreas', 'nello', 'bei', 'yvonne', 'complained']
+	vivid:['intricate', 'richly', 'weave', 'illusion', 'coloured', 'layered', 'thoughtfully', 'delicately', 'colourful', 'vivid']
+	breast:['belly', 'pork', 'roasted', 'breast', 'knife_shaved', 'takana', 'skin', 'tender', 'braised', 'giblet']
+	own:['stevens', 'tucker', 'leary', 'fulton', 'anderson', 'horton', 'bryce', 'higley', 'swanson', 'own']
+	uk:['british', 'australia', 'australian', 'malaya', 'pub', 'wellington', 'yukon', 'overseas', 'kong', 'uk']
+====PMIS====
+	seafood:222.6153099877303
+	burger:240.4108469939735
+	sushi:194.0964573008604
+	chinese_food:193.75967972735052
+	dessert:258.76655370794265
+	complained:0
+	vivid:11.335144251865158
+	breast:112.95785088421212
+	own:0
+	uk:17.86600727947172
+	<SUM>: 125.18078501334064
+====NPMIS====
+	seafood:21.039577611047036
+	burger:23.200087210972228
+	sushi:17.911934563936814
+	chinese_food:16.50256463358099
+	dessert:25.83637703437469
+	complained:0
+	vivid:0.7968177916419454
+	breast:9.726731278817264
+	own:0
+	uk:1.387084505531857
+	<SUM>: 11.640117462990283
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.94
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/yelp/ensemble/local-0.7-global-0.3-rho-0.5/scores.pkl
+====WORD SET====
+	seafood:['seafood', 'shrimp', 'oyster', 'crab', 'lobster', 'shellfish', 'king_crab', 'fisherman', 'yacht', 'clam_chowder']
+	burger:['burger', 'patty', 'burgerfi', 'burger_joint', 'hamburger', 'cheeseburger', 'fry', 'burgers', 'bun', 'steakburger']
+	sushi:['sushi', 'ayce_sushi', 'miso_soup', 'roll', 'spicy_tuna', 'sushimon', 'revolving_sushi', 'bento_box', 'japango', 'specialty_roll']
+	chinese_food:['chinese_food', 'chinese', 'noodle_soup', 'beijing', 'sichuan', 'guangzhou', 'dim_sum', 'china', 'sam_woo', 'hunan']
+	dessert:['dessert', 'chocolate', 'creme_brulee', 'flourless', 'dark_chocolate', 'whipped_cream', 'vanilla', 'ice_cream', 'white_chocolate', 'cream']
+	complained:['markus', 'der', 'bruno', 'karl', 'andreas', 'bahn', 'timo', 'nello', 'und', 'complained']
+	vivid:['intricate', 'richly', 'ingenious', 'weave', 'delicately', 'illusion', 'thoughtfully', 'layered', 'coloured', 'vivid']
+	breast:['belly', 'pork', 'takana', 'roasted', 'knife_shaved', 'giblet', 'braised', 'tender', 'skin', 'breast']
+	own:['tucker', 'stevens', 'leary', 'fulton', 'anderson', 'horton', 'tanner', 'swanson', 'higley', 'own']
+	uk:['british', 'australia', 'australian', 'malaya', 'yukon', 'wellington', 'pub', 'overseas', 'pacific', 'uk']
+====PMIS====
+	seafood:222.6153099877303
+	burger:223.17139854985797
+	sushi:202.59132791647542
+	chinese_food:166.12518637593527
+	dessert:260.31753622580067
+	complained:13.937833937309541
+	vivid:11.335144251865158
+	breast:112.95785088421212
+	own:0
+	uk:17.86600727947172
+	<SUM>: 123.09175954086581
+====NPMIS====
+	seafood:21.039577611047033
+	burger:21.50106264118104
+	sushi:18.256418401264092
+	chinese_food:14.054847865580982
+	dessert:23.84320303872406
+	complained:1.1587542599555591
+	vivid:0.7968177916419454
+	breast:9.726731278817264
+	own:0
+	uk:1.387084505531857
+	<SUM>: 11.176449739374382
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.95
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/yelp/ensemble/local-0.8-global-0.2-rho-0.5/scores.pkl
+====WORD SET====
+	seafood:['seafood', 'shellfish', 'shrimp', 'crab', 'oyster', 'king_crab', 'lobster', 'etouffee', 'yacht', 'fisherman']
+	burger:['burger', 'patty', 'burger_joint', 'cheeseburger', 'burgerfi', 'hamburger', 'fry', 'bun', 'steakburger', 'burgers']
+	sushi:['sushi', 'ayce_sushi', 'miso_soup', 'roll', 'japango', 'revolving_sushi', 'maki_roll', 'spicy_tuna', 'specialty_roll', 'spicy_salmon_roll']
+	chinese_food:['chinese_food', 'chinese', 'sichuan', 'beijing', 'hunan', 'noodle_soup', 'guangzhou', 'china', 'chinatown', 'peking']
+	dessert:['dessert', 'flourless', 'creme_brulee', 'chocolate', 'white_chocolate', 'whipped_cream', 'dark_chocolate', 'vanilla', 'ice_cream', 'salted_caramel']
+	complained:['markus', 'bruno', 'andreas', 'timo', 'der', 'karl', 'bahn', 'nello', 'und', 'complained']
+	vivid:['intricate', 'richly', 'ingenious', 'delicately', 'weave', 'illusion', 'cluttered', 'thoughtfully', 'neatly', 'vivid']
+	breast:['belly', 'pork', 'takana', 'knife_shaved', 'giblet', 'roasted', 'fatty', 'braised', 'hock', 'breast']
+	own:['tucker', 'stevens', 'leary', 'fulton', 'anderson', 'tanner', 'conner', 'swanson', 'higley', 'own']
+	uk:['british', 'australia', 'australian', 'malaya', 'nanaimo', 'pacific', 'yukon', 'overseas', 'bombay', 'uk']
+====PMIS====
+	seafood:217.07612850772696
+	burger:223.17139854985797
+	sushi:216.09581886151395
+	chinese_food:188.80770170209433
+	dessert:259.63251169436097
+	complained:13.937833937309541
+	vivid:0
+	breast:111.32035720846669
+	own:0
+	uk:0
+	<SUM>: 123.00417504613304
+====NPMIS====
+	seafood:20.122495902476306
+	burger:21.50106264118104
+	sushi:19.47566711777238
+	chinese_food:15.408041225727091
+	dessert:23.240857862882525
+	complained:1.1587542599555591
+	vivid:0
+	breast:9.084922001384168
+	own:0
+	uk:0
+	<SUM>: 10.999180101137906
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.96
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/yelp/ensemble/local-0.9-global-0.1-rho-0.5/scores.pkl
+====WORD SET====
+	seafood:['seafood', 'poboy', 'shellfish', 'etouffee', 'king_crab', 'shrimp', 'crab', 'lobster', 'oyster', 'crawfish']
+	burger:['burger', 'patty', 'cheeseburger', 'burger_joint', 'shroom', 'steakburger', 'shack_stack', 'smashburger', 'burgerfi', 'hamburger']
+	sushi:['sushi', 'ayce_sushi', 'japango', 'roll', 'sashmi', 'miso_soup', 'maki_roll', 'revolving_sushi', 'ayce', 'spicy_tuna']
+	chinese_food:['chinese_food', 'chinese', 'sichuan', 'hunan', 'beijing', 'restaurent', 'szechuan', 'noodle_soup', 'guangzhou', 'yuxiang']
+	dessert:['dessert', 'flourless', 'granita', 'creme_brulee', 'chocolate', 'white_chocolate', 'brul', 'whipped_cream', 'mangoe', 'dark_chocolate']
+	complained:['markus', 'bruno', 'timo', 'andreas', 'der', 'karl', 'nico', 'und', 'bahn', 'complained']
+	vivid:['intricate', 'richly', 'ingenious', 'exquisitely', 'meticulously', 'artfully', 'cluttered', 'delicately', 'textured', 'vivid']
+	breast:['belly', 'pork', 'takana', 'knife_shaved', 'nitamago', 'giblet', 'fatty', 'kikurage', 'soft_boiled_egg', 'breast']
+	own:['tucker', 'stevens', 'leary', 'fulton', 'johnson', 'tanner', 'anderson', 'conner', 'tatum', 'own']
+	uk:['british', 'australia', 'australian', 'malaya', 'nanaimo', 'pacific', 'coast', 'bombay', 'yukon', 'uk']
+====PMIS====
+	seafood:240.91120299818488
+	burger:190.25397604073686
+	sushi:213.5343131386112
+	chinese_food:150.36663084090497
+	dessert:137.99702217677896
+	complained:13.937833937309541
+	vivid:0
+	breast:130.31963480709902
+	own:0
+	uk:8.043431103044691
+	<SUM>: 108.53640450426701
+====NPMIS====
+	seafood:22.53014189955888
+	burger:16.742126742098613
+	sushi:19.874365387242207
+	chinese_food:12.510186326860637
+	dessert:11.906433204194627
+	complained:1.1587542599555591
+	vivid:0
+	breast:10.634594876415198
+	own:0
+	uk:0.565422800658016
+	<SUM>: 9.592202549698374
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.97
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/yelp/ensemble/local-0.5-global-0.5-rho-0.1/scores.pkl
+====WORD SET====
+	seafood:['seafood', 'oyster', 'shrimp', 'crab', 'lobster', 'fisherman', 'fish', 'king_crab', 'clam_chowder', 'yacht']
+	burger:['burger', 'burgerfi', 'hamburger', 'burgers', 'fry', 'patty', 'burger_joint', 'bun', 'cheeseburger', 'shake']
+	sushi:['sushi', 'ayce_sushi', 'miso_soup', 'sushimon', 'roll', 'bento_box', 'sushiya', 'spicy_tuna', 'sushiholic', 'spicy_tuna_roll']
+	chinese_food:['chinese_food', 'chinese', 'dim_sum', 'guangzhou', 'noodle_soup', 'roast_pork', 'sam_woo', 'orange_chicken', 'beijing', 'china']
+	dessert:['dessert', 'chocolate', 'creme_brulee', 'dark_chocolate', 'ice_cream', 'vanilla', 'whipped_cream', 'strawberry', 'cake', 'cookie']
+	complained:['markus', 'der', 'bahn', 'karl', 'nello', 'bei', 'yvonne', 'stil', 'anderson', 'complained']
+	vivid:['intricate', 'richly', 'illusion', 'weave', 'coloured', 'layered', 'thoughtfully', 'colourful', 'fabric', 'vivid']
+	breast:['belly', 'breast', 'pork', 'roasted', 'shoulder', 'skin', 'tender', 'cheek', 'dried', 'knife_shaved']
+	own:['stevens', 'tucker', 'leary', 'fulton', 'anderson', 'horton', 'bryce', 'bernie', 'bret', 'own']
+	uk:['british', 'australia', 'australian', 'malaya', 'pub', 'wellington', 'england', 'yukon', 'london', 'uk']
+====PMIS====
+	seafood:230.2492242721267
+	burger:234.96702325189116
+	sushi:168.32695200307077
+	chinese_food:186.19695588369547
+	dessert:256.34576208849927
+	complained:0
+	vivid:11.335144251865158
+	breast:157.37664290687502
+	own:0
+	uk:26.834027917205262
+	<SUM>: 127.16317325752289
+====NPMIS====
+	seafood:22.630673968779224
+	burger:23.21757697616657
+	sushi:15.90100740579172
+	chinese_food:15.958401365422864
+	dessert:26.029069218611568
+	complained:0
+	vivid:0.7968177916419454
+	breast:13.238612105820703
+	own:0
+	uk:2.017502455332752
+	<SUM>: 11.978966128756735
+====DISTINCTIVENESS====
+	<SUM>: 0.99
+	<SEMANTICALLY DISTINCT>: 0.92
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/yelp/ensemble/local-0.5-global-0.5-rho-0.3/scores.pkl
+====WORD SET====
+	seafood:['seafood', 'oyster', 'shrimp', 'crab', 'lobster', 'fisherman', 'fish', 'clam_chowder', 'king_crab', 'yacht']
+	burger:['burger', 'burgerfi', 'hamburger', 'burgers', 'fry', 'patty', 'burger_joint', 'bun', 'cheeseburger', 'shake']
+	sushi:['sushi', 'ayce_sushi', 'miso_soup', 'sushimon', 'roll', 'bento_box', 'sushiya', 'spicy_tuna', 'sushiholic', 'spicy_tuna_roll']
+	chinese_food:['chinese_food', 'chinese', 'dim_sum', 'guangzhou', 'noodle_soup', 'roast_pork', 'sam_woo', 'orange_chicken', 'beijing', 'china']
+	dessert:['dessert', 'chocolate', 'creme_brulee', 'ice_cream', 'dark_chocolate', 'vanilla', 'strawberry', 'whipped_cream', 'cake', 'cookie']
+	complained:['markus', 'der', 'bahn', 'karl', 'nello', 'bei', 'yvonne', 'stil', 'anderson', 'complained']
+	vivid:['intricate', 'richly', 'illusion', 'weave', 'coloured', 'layered', 'thoughtfully', 'colourful', 'fabric', 'vivid']
+	breast:['belly', 'breast', 'pork', 'roasted', 'shoulder', 'skin', 'tender', 'cheek', 'dried', 'pig']
+	own:['stevens', 'tucker', 'leary', 'fulton', 'anderson', 'horton', 'bryce', 'bernie', 'bret', 'own']
+	uk:['british', 'australia', 'australian', 'malaya', 'pub', 'wellington', 'england', 'london', 'yukon', 'uk']
+====PMIS====
+	seafood:230.2492242721267
+	burger:234.96702325189116
+	sushi:168.32695200307077
+	chinese_food:186.19695588369547
+	dessert:256.3457620884993
+	complained:0
+	vivid:11.335144251865158
+	breast:162.33367573794473
+	own:0
+	uk:26.834027917205262
+	<SUM>: 127.65887654062985
+====NPMIS====
+	seafood:22.630673968779224
+	burger:23.21757697616657
+	sushi:15.90100740579172
+	chinese_food:15.958401365422864
+	dessert:26.029069218611568
+	complained:0
+	vivid:0.7968177916419454
+	breast:13.983519250549614
+	own:0
+	uk:2.017502455332752
+	<SUM>: 12.053456843229625
+====DISTINCTIVENESS====
+	<SUM>: 0.99
+	<SEMANTICALLY DISTINCT>: 0.92
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/yelp/ensemble/local-0.5-global-0.5-rho-0.7/scores.pkl
+====WORD SET====
+	seafood:['seafood', 'oyster', 'shrimp', 'crab', 'lobster', 'fisherman', 'fish', 'clam_chowder', 'octopus', 'yacht']
+	burger:['burger', 'burgerfi', 'hamburger', 'burgers', 'fry', 'patty', 'burger_joint', 'bun', 'cheeseburger', 'shake']
+	sushi:['sushi', 'ayce_sushi', 'miso_soup', 'sushimon', 'roll', 'bento_box', 'spicy_tuna', 'sushiya', 'spicy_tuna_roll', 'sushiholic']
+	chinese_food:['chinese_food', 'chinese', 'dim_sum', 'guangzhou', 'noodle_soup', 'roast_pork', 'sam_woo', 'orange_chicken', 'fried_rice', 'china']
+	dessert:['dessert', 'chocolate', 'ice_cream', 'dark_chocolate', 'creme_brulee', 'vanilla', 'strawberry', 'whipped_cream', 'cake', 'cookie']
+	complained:['markus', 'der', 'bahn', 'karl', 'nello', 'bei', 'andreas', 'yvonne', 'bruno', 'complained']
+	vivid:['intricate', 'richly', 'illusion', 'weave', 'coloured', 'layered', 'thoughtfully', 'colourful', 'fabric', 'vivid']
+	breast:['belly', 'breast', 'pork', 'roasted', 'shoulder', 'skin', 'tender', 'dried', 'cheek', 'pig']
+	own:['stevens', 'tucker', 'leary', 'fulton', 'anderson', 'horton', 'bryce', 'bret', 'bernie', 'own']
+	uk:['british', 'australia', 'australian', 'malaya', 'pub', 'wellington', 'london', 'england', 'yukon', 'uk']
+====PMIS====
+	seafood:219.98661816096862
+	burger:234.96702325189116
+	sushi:168.32695200307074
+	chinese_food:198.33263739552214
+	dessert:256.3457620884993
+	complained:0
+	vivid:11.335144251865158
+	breast:162.33367573794473
+	own:0
+	uk:26.834027917205262
+	<SUM>: 127.84618408069673
+====NPMIS====
+	seafood:21.888854343723832
+	burger:23.21757697616657
+	sushi:15.90100740579172
+	chinese_food:17.436616035115414
+	dessert:26.029069218611568
+	complained:0
+	vivid:0.7968177916419454
+	<SUM>: 12.127096347693342
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.93
+SUMMARY
+================================================================================
+/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/yelp/ensemble/local-0.5-global-0.5-rho-0.9/scores.pkl
+====WORD SET====
+	seafood:['seafood', 'oyster', 'shrimp', 'crab', 'lobster', 'fisherman', 'fish', 'clam_chowder', 'octopus', 'yacht']
+	burger:['burger', 'burgerfi', 'hamburger', 'burgers', 'fry', 'patty', 'burger_joint', 'bun', 'cheeseburger', 'shake']
+	sushi:['sushi', 'ayce_sushi', 'miso_soup', 'sushimon', 'roll', 'bento_box', 'spicy_tuna', 'sushiya', 'spicy_tuna_roll', 'sushiholic']
+	chinese_food:['chinese_food', 'chinese', 'dim_sum', 'guangzhou', 'noodle_soup', 'roast_pork', 'sam_woo', 'orange_chicken', 'fried_rice', 'china']
+	dessert:['dessert', 'chocolate', 'ice_cream', 'dark_chocolate', 'creme_brulee', 'vanilla', 'strawberry', 'whipped_cream', 'cake', 'cookie']
+	complained:['markus', 'der', 'bahn', 'karl', 'nello', 'andreas', 'bei', 'bruno', 'yvonne', 'complained']
+	vivid:['intricate', 'richly', 'illusion', 'weave', 'coloured', 'layered', 'thoughtfully', 'colourful', 'fabric', 'vivid']
+	breast:['belly', 'breast', 'roasted', 'pork', 'shoulder', 'skin', 'tender', 'dried', 'cheek', 'pig']
+	own:['stevens', 'tucker', 'leary', 'fulton', 'anderson', 'horton', 'bryce', 'bret', 'bernie', 'own']
+	uk:['british', 'australia', 'australian', 'malaya', 'pub', 'london', 'wellington', 'england', 'yukon', 'uk']
+====PMIS====
+	seafood:219.98661816096862
+	burger:234.96702325189116
+	sushi:168.32695200307074
+	chinese_food:198.33263739552214
+	dessert:256.3457620884993
+	complained:0
+	vivid:11.335144251865158
+	breast:162.33367573794473
+	own:0
+	uk:26.834027917205262
+	<SUM>: 127.84618408069673
+====NPMIS====
+	seafood:21.888854343723832
+	burger:23.21757697616657
+	sushi:15.90100740579172
+	chinese_food:17.436616035115414
+	dessert:26.029069218611568
+	complained:0
+	vivid:0.7968177916419454
+	breast:13.983519250549612
+	own:0
+	uk:2.017502455332752
+	<SUM>: 12.127096347693342
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.93
+      0L}í
+  0L}í
+                          P       à
