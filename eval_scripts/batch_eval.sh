@@ -14,6 +14,7 @@ do
         -e ./results/$dataset/bert/embeddings.pkl \
         -o ./results/$dataset/bert/embeddings_reduced.pkl && \
     # Compute reduced Embeddings
+    python3 similarities.py -m bert -d $dataset -e -r
     python3 scripts/batch_eval.py \
         -d $dataset \
         -n evaluation_reduced  \

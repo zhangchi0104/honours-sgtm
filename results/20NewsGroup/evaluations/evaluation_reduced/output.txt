@@ -1,4 +1,4 @@
-[2;36m[11/01/22 10:12:07][0m[2;36m [0m[34mINFO    [0m INFO:root:Loaded [1;36m34771[0m words from                                                                   ]8;id=553388;file:///mnt/data/code/github.com/zhangchi0104/honours-sgtm/scripts/utils/io.py\[2mio.py[0m]8;;\[2m:[0m]8;id=960757;file:///mnt/data/code/github.com/zhangchi0104/honours-sgtm/scripts/utils/io.py#12\[2m12[0m]8;;\
+[2;36m[11/04/22 22:49:13][0m[2;36m [0m[34mINFO    [0m INFO:root:Loaded [1;36m34771[0m words from                                                                   ]8;id=777147;file:///mnt/data/code/github.com/zhangchi0104/honours-sgtm/scripts/utils/io.py\[2mio.py[0m]8;;\[2m:[0m]8;id=836288;file:///mnt/data/code/github.com/zhangchi0104/honours-sgtm/scripts/utils/io.py#12\[2m12[0m]8;;\
                              [35m/home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/data/20NewsGroup/vocab/[0m[95mvocab.pkl[0m                  
 SUMMARY
 ================================================================================
@@ -9,38 +9,38 @@ SUMMARY
 	space:['space', 'spacelink', 'spacehab', 'spacepac', 'spacelab', 'spaceflight', 'spaceward', 'spacewatch', 'spaceball', 'spacewalk']
 	gun:['gun', 'gund', 'weapon', 'gunfight', 'pistol', 'guncer', 'firearm', 'bullet', 'shotgun', 'gunpoint']
 	medicine:['medicine', 'physician', 'medical', 'doctor', 'medically', 'healthcare', 'health', 'diagnosis', 'disease', 'surgery']
-	crypt:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'crypt']
-	graphics:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'graphics']
-	sports:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'sports']
-	politics:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'politics']
-	windows:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'windows']
+	sakura:['kata', 'sanskrit', 'asha', 'samurai', 'turkic', 'lydia', 'sufi', 'asa', 'iso', 'sakura']
+	superhero:['mythical', 'humanoid', 'demonic', 'bounty', 'telling', 'horrific', 'superhuman', 'enthusiastically', 'dazzling', 'superhero']
+	himalayas:['rbis', 'catching', 'fumble', 'outing', 'pitched', 'rushing', 'pennant', 'unbeaten', 'postseason', 'himalayas']
+	lyrics:['forested', 'mountainous', 'expanse', 'populated', 'countryside', 'northernmost', 'geographically', 'flowing', 'outpost', 'lyrics']
+	html:['cmap_compact', 'w_id', 'atom_wm_save_yourself', 'prompting', 'max_x', 'uuprog_mode', 'my_int_var', 'save_yourself', 'wc_len', 'html']
 ====PMIS====
 	hardware:213.86019538536038
-	medicine:316.6336965970866
-	sports:14.160492719321342
-	politics:30.13467412391396
-	graphics:41.923232033313276
-	windows:35.590503736788584
-	religion:296.9737763255099
-	crypt:40.50421479339537
-	gun:177.56967265319952
 	space:145.1543736707685
-	<SUM>: 131.25048320386574
+	religion:296.9737763255099
+	gun:177.56967265319952
+	himalayas:18.993444175556803
+	sakura:61.96546839084557
+	html:14.752668840098892
+	superhero:10.252859169768628
+	medicine:316.6336965970866
+	lyrics:10.504173598049533
+	<SUM>: 126.66603288062443
 ====NPMIS====
-	religion:28.126358441791474
-	politics:2.1623904734243085
-	crypt:2.9490771235283324
-	windows:2.715872652785598
 	space:13.139570534326838
-	gun:20.078862403293787
-	hardware:22.271911566361265
 	medicine:34.32320310258046
-	graphics:3.296194972869425
-	sports:0.9882872115946837
-	<SUM>: 13.005172848255617
+	hardware:22.271911566361265
+	religion:28.126358441791474
+	html:1.2025558216110992
+	gun:20.078862403293787
+	superhero:0.6949833471419468
+	himalayas:1.2874581800366287
+	lyrics:0.7120185311486407
+	sakura:4.438924597610805
+	<SUM>: 12.627584652590295
 ====DISTINCTIVENESS====
-	<SUM>: 0.64
-	<SEMANTICALLY DISTINCT>: 0.49
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.85
 SUMMARY
 ================================================================================
 /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/20NewsGroup/ensemble/local-0.2-global-0.8-rho-0.5/scores.pkl
@@ -50,38 +50,38 @@ SUMMARY
 	space:['space', 'spacelink', 'spacehab', 'spacelab', 'spaceflight', 'spacepac', 'spacewalk', 'spacewatch', 'spacecause', 'orbit']
 	gun:['gun', 'weapon', 'gund', 'gunfight', 'firearm', 'pistol', 'handgun', 'shotgun', 'rifle', 'knife']
 	medicine:['medicine', 'physician', 'medical', 'doctor', 'healthcare', 'health', 'medically', 'diagnosis', 'medication', 'surgery']
-	crypt:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'crypt']
-	graphics:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'graphics']
-	sports:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'sports']
-	politics:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'politics']
-	windows:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'windows']
+	sakura:['sanskrit', 'kata', 'asha', 'vedic', 'sufi', 'turkic', 'samurai', 'vowel', 'syriac', 'sakura']
+	superhero:['mythical', 'humanoid', 'horrific', 'demonic', 'telling', 'enthusiastically', 'daring', 'monstrous', 'dazzling', 'superhero']
+	himalayas:['rbis', 'catching', 'rushing', 'innings', 'fumble', 'postseason', 'pennant', 'pitched', 'yards', 'himalayas']
+	lyrics:['forested', 'expanse', 'mountainous', 'countryside', 'northernmost', 'populated', 'flowing', 'outpost', 'geographically', 'lyrics']
+	html:['cmap_compact', 'w_id', 'prompting', 'max_x', 'uubuild_mode', 'uuprog_mode', 'my_int_var', 'save_yourself', 'window_title', 'html']
 ====PMIS====
-	religion:306.5602762525707
-	medicine:302.6790381031006
-	space:238.31689777409264
-	graphics:41.923232033313276
-	windows:35.590503736788584
-	crypt:40.50421479339537
 	hardware:242.08123007701994
+	lyrics:10.504173598049533
+	sakura:50.01105601973504
 	gun:308.22490964604503
-	politics:30.13467412391396
-	sports:14.160492719321342
-	<SUM>: 156.01754692595617
+	space:238.31689777409264
+	superhero:22.29747780876531
+	medicine:302.6790381031006
+	religion:306.5602762525707
+	html:14.059521659538948
+	himalayas:9.587882866175379
+	<SUM>: 150.4322463805093
 ====NPMIS====
-	politics:2.1623904734243085
-	religion:30.47379947202016
-	graphics:3.296194972869425
-	crypt:2.9490771235283324
-	medicine:30.621009901517095
-	windows:2.715872652785598
 	hardware:24.80397189352789
-	gun:36.35403436141002
+	religion:30.47379947202016
+	html:1.1093876349312244
+	lyrics:0.7120185311486407
+	medicine:30.621009901517095
 	space:22.21510568218085
-	sports:0.9882872115946837
-	<SUM>: 15.657974374485837
+	sakura:3.5976540260961176
+	gun:36.35403436141002
+	superhero:1.5114199369919459
+	himalayas:0.6499083637066925
+	<SUM>: 15.204830980353066
 ====DISTINCTIVENESS====
-	<SUM>: 0.64
-	<SEMANTICALLY DISTINCT>: 0.52
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.88
 SUMMARY
 ================================================================================
 /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/20NewsGroup/ensemble/local-0.3-global-0.7-rho-0.5/scores.pkl
@@ -91,38 +91,38 @@ SUMMARY
 	space:['space', 'spacehab', 'spacelink', 'spacelab', 'spaceflight', 'spacepac', 'spacewalk', 'orbit', 'shuttle', 'spacewatch']
 	gun:['gun', 'weapon', 'firearm', 'handgun', 'pistol', 'gunfight', 'shotgun', 'gund', 'rifle', 'knife']
 	medicine:['medicine', 'physician', 'medical', 'doctor', 'healthcare', 'health', 'diagnosis', 'medically', 'medication', 'surgery']
-	crypt:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'crypt']
-	graphics:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'graphics']
-	sports:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'sports']
-	politics:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'politics']
-	windows:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'windows']
+	sakura:['sanskrit', 'vedic', 'kata', 'asha', 'sufi', 'turkic', 'syriac', 'aramaic', 'mandir', 'sakura']
+	superhero:['mythical', 'humanoid', 'horrific', 'demonic', 'telling', 'monstrous', 'enthusiastically', 'daring', 'ambitious', 'superhero']
+	himalayas:['rbis', 'innings', 'rushing', 'catching', 'postseason', 'fumble', 'yards', 'batting', 'pennant', 'himalayas']
+	lyrics:['forested', 'expanse', 'mountainous', 'countryside', 'northernmost', 'populated', 'southward', 'flowing', 'arid', 'lyrics']
+	html:['cmap_compact', 'prompting', 'w_id', 'uubuild_mode', 'max_x', 'window_title', 'uuprog_mode', 'my_int_var', 'n_control', 'html']
 ====PMIS====
-	religion:302.84790508105453
-	crypt:40.50421479339537
-	hardware:326.5047004443213
-	graphics:41.923232033313276
-	politics:30.13467412391396
-	medicine:302.6790381031006
+	html:14.059521659538948
+	lyrics:11.351471458436738
 	gun:308.2249096460451
-	windows:35.590503736788584
+	hardware:326.5047004443213
+	himalayas:17.147617485058472
+	religion:302.84790508105453
 	space:269.22295393755496
-	sports:14.160492719321342
-	<SUM>: 167.1792624618809
+	medicine:302.6790381031006
+	sakura:87.85971036481702
+	superhero:10.252859169768628
+	<SUM>: 165.01506873496962
 ====NPMIS====
-	medicine:30.621009901517095
 	space:25.687882535967496
-	graphics:3.296194972869425
-	gun:36.35403436141002
 	hardware:32.25864233495992
-	windows:2.715872652785598
-	sports:0.9882872115946837
-	crypt:2.9490771235283324
 	religion:28.941469480148527
-	politics:2.1623904734243085
-	<SUM>: 16.59748610482054
+	sakura:6.468693169422336
+	html:1.1093876349312244
+	gun:36.35403436141002
+	lyrics:0.769452061960651
+	himalayas:1.1876033722530215
+	medicine:30.621009901517095
+	superhero:0.6949833471419468
+	<SUM>: 16.409315819971226
 ====DISTINCTIVENESS====
-	<SUM>: 0.64
-	<SEMANTICALLY DISTINCT>: 0.54
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.9
 SUMMARY
 ================================================================================
 /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/20NewsGroup/ensemble/local-0.4-global-0.6-rho-0.5/scores.pkl
@@ -132,38 +132,38 @@ SUMMARY
 	space:['space', 'spacehab', 'spacelink', 'spaceflight', 'spacelab', 'shuttle', 'spacepac', 'orbit', 'spacewalk', 'orbital']
 	gun:['gun', 'weapon', 'firearm', 'handgun', 'pistol', 'shotgun', 'gunfight', 'knife', 'rifle', 'gund']
 	medicine:['medicine', 'medical', 'physician', 'doctor', 'healthcare', 'health', 'diagnosis', 'clinical', 'medication', 'surgery']
-	crypt:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'crypt']
-	graphics:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'graphics']
-	sports:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'sports']
-	politics:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'politics']
-	windows:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'windows']
+	sakura:['sanskrit', 'vedic', 'asha', 'sufi', 'kata', 'aramaic', 'syriac', 'hindus', 'turkic', 'sakura']
+	superhero:['mythical', 'humanoid', 'horrific', 'demonic', 'telling', 'monstrous', 'enthusiastically', 'gods', 'daring', 'superhero']
+	himalayas:['rbis', 'innings', 'rushing', 'catching', 'batting', 'postseason', 'padres', 'yards', 'marlins', 'himalayas']
+	lyrics:['forested', 'expanse', 'mountainous', 'countryside', 'northernmost', 'southward', 'canopy', 'arid', 'populated', 'lyrics']
+	html:['cmap_compact', 'prompting', 'w_id', 'uubuild_mode', 'max_x', 'current_dir', 'vinfo_list', 'window_title', 'n_control', 'html']
 ====PMIS====
-	religion:308.9584437083225
-	space:293.2837869792006
-	sports:14.160492719321342
-	gun:308.2249096460451
 	hardware:326.50470044432126
-	graphics:41.923232033313276
-	windows:35.590503736788584
+	sakura:87.85971036481702
+	gun:308.2249096460451
+	lyrics:11.351471458436738
 	medicine:341.3752103943852
-	crypt:40.50421479339537
-	politics:30.13467412391396
-	<SUM>: 174.0660168579007
+	religion:308.9584437083225
+	himalayas:16.943228294337487
+	space:293.2837869792006
+	superhero:10.252859169768628
+	html:0
+	<SUM>: 170.47543204596346
 ====NPMIS====
-	space:28.84215153347047
-	politics:2.1623904734243085
-	hardware:32.25864233495993
-	medicine:36.34889533832524
-	graphics:3.296194972869425
 	religion:31.207650292906603
-	sports:0.9882872115946837
+	hardware:32.25864233495993
 	gun:36.35403436141002
-	crypt:2.9490771235283324
-	windows:2.715872652785598
-	<SUM>: 17.712319629527464
+	space:28.84215153347047
+	sakura:6.468693169422335
+	medicine:36.34889533832524
+	lyrics:0.769452061960651
+	himalayas:1.1484856386313291
+	superhero:0.6949833471419468
+	html:0
+	<SUM>: 17.409298807822857
 ====DISTINCTIVENESS====
-	<SUM>: 0.64
-	<SEMANTICALLY DISTINCT>: 0.55
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.91
 SUMMARY
 ================================================================================
 /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/20NewsGroup/ensemble/local-0.5-global-0.5-rho-0.5/scores.pkl
@@ -173,38 +173,38 @@ SUMMARY
 	space:['space', 'spacehab', 'spacelink', 'spaceflight', 'spacelab', 'shuttle', 'orbit', 'orbital', 'spacewalk', 'spacecraft']
 	gun:['gun', 'weapon', 'firearm', 'handgun', 'pistol', 'shotgun', 'knife', 'rifle', 'gunfight', 'revolver']
 	medicine:['medicine', 'medical', 'physician', 'doctor', 'healthcare', 'health', 'clinical', 'medication', 'diagnosis', 'therapy']
-	crypt:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'crypt']
-	graphics:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'graphics']
-	sports:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'sports']
-	politics:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'politics']
-	windows:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'windows']
+	sakura:['sanskrit', 'vedic', 'sufi', 'asha', 'aramaic', 'hindus', 'mandir', 'syriac', 'krishna', 'sakura']
+	superhero:['mythical', 'gods', 'humanoid', 'horrific', 'monstrous', 'demonic', 'telling', 'enthusiastically', 'daring', 'superhero']
+	himalayas:['rbis', 'innings', 'rushing', 'batting', 'catching', 'padres', 'marlins', 'postseason', 'royals', 'himalayas']
+	lyrics:['forested', 'expanse', 'mountainous', 'canopy', 'southward', 'countryside', 'arid', 'northernmost', 'flowing', 'lyrics']
+	html:['cmap_compact', 'prompting', 'current_dir', 'w_id', 'uubuild_mode', 'vinfo_list', 'max_x', 'window_title', 'n_control', 'html']
 ====PMIS====
-	graphics:41.923232033313276
-	hardware:302.80711940500333
-	crypt:40.50421479339537
-	medicine:349.9745921030789
-	gun:371.0028835601768
-	space:335.35548354196527
-	politics:30.13467412391396
-	sports:14.160492719321342
-	windows:35.590503736788584
+	himalayas:27.764071501712053
 	religion:295.950228897899
-	<SUM>: 181.7403424914856
+	gun:371.0028835601768
+	hardware:302.80711940500333
+	lyrics:11.351471458436738
+	medicine:349.9745921030789
+	sakura:88.73517910217092
+	html:0
+	superhero:10.252859169768628
+	space:335.35548354196527
+	<SUM>: 179.31938887402114
 ====NPMIS====
-	space:33.864274978762644
-	hardware:29.11051021533001
-	gun:42.67692186291917
-	windows:2.715872652785598
-	medicine:38.12756958050267
+	himalayas:1.9181308278069482
 	religion:29.55938433176596
-	crypt:2.9490771235283324
-	graphics:3.296194972869425
-	sports:0.9882872115946837
-	politics:2.1623904734243085
-	<SUM>: 18.54504834034828
+	hardware:29.11051021533001
+	medicine:38.12756958050267
+	lyrics:0.769452061960651
+	superhero:0.6949833471419468
+	gun:42.67692186291917
+	html:0
+	sakura:6.6989773110036595
+	space:33.864274978762644
+	<SUM>: 18.34202045171937
 ====DISTINCTIVENESS====
-	<SUM>: 0.64
-	<SEMANTICALLY DISTINCT>: 0.56
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.92
 SUMMARY
 ================================================================================
 /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/20NewsGroup/ensemble/local-0.6-global-0.4-rho-0.5/scores.pkl
@@ -214,38 +214,38 @@ SUMMARY
 	space:['space', 'spacehab', 'shuttle', 'spacelink', 'spaceflight', 'spacelab', 'orbit', 'orbital', 'aeronautics', 'spacecraft']
 	gun:['gun', 'firearm', 'handgun', 'weapon', 'pistol', 'shotgun', 'knife', 'rifle', 'myselfe', 'gunfight']
 	medicine:['medicine', 'medical', 'physician', 'doctor', 'clinical', 'healthcare', 'nutrition', 'health', 'therapy', 'dentistry']
-	crypt:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'crypt']
-	graphics:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'graphics']
-	sports:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'sports']
-	politics:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'politics']
-	windows:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'windows']
+	sakura:['sanskrit', 'vedic', 'sufi', 'asha', 'aramaic', 'krishna', 'hindus', 'mandir', 'syriac', 'sakura']
+	superhero:['mythical', 'gods', 'horrific', 'humanoid', 'monstrous', 'telling', 'demonic', 'enthusiastically', 'terrifying', 'superhero']
+	himalayas:['rbis', 'innings', 'rushing', 'batting', 'padres', 'royals', 'marlins', 'catching', 'brewers', 'himalayas']
+	lyrics:['forested', 'expanse', 'mountainous', 'canopy', 'southward', 'farmland', 'arid', 'countryside', 'northernmost', 'lyrics']
+	html:['cmap_compact', 'prompting', 'current_dir', 'uubuild_mode', 'vinfo_list', 'w_id', 'max_x', 'n_control', 'window_title', 'html']
 ====PMIS====
-	hardware:292.8973609563923
-	crypt:40.50421479339537
-	gun:355.813698265921
-	politics:30.13467412391396
-	sports:14.160492719321342
 	religion:333.88330673011586
-	medicine:351.33261420760306
-	windows:35.590503736788584
-	graphics:41.923232033313276
+	sakura:88.73517910217092
+	html:0
 	space:395.09705908063194
-	<SUM>: 189.13371566473967
+	medicine:351.33261420760306
+	himalayas:27.764071501712053
+	lyrics:11.351471458436738
+	gun:355.813698265921
+	superhero:10.252859169768628
+	hardware:292.8973609563923
+	<SUM>: 186.71276204727525
 ====NPMIS====
-	hardware:26.837431416995745
-	religion:35.79332208606719
-	graphics:3.296194972869425
-	medicine:37.98527033052977
-	crypt:2.9490771235283324
-	politics:2.1623904734243085
-	sports:0.9882872115946837
-	space:39.18223990580688
-	windows:2.715872652785598
 	gun:40.18844479849497
-	<SUM>: 19.20985309720969
+	sakura:6.6989773110036595
+	superhero:0.6949833471419468
+	hardware:26.837431416995745
+	himalayas:1.9181308278069484
+	religion:35.79332208606719
+	lyrics:0.769452061960651
+	html:0
+	space:39.18223990580688
+	medicine:37.98527033052977
+	<SUM>: 19.00682520858078
 ====DISTINCTIVENESS====
-	<SUM>: 0.64
-	<SEMANTICALLY DISTINCT>: 0.57
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.93
 SUMMARY
 ================================================================================
 /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/20NewsGroup/ensemble/local-0.7-global-0.3-rho-0.5/scores.pkl
@@ -255,38 +255,38 @@ SUMMARY
 	space:['space', 'spacehab', 'shuttle', 'orbit', 'spacelink', 'orbital', 'spaceflight', 'spacelab', 'aeronautics', 'billboard']
 	gun:['gun', 'firearm', 'handgun', 'weapon', 'shotgun', 'pistol', 'myselfe', 'knife', 'rifle', 'violent']
 	medicine:['medicine', 'medical', 'physician', 'doctor', 'dentistry', 'clinical', 'nutrition', 'therapy', 'patient', 'healthcare']
-	crypt:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'crypt']
-	graphics:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'graphics']
-	sports:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'sports']
-	politics:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'politics']
-	windows:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'windows']
+	sakura:['sanskrit', 'vedic', 'sufi', 'krishna', 'aramaic', 'hindus', 'hindi', 'mandir', 'asha', 'sakura']
+	superhero:['mythical', 'gods', 'horrific', 'humanoid', 'monstrous', 'telling', 'demonic', 'enthusiastically', 'terrifying', 'superhero']
+	himalayas:['rbis', 'innings', 'rushing', 'batting', 'padres', 'royals', 'marlins', 'nlcs', 'brewers', 'himalayas']
+	lyrics:['forested', 'expanse', 'mountainous', 'farmland', 'canopy', 'ravine', 'southward', 'arid', 'gorge', 'lyrics']
+	html:['cmap_compact', 'prompting', 'current_dir', 'fontpath', 'vinfo_list', 'uubuild_mode', 'w_id', 'xview_private', 'n_control', 'html']
 ====PMIS====
+	sakura:88.73517910217092
 	gun:395.4933847422883
-	religion:325.7251235129728
-	graphics:41.923232033313276
 	space:342.06328610493375
-	sports:14.160492719321342
+	religion:325.7251235129728
 	hardware:341.8561779596332
-	crypt:40.50421479339537
-	windows:35.590503736788584
-	politics:30.13467412391396
 	medicine:344.57319386356687
-	<SUM>: 191.20242835901274
+	lyrics:11.351471458436738
+	himalayas:38.160031515121354
+	superhero:10.252859169768628
+	html:14.347203731990728
+	<SUM>: 191.25579111608832
 ====NPMIS====
-	religion:33.6675174981202
-	space:33.191572050876474
-	windows:2.715872652785598
-	sports:0.9882872115946837
-	hardware:31.423289187546782
 	medicine:37.46698676664858
-	politics:2.1623904734243085
-	crypt:2.9490771235283324
-	graphics:3.296194972869425
+	html:1.1069596524018241
+	space:33.191572050876474
 	gun:44.89250575634993
-	<SUM>: 19.27536936937443
+	sakura:6.6989773110036595
+	lyrics:0.769452061960651
+	religion:33.6675174981202
+	himalayas:2.622814171959044
+	hardware:31.423289187546782
+	superhero:0.6949833471419468
+	<SUM>: 19.25350578040091
 ====DISTINCTIVENESS====
-	<SUM>: 0.64
-	<SEMANTICALLY DISTINCT>: 0.59
+	<SUM>: 0.99
+	<SEMANTICALLY DISTINCT>: 0.94
 SUMMARY
 ================================================================================
 /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/20NewsGroup/ensemble/local-0.8-global-0.2-rho-0.5/scores.pkl
@@ -296,38 +296,38 @@ SUMMARY
 	space:['space', 'shuttle', 'spacehab', 'orbit', 'orbital', 'aeronautics', 'seds', 'billboard', 'satellite', 'onobstructed']
 	gun:['gun', 'firearm', 'handgun', 'myselfe', 'weapon', 'shotgun', 'pistol', 'homocide', 'enyone', 'knife']
 	medicine:['medicine', 'medical', 'physician', 'dentistry', 'doctor', 'nutrition', 'clinical', 'radiology', 'therapy', 'patient']
-	crypt:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'crypt']
-	graphics:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'graphics']
-	sports:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'sports']
-	politics:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'politics']
-	windows:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'windows']
+	sakura:['sanskrit', 'vedic', 'vedas', 'krishna', 'sufi', 'aramaic', 'gatha', 'hindus', 'hindi', 'sakura']
+	superhero:['mythical', 'gods', 'mythic', 'fantastical', 'horrific', 'monstrous', 'humanoid', 'personify', 'telling', 'superhero']
+	himalayas:['rbis', 'innings', 'rushing', 'nlcs', 'batting', 'padres', 'royals', 'rbi', 'hitting', 'himalayas']
+	lyrics:['forested', 'expanse', 'mountainous', 'farmland', 'ravine', 'canopy', 'gorge', 'uninhabited', 'southward', 'lyrics']
+	html:['cmap_compact', 'prompting', 'fontpath', 'current_dir', 'vinfo_list', 'uubuild_mode', 'xview_private', 'n_control', 'w_id', 'html']
 ====PMIS====
 	gun:352.0077198954015
-	space:350.74906547573903
-	graphics:41.923232033313276
 	hardware:390.48073382461035
-	medicine:392.85669828423954
-	crypt:40.50421479339537
-	politics:30.13467412391396
-	windows:35.590503736788584
-	sports:14.160492719321342
 	religion:346.1515365503309
-	<SUM>: 199.4558871437054
+	html:14.347203731990728
+	sakura:127.11504976066661
+	medicine:392.85669828423954
+	superhero:0
+	himalayas:89.28776569980312
+	space:350.74906547573903
+	lyrics:23.90691572119941
+	<SUM>: 208.69026889439812
 ====NPMIS====
-	medicine:41.29783914415047
-	religion:39.33743199758858
 	hardware:35.40750415784184
-	graphics:3.296194972869425
-	crypt:2.9490771235283324
-	gun:37.43726751405584
-	windows:2.715872652785598
-	politics:2.1623904734243085
+	religion:39.33743199758858
 	space:35.73335056983883
-	sports:0.9882872115946837
-	<SUM>: 20.132521581767794
+	lyrics:1.6205146323232424
+	medicine:41.29783914415047
+	sakura:9.8162338752527
+	himalayas:6.856821810602466
+	gun:37.43726751405584
+	superhero:0
+	html:1.1069596524018241
+	<SUM>: 20.861392335405583
 ====DISTINCTIVENESS====
-	<SUM>: 0.64
-	<SEMANTICALLY DISTINCT>: 0.62
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.97
 SUMMARY
 ================================================================================
 /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/20NewsGroup/ensemble/local-0.9-global-0.1-rho-0.5/scores.pkl
@@ -337,38 +337,38 @@ SUMMARY
 	space:['space', 'shuttle', 'seds', 'onobstructed', 'spacehab', 'jenks', 'aeronautics', 'billboard', 'orbital', 'orbit']
 	gun:['gun', 'myselfe', 'firearm', 'handgun', 'homocide', 'weapon', 'enyone', 'shotgun', 'pistol', 'backcountry']
 	medicine:['medicine', 'dentistry', 'medical', 'physician', 'radiology', 'obstetrics', 'neurology', 'nutrition', 'doctor', 'clinical']
-	crypt:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'crypt']
-	graphics:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'graphics']
-	sports:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'sports']
-	politics:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'politics']
-	windows:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'windows']
+	sakura:['sanskrit', 'vedic', 'vedas', 'gatha', 'avestan', 'krishna', 'gathas', 'dasa', 'brahma', 'sakura']
+	superhero:['mythical', 'gods', 'mythic', 'fantastical', 'personify', 'deity', 'extraterrestrial', 'godlike', 'telepathic', 'superhero']
+	himalayas:['rbis', 'rbi', 'innings', 'leadoff', 'nlcs', 'slugging', 'baserunner', 'hitting', 'rushing', 'himalayas']
+	lyrics:['forested', 'expanse', 'farmland', 'ravine', 'mountainous', 'gorge', 'uninhabited', 'canopy', 'hectare', 'lyrics']
+	html:['cmap_compact', 'fontpath', 'prompting', 'builderxcessory', 'keyrelease', 'current_dir', 'winhelp', 'xenvironment', 'xev', 'html']
 ====PMIS====
-	crypt:40.50421479339537
-	religion:357.5963122669939
-	politics:30.13467412391396
-	hardware:330.86904533561415
-	gun:303.15140076975933
-	graphics:41.923232033313276
-	sports:14.160492719321342
-	windows:35.590503736788584
-	medicine:315.6099878498467
 	space:331.1456158785449
-	<SUM>: 180.06854795074915
+	gun:303.15140076975933
+	lyrics:0
+	religion:357.5963122669939
+	hardware:330.86904533561415
+	superhero:8.160995108090235
+	himalayas:95.2871930369597
+	sakura:270.10563762774575
+	html:68.15249972149753
+	medicine:315.6099878498467
+	<SUM>: 208.00786875950521
 ====NPMIS====
+	superhero:0.5531877110877742
 	gun:31.907766272397573
-	graphics:3.296194972869425
-	sports:0.9882872115946837
-	space:31.450330576577127
-	medicine:29.79374425895994
-	hardware:30.177578762159687
-	politics:2.1623904734243085
-	windows:2.715872652785598
 	religion:41.94803693886895
-	crypt:2.9490771235283324
-	<SUM>: 17.738927924316563
+	himalayas:7.444581018283969
+	space:31.450330576577127
+	hardware:30.177578762159687
+	lyrics:0
+	html:5.007303510577915
+	medicine:29.79374425895994
+	sakura:20.635709318376755
+	<SUM>: 19.891823836728967
 ====DISTINCTIVENESS====
-	<SUM>: 0.64
-	<SEMANTICALLY DISTINCT>: 0.62
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.97
 SUMMARY
 ================================================================================
 /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/20NewsGroup/ensemble/local-0.5-global-0.5-rho-0.1/scores.pkl
@@ -378,38 +378,38 @@ SUMMARY
 	space:['space', 'spacehab', 'spacelink', 'spaceflight', 'spacelab', 'shuttle', 'orbit', 'orbital', 'spacepac', 'spacewalk']
 	gun:['gun', 'weapon', 'firearm', 'handgun', 'pistol', 'shotgun', 'knife', 'rifle', 'gunfight', 'revolver']
 	medicine:['medicine', 'medical', 'physician', 'doctor', 'healthcare', 'health', 'clinical', 'medication', 'nutrition', 'therapy']
-	crypt:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'crypt']
-	graphics:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'graphics']
-	sports:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'sports']
-	politics:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'politics']
-	windows:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'windows']
+	sakura:['sanskrit', 'vedic', 'sufi', 'asha', 'aramaic', 'hindus', 'mandir', 'syriac', 'krishna', 'sakura']
+	superhero:['mythical', 'gods', 'humanoid', 'horrific', 'monstrous', 'demonic', 'telling', 'enthusiastically', 'daring', 'superhero']
+	himalayas:['rbis', 'innings', 'rushing', 'catching', 'batting', 'padres', 'postseason', 'marlins', 'yards', 'himalayas']
+	lyrics:['forested', 'expanse', 'mountainous', 'canopy', 'countryside', 'southward', 'northernmost', 'arid', 'flowing', 'lyrics']
+	html:['cmap_compact', 'prompting', 'current_dir', 'w_id', 'uubuild_mode', 'vinfo_list', 'max_x', 'window_title', 'n_control', 'html']
 ====PMIS====
-	religion:307.5666214751867
-	gun:371.0028835601768
-	hardware:302.80711940500333
-	politics:30.13467412391396
-	windows:35.590503736788584
-	crypt:40.50421479339537
 	space:293.28378697920056
-	sports:14.160492719321342
 	medicine:353.4762866543663
-	graphics:41.923232033313276
-	<SUM>: 179.04498154806663
+	hardware:302.80711940500333
+	sakura:88.73517910217092
+	gun:371.0028835601768
+	religion:307.5666214751867
+	himalayas:16.943228294337487
+	superhero:10.252859169768628
+	lyrics:11.351471458436738
+	html:0
+	<SUM>: 175.54194360986475
 ====NPMIS====
-	crypt:2.9490771235283324
-	politics:2.1623904734243085
-	medicine:38.791285789557605
-	space:28.84215153347047
-	graphics:3.296194972869425
-	religion:32.49870615885592
-	gun:42.67692186291917
+	html:0
+	himalayas:1.1484856386313291
 	hardware:29.11051021533001
-	windows:2.715872652785598
-	sports:0.9882872115946837
-	<SUM>: 18.403139799433553
+	space:28.84215153347047
+	gun:42.67692186291917
+	superhero:0.6949833471419468
+	lyrics:0.769452061960651
+	religion:32.49870615885592
+	sakura:6.6989773110036595
+	medicine:38.791285789557605
+	<SUM>: 18.12314739188708
 ====DISTINCTIVENESS====
-	<SUM>: 0.64
-	<SEMANTICALLY DISTINCT>: 0.55
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.91
 SUMMARY
 ================================================================================
 /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/20NewsGroup/ensemble/local-0.5-global-0.5-rho-0.3/scores.pkl
@@ -419,38 +419,38 @@ SUMMARY
 	space:['space', 'spacehab', 'spacelink', 'spaceflight', 'spacelab', 'shuttle', 'orbit', 'orbital', 'spacewalk', 'spacepac']
 	gun:['gun', 'weapon', 'firearm', 'handgun', 'pistol', 'shotgun', 'knife', 'rifle', 'gunfight', 'revolver']
 	medicine:['medicine', 'medical', 'physician', 'doctor', 'healthcare', 'health', 'clinical', 'medication', 'diagnosis', 'therapy']
-	crypt:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'crypt']
-	graphics:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'graphics']
-	sports:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'sports']
-	politics:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'politics']
-	windows:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'windows']
+	sakura:['sanskrit', 'vedic', 'sufi', 'asha', 'aramaic', 'hindus', 'mandir', 'syriac', 'krishna', 'sakura']
+	superhero:['mythical', 'gods', 'humanoid', 'horrific', 'monstrous', 'demonic', 'telling', 'enthusiastically', 'daring', 'superhero']
+	himalayas:['rbis', 'innings', 'rushing', 'catching', 'batting', 'padres', 'marlins', 'postseason', 'yards', 'himalayas']
+	lyrics:['forested', 'expanse', 'mountainous', 'canopy', 'countryside', 'southward', 'northernmost', 'arid', 'flowing', 'lyrics']
+	html:['cmap_compact', 'prompting', 'current_dir', 'w_id', 'uubuild_mode', 'vinfo_list', 'max_x', 'window_title', 'n_control', 'html']
 ====PMIS====
-	graphics:41.923232033313276
-	crypt:40.50421479339537
-	politics:30.13467412391396
-	sports:14.160492719321342
-	space:293.28378697920056
-	windows:35.590503736788584
+	lyrics:11.351471458436738
 	gun:371.0028835601768
+	superhero:10.252859169768628
 	religion:295.9502288978989
-	medicine:349.9745921030789
+	himalayas:16.943228294337487
 	hardware:302.80711940500333
-	<SUM>: 177.53317283520911
+	space:293.28378697920056
+	medicine:349.9745921030789
+	html:0
+	sakura:88.73517910217092
+	<SUM>: 174.03013489700723
 ====NPMIS====
-	religion:29.55938433176596
-	space:28.84215153347047
-	sports:0.9882872115946837
-	medicine:38.12756958050267
-	gun:42.67692186291917
-	graphics:3.296194972869425
-	crypt:2.9490771235283324
-	politics:2.1623904734243085
 	hardware:29.11051021533001
-	windows:2.715872652785598
-	<SUM>: 18.042835995819065
+	superhero:0.6949833471419468
+	sakura:6.6989773110036595
+	himalayas:1.1484856386313291
+	religion:29.55938433176596
+	medicine:38.12756958050267
+	space:28.84215153347047
+	lyrics:0.769452061960651
+	html:0
+	gun:42.67692186291917
+	<SUM>: 17.762843588272588
 ====DISTINCTIVENESS====
-	<SUM>: 0.64
-	<SEMANTICALLY DISTINCT>: 0.56
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.92
 SUMMARY
 ================================================================================
 /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/20NewsGroup/ensemble/local-0.5-global-0.5-rho-0.7/scores.pkl
@@ -460,38 +460,38 @@ SUMMARY
 	space:['space', 'spacehab', 'spacelink', 'spaceflight', 'spacelab', 'shuttle', 'orbit', 'orbital', 'spacecraft', 'spacewalk']
 	gun:['gun', 'weapon', 'firearm', 'handgun', 'pistol', 'shotgun', 'knife', 'rifle', 'gunfight', 'revolver']
 	medicine:['medicine', 'medical', 'physician', 'doctor', 'healthcare', 'health', 'clinical', 'medication', 'diagnosis', 'therapy']
-	crypt:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'crypt']
-	graphics:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'graphics']
-	sports:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'sports']
-	politics:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'politics']
-	windows:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'windows']
+	sakura:['sanskrit', 'vedic', 'sufi', 'asha', 'aramaic', 'hindus', 'mandir', 'syriac', 'krishna', 'sakura']
+	superhero:['mythical', 'gods', 'humanoid', 'horrific', 'monstrous', 'demonic', 'telling', 'enthusiastically', 'terrifying', 'superhero']
+	himalayas:['rbis', 'innings', 'rushing', 'batting', 'catching', 'padres', 'marlins', 'royals', 'postseason', 'himalayas']
+	lyrics:['forested', 'expanse', 'mountainous', 'canopy', 'southward', 'countryside', 'arid', 'northernmost', 'flowing', 'lyrics']
+	html:['cmap_compact', 'prompting', 'current_dir', 'w_id', 'uubuild_mode', 'vinfo_list', 'max_x', 'window_title', 'n_control', 'html']
 ====PMIS====
+	medicine:349.9745921030789
+	superhero:10.252859169768628
 	religion:295.950228897899
 	gun:371.0028835601768
-	graphics:41.923232033313276
-	crypt:40.50421479339537
-	space:335.35548354196527
+	sakura:88.73517910217092
+	html:0
+	lyrics:11.351471458436738
 	hardware:302.80711940500333
-	windows:35.590503736788584
-	politics:30.13467412391396
-	medicine:349.9745921030789
-	sports:14.160492719321342
-	<SUM>: 181.7403424914856
+	himalayas:27.764071501712053
+	space:335.35548354196527
+	<SUM>: 179.31938887402114
 ====NPMIS====
-	crypt:2.9490771235283324
-	hardware:29.11051021533001
-	politics:2.1623904734243085
-	sports:0.9882872115946837
-	space:33.864274978762644
-	medicine:38.12756958050267
-	gun:42.67692186291917
-	windows:2.715872652785598
-	graphics:3.296194972869425
 	religion:29.55938433176596
-	<SUM>: 18.54504834034828
+	gun:42.67692186291917
+	space:33.864274978762644
+	hardware:29.11051021533001
+	html:0
+	medicine:38.12756958050267
+	sakura:6.6989773110036595
+	lyrics:0.769452061960651
+	superhero:0.6949833471419468
+	himalayas:1.9181308278069482
+	<SUM>: 18.34202045171937
 ====DISTINCTIVENESS====
-	<SUM>: 0.64
-	<SEMANTICALLY DISTINCT>: 0.56
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.92
 SUMMARY
 ================================================================================
 /home/alexzhang/code/github.com/zhangchi0104/honours-sgtm/results/20NewsGroup/ensemble/local-0.5-global-0.5-rho-0.9/scores.pkl
@@ -501,35 +501,35 @@ SUMMARY
 	space:['space', 'spacehab', 'spacelink', 'spaceflight', 'spacelab', 'shuttle', 'orbit', 'orbital', 'spacecraft', 'spacewalk']
 	gun:['gun', 'weapon', 'firearm', 'handgun', 'pistol', 'shotgun', 'knife', 'rifle', 'gunfight', 'revolver']
 	medicine:['medicine', 'medical', 'physician', 'doctor', 'healthcare', 'health', 'clinical', 'medication', 'diagnosis', 'therapy']
-	crypt:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'crypt']
-	graphics:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'graphics']
-	sports:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'sports']
-	politics:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'politics']
-	windows:['reichel', 'luck', 'dialup', 'denise', 'lousanne', 'spreading', 'yap', 'approximation', 'chg', 'windows']
+	sakura:['sanskrit', 'vedic', 'sufi', 'asha', 'aramaic', 'hindus', 'mandir', 'syriac', 'krishna', 'sakura']
+	superhero:['mythical', 'gods', 'humanoid', 'horrific', 'monstrous', 'telling', 'demonic', 'enthusiastically', 'terrifying', 'superhero']
+	himalayas:['rbis', 'innings', 'rushing', 'batting', 'padres', 'catching', 'marlins', 'royals', 'postseason', 'himalayas']
+	lyrics:['forested', 'expanse', 'mountainous', 'canopy', 'southward', 'countryside', 'arid', 'northernmost', 'flowing', 'lyrics']
+	html:['cmap_compact', 'prompting', 'current_dir', 'w_id', 'uubuild_mode', 'vinfo_list', 'max_x', 'window_title', 'n_control', 'html']
 ====PMIS====
 	hardware:302.80711940500333
-	religion:293.2054414630255
-	politics:30.13467412391396
-	medicine:349.9745921030789
-	graphics:41.923232033313276
-	crypt:40.50421479339537
-	windows:35.590503736788584
-	sports:14.160492719321342
 	space:335.35548354196527
+	html:0
+	sakura:88.73517910217092
+	himalayas:27.764071501712053
+	religion:293.2054414630255
+	medicine:349.9745921030789
+	superhero:10.252859169768628
+	lyrics:11.351471458436738
 	gun:371.0028835601768
-	<SUM>: 181.46586374799827
+	<SUM>: 179.04491013053382
 ====NPMIS====
-	gun:42.67692186291917
-	medicine:38.12756958050267
+	himalayas:1.9181308278069482
+	sakura:6.6989773110036595
 	hardware:29.110510215330006
-	religion:30.151850245937226
 	space:33.864274978762644
-	windows:2.715872652785598
-	graphics:3.296194972869425
-	sports:0.9882872115946837
-	crypt:2.9490771235283324
-	politics:2.1623904734243085
-	<SUM>: 18.604294931765406
+	superhero:0.6949833471419468
+	gun:42.67692186291917
+	religion:30.151850245937226
+	html:0
+	medicine:38.12756958050267
+	lyrics:0.769452061960651
+	<SUM>: 18.401267043136496
 ====DISTINCTIVENESS====
-	<SUM>: 0.64
-	<SEMANTICALLY DISTINCT>: 0.56
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.92
