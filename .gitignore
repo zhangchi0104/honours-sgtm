@@ -1,4 +1,5 @@
 models/
+.DS_Store
 data/***/vocab
 wandb/
 train.sh
