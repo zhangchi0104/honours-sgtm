@@ -123,7 +123,7 @@ def main(args):
     trainer: pl.Trainer = pl.Trainer.from_argparse_args(
         args,
         callbacks=[checkpointer],
-        logger=WandbLogger(project="honours-sgtm"),
+        # logger=WandbLogger(project="honours-sgtm"),
         strategy="ddp_find_unused_parameters_false",
         auto_scale_batch_size="binsearch",
     )
