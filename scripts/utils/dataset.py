@@ -10,6 +10,7 @@ class BertDataset(Dataset):
         self.data = data
         self.tokenizer = tokenizer
         self.tokenizer_vocab = tokenizer.get_vocab()
+        print('initied dataset')
 
     def __len__(self):
         return len(self.data)
