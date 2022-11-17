@@ -1,0 +1,16 @@
+{
+    "in_vocab" : [
+        "educational_institution",
+        "artist",
+        "athlete",
+        "company",
+        "plant"
+    ],
+    "out_vocab" : [
+        "insulin",
+        "kinship",
+        "biship",
+        "refrigerator", 
+        "bartender"
+    ]
+}
