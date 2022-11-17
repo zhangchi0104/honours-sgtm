@@ -28,6 +28,9 @@ def main(args):
 
 def stat_dataset(dataset_name):
     dataset_path = f'./data/{dataset_name}/corpus/corpus.txt'
+    return stat_dataset_by_path(dataset_path)
+
+def stat_dataset_by_path(dataset_path):
     f = open(dataset_path, 'r')
     lines = f.readlines()
     n_words = 0
@@ -41,7 +44,6 @@ def stat_dataset(dataset_name):
         n_phrases += phrase_count
 
     return n_words, n_phrases
-
 
 if __name__ == '__main__':
     args = parse_args()
