@@ -1,3 +1,4 @@
 *.pkl filter=lfs diff=lfs merge=lfs -text
 *.bin filter=lfs diff=lfs merge=lfs -text
 data/dbpedia/corpus/corpus_raw.txt filter=lfs diff=lfs merge=lfs -text
+data/dbpedia/corpus/corpus_cleaned.txt filter=lfs diff=lfs merge=lfs -text
