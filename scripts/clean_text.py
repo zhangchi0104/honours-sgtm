@@ -59,7 +59,7 @@ def clean_text(text: List[str], batch_size=200):
 def main():
     args = parse_args()
 
-    f = open(args.file, 'r')
+    f = open(args.file, 'r', encoding="utf-8")
     lines = f.readlines()
     lines = [
         line.strip().lower().replace(r'\\', ' ') for line in lines

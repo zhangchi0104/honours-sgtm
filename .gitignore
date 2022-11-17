@@ -10,3 +10,4 @@ results/***/embedding*
 data/***/embeddings.pkl
 data/***/cooccurence*.csv
 *.zip
+*.pyc

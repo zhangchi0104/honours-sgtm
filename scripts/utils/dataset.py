@@ -1,6 +1,9 @@
 import random
 from torch.utils.data import Dataset, DataLoader
-import pytorch_lightning as pl
+try:
+    import lightning as pl
+except:
+    import pytorch_lightning as pl
 from transformers import DataCollatorForLanguageModeling
 
 

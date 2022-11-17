@@ -2,12 +2,20 @@ import os
 from random import seed
 import shutil
 import torch
-import pytorch_lightning as pl
+try:
+    import pytorch_lightning as pl
+    from pytorch_lightning.callbacks import ModelCheckpoint
+    from pytorch_lightning.loggers.wandb import WandbLogger
+except:
+    import lightning as pl
+    from lightning.callbacks import ModelCheckpoint
+    from lightning.loggers.wandb import WandbLogger
+
+
 import argparse
 from transformers import BertForMaskedLM, BertConfig, Trainer, TrainingArguments
 from utils.dataset import BertDataModule
-from pytorch_lightning.callbacks import ModelCheckpoint
-from pytorch_lightning.loggers.wandb import WandbLogger
+
 from tokenizers import AddedToken
 from utils.io import load_seed, load_tokenizer, load_vocab
 from rich.logging import RichHandler
