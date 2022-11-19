@@ -1,0 +1,10 @@
+educational_institution:80.92603226521281
+artist:206.98725928480843
+athlete:119.20742987007154
+company:221.9171628141157
+plant:122.7899104327636
+village:127.27926785863082
+insulin:0
+jeans:0
+refrigerator:0
+bartender:0

@@ -1,0 +1,22 @@
+SUMMARY
+================================================================================
+./results/dbpedia/cate/word_sets.json
+====PMIS====
+	educational_institution:55.56267982094226
+	athlete:24.590610505636686
+	company:112.97428974500315
+	plant:58.52964054615232
+	village:0
+	artist:89.52819202740746
+	<SUM>: 56.86423544085698
+====NPMIS====
+	educational_institution:5.036397646655789
+	artist:7.375013327248122
+	athlete:1.8569077738437865
+	company:9.26686181822478
+	plant:4.958873690954099
+	village:0
+	<SUM>: 4.749009042821097
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 1.1016949152542372

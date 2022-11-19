@@ -6,5 +6,5 @@ for dataset in "dbpedia"; do
         --out ./results/$dataset/cate/evaluation.json \
         -c ./data/$dataset/cooccurence.csv \
         -v ./data/$dataset/vocab/vocab.pkl \
-        ./results/$dataset/cate/word_sets.json
+        ./results/$dataset/cate/word_sets.json > ./results/$dataset/cate/cate.output
 done

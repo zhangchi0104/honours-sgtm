@@ -215,7 +215,7 @@ def main():
         plot.savefig(path)
 
     # Bar charts for invcab and out PMI for ensemble methods
-    results = ensemble_pmi2dataframe(DATASETS)
+    results = ensemble_pmi2dataframe(*DATASETS)
     plot = sns.catplot(results, kind='bar', x='Dataset', y='PMI', hue='Type')
     plot = plot.fig
     logging.info("Saving in vocab vs out vocab figure")
