@@ -1,5 +1,5 @@
 # Pretrained BERT will not work for scidoc as the seeds containing phrases
-for dataset in "20NewsGroup" "yelp"; do
+for dataset in "dbpedia"; do
     # obtain word sets
     echo "+++++++++++++++++++++++++++++++++++++++++++++"
     echo "Generating Word Sets For $dataset"

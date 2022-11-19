@@ -1,0 +1,536 @@
+[2;36m[11/18/22 21:36:31][0m[2;36m [0m[34mINFO    [0m INFO:root:Loaded [1;36m25570[0m words from [35m/home/zhang/code/github[0m ]8;id=980840;file:///mnt/wsl/PHYSICALDRIVE1p3/code/github.com/zhangchi0104/honours-sgtm/scripts/utils/io.py\[2mio.py[0m]8;;\[2m:[0m]8;id=214910;file:///mnt/wsl/PHYSICALDRIVE1p3/code/github.com/zhangchi0104/honours-sgtm/scripts/utils/io.py#12\[2m12[0m]8;;\
+                             [35m.com/zhangchi0104/honours-sgtm/data/dbpedia/vocab/[0m[95mvocab.p[0m         
+                             [95mkl[0m                                                                
+SUMMARY
+================================================================================
+/home/zhang/code/github.com/zhangchi0104/honours-sgtm/results/dbpedia/ensemble/local-0.1-global-0.9-rho-0.5/scores.pkl
+====WORD SET====
+	educational_institution:['educational_institution', 'public_university', 'catholic_university', 'sixth_form_college', 'american_university', 'boarding_school', 'comprehensive_school', 'private_school', 'medical_school', 'non_sectarian']
+	artist:['artist', 'painter', 'artiste', 'sculptor', 'painting', 'illustrator', 'paint', 'artistic', 'writer', 'art']
+	athlete:['athlete', 'sprinter', 'swimmer', 'teammate', 'jumper', 'gymnast', 'wrestler', 'cyclist', 'olympian', 'equestrian']
+	company:['company', 'corporation', 'firm', 'inc', 'brand', 'manufacturer', 'multinational_corporation', 'founder', 'conglomerate', 'operator']
+	plant:['plant', 'plantain', 'plantaginaceae', 'planter', 'annual_herb', 'palm_tree', 'endemic', 'herbaceous_perennial', 'species', 'vine']
+	village:['village', 'villager', 'town', 'settlement', 'population', 'area', 'community', 'city', 'municipality', 'lie']
+	insulin:['retro', 'themed', 'stylistic', 'reflex', 'angled', 'cosmetic', 'graphical', 'jonny', 'vivo', 'insulin']
+	jeans:['aforementioned', 'zac_brown_band', 'analogous', 'glam_metal', 'vivo', 'anil_kapoor', 'formulation', 'prominently', 'cosmetic', 'jeans']
+	refrigerator:['evelyn', 'brodie', 'fontaine', 'quentin', 'jonny', 'county_town', 'quadrant', 'zac_brown_band', 'stella', 'refrigerator']
+	bartender:['waitress', 'bar', 'traveler', 'bodyguard', 'beverage', 'drink', 'prostitute', 'drunken', 'nightclub', 'bartender']
+====PMIS====
+	educational_institution:55.72465194754011
+	artist:209.77390334232896
+	athlete:46.54871715544294
+	company:192.91888691290285
+	village:157.79976033369053
+	insulin:0
+	jeans:0
+	refrigerator:0
+	bartender:30.28140128402768
+	plant:97.13036320377617
+	<SUM>: 79.01776841797093
+====NPMIS====
+	educational_institution:4.183497948238918
+	artist:18.858880476221668
+	athlete:3.4492667034574316
+	company:17.677295398723455
+	plant:8.47153911298489
+	village:16.10899635564027
+	insulin:0
+	jeans:0
+	refrigerator:0
+	bartender:2.3070845719716147
+	<SUM>: 7.105656056723825
+====DISTINCTIVENESS====
+	<SUM>: 0.96
+	<SEMANTICALLY DISTINCT>: 0.88
+SUMMARY
+================================================================================
+/home/zhang/code/github.com/zhangchi0104/honours-sgtm/results/dbpedia/ensemble/local-0.2-global-0.8-rho-0.5/scores.pkl
+====WORD SET====
+	educational_institution:['educational_institution', 'public_university', 'american_university', 'catholic_university', 'sixth_form_college', 'boarding_school', 'non_sectarian', 'medical_school', 'private_university', 'private_school']
+	artist:['artist', 'painter', 'sculptor', 'illustrator', 'painting', 'artiste', 'artistic', 'paint', 'art', 'writer']
+	athlete:['athlete', 'sprinter', 'swimmer', 'teammate', 'gymnast', 'jumper', 'cyclist', 'wrestler', 'olympian', 'compete_summer_olympics']
+	company:['company', 'corporation', 'firm', 'inc', 'manufacturer', 'brand', 'multinational_corporation', 'subsidiary', 'ltd', 'conglomerate']
+	plant:['plant', 'plantain', 'plantaginaceae', 'annual_herb', 'palm_tree', 'endemic', 'herbaceous_perennial', 'species', 'flower', 'ornamental_plant']
+	village:['village', 'villager', 'town', 'population', 'settlement', 'area', 'municipality', 'community', 'lie', 'city']
+	insulin:['retro', 'themed', 'stylistic', 'reflex', 'graphical', 'hearted', 'angled', 'cosmetic', 'jonny', 'insulin']
+	jeans:['aforementioned', 'zac_brown_band', 'analogous', 'glam_metal', 'respective', 'anil_kapoor', 'prominently', 'explicitly', 'vivo', 'jeans']
+	refrigerator:['evelyn', 'brodie', 'fontaine', 'quentin', 'priscilla', 'jonny', 'quadrant', 'county_town', 'fenton', 'refrigerator']
+	bartender:['waitress', 'bar', 'prostitute', 'bodyguard', 'beverage', 'drunken', 'drink', 'nightclub', 'traveler', 'bartender']
+====PMIS====
+	educational_institution:68.29396755698477
+	artist:209.77390334232896
+	athlete:84.15282384077351
+	company:221.78173456576772
+	plant:140.99846692365932
+	village:157.7997603336905
+	insulin:0
+	jeans:0
+	refrigerator:0
+	bartender:30.28140128402768
+	<SUM>: 91.30820578472324
+====NPMIS====
+	educational_institution:5.166743645850501
+	artist:18.85888047622167
+	athlete:6.441087639781099
+	company:20.7622989792474
+	plant:13.004262670057294
+	village:16.10899635564027
+	insulin:0
+	jeans:0
+	refrigerator:0
+	bartender:2.3070845719716147
+	<SUM>: 8.264935433876985
+====DISTINCTIVENESS====
+	<SUM>: 0.99
+	<SEMANTICALLY DISTINCT>: 0.92
+SUMMARY
+================================================================================
+/home/zhang/code/github.com/zhangchi0104/honours-sgtm/results/dbpedia/ensemble/local-0.3-global-0.7-rho-0.5/scores.pkl
+====WORD SET====
+	educational_institution:['educational_institution', 'public_university', 'american_university', 'non_sectarian', 'private_university', 'medical_school', 'catholic_university', 'college', 'boarding_school', 'technical_education']
+	artist:['artist', 'painter', 'sculptor', 'illustrator', 'painting', 'artistic', 'art', 'sculpture', 'paint', 'writer']
+	athlete:['athlete', 'sprinter', 'swimmer', 'teammate', 'gymnast', 'jumper', 'cyclist', 'wrestler', 'olympian', 'compete_summer_olympics']
+	company:['company', 'corporation', 'firm', 'inc', 'manufacturer', 'brand', 'subsidiary', 'multinational_corporation', 'ltd', 'conglomerate']
+	plant:['plant', 'plantaginaceae', 'plantain', 'flower', 'palm_tree', 'endemic', 'annual_herb', 'herbaceous_perennial', 'species', 'ornamental_plant']
+	village:['village', 'villager', 'population', 'town', 'settlement', 'municipality', 'area', 'lie', 'rural_district', 'community']
+	insulin:['retro', 'themed', 'stylistic', 'hearted', 'graphical', 'reflex', 'gangsta', 'knack', 'undertone', 'insulin']
+	jeans:['aforementioned', 'zac_brown_band', 'analogous', 'glam_metal', 'respective', 'chronological', 'prominently', 'anil_kapoor', 'explicitly', 'jeans']
+	refrigerator:['evelyn', 'brodie', 'priscilla', 'fontaine', 'quentin', 'draper', 'jonny', 'fenton', 'quadrant', 'refrigerator']
+	bartender:['waitress', 'prostitute', 'bar', 'bodyguard', 'drunken', 'nightclub', 'beverage', 'drink', 'addict', 'bartender']
+====PMIS====
+	educational_institution:90.19602974406868
+	artist:259.04262592794663
+	athlete:84.15282384077351
+	company:221.78173456576775
+	plant:140.9984669236593
+	village:141.51741548513306
+	insulin:0
+	jeans:0
+	refrigerator:0
+	bartender:30.281401284027684
+	<SUM>: 96.79704977713766
+====NPMIS====
+	educational_institution:7.572192131836142
+	artist:23.168323488006482
+	athlete:6.441087639781099
+	company:20.7622989792474
+	plant:13.004262670057292
+	village:14.85632347649569
+	insulin:0
+	jeans:0
+	refrigerator:0
+	bartender:2.3070845719716147
+	<SUM>: 8.811157295739573
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.94
+SUMMARY
+================================================================================
+/home/zhang/code/github.com/zhangchi0104/honours-sgtm/results/dbpedia/ensemble/local-0.4-global-0.6-rho-0.5/scores.pkl
+====WORD SET====
+	educational_institution:['educational_institution', 'public_university', 'american_university', 'non_sectarian', 'college', 'private_university', 'medical_school', 'management_science', 'technical_education', 'general_hospital']
+	artist:['artist', 'painter', 'sculptor', 'illustrator', 'painting', 'artistic', 'art', 'sculpture', 'writer', 'paint']
+	athlete:['athlete', 'sprinter', 'swimmer', 'gymnast', 'teammate', 'jumper', 'cyclist', 'compete_summer_olympics', 'olympian', 'wrestler']
+	company:['company', 'corporation', 'firm', 'inc', 'manufacturer', 'brand', 'subsidiary', 'ltd', 'multinational_corporation', 'retailer']
+	plant:['plant', 'plantaginaceae', 'plantain', 'flower', 'palm_tree', 'endemic', 'annual_herb', 'herbaceous_perennial', 'ornamental_plant', 'medicinal_plant']
+	village:['village', 'population', 'villager', 'town', 'settlement', 'municipality', 'lie', 'rural_district', 'area', 'sydalen']
+	insulin:['retro', 'themed', 'hearted', 'gangsta', 'glam', 'amg', 'undertone', 'knack', 'stylistic', 'insulin']
+	jeans:['aforementioned', 'zac_brown_band', 'analogous', 'glam_metal', 'chronological', 'kottonmouth_kings', 'respective', 'supplemental', 'prominently', 'jeans']
+	refrigerator:['evelyn', 'brodie', 'priscilla', 'draper', 'fontaine', 'quentin', 'purdy', 'hough', 'pusey', 'refrigerator']
+	bartender:['waitress', 'prostitute', 'drunken', 'bodyguard', 'nightclub', 'butcher', 'bar', 'addict', 'beverage', 'bartender']
+====PMIS====
+	educational_institution:70.22690128899244
+	artist:259.04262592794663
+	athlete:84.15282384077351
+	company:221.9171628141157
+	plant:121.30304932721504
+	village:139.2223038920627
+	insulin:0
+	jeans:0
+	refrigerator:0
+	bartender:14.521678940303932
+	<SUM>: 91.038654603141
+====NPMIS====
+	educational_institution:5.899502850240441
+	artist:23.168323488006482
+	athlete:6.441087639781099
+	company:20.936050814175807
+	plant:11.04531827727846
+	village:14.439550833304542
+	insulin:0
+	jeans:0
+	refrigerator:0
+	bartender:1.0760585190741918
+	<SUM>: 8.300589242186103
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.94
+SUMMARY
+================================================================================
+/home/zhang/code/github.com/zhangchi0104/honours-sgtm/results/dbpedia/ensemble/local-0.5-global-0.5-rho-0.5/scores.pkl
+====WORD SET====
+	educational_institution:['educational_institution', 'public_university', 'american_university', 'college', 'non_sectarian', 'private_university', 'anna_university', 'management_science', 'technical_education', 'medical_school']
+	artist:['artist', 'painter', 'sculptor', 'illustrator', 'painting', 'artistic', 'sculpture', 'art', 'writer', 'paint']
+	athlete:['athlete', 'sprinter', 'swimmer', 'gymnast', 'compete_summer_olympics', 'teammate', 'jumper', 'cyclist', 'olympic', 'olympian']
+	company:['company', 'corporation', 'firm', 'inc', 'manufacturer', 'subsidiary', 'brand', 'ltd', 'multinational_corporation', 'retailer']
+	plant:['plant', 'plantaginaceae', 'flower', 'plantain', 'palm_tree', 'endemic', 'medicinal_plant', 'herbaceous_perennial', 'annual_herb', 'perennial']
+	village:['village', 'population', 'villager', 'town', 'sydalen', 'municipality', 'settlement', 'lie', 'rural_district', 'kurowo']
+	insulin:['retro', 'themed', 'gangsta', 'glam', 'hearted', 'offbeat', 'amg', 'undertone', 'knack', 'insulin']
+	jeans:['aforementioned', 'kottonmouth_kings', 'zac_brown_band', 'space_needle', 'split_album', 'chronological', 'supplemental', 'glam_metal', 'as', 'jeans']
+	refrigerator:['evelyn', 'brodie', 'priscilla', 'draper', 'purdy', 'drayton', 'pusey', 'keats', 'hough', 'refrigerator']
+	bartender:['waitress', 'prostitute', 'butcher', 'drunken', 'bodyguard', 'nightclub', 'addict', 'maid', 'eatery', 'bartender']
+====PMIS====
+	educational_institution:80.92603226521281
+	artist:259.04262592794663
+	athlete:119.20742987007154
+	company:221.9171628141157
+	plant:131.56368519742819
+	village:125.49969597459463
+	insulin:0
+	jeans:0
+	refrigerator:0
+	bartender:0
+	<SUM>: 93.81566320493695
+====NPMIS====
+	educational_institution:6.795630149746353
+	artist:23.168323488006482
+	athlete:9.342365820030897
+	company:20.93605081417581
+	plant:12.210336853674677
+	village:12.650339218208659
+	insulin:0
+	jeans:0
+	refrigerator:0
+	bartender:0
+	<SUM>: 8.510304634384287
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.95
+SUMMARY
+================================================================================
+/home/zhang/code/github.com/zhangchi0104/honours-sgtm/results/dbpedia/ensemble/local-0.6-global-0.4-rho-0.5/scores.pkl
+====WORD SET====
+	educational_institution:['educational_institution', 'anna_university', 'college', 'public_university', 'american_university', 'non_sectarian', 'private_university', 'management_science', 'academic_degree', 'technical_education']
+	artist:['artist', 'painter', 'sculptor', 'illustrator', 'painting', 'artistic', 'sculpture', 'art', 'muralist', 'writer']
+	athlete:['athlete', 'sprinter', 'swimmer', 'gymnast', 'compete_summer_olympics', 'olympic', 'jumper', 'skier', 'teammate', 'cyclist']
+	company:['company', 'corporation', 'firm', 'inc', 'manufacturer', 'subsidiary', 'brand', 'ltd', 'multinational_corporation', 'privately_hold']
+	plant:['plant', 'plantaginaceae', 'flower', 'plantain', 'endemic', 'palm_tree', 'medicinal_plant', 'legume_family', 'perennial', 'mustard_family']
+	village:['village', 'population', 'sydalen', 'villager', 'town', 'municipality', 'mersin_province', 'rural_district', 'kuhpayeh', 'nowinka']
+	insulin:['retro', 'synth', 'themed', 'gangsta', 'glam', 'offbeat', 'grunge', 'amg', 'undertone', 'insulin']
+	jeans:['aforementioned', 'kottonmouth_kings', 'space_needle', 'split_album', 'zac_brown_band', 'as', 'chronological', 'supplemental', 'overdubbe', 'jeans']
+	refrigerator:['evelyn', 'brodie', 'priscilla', 'draper', 'gladys', 'keats', 'drayton', 'pusey', 'purdy', 'refrigerator']
+	bartender:['waitress', 'prostitute', 'maid', 'butcher', 'drunken', 'nightclub', 'cheerleader', 'addict', 'bodyguard', 'bartender']
+====PMIS====
+	educational_institution:74.33822960866993
+	artist:206.98725928480843
+	athlete:102.01954642048202
+	company:219.01178658169187
+	plant:134.75349174669384
+	village:98.22274764662976
+	insulin:0
+	refrigerator:0
+	bartender:0
+	jeans:0
+	<SUM>: 83.53330612889758
+====NPMIS====
+	educational_institution:6.166704827877461
+	artist:18.83175534052315
+	athlete:8.068741159492989
+	company:20.61605071792276
+	plant:12.627779933351992
+	village:9.654655002392975
+	jeans:0
+	refrigerator:0
+	bartender:0
+	insulin:0
+	<SUM>: 7.596568698156133
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.95
+SUMMARY
+================================================================================
+/home/zhang/code/github.com/zhangchi0104/honours-sgtm/results/dbpedia/ensemble/local-0.7-global-0.3-rho-0.5/scores.pkl
+====WORD SET====
+	educational_institution:['educational_institution', 'anna_university', 'college', 'public_university', 'non_sectarian', 'american_university', 'academic_degree', 'kendriya_vidyalaya', 'central_philippine_university', 'private_university']
+	artist:['artist', 'sculptor', 'painter', 'illustrator', 'painting', 'sculpture', 'artistic', 'muralist', 'art', 'printmaker']
+	athlete:['athlete', 'sprinter', 'gymnast', 'swimmer', 'compete_summer_olympics', 'olympic', 'skier', 'jumper', 'thrower', 'cyclist']
+	company:['company', 'corporation', 'inc', 'subsidiary', 'manufacturer', 'firm', 'ltd', 'brand', 'ohio_company', 'privately_hold']
+	plant:['plant', 'flower', 'plantaginaceae', 'pink_family', 'carrot_family', 'legume_family', 'medicinal_plant', 'mustard_family', 'plantain', 'endemic']
+	village:['village', 'population', 'sydalen', 'mersin_province', 'kuyucak', 'kuhpayeh', 'gmina_strzegowo', 'nowinka', 'radom_county', 'afyonkarahisar_province']
+	insulin:['retro', 'synth', 'offbeat', 'glam', 'gangsta', 'grunge', 'amg', 'undertone', 'themed', 'insulin']
+	jeans:['aforementioned', 'kottonmouth_kings', 'split_album', 'space_needle', 'chris_brown', 'as', 'van_halen', 'zac_brown_band', 'roger_daltrey', 'jeans']
+	refrigerator:['evelyn', 'priscilla', 'brodie', 'draper', 'gladys', 'katharine', 'keats', 'drayton', 'phyllis', 'refrigerator']
+	bartender:['waitress', 'prostitute', 'maid', 'butcher', 'cheerleader', 'dentist', 'drunken', 'bathroom', 'prank', 'bartender']
+====PMIS====
+	educational_institution:85.23079011909589
+	artist:203.7134135488417
+	athlete:87.70464953553008
+	company:211.0383773768686
+	plant:115.52511861611954
+	village:73.64426014949885
+	insulin:0
+	jeans:0
+	refrigerator:0
+	bartender:0
+	<SUM>: 77.68566093459546
+====NPMIS====
+	educational_institution:6.966386998272916
+	artist:18.204917282884413
+	athlete:7.041450210157734
+	company:20.0495987100767
+	plant:10.621849270220807
+	village:6.551320561766269
+	insulin:0
+	jeans:0
+	refrigerator:0
+	bartender:0
+	<SUM>: 6.943552303337884
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.96
+SUMMARY
+================================================================================
+/home/zhang/code/github.com/zhangchi0104/honours-sgtm/results/dbpedia/ensemble/local-0.8-global-0.2-rho-0.5/scores.pkl
+====WORD SET====
+	educational_institution:['educational_institution', 'anna_university', 'college', 'kendriya_vidyalaya', 'academic_degree', 'central_philippine_university', 'non_sectarian', 'public_university', 'american_university', 'santa_maria_bulacan']
+	artist:['artist', 'sculptor', 'painter', 'illustrator', 'painting', 'muralist', 'sculpture', 'artistic', 'printmaker', 'art']
+	athlete:['athlete', 'sprinter', 'gymnast', 'swimmer', 'compete_summer_olympics', 'thrower', 'judoka', 'olympic', 'skier', 'compete']
+	company:['company', 'corporation', 'subsidiary', 'inc', 'manufacturer', 'ohio_company', 'firm', 'headquarter', 'shenzhen_stock_exchange', 'constituent_ftse_index']
+	plant:['plant', 'flower', 'plantaginaceae', 'pink_family', 'carrot_family', 'nightshade_family', 'semecarpus', 'rubiaceae', 'myrsinaceae', 'boraginaceae']
+	village:['village', 'sydalen', 'population', 'afyonkarahisar_province', 'mersin_province', 'kuyucak', 'sarpol', 'kuhpayeh', 'radom_county', 'gmina_strzegowo']
+	insulin:['retro', 'synth', 'vibe', 'funky', 'downtempo', 'offbeat', 'grunge', 'glam', 'sultry', 'insulin']
+	jeans:['aforementioned', 'kottonmouth_kings', 'split_album', 'chris_brown', 'space_needle', 'van_halen', 'as', 'roger_daltrey', 'overdubbe', 'jeans']
+	refrigerator:['evelyn', 'phyllis', 'katharine', 'gladys', 'eliza', 'priscilla', 'brodie', 'draper', 'wyndham', 'refrigerator']
+	bartender:['waitress', 'prostitute', 'maid', 'housemaid', 'cheerleader', 'mimi', 'butcher', 'prank', 'repairman', 'bartender']
+====PMIS====
+	educational_institution:95.61861612363856
+	artist:203.7134135488417
+	athlete:135.43285652265988
+	company:193.38936886072815
+	plant:97.04871132012212
+	village:79.79673115603734
+	insulin:0
+	jeans:0
+	refrigerator:0
+	bartender:0
+	<SUM>: 80.49996975320278
+====NPMIS====
+	educational_institution:7.800757778751735
+	artist:18.20491728288441
+	athlete:11.259186984844188
+	company:18.19131720337603
+	plant:8.587021663335808
+	village:7.1027609487359475
+	insulin:0
+	jeans:0
+	refrigerator:0
+	bartender:0
+	<SUM>: 7.114596186192811
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.97
+SUMMARY
+================================================================================
+/home/zhang/code/github.com/zhangchi0104/honours-sgtm/results/dbpedia/ensemble/local-0.9-global-0.1-rho-0.5/scores.pkl
+====WORD SET====
+	educational_institution:['educational_institution', 'anna_university', 'mmnss', 'santa_maria_bulacan', 'kendriya_vidyalaya', 'college', 'academic_degree', 'central_philippine_university', 'kottiyam', 'digipen']
+	artist:['artist', 'sculptor', 'illustrator', 'painter', 'muralist', 'printmaker', 'painting', 'sculpture', 'artistic', 'landscape_painting']
+	athlete:['athlete', 'sprinter', 'thrower', 'gymnast', 'judoka', 'compete_summer_olympics', 'weightlifter', 'swimmer', 'backstroke', 'paralympian']
+	company:['company', 'shenzhen_stock_exchange', 'corporation', 'ohio_company', 'subsidiary', 'headquarter', 'constituent_ftse_index', 'inc', 'manufacturer', 'rio_tinto_alcan']
+	plant:['plant', 'flower', 'semecarpus', 'nightshade_family', 'pink_family', 'plantaginaceae', 'rubiaceae', 'carrot_family', 'myrsinaceae', 'boraginaceae']
+	village:['village', 'sydalen', 'afyonkarahisar_province', 'mersin_province', 'population', 'ardahan_province', 'kuyucak', 'sarpol', 'administrative_centre', 'haskovo_province']
+	insulin:['retro', 'vibe', 'synth', 'funky', 'downtempo', 'electropop', 'timeless', 'sultry', 'rave', 'insulin']
+	jeans:['aforementioned', 'kottonmouth_kings', 'chris_brown', 'split_album', 'van_halen', 'space_needle', 'roger_daltrey', 'as', 'armando_manzanero', 'jeans']
+	refrigerator:['evelyn', 'eliza', 'phyllis', 'katharine', 'winifred', 'gladys', 'wyndham', 'margery', 'fane', 'refrigerator']
+	bartender:['waitress', 'prostitute', 'housemaid', 'maid', 'mimi', 'hairdresser', 'cheerleader', 'repairman', 'prank', 'bartender']
+====PMIS====
+	educational_institution:74.20874178766783
+	artist:179.11525806970286
+	athlete:56.10373791399496
+	company:183.21134461746095
+	plant:97.04871132012212
+	village:79.84997567055615
+	insulin:20.698931252182355
+	jeans:0
+	refrigerator:0
+	bartender:0
+	<SUM>: 69.02367006316872
+====NPMIS====
+	educational_institution:6.582040274912989
+	artist:15.381627317731473
+	athlete:4.46010224510269
+	company:17.1599121930049
+	plant:8.587021663335808
+	village:7.14807133874191
+	insulin:1.5337938127680215
+	jeans:0
+	refrigerator:0
+	bartender:0
+	<SUM>: 6.0852568845597785
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.98
+SUMMARY
+================================================================================
+/home/zhang/code/github.com/zhangchi0104/honours-sgtm/results/dbpedia/ensemble/local-0.5-global-0.5-rho-0.1/scores.pkl
+====WORD SET====
+	educational_institution:['educational_institution', 'public_university', 'college', 'american_university', 'anna_university', 'non_sectarian', 'private_university', 'management_science', 'technical_education', 'medical_school']
+	artist:['artist', 'painter', 'sculptor', 'illustrator', 'painting', 'artistic', 'sculpture', 'art', 'writer', 'muralist']
+	athlete:['athlete', 'sprinter', 'swimmer', 'gymnast', 'compete_summer_olympics', 'teammate', 'jumper', 'olympic', 'cyclist', 'skier']
+	company:['company', 'corporation', 'firm', 'inc', 'manufacturer', 'subsidiary', 'brand', 'ltd', 'multinational_corporation', 'retailer']
+	plant:['plant', 'plantaginaceae', 'flower', 'plantain', 'palm_tree', 'endemic', 'medicinal_plant', 'herbaceous_perennial', 'annual_herb', 'legume_family']
+	village:['village', 'population', 'villager', 'town', 'sydalen', 'municipality', 'settlement', 'lie', 'rural_district', 'kurowo']
+	insulin:['retro', 'themed', 'hearted', 'gangsta', 'glam', 'amg', 'offbeat', 'undertone', 'knack', 'insulin']
+	jeans:['aforementioned', 'kottonmouth_kings', 'zac_brown_band', 'space_needle', 'split_album', 'chronological', 'glam_metal', 'analogous', 'supplemental', 'jeans']
+	refrigerator:['evelyn', 'brodie', 'priscilla', 'draper', 'purdy', 'fontaine', 'drayton', 'pusey', 'keats', 'refrigerator']
+	bartender:['waitress', 'prostitute', 'butcher', 'drunken', 'bodyguard', 'nightclub', 'maid', 'addict', 'eatery', 'bartender']
+====PMIS====
+	educational_institution:80.9260322652128
+	artist:206.98725928480843
+	athlete:102.01954642048202
+	company:221.9171628141157
+	plant:119.07477371471896
+	village:125.49969597459463
+	insulin:0
+	jeans:0
+	refrigerator:0
+	bartender:0
+	<SUM>: 85.64244704739325
+====NPMIS====
+	educational_institution:6.795630149746353
+	artist:18.83175534052315
+	athlete:8.068741159492989
+	company:20.93605081417581
+	plant:10.950643069327544
+	village:12.650339218208659
+	insulin:0
+	jeans:0
+	refrigerator:0
+	bartender:0
+	<SUM>: 7.823315975147452
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.95
+SUMMARY
+================================================================================
+/home/zhang/code/github.com/zhangchi0104/honours-sgtm/results/dbpedia/ensemble/local-0.5-global-0.5-rho-0.3/scores.pkl
+====WORD SET====
+	educational_institution:['educational_institution', 'public_university', 'american_university', 'college', 'non_sectarian', 'anna_university', 'private_university', 'management_science', 'technical_education', 'medical_school']
+	artist:['artist', 'painter', 'sculptor', 'illustrator', 'painting', 'artistic', 'sculpture', 'art', 'writer', 'muralist']
+	athlete:['athlete', 'sprinter', 'swimmer', 'gymnast', 'compete_summer_olympics', 'teammate', 'jumper', 'cyclist', 'olympic', 'skier']
+	company:['company', 'corporation', 'firm', 'inc', 'manufacturer', 'subsidiary', 'brand', 'ltd', 'multinational_corporation', 'retailer']
+	plant:['plant', 'plantaginaceae', 'flower', 'plantain', 'palm_tree', 'endemic', 'medicinal_plant', 'herbaceous_perennial', 'annual_herb', 'legume_family']
+	village:['village', 'population', 'villager', 'town', 'sydalen', 'municipality', 'settlement', 'lie', 'rural_district', 'kurowo']
+	insulin:['retro', 'themed', 'gangsta', 'hearted', 'glam', 'amg', 'offbeat', 'undertone', 'knack', 'insulin']
+	jeans:['aforementioned', 'kottonmouth_kings', 'zac_brown_band', 'space_needle', 'split_album', 'chronological', 'glam_metal', 'supplemental', 'analogous', 'jeans']
+	refrigerator:['evelyn', 'brodie', 'priscilla', 'draper', 'purdy', 'drayton', 'pusey', 'keats', 'hough', 'refrigerator']
+	bartender:['waitress', 'prostitute', 'butcher', 'drunken', 'bodyguard', 'nightclub', 'maid', 'addict', 'eatery', 'bartender']
+====PMIS====
+	educational_institution:80.92603226521281
+	artist:206.98725928480843
+	athlete:102.01954642048202
+	company:221.9171628141157
+	plant:119.07477371471896
+	village:125.49969597459463
+	insulin:0
+	jeans:0
+	refrigerator:0
+	bartender:0
+	<SUM>: 85.64244704739325
+====NPMIS====
+	educational_institution:6.795630149746353
+	artist:18.83175534052315
+	athlete:8.068741159492989
+	company:20.93605081417581
+	plant:10.950643069327544
+	village:12.650339218208659
+	insulin:0
+	jeans:0
+	refrigerator:0
+	bartender:0
+	<SUM>: 7.823315975147452
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.95
+SUMMARY
+================================================================================
+/home/zhang/code/github.com/zhangchi0104/honours-sgtm/results/dbpedia/ensemble/local-0.5-global-0.5-rho-0.7/scores.pkl
+====WORD SET====
+	educational_institution:['educational_institution', 'public_university', 'american_university', 'non_sectarian', 'college', 'private_university', 'management_science', 'anna_university', 'technical_education', 'medical_school']
+	artist:['artist', 'painter', 'sculptor', 'illustrator', 'painting', 'artistic', 'sculpture', 'art', 'writer', 'paint']
+	athlete:['athlete', 'sprinter', 'swimmer', 'gymnast', 'compete_summer_olympics', 'teammate', 'jumper', 'cyclist', 'olympic', 'olympian']
+	company:['company', 'corporation', 'firm', 'inc', 'manufacturer', 'subsidiary', 'brand', 'ltd', 'multinational_corporation', 'retailer']
+	plant:['plant', 'plantaginaceae', 'flower', 'plantain', 'palm_tree', 'endemic', 'medicinal_plant', 'herbaceous_perennial', 'annual_herb', 'perennial']
+	village:['village', 'population', 'villager', 'town', 'municipality', 'sydalen', 'lie', 'settlement', 'rural_district', 'kurowo']
+	insulin:['retro', 'themed', 'gangsta', 'glam', 'hearted', 'offbeat', 'amg', 'undertone', 'knack', 'insulin']
+	jeans:['aforementioned', 'kottonmouth_kings', 'zac_brown_band', 'space_needle', 'split_album', 'chronological', 'supplemental', 'as', 'glam_metal', 'jeans']
+	refrigerator:['evelyn', 'brodie', 'priscilla', 'draper', 'purdy', 'drayton', 'pusey', 'keats', 'hough', 'refrigerator']
+	bartender:['waitress', 'prostitute', 'drunken', 'butcher', 'bodyguard', 'nightclub', 'addict', 'maid', 'eatery', 'bartender']
+====PMIS====
+	educational_institution:80.92603226521281
+	artist:259.04262592794663
+	athlete:119.20742987007154
+	company:221.9171628141157
+	plant:131.56368519742819
+	village:125.49969597459463
+	insulin:0
+	jeans:0
+	refrigerator:0
+	bartender:0
+	<SUM>: 93.81566320493695
+====NPMIS====
+	educational_institution:6.795630149746352
+	artist:23.168323488006482
+	athlete:9.342365820030897
+	company:20.93605081417581
+	plant:12.210336853674677
+	village:12.650339218208659
+	insulin:0
+	jeans:0
+	refrigerator:0
+	bartender:0
+	<SUM>: 8.510304634384287
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.95
+SUMMARY
+================================================================================
+/home/zhang/code/github.com/zhangchi0104/honours-sgtm/results/dbpedia/ensemble/local-0.5-global-0.5-rho-0.9/scores.pkl
+====WORD SET====
+	educational_institution:['educational_institution', 'public_university', 'american_university', 'non_sectarian', 'college', 'private_university', 'management_science', 'technical_education', 'medical_school', 'anna_university']
+	artist:['artist', 'painter', 'sculptor', 'illustrator', 'painting', 'artistic', 'sculpture', 'art', 'writer', 'paint']
+	athlete:['athlete', 'sprinter', 'swimmer', 'gymnast', 'teammate', 'compete_summer_olympics', 'jumper', 'cyclist', 'olympic', 'olympian']
+	company:['company', 'corporation', 'firm', 'inc', 'manufacturer', 'subsidiary', 'brand', 'ltd', 'multinational_corporation', 'retailer']
+	plant:['plant', 'plantaginaceae', 'plantain', 'flower', 'palm_tree', 'endemic', 'medicinal_plant', 'herbaceous_perennial', 'annual_herb', 'perennial']
+	village:['village', 'population', 'villager', 'town', 'municipality', 'sydalen', 'lie', 'rural_district', 'settlement', 'kurowo']
+	insulin:['retro', 'themed', 'gangsta', 'glam', 'hearted', 'offbeat', 'amg', 'undertone', 'knack', 'insulin']
+	jeans:['aforementioned', 'kottonmouth_kings', 'zac_brown_band', 'space_needle', 'chronological', 'split_album', 'supplemental', 'as', 'glam_metal', 'jeans']
+	refrigerator:['evelyn', 'brodie', 'priscilla', 'draper', 'purdy', 'drayton', 'pusey', 'keats', 'hough', 'refrigerator']
+	bartender:['waitress', 'prostitute', 'drunken', 'butcher', 'bodyguard', 'nightclub', 'addict', 'eatery', 'maid', 'bartender']
+====PMIS====
+	educational_institution:80.92603226521283
+	artist:259.04262592794663
+	athlete:119.20742987007154
+	company:221.9171628141157
+	plant:131.56368519742819
+	village:125.49969597459463
+	insulin:0
+	jeans:0
+	refrigerator:0
+	bartender:0
+	<SUM>: 93.81566320493695
+====NPMIS====
+	educational_institution:6.795630149746352
+	artist:23.168323488006482
+	athlete:9.3423658200309
+	company:20.93605081417581
+	plant:12.21033685367468
+	village:12.650339218208659
+	insulin:0
+	jeans:0
+	refrigerator:0
+	bartender:0
+	<SUM>: 8.510304634384289
+====DISTINCTIVENESS====
+	<SUM>: 1.0
+	<SEMANTICALLY DISTINCT>: 0.95

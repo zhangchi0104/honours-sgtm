@@ -159,7 +159,7 @@ def ensemble_pmi2dict(lines):
 
 
 def main():
-    DATASETS = ['scidoc', 'yelp', '20NewsGroup']
+    DATASETS = ['scidoc', 'yelp', '20NewsGroup', "dbpedia"]
     # PMI without rank reduction
     PLOT_NAME = [
         "{} vs Local Knowledge weight WITH rank reduction",
@@ -200,7 +200,7 @@ def main():
         )
 
     # [Bar charts] Comparsions of methods By datasets
-    results = result_json2dataframe(['20NewsGroup', "scidoc", 'yelp'])
+    results = result_json2dataframe(DATASETS)
     metrics = ['pmi', 'distinctiveness']
     for metric in metrics:
         plot = sns.catplot(results[results['metric'] == metric],
@@ -215,7 +215,7 @@ def main():
         plot.savefig(path)
 
     # Bar charts for invcab and out PMI for ensemble methods
-    results = ensemble_pmi2dataframe('20NewsGroup', "scidoc", 'yelp')
+    results = ensemble_pmi2dataframe(DATASETS)
     plot = sns.catplot(results, kind='bar', x='Dataset', y='PMI', hue='Type')
     plot = plot.fig
     logging.info("Saving in vocab vs out vocab figure")

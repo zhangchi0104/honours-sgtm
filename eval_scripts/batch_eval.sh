@@ -1,4 +1,4 @@
-for dataset in '20NewsGroup' 'yelp' 'scidoc'
+for dataset in 'dbpedia'
 do
     # compute BERT embeddings
 
@@ -7,7 +7,7 @@ do
     # compute CaTE embeddings
     python3 similarities.py -m cate -d $dataset --output embeddings 
     # Normal evaluation
-    python3 scripts/batch_eval.py -d $dataset  
+    python3 scripts/batch_eval.py -d $dataset  -n ensembe
     # rank reduction
     python3 scripts/rank_reduction.py \
         -s ./results/$dataset/bert/similarities.pkl \

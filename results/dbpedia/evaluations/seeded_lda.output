@@ -1,0 +1,22 @@
+SUMMARY
+================================================================================
+./results/dbpedia/seeded_lda/result.json
+====PMIS====
+	educational_institution:149.5219903553921
+	artist:186.1026758005805
+	athlete:147.97629804875282
+	company:174.63807359747764
+	plant:158.27632046244287
+	village:182.5000257519274
+	<SUM>: 166.50256400276223
+====NPMIS====
+	educational_institution:20.932409266892424
+	artist:25.353779628153944
+	athlete:19.46518762249768
+	company:22.11671576381144
+	plant:21.83258758294099
+	village:25.284744374671877
+	<SUM>: 22.497570706494727
+====DISTINCTIVENESS====
+	<SUM>: 0.8833333333333333
+	<SEMANTICALLY DISTINCT>: 0.9333333333333333

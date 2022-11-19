@@ -1,0 +1,20 @@
+Category (educational_institution):
+mmnss anna_university santa_maria_bulacan kottiyam college central_philippine_university digipen academic_degree kendriya_vidyalaya matriculation 
+Category (artist):
+sculptor printmaker illustrator landscape_painting painter symbolist painting muralist sculpture etcher 
+Category (athlete):
+sprinter weightlifter paralympian thrower triathlete judoka backstroke gymnast compete_summer_olympics fencing 
+Category (company):
+shenzhen_stock_exchange ohio_company headquarter rio_tinto_alcan corporation subsidiary marketer tangsteel constituent_ftse_index anritsu 
+Category (plant):
+semecarpus flower brassicaceae nightshade_family malvaceae rubiaceae araceae solanaceae caryophyllaceae pink_family 
+Category (village):
+afyonkarahisar_province sydalen mersin_province ardahan_province adana_province administrative_centre kuyucak brodnica_county sarpol abbasabad 
+Category (retro):
+vibe funky downtempo synth electropop minimalist sultry timeless rave arcade 
+Category (aforementioned):
+kottonmouth_kings chris_brown split_album van_halen space_needle young_jeezy armando_manzanero roger_daltrey as basement_jaxx 
+Category (evelyn):
+eliza doreen phyllis winifred fane katharine margery beatrice gertrude wyndham 
+Category (waitress):
+housemaid prostitute mimi hairdresser grandma repairman prank maid cheerleader butcher 

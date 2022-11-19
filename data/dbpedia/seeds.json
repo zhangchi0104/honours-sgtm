@@ -4,12 +4,12 @@
         "artist",
         "athlete",
         "company",
-        "plant"
+        "plant",
+        "village"
     ],
     "out_vocab" : [
         "insulin",
-        "kinship",
-        "biship",
+        "jeans",
         "refrigerator", 
         "bartender"
     ]

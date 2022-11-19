@@ -1,4 +1,4 @@
-for dataset in "20NewsGroup" "yelp" "scidoc"; do
+for dataset in "dbpedia"; do
     echo "+++++++++++++++++++++++++++++++++++++++++++++"
     echo "Evaulating SeededLDA results for $dataset"
     echo "+++++++++++++++++++++++++++++++++++++++++++++"

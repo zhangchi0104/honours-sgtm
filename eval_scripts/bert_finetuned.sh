@@ -1,4 +1,4 @@
-for dataset in "20NewsGroup" "yelp" "scidoc"; do
+for dataset in "dbpedia"; do
     # obtain word sets
     echo "+++++++++++++++++++++++++++++++++++++++++++++"
     echo "Generating Word Sets For $dataset"
