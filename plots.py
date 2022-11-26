@@ -159,7 +159,7 @@ def ensemble_pmi2dict(lines):
 
 
 def main():
-    DATASETS = ['scidoc', 'yelp', '20NewsGroup', "dbpedia"]
+    DATASETS = ['scidoc', 'yelp', '20NewsGroup']
     # PMI without rank reduction
     PLOT_NAME = [
         "{} vs Local Knowledge weight WITH rank reduction",

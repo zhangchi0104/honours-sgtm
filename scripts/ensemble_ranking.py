@@ -44,8 +44,8 @@ def parse_args():
                         default=0.5,
                         type=float)
     parser.add_argument('--verbose', "-v", action='store_true')
-    return parser.parse_args()
-
+    args = parser.parse_args()
+    return args
 
 def ensemble_ranking(score_g, score_l, rho, weight_global, weight_local):
     exponent = 1 / rho
@@ -82,12 +82,12 @@ def run_ensemble_rankings(
     local_df = read_csv(local_score)
     global_df = read_csv(global_score)
     vocab = set(local_df.index) & set(global_df.index)
-    dropped = set(local_df.index) - vocab
-    if (len(dropped) > 0):
-        logging.warning(f"dropped {list(dropped)} from local_df")
-    dropped = set(global_df.index) - vocab
-    if (len(dropped) > 0):
-        logging.warning(f"dropped {list(dropped)} from global_df")
+    # dropped = set(local_df.index) - vocab
+    # if (len(dropped) > 0):
+    #     logging.warning(f"dropped {list(dropped)} from local_df")
+    # dropped = set(global_df.index) - vocab
+    # if (len(dropped) > 0):
+    #    logging.warning(f"dropped {list(dropped)} from global_df")
     local_df = local_df.loc[list(vocab)]
     global_df = global_df.loc[list(vocab)]
     rankings = ensemble_ranking(global_df,
@@ -118,6 +118,7 @@ def run_ensemble_rankings(
 
 
 def main(args):
+    logging.info(args)
     run_ensemble_rankings(
         global_score=args.global_df,
         local_score=args.local_df,
