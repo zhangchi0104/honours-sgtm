@@ -1,7 +1,4 @@
-from ast import arg
 import json
-from operator import index
-from random import seed
 import pandas as pd
 import numpy as np
 import logging
@@ -13,7 +10,6 @@ from utils.visualize import visualize_results
 from utils.io import load_model, load_tokenizer, load_vocab, load_seed
 from utils.embeddings import batch_cosine_similarity
 from tqdm.auto import tqdm
-import shutil
 
 logging.basicConfig(level=logging.INFO,
                     handlers=[RichHandler()],
@@ -25,25 +21,55 @@ def parse_args():
     sub_parser = parser.add_subparsers(dest="command")
     bert_parser = sub_parser.add_parser("bert")
 
-    parser.add_argument("--vocab", type=str, required=True)
-    parser.add_argument("--output", type=str, required=True)
-    parser.add_argument("--out_embeddings", type=str)
+    parser.add_argument("--vocab",
+                        type=str,
+                        required=True,
+                        help="Path to vocabulary")
+    parser.add_argument("--output",
+                        type=str,
+                        required=True,
+                        help="The path to output similarities")
+    parser.add_argument("--out_embeddings",
+                        type=str,
+                        help="If set, save embeddings to specified path")
 
-    parser.add_argument("--seeds", type=str, required=True)
-    parser.add_argument("--embeddings", type=str, default=None)
-    parser.add_argument("--out_words", type=str, default=None)
+    parser.add_argument("--seeds",
+                        type=str,
+                        required=True,
+                        help="Path to seeds.json")
+    parser.add_argument(
+        "--embeddings",
+        type=str,
+        default=None,
+        help=
+        "If specified, use embeddings from the path, rather than extracting them from the model"
+    )
+    parser.add_argument("--out_words",
+                        type=str,
+                        default=None,
+                        help="If set, save top 10 words to specified path")
     # Bert Parser
-    bert_parser.add_argument("--weights", type=str)
-    bert_parser.add_argument("--tokenizer", type=str)
+    bert_parser.add_argument("--weights",
+                             type=str,
+                             help="Path to model weights")
+    bert_parser.add_argument("--tokenizer",
+                             type=str,
+                             help="Path to the tokenizer")
     bert_parser.add_argument(
         "--device",
         type=str,
         default='cuda' if torch.cuda.is_available() else 'cpu',
-    )
+        help="device to use for running the model, either 'cuda' or 'cpu'")
     # CatE Parser
-    cate_parser = sub_parser.add_parser("cate")
-    cate_parser.add_argument("--topic", type=str, required=True)
-    cate_parser.add_argument("--words", type=str, required=True)
+    cate_parser = sub_parser.add_parser("cate", help="CatE embeddings")
+    cate_parser.add_argument("--topic",
+                             type=str,
+                             required=True,
+                             help="Path to CaTE topic embeddings")
+    cate_parser.add_argument("--words",
+                             type=str,
+                             required=True,
+                             help="Path to CaTE word embeddings ")
 
     args = parser.parse_args()
     if args.command == "bert":
@@ -78,6 +104,11 @@ def main(args):
 
 
 def bert_embeddings(args):
+    """
+    Extracts embeddings from the model and computes cosine similarities
+    """
+
+    # Initialization
     seeds = load_seed(args.seeds)
     vocab_set = load_vocab(args.vocab)
     all_vocab = set(vocab_set).union(set(seeds))
@@ -93,6 +124,7 @@ def bert_embeddings(args):
     model = load_model(args.weights, device=args.device)
     tokenizer = load_tokenizer(args.tokenizer)
     if not args.embeddings:
+        # Extract embeddings from model and compute similarities
         for i, topic in enumerate(df.columns):
             similarities = cosine_similarity_with_topic(topic,
                                                         all_vocab,
@@ -103,6 +135,7 @@ def bert_embeddings(args):
             data[:, i] = similarities
             df = pd.DataFrame(data, index=all_vocab, columns=seeds)
     else:
+        # Load embeddings from file and compute similarities
         word_embeddings = pd.read_pickle(args.embeddings)
         for i, topic in enumerate(df.columns):
             topic_embedding = word_embeddings.loc[topic, :]
@@ -111,11 +144,13 @@ def bert_embeddings(args):
             data[:, i] = similarities
         df = pd.DataFrame(data, index=word_embeddings.index, columns=seeds)
     if args.out_embeddings:
+        # Allocate memory
         embeddings_arr = np.zeros((len(all_vocab), 768))
         batch_size = 3072
         embeddings_df = pd.DataFrame(embeddings_arr,
                                      index=all_vocab,
                                      columns=range(768))
+        # Extract embeddings from model
         for lo in tqdm(range(0, len(all_vocab), batch_size)):
             hi = min(lo + batch_size, len(all_vocab))
             batch = all_vocab[lo:hi]
@@ -130,23 +165,31 @@ def bert_embeddings(args):
         logging.info(
             f"writing embeddings with shape {embeddings_df.shape} to {args.out_embeddings}"
         )
-        print()
+        # Save embeddings to file
         embeddings_df.to_pickle(args.out_embeddings)
     return df
 
 
 def cate_embeddings(args):
+    """
+    Computes similarities for CatE embeddings
+    """
     df = None
     if not args.embeddings:
+        # Computes similarities for raw embeddings from file
+
+        # Load embeddings and seeds from file
         topics = load_seed(args.seeds)
         topic_embeddings = load_cate_embeddings(args.topic)
         vocab_embeddings = load_cate_embeddings(args.words)
 
+        # Computes similarities for each topic
         res = np.zeros((vocab_embeddings.shape[0], len(topics)))
         for i, topic in enumerate(topic_embeddings.index):
             similarities = batch_cosine_similarity(topic_embeddings.loc[topic],
                                                    vocab_embeddings.to_numpy())
             res[:, i] = similarities
+        # Put the data into the dataframe
         df = pd.DataFrame(res, index=vocab_embeddings.index, columns=topics)
         if (args.out_embeddings):
             for topic in topic_embeddings.index:
@@ -155,8 +198,8 @@ def cate_embeddings(args):
         logging.info(
             f"Created a dataframe for cosine similarities with shape {df.shape}"
         )
-
     else:
+        # Computes similarities by using embeddings from the given file
         topic_embeddings = load_cate_embeddings(args.topic)
         embeddings = pd.read_pickle(args.embeddings)
         topics = load_seed(args.seeds)

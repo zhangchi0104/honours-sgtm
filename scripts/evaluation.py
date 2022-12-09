@@ -1,18 +1,33 @@
-from email.mime import base
+"""
+Author: Chi Zhang
+License: MIT
+
+This script is used to evaluate the  results
+"""
+
 from pathlib import Path
-from tkinter import N
 import pandas as pd
 import numpy as np
 from argparse import ArgumentParser
 from joblib import Parallel, delayed
 import nltk
-import pickle
 import json
 
 from utils.io import load_vocab
 
 
 def sum_pmi(words, mat, vocab):
+    """
+    Sums up the PMI of all word pairs in a word set
+
+    Args: 
+        words: a list of words
+        mat: a co-occurence matrix
+        vocab: the vocabulary
+
+    Returns:
+        the sum of PMI for the word set
+    """
     res = 0
     word_count = sum(vocab.values())
     for i, word_a in enumerate(words):
@@ -33,6 +48,15 @@ def pmi(
     ab_count,
     word_count,
 ):
+    """
+    Computes PMI for a given pair of words
+
+    Args:
+        a_count: the count of word a
+        b_count: the count of word b
+        ab_count: the count of word a and b co-occuring
+        word_count: the total word count
+    """
     corpus_word_count = float(word_count)
     prob_a = a_count / corpus_word_count
     prob_b = b_count / corpus_word_count
@@ -50,6 +74,13 @@ def npmi(
     ab_count,
     word_count,
 ):
+    """
+    Computes the normalized PMI for a given pair of words
+    Args:
+        a_count: the count of word a
+        b_count: the count of word b
+        ab_count: the count of word a and b co-occuring 
+    """
     corpus_word_count = float(word_count)
     prob_ab = ab_count / corpus_word_count
     _pmi = pmi(a_count, b_count, ab_count, word_count)
@@ -57,6 +88,13 @@ def npmi(
 
 
 def sum_npmi(words, mat, vocab):
+    """
+    Sums up the NPMI of all word pairs in a word set
+    Arfs:
+        words: the word sets 
+        mat: a co-occurence matrix
+        vocab: the vocabulary 
+    """
     res = 0
     word_count = sum(vocab.values())
     for i, word_a in enumerate(words):
@@ -72,6 +110,15 @@ def sum_npmi(words, mat, vocab):
 
 
 def compute_npmi_from_results(cooccur_mat, topics, word_sets, vocab):
+    """
+    wraps NPMI computatation with parallel job
+    and prints results to stdout
+
+    Args:
+        cooccur_mat: the co-occurence matrix
+        topics:  the list of topics
+        word_sets: the word set for the topics 
+    """
 
     def job(words, cooccur_mat, topic):
         res = sum_npmi(words, cooccur_mat, vocab)
@@ -90,16 +137,22 @@ def compute_npmi_from_results(cooccur_mat, topics, word_sets, vocab):
 def parse_args():
     parser = ArgumentParser()
     parser.add_argument("files", nargs="+", help="input files")
-    parser.add_argument("--out",
-                        "-o",
-                        default=Path('./evaluations.json'),
-                        type=Path)
+    parser.add_argument(
+        "--out",
+        "-o",
+        help="path to output file, Default: ./evaluations.json",
+        default=Path('./evaluations.json'),
+        type=Path)
     parser.add_argument("--cooccur",
                         "-c",
                         required=True,
                         type=str,
                         help="path to precomputed co-occurence matrix")
-    parser.add_argument("--vocab", "-v", required=True)
+    parser.add_argument("--vocab",
+                        "-v",
+                        required=True,
+                        type=str,
+                        help="path to vocabulary")
     return parser.parse_args()
 
 
@@ -125,9 +178,8 @@ def evaluation(files, cooccur_mat, vocab, out, n_words=5):
         _pmi = compute_pmi_from_results(cooccur_mat, topics, word_sets, vocab)
         _npmi = compute_npmi_from_results(cooccur_mat, topics, word_sets,
                                           vocab)
-        _distinctivess, _sem_dist = compute_distinctiveness(word_sets)
+        _distinctivess = compute_distinctiveness(word_sets)
         scores['distinctiveness'] = _distinctivess
-        scores['sem_distinctiveness'] = _sem_dist
         scores['pmi'] = _pmi
         scores['npmi'] = _npmi
         scores['word_set'] = word_sets
@@ -139,33 +191,39 @@ def evaluation(files, cooccur_mat, vocab, out, n_words=5):
 
 
 def compute_distinctiveness(word_sets):
+    """
+    Computes the distinctiveness of a word set 
+    Args:
+        word_sets ([list[list[str]]]): the word sets
+    """
+
+    # Some initializations
     words = list(word_sets.values())
     topics = list(word_sets.keys())
     words = [set(v) for v in words]
     total_items = 0
     unique_words = set()
-    words_to_remove = set()
-    lemmatizer = nltk.stem.WordNetLemmatizer()
-    semantically_unique_words = set()
+    # Do Union of all words
     for s, _ in zip(words, topics):
         total_items += len(s)
         unique_words = unique_words.union(s)
+
     distinctiveness = len(unique_words) / total_items
-    for word in unique_words:
-        for topic in topics:
-            if word.startswith(topic) or topic.startswith(word):
-                words_to_remove.add(word)
-    unique_words = (unique_words - words_to_remove).union(set(topics))
-    for word in unique_words:
-        semantically_unique_words.add(lemmatizer.lemmatize(word))
-    sem_dist = (len(semantically_unique_words)) / total_items
+
     print("====DISTINCTIVENESS====")
     print(f"\t<SUM>: {distinctiveness}")
-    print(f"\t<SEMANTICALLY DISTINCT>: {sem_dist}")
-    return distinctiveness, sem_dist
+    return distinctiveness
 
 
 def compute_pmi_from_results(cooccur_mat, topics, word_sets, vocab):
+    """
+    Comptuse PMI in parallel
+    Args:
+        cooccur_mat: the co-occurence matrix
+        topics:  the list of topics
+        word_sets: the word set for the topics
+        vocab: the vocabulary
+    """
     _pmi = []
     print("====PMIS====")
 
@@ -183,6 +241,12 @@ def compute_pmi_from_results(cooccur_mat, topics, word_sets, vocab):
 
 
 def build_word_sets(scores_df, n_words=5):
+    """
+    Choose top n words from the scores dataframe
+    Args:
+        scores_df (pd.DataFrame): the dataframe for the combined scores
+        n_words (int, optional): the number of words to choose. Defaults to 5. 
+    """
     word_sets = {}
     for topic in scores_df.columns:
         word_sets[topic] = list(

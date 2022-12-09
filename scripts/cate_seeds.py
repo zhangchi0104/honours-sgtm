@@ -1,49 +1,62 @@
+"""
+Author: Chi Zhang
+Licence: MIT
+
+This script is for replacing the out-of-vocabulary seeds 
+with in-vocabulary seeds. Please refer README.md for detailed usages.
+"""
+
 import argparse as a
-from array import array
-from shutil import move
-from typing import Iterable
 
 import pandas as pd
 import logging
 from rich.table import Table, Column
 from rich.console import Console
 from rich.logging import RichHandler
-import numpy as np
 from utils.io import load_seed, load_vocab
-import gensim
 
 
 def parse_args():
     parser = a.ArgumentParser()
     parser.add_argument("--verbose", "-v", action="store_true")
-    sub_parser = parser.add_subparsers(dest='command')
-    seed_parser = sub_parser.add_parser("gen_seeds")
-    seed_parser.add_argument("--out", required=True)
-    seed_parser.add_argument("--similarities", required=True)
-    seed_parser.add_argument("--vocab", required=True)
-    seed_parser.add_argument("--seeds", required=True)
+    parser.add_argument("--out", required=True)
+    parser.add_argument("--similarities", required=True)
+    parser.add_argument("--vocab", required=True)
+    parser.add_argument("--seeds", required=True)
     args = parser.parse_args()
     return args
 
 
 def main(args):
-    if args.command == "gen_seeds":
-        in_vocab, out_vocab = load_seed(args.seeds, False)
-        vocab = load_vocab(args.vocab)
-        similarities = pd.read_pickle(args.similarities)
-        safe_vocab = set(vocab).intersection(set(similarities.index))
-        similarities = similarities.loc[list(safe_vocab), :]
-        replacements = find_in_vocab_replacements(out_vocab, similarities)
-        visualize_replacement_seeds(out_vocab, replacements)
-        logging.info(f"Saving seeds to {args.out}")
-        with open(args.out, "w") as f:
-            f.write("\n".join([
-                *in_vocab,
-                *replacements,
-            ]))
+
+    in_vocab, out_vocab = load_seed(args.seeds, False)
+    vocab = load_vocab(args.vocab)
+    similarities = pd.read_pickle(args.similarities)
+    safe_vocab = set(vocab).intersection(set(similarities.index))
+    similarities = similarities.loc[list(safe_vocab), :]
+    replacements = find_in_vocab_replacements(out_vocab, similarities)
+    visualize_replacement_seeds(out_vocab, replacements)
+    logging.info(f"Saving seeds to {args.out}")
+    with open(args.out, "w") as f:
+        f.write("\n".join([
+            *in_vocab,
+            *replacements,
+        ]))
 
 
-def find_in_vocab_replacements(seeds: list, similarities: pd.DataFrame):
+def find_in_vocab_replacements(
+    seeds: list,
+    similarities: pd.DataFrame,
+) -> list:
+    """
+    find the in vocabulary replacements for the out-of-vocabulary seeds
+
+    Args:
+        seeds (list[str]): A list of out-of-vocabulary seeds
+        similarities(pd.Dataframe): DataFrame for all words of each topic
+    Returns:
+        A list of in-vocabulary replacements.
+    """
     res = []
     for seed in seeds:
         sorted_col = similarities[seed].sort_values(ascending=False).head(3)
@@ -53,6 +66,11 @@ def find_in_vocab_replacements(seeds: list, similarities: pd.DataFrame):
 
 
 def visualize_replacement_seeds(old_seeds, new_seeds):
+    """
+        Visualize the replacements seeds
+        old_seeds: A list of out-of-vocabular seeds
+        new_seeds: A list of in-vocabulary replacements
+    """
     console = Console()
     table = Table(
         Column("Out-vocab Seeds", style="cyan"),

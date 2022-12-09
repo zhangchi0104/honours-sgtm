@@ -48,6 +48,18 @@ def parse_args():
     return args
 
 def ensemble_ranking(score_g, score_l, rho, weight_global, weight_local):
+    """
+    Combines the scores of local and global embeddings with the formula
+
+    Args:
+        score_g (np.array): global scores
+        score_l (np.array): local scores
+        rho (float): exponent
+        weight_global (float): weight of global scores
+        weight_local (float): weight of local scores
+    Returns:
+        np.array: combined scores
+    """
     exponent = 1 / rho
     base = weight_global * np.power(
         1 / score_g, rho) + weight_local * np.power(1 / score_l, rho)
@@ -55,11 +67,27 @@ def ensemble_ranking(score_g, score_l, rho, weight_global, weight_local):
 
 
 def scale_data(data):
+    """
+    Remove the negative values with minmax scaler
+
+    Args:
+        data (np.array): data to be scaled to [0, 1]
+    Returns:
+        np.array: scaled data
+    """
     scaler = MinMaxScaler()
     return scaler.fit_transform(data)
 
 
 def read_csv(path):
+    """
+    Read a csv file and scale the data
+
+    Args: 
+        path (str): path to csv file
+    Returns:
+        pd.DataFrame: scaled data
+    """
     df = pd.read_pickle(path)
     df.iloc[:, :] = MinMaxScaler().fit_transform(df)
     logging.info(f"loaded a csv with shape {df.shape} from {path}")
@@ -67,6 +95,16 @@ def read_csv(path):
 
 
 def rankings2df(rankings, vocab, topics):
+    """
+    Convert rankings to a dataframe
+    
+    Args:
+        rankings (np.array): rankings
+        vocab (list): vocabulary
+        topics (list): topics
+    Returns:
+        pd.DataFrame: rankings
+    """
     return pd.DataFrame(rankings, index=vocab, columns=topics)
 
 
@@ -79,6 +117,19 @@ def run_ensemble_rankings(
     out_dir: str,
     dry_run=False,
 ):
+    """
+    Run ensemble ranking 
+    Args:
+        global_score (str): path to global scores
+        local_score (str): path to local scores
+        global_weight (float): weight of global scores
+        local_weight (float): weight of local scores
+        rho (float): exponent
+        out_dir (str): path to output directory
+        dry_run (bool): flat to indicate that should write output
+    Returns:
+        None
+    """
     local_df = read_csv(local_score)
     global_df = read_csv(global_score)
     vocab = set(local_df.index) & set(global_df.index)
