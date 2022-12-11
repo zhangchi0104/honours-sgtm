@@ -58,6 +58,7 @@ def main(args):
 
 def build_vocabulary(lines, min_count):
     all_occurences = {}
+    # Do the counting
     loop = track(lines, description="Building vocabulary")
     for line in loop:
         words = line.split(' ')
@@ -78,17 +79,24 @@ def build_cooccurance_matrix(
     lines,
     vocabulary,
 ):
+    """
+    Build a co-occurrence matrix from a list of lines 
+    """
     from sklearn.feature_extraction.text import CountVectorizer
-    import numpy as np
+
+    # Do unigram counting
     logging.info("making unigram matrix")
     cv = CountVectorizer(ngram_range=(1, 1), vocabulary=vocabulary)
     x = cv.fit_transform(lines)
     logging.info("Computing occurrence matrix")
+    # Compute co-occurrence matrix using linear algebra
     co_x = x.T * x
     co_x.setdiag(0)
     data = co_x.toarray()
     names = cv.get_feature_names_out()
-    logging.info("Starting building dataframe")
+    logging.info(
+        "Starting building dataframe, it may take a while depending on the size of the vocabulary"
+    )
     df = pd.DataFrame(data, columns=names, index=names)
     return df
 

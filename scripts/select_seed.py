@@ -1,3 +1,11 @@
+"""
+Author: Chi Zhang
+License: MIT
+
+Select in-vocab seeds from the vocabulary 
+and out-of-vocabulary seeds from the BERT tokenizer vocabulary 
+"""
+
 import argparse
 import re
 from sklearn.cluster import KMeans
@@ -17,15 +25,33 @@ logger = logging.getLogger("select_seed")
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--dataset", type=str, required=True)
-    parser.add_argument("--embeddings", type=str)
-    parser.add_argument("--output", type=str, default="seed.txt")
-    parser.add_argument("--n_in_vocab", type=int, default=10)
-    parser.add_argument("--n_out_vocab", type=int, default=10)
-    parser.add_argument("--tokenizer_vocab", type=str, default="")
+    parser.add_argument("--dataset",
+                        type=str,
+                        required=True,
+                        help="full path to dataset")
+    parser.add_argument("--embeddings",
+                        type=str,
+                        help="full path to embeddings")
+    parser.add_argument("--output",
+                        type=str,
+                        default="seed.txt",
+                        help="path to output file for seeds")
+    parser.add_argument("--n_in_vocab",
+                        type=int,
+                        default=10,
+                        help="number of in vocabulary seeds")
+    parser.add_argument("--n_out_vocab",
+                        type=int,
+                        default=10,
+                        help="number of out of vocabulary seeds")
+    parser.add_argument("--tokenizer_vocab",
+                        type=str,
+                        default="",
+                        help="path to the tokenizer's vocabulary")
     parser.add_argument("--output_vocab_embedings",
                         type=str,
-                        default="vocab_embeddings.bin")
+                        default="vocab_embeddings.bin",
+                        help="path to save the vocab embeddings for gensim")
 
     return parser.parse_args()
 
@@ -38,6 +64,7 @@ def main(args):
     documents = [doc.strip().split(' ') for doc in documents]
     logger.info("Loaded {} documents".format(len(documents)))
     # get document vocabulary
+    # Train
     if args.embeddings:
         logger.info("Loading embeddings from {}".format(args.embedding))
         doc_vocab_embeddings = load_word2vec_embeddings(args.embedding)

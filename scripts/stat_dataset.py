@@ -1,5 +1,12 @@
+"""
+Author: Chi Zhang
+License: MIT
+
+count the number of words and phrases in a dataset
+A phrase is defined by a sequence of words joined by underscore "_" 
+"""
 import argparse as a
-from rich.table import Table, Column
+from rich.table import Table
 from rich.console import Console
 
 
@@ -27,10 +34,25 @@ def main(args):
 
 
 def stat_dataset(dataset_name):
+    """
+    Count the number of words and phrases for a given dataset name
+
+    Args:
+        dataset_name (str): name of the dataset
+    """
     dataset_path = f'./data/{dataset_name}/corpus/corpus.txt'
     return stat_dataset_by_path(dataset_path)
 
+
 def stat_dataset_by_path(dataset_path):
+    """
+    Count the number of words and phrases in a dataset
+
+    Args:
+        dataset_path (str): path to the dataset file
+    Returns:
+        (int, int): (number of words, number of phrases) 
+    """
     f = open(dataset_path, 'r')
     lines = f.readlines()
     n_words = 0
@@ -44,6 +66,7 @@ def stat_dataset_by_path(dataset_path):
         n_phrases += phrase_count
 
     return n_words, n_phrases
+
 
 if __name__ == '__main__':
     args = parse_args()

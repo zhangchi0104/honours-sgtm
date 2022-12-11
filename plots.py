@@ -1,9 +1,15 @@
+"""
+Author: Chi Zhang
+License: MIT
+
+Plots releven data
+"""
+
 import pandas as pd
 import numpy as np
 import logging
 from rich.logging import RichHandler
 import matplotlib.pylab as plt
-from os.path import join as join_path
 from scripts.utils.io import load_seed
 import re
 from pathlib import Path
@@ -38,6 +44,9 @@ def aggregated_plots_by_metrics(data: dict, name: str, fig_path):
 
 
 def result_json2dataframe(datasets):
+    """
+    Collects results and parse them to a dataframe
+    """
     from os.path import join as j
     metrics = ['pmi', 'npmi', 'distinctiveness']
     results = {
@@ -48,6 +57,7 @@ def result_json2dataframe(datasets):
     }
 
     for dataset in datasets:
+        # Configure result paths
         evaluation_root = f"./results/{dataset}/evaluations/"
         methods = [
             ('CaTE', j(evaluation_root, 'cate.json')),
@@ -65,6 +75,7 @@ def result_json2dataframe(datasets):
                   'local-0.5-global-0.5-rho-0.5.json'),
             ),
         ]
+        # Collect results for methods
         for method, file in methods:
             try:
                 f = open(file, 'r')
@@ -90,6 +101,15 @@ def result_json2dataframe(datasets):
 
 
 def parse_ensemble_results(dir):
+    """
+    Parse ensemble results for diffferent hyperparameters
+    and returnas a dataframe 
+
+    Args:
+        dir (str): path to the directory containing the results
+    Returns:
+        pd.DataFrame: a dataframe containing the results
+    """
     files = list(dir.glob('local-*.json'))
     res = np.zeros((len(files), 6))
     for i, filename in enumerate(files):
@@ -113,10 +133,12 @@ def parse_ensemble_results(dir):
 
 
 def ensemble_pmi2dataframe(*datasets):
-    # load seeds
+    """
+    Breaks down the ensemble pmi results to in-vocabulary and out-of-vocabulary
+    """
     data = {"Dataset": [], "Type": [], "PMI": []}
     for dataset in datasets:
-
+        # Initialize the results and paths
         dataset_result = {
             "In vocabulary Average": 0,
             "Out Vocabulary Average": 0,
@@ -125,10 +147,12 @@ def ensemble_pmi2dataframe(*datasets):
         seed_path = os.path.join('./data', dataset, 'seeds.json')
         result_path = os.path.join('./results/', dataset, 'evaluations',
                                    'ensemble_pmi.txt')
+        # Load the seeds and the results
         in_vocab, out_vocab = load_seed(seed_path, False)
         f = open(result_path, 'r')
         lines = f.readlines()
         f.close()
+        # Parse the results
         pmis = ensemble_pmi2dict(lines)
         out_vocab_pmi = sum(pmis[word] for word in out_vocab) / len(in_vocab)
         in_vocab_pmi = sum(pmis[word] for word in in_vocab) / len(out_vocab)
@@ -138,6 +162,7 @@ def ensemble_pmi2dataframe(*datasets):
             sum(pmis[word]
                 for word in out_vocab) + sum(pmis[word]
                                              for word in in_vocab)) / len(pmis)
+        # Fill the dataframe
         for key, value in dataset_result.items():
             data['Dataset'].append(dataset)
             data['Type'].append(key)
@@ -147,6 +172,9 @@ def ensemble_pmi2dataframe(*datasets):
 
 
 def ensemble_pmi2dict(lines):
+    """
+    Collects the PMI results from the ensemble pmi results
+    """
     res = {}
     for line in lines:
         match = re.match(LINE_MATCHER, line)
@@ -169,7 +197,7 @@ def main():
 
     for i, results_root in enumerate(["ensemble", "evaluation_reduced"]):
         results = {}
-        # collect results to DF
+        # Plots enseble results based on different metrics
         for dataset in DATASETS:
             result_dir = Path(
                 './results') / dataset / 'evaluations' / results_root
@@ -199,7 +227,7 @@ def main():
             f'./plots/distinctiveness_{suffix}.png',
         )
 
-    # [Bar charts] Comparsions of methods By datasets
+    # [Bar charts] Comparsions of methods By datasets based on PMI and distinctiveness
     results = result_json2dataframe(DATASETS)
     metrics = ['pmi', 'distinctiveness']
     for metric in metrics:

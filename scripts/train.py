@@ -1,16 +1,10 @@
 import os
-from random import seed
 import shutil
 import torch
-try:
-    import pytorch_lightning as pl
-    from pytorch_lightning.callbacks import ModelCheckpoint
-    from pytorch_lightning.loggers.wandb import WandbLogger
-except:
-    import lightning as pl
-    from lightning.callbacks import ModelCheckpoint
-    from lightning.loggers.wandb import WandbLogger
 
+import pytorch_lightning as pl
+from pytorch_lightning.callbacks import ModelCheckpoint
+from pytorch_lightning.loggers.wandb import WandbLogger
 
 import argparse
 from transformers import BertForMaskedLM, BertConfig, Trainer, TrainingArguments
@@ -64,14 +58,30 @@ def parser_args():
                         required=True,
                         help='Path to Train-Labeled')
     parser.add_argument('--batch_size', type=int, default=4, help='Batch size')
-    parser.add_argument("--vocab", type=str, required=True)
-    parser.add_argument('--output_dir', type=str, required=True)
-    parser.add_argument('--num_workers', type=int, default=4)
-    parser.add_argument('--tokenizer', type=str, default=None)
+    parser.add_argument("--vocab",
+                        type=str,
+                        required=True,
+                        help="Path to vocabulary")
+    parser.add_argument('--output_dir',
+                        type=str,
+                        required=True,
+                        help='Path to save model')
+    parser.add_argument('--num_workers',
+                        type=int,
+                        default=4,
+                        help='Number of dataloader workers')
+    parser.add_argument('--tokenizer',
+                        type=str,
+                        default=None,
+                        help='[Optional] Path to the tokenizer')
     parser.add_argument("--verbose", "-v", action='store_true')
-    parser.add_argument("--scratch", action='store_true')
-    parser.add_argument("--seeds", required=True)
-    parser.add_argument("--upload_model", action='store_true')
+    parser.add_argument("--scratch",
+                        action='store_true',
+                        help="Train from scratch rather than fine tune")
+    parser.add_argument("--seeds", required=True, help="Path to seeds.json")
+    parser.add_argument("--upload_model",
+                        action='store_true',
+                        help="Upload model to wandb")
     parser = pl.Trainer.add_argparse_args(parser)
     args = parser.parse_args()
 
@@ -79,9 +89,11 @@ def parser_args():
 
 
 def main(args):
+    # Load tokenizer and vocabulary
     tokenizer = load_tokenizer(args.tokenizer)
     vocab = load_vocab(args.vocab)
     model = None
+    # Load model
     if args.tokenizer is not None and args.tokenizer.strip() != '':
         logging.info(
             "Training BERT from scratch because '--tokenizer' is specified")
@@ -95,6 +107,7 @@ def main(args):
     else:
         logging.info("Fine tunning BERT")
         model = BertForMaskedLM.from_pretrained('bert-base-uncased')
+    # Add seeds and phrases to tokenizer
     seeds = load_seed(args.seeds, combine_result=True)
     new_tokens = list(set(vocab) - set(tokenizer.vocab.keys()))
     new_tokens = [
@@ -106,13 +119,17 @@ def main(args):
     tokenizer.add_tokens(seed_tokens)
     # logging.info(f"adding {new_tokens} to tokenizer")
     logging.info(f"new tokenizer now has shape {len(tokenizer)}")
+    # Create tokenizer and model out put directory
     tokenizer_dir = os.path.join(args.output_dir, "tokenizer")
     model_dir = os.path.join(args.output_dir, f"finetuned-model")
     os.makedirs(tokenizer_dir, exist_ok=True)
+    # Save tokenizer
     tokenizer.save_pretrained(tokenizer_dir)
     logging.info(f"save tokenizer to {tokenizer_dir}")
+    # Resize model embeddings
     model.resize_token_embeddings(len(tokenizer))
     os.makedirs(args.output_dir, exist_ok=True)
+    # Setup checkpointing
     checkpointer = ModelCheckpoint(
         dirpath=args.output_dir,
         every_n_epochs=10,
@@ -120,7 +137,7 @@ def main(args):
     data = None
     with open(args.dataset_path, 'r') as f:
         data = f.readlines()
-
+    # Setup dataloader and trainer
     data_module = BertDataModule(
         data,
         tokenizer,
@@ -135,11 +152,13 @@ def main(args):
         strategy="ddp_find_unused_parameters_false",
         auto_scale_batch_size="binsearch",
     )
-    # trainer.tune(training_module, datamodule=data_module)
+    # start training
     trainer.fit(training_module, data_module)
     hg_trainer = Trainer(model=model)
     logging.info(f"Saving model and config to {model_dir}")
+    # Save model and config
     hg_trainer.save_model(model_dir)
+    # Upload model to wandb if specified
     if args.upload_model:
         logging.info(
             f"zipping tokenizer and model to 'model-{trainer.logger.name}.zip'"
